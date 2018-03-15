@@ -1,0 +1,12 @@
+﻿@model List<Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto>
+@{
+                Layout = null;
+}
+<select class="form-control js-career-select" name="academicUnitId" id="academicUnitId" data-live-search="true">
+
+    <option value="0">--Seleccionar Unidad Académica--</option>
+    @foreach (var elm in Model)
+    {
+        <option @(ViewBag.Selected == elm.Id ? "selected" : "") data-publisher="@elm.Name" value="@elm.Id">@elm.Name</option>
+    }
+</select>

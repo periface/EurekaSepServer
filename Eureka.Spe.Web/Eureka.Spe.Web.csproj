@@ -3136,6 +3136,9 @@
     <Content Include="Views\AcademicUnits\Index.cshtml" />
     <Content Include="Views\AcademicUnits\CreateOrEdit.cshtml" />
     <Content Include="Views\Careers\Index.cshtml" />
+    <Content Include="Views\Careers\CreateOrEdit.cshtml" />
+    <Content Include="Views\Layout\AcademicUnitsSelector.cshtml" />
+    <Content Include="Views\Layout\CareersSelector.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

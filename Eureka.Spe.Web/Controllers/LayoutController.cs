@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using Abp.Application.Navigation;
 using Abp.Configuration;
@@ -6,6 +7,9 @@ using Abp.Configuration.Startup;
 using Abp.Localization;
 using Abp.Runtime.Session;
 using Abp.Threading;
+using Eureka.Spe.AcademicUnits;
+using Eureka.Spe.AcademicUnits.Dto;
+using Eureka.Spe.Careers;
 using Eureka.Spe.Configuration;
 using Eureka.Spe.Configuration.Ui;
 using Eureka.Spe.Publishers;
@@ -22,18 +26,22 @@ namespace Eureka.Spe.Web.Controllers
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         private readonly ILanguageManager _languageManager;
         private readonly IPublisherAppService _publisherAppService;
+        private readonly IAcademicUnitAppService _academicUnitAppService;
+        private readonly ICareerAppService _careerAppService;
 
         public LayoutController(
             IUserNavigationManager userNavigationManager,
             ISessionAppService sessionAppService,
             IMultiTenancyConfig multiTenancyConfig,
-            ILanguageManager languageManager, IPublisherAppService publisherAppService)
+            ILanguageManager languageManager, IPublisherAppService publisherAppService, IAcademicUnitAppService academicUnitAppService, ICareerAppService careerAppService)
         {
             _userNavigationManager = userNavigationManager;
             _sessionAppService = sessionAppService;
             _multiTenancyConfig = multiTenancyConfig;
             _languageManager = languageManager;
             _publisherAppService = publisherAppService;
+            _academicUnitAppService = academicUnitAppService;
+            _careerAppService = careerAppService;
         }
 
         [ChildActionOnly]
@@ -95,6 +103,25 @@ namespace Eureka.Spe.Web.Controllers
             return View(publishers);
 
         }
+        [ChildActionOnly]
+        public ViewResult AcademicUnitsSelector(int? selected)
+        {
+            ViewBag.Selected = selected ?? 0;
 
+            List<AcademicUnitDto> academicUnits = _academicUnitAppService.GetAcademicUnitSimpleList();
+
+            return View(academicUnits);
+
+        }
+        [ChildActionOnly]
+        public ViewResult CareersSelector(int? selected)
+        {
+            ViewBag.Selected = selected ?? 0;
+
+            var careers = _careerAppService.GetCareersList();
+
+            return View(careers);
+
+        }
     }
 }

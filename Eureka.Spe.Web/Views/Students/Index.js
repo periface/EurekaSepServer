@@ -7,7 +7,12 @@
             locale: 'es-Es',
             columns: [
                 {
-                    title: "Logo", field: "img", sortable: false, align: "center", formatter: (value, row, index) => {
+                    title: "Matricula", field: "enrollCode", sortable: false, align: "center", formatter: (value, row, index) => {
+                        return `<a href="/Students/Manage/${row.id}">${value}</a>`;
+                    }
+                },
+                {
+                    title: "Perfil", field: "img", sortable: false, align: "center", formatter: (value, row, index) => {
                         return `<img style="width:32px;height:32px;" src="${value}" />`;
                     }
                 },
@@ -17,9 +22,14 @@
                     }
                 },
                 {
+                    title: "Apellidos", field: "surname", sortable: true, formatter: (value, row, index) => {
+                        return `${value}`;
+                    }
+                },
+                {
                     title: "Acciones",
                     formatter: (value, row, index) => {
-                        var btnEdit = `<a class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-publisher" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
+                        var btnEdit = `<a class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-student" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
                         var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-publisher" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
 
                         return [
@@ -55,13 +65,46 @@
     }
 
     startTable();
+    $("body").on("click",
+        ".js-edit-student",
+        function() {
+            var id = $(this).data("id");
+            console.log(id);
+            window.eModal.ajax({
+                    loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+                    url: '/Students/CreateOrEdit/' + id,
+                    title: 'Estudiante',
+                    buttons: [
+                        {
+                            text: 'Cerrar', style: 'danger', close: true, click: function () {
+
+                            }
+                        },
+                        {
+                            text: 'Guardar', style: 'info', close: false, click: function (elm) {
+                                var data = $("#AddEditStudentForm").serializeFormToObject();
+                                service.createOrUpdate(data).done(function () {
+                                    window.eModal.close();
+                                    table.bootstrapTable('refresh');
+                                    abp.notify.success("Elemento guardado con exito...");
+                                });
+                                console.log(data);
+                            }
+                        }
+                    ]
+                })
+                .then(function () {
+
+                });
+        });
+
 
     $(".js-add-student").click(function() {
         
         window.eModal.ajax({
                 loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
                 url: '/Students/CreateOrEdit/',
-                title: 'Crear categoría',
+                title: 'Estudiante',
                 buttons: [
                     {
                         text: 'Cerrar', style: 'danger', close: true, click: function () {

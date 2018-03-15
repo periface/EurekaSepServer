@@ -1,0 +1,17 @@
+﻿@model Eureka.Spe.Careers.Dto.CareersGroupedList
+
+@{
+    Layout = null;
+}
+<select class="form-control js-career-select" name="careerId" id="careerId" data-live-search="true">
+    <option value="0">--Seleccionar Carrera--</option>
+    @foreach (var grp in Model.Groups)
+    {
+        <optgroup label="@grp.Name">
+            @foreach (var elm in grp.Careers)
+            {
+            <option @(ViewBag.Selected == elm.Id ? "selected" : "") data-publisher="@elm.Name" value="@elm.Id">@elm.Name</option>
+            }
+        </optgroup>
+    }
+</select>

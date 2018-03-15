@@ -1,10 +1,11 @@
-﻿using Abp.AutoMapper;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
 using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.Careers.Dto
 {
     [AutoMap(typeof(Career))]
-    public class CareerDto
+    public class CareerDto : EntityDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

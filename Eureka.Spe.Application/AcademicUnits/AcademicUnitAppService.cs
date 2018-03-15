@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
@@ -63,6 +64,12 @@ namespace Eureka.Spe.AcademicUnits
         {
             var elm = await _repository.GetAsync(idValue);
             return elm.MapTo<AcademicUnitDto>();
+        }
+
+        public List<AcademicUnitDto> GetAcademicUnitSimpleList()
+        {
+            var all = _repository.GetAllList();
+            return all.Select(a => a.MapTo<AcademicUnitDto>()).ToList();
         }
     }
 }

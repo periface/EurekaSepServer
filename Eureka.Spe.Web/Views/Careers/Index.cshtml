@@ -13,8 +13,16 @@
                 </h2>
             </div>
             <div class="body table-responsive">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name" class="form-label">@L("AcademicUnits")</label>
+                            @{Html.RenderAction("AcademicUnitsSelector","Layout",new{  });}
+                        </div>
+                    </div>
+                </div>
                 <table data-pagination="true"
-                       data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/careers/getall" id="table" class="table table-responsive table-condensed"></table>
+                       data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/career/getall" id="table" class="table table-responsive table-condensed"></table>
                 <a class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right js-add-career">
                     <i class="material-icons">add</i>
                 </a>

@@ -196,6 +196,8 @@
     <Compile Include="AcademicUnits\Dto\AcademicUnitDto.cs" />
     <Compile Include="AcademicUnits\IAcademicUnitAppService.cs" />
     <Compile Include="Careers\CareerAppService.cs" />
+    <Compile Include="Careers\Dto\CareersGroupedList.cs" />
+    <Compile Include="Careers\Dto\CustomCareerInput.cs" />
     <Compile Include="Careers\Dto\CareerDto.cs" />
     <Compile Include="Careers\ICareerAppService.cs" />
     <Compile Include="CourseCategories\CourseCategoriesAppService.cs" />
