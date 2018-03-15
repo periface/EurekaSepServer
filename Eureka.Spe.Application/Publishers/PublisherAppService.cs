@@ -62,9 +62,9 @@ namespace Eureka.Spe.Publishers
             await _repository.DeleteAsync(id);
         }
 
-        public PublisherDto Get(int id)
+        public async Task <PublisherDto> Get(int id)
         {
-            var publisher = _repository.Get(id);
+            var publisher = await _repository.GetAsync(id);
             return publisher.MapTo<PublisherDto>();
         }
 

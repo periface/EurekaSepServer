@@ -71,7 +71,7 @@ namespace Eureka.Spe.Feeds
             if (input.Notify)
             {
 
-                _pushManager.SendMessage(new PushMessageInput()
+                var result = await _pushManager.SendMessage(new PushMessageInput()
                 {
                     Desc = mapped.Title,
                     Segments = new List<string>()
@@ -102,9 +102,9 @@ namespace Eureka.Spe.Feeds
             }));
         }
 
-        public FeedDto Get(int idValue)
+        public async Task<FeedDto> Get(int idValue)
         {
-            var feed = _repository.Get(idValue);
+            var feed = await _repository.GetAsync(idValue);
             return feed.MapTo<FeedDto>();
         }
     }

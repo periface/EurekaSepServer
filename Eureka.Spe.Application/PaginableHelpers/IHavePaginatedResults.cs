@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 
 namespace Eureka.Spe.PaginableHelpers
@@ -10,5 +11,10 @@ namespace Eureka.Spe.PaginableHelpers
         [ApiIgnore]
         IQueryable<TEntity> GetOrderedQuery(IQueryable<TEntity> all, TPaginableInput input);
         PagedResultDto<TEntityDto> GetAll(TPaginableInput input);
+
+
+        Task CreateOrUpdate(TEntityDto input);
+        Task Delete(int id);
+        Task<TEntityDto> Get(int id);
     }
 }

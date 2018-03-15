@@ -42,6 +42,16 @@
     <text name="TenantSelection" value="Selección de Empresa" />
     <text name="TenantSelection_Detail" value="Por favor seleccione una de las siguientes empresas." />
     <text name="Logout" value="Cerrar sesión" />
-
+    <text name="Feeds" value="Noticias" />
+    <text name="Publishers" value="Departamentos" />
+    <text name="FeedList" value="Listado" />
+    <text name="Courses" value="Educación Continúa" />
+    <text name="Categories" value="Categorias" />
+    <text name="CourseList" value="Listado" />
+    <text name="Scholarships" value="Becas" />
+    <text name="ScholarshipList" value="Listado" />
+    <text name="Students" value="Estudiantes" />
+    <text name="AcademicUnits" value="Unidades Academicas" />
+    <text name="StudentsList" value="Listado" />
   </texts>
 </localizationDictionary>

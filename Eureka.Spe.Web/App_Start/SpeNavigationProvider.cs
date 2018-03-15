@@ -75,21 +75,21 @@ namespace Eureka.Spe.Web
                 )
                 .AddItem(
                     new MenuItemDefinition(
-                            PageNames.About,
+                            PageNames.Courses,
                             L("Courses"),
                             url: "About",
                             icon: "local_offer"
                         )
                         .AddItem(
                             new MenuItemDefinition(
-                                PageNames.About,
+                                PageNames.CourseCategories,
                                 L("Categories"),
                                 url: "About"
                             )
                         )
                         .AddItem(
                             new MenuItemDefinition(
-                                PageNames.About,
+                                PageNames.Courses,
                                 L("CourseList"),
                                 url: "About"
                             )
@@ -97,21 +97,21 @@ namespace Eureka.Spe.Web
                 )
                 .AddItem(
                     new MenuItemDefinition(
-                            PageNames.About,
+                            PageNames.Scholarships,
                             L("Scholarships"),
                             url: "About",
                             icon: "local_offer"
                         )
                         .AddItem(
                             new MenuItemDefinition(
-                                PageNames.About,
+                                PageNames.ScholarshipCategories,
                                 L("Categories"),
                                 url: "About"
                             )
                         )
                         .AddItem(
                             new MenuItemDefinition(
-                                PageNames.About,
+                                PageNames.Scholarships,
                                 L("ScholarshipList"),
                                 url: "About"
                             )
@@ -119,10 +119,23 @@ namespace Eureka.Spe.Web
                 )
                 .AddItem(
                     new MenuItemDefinition(
-                        PageNames.About,
+                        PageNames.Students,
                         L("Students"),
-                        url: "About",
                         icon: "local_offer"
+                    ).AddItem(
+                            new MenuItemDefinition(
+                                PageNames.AcademicUnits,
+                                L("AcademicUnits"),
+                                url: "AcademicUnits",
+                                icon: "local_offer"
+                            )
+                        ).AddItem(
+                        new MenuItemDefinition(
+                            PageNames.Students,
+                            L("StudentsList"),
+                            url: "Students",
+                            icon: "local_offer"
+                        )
                     )
                 )
                 .AddItem(

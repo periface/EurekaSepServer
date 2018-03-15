@@ -58,5 +58,10 @@ namespace Eureka.Spe.Courses
         {
             await _repository.DeleteAsync(id);
         }
+
+        public Task<CourseDto> Get(int id)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

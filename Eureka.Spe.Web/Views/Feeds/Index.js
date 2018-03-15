@@ -59,29 +59,5 @@
     startTable();
 
 
-    $(".js-add-category").click(function() {
-        window.eModal.ajax({
-                loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
-                url: '/Feeds/CreateOrEdit',
-                title: 'Crear categoría',
-                buttons: [
-                    {
-                        text: 'Cerrar', style: 'danger', close: true, click: function () {
 
-                        }
-                    },
-                    {
-                        text: 'Guardar', style: 'info', close: false, click: function (elm) {
-                            var data = $("#createCategory").serializeFormToObject();
-                            console.log(data);
-                        }
-                    }
-                ]
-            })
-            .then(function () {
-
-            });
-
-
-    });
 })();

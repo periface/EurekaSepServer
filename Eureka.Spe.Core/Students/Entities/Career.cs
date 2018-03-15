@@ -13,9 +13,10 @@ namespace Eureka.Spe.Students.Entities
         public string Img { get; set; }
         public string Tags { get; set; }
         public int AcademicUnitId { get; set; }
+        public int TenantId { get; set; }
         [ForeignKey("AcademicUnitId")]
         public virtual AcademicUnit AcademicUnit { get; set; }
         public virtual ICollection<Student> Students { get; set; }
-        public int TenantId { get; set; }
+        
     }
 }

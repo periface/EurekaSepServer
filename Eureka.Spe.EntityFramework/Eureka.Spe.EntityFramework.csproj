@@ -233,6 +233,10 @@
     <Compile Include="Migrations\201803142011113_InitialSpe.Designer.cs">
       <DependentUpon>201803142011113_InitialSpe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803151800055_ShortNameForAcademicUnit.cs" />
+    <Compile Include="Migrations\201803151800055_ShortNameForAcademicUnit.Designer.cs">
+      <DependentUpon>201803151800055_ShortNameForAcademicUnit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -267,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803142011113_InitialSpe.resx">
       <DependentUpon>201803142011113_InitialSpe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803151800055_ShortNameForAcademicUnit.resx">
+      <DependentUpon>201803151800055_ShortNameForAcademicUnit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

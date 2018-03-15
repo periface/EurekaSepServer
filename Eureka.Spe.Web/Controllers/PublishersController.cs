@@ -1,12 +1,16 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
+using Abp.Web.Mvc.Authorization;
+using Eureka.Spe.Authorization;
 using Eureka.Spe.Publishers;
 using Eureka.Spe.Publishers.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {
+    [AbpMvcAuthorize(PermissionNames.Pages_Feeds)]
     public class PublishersController : Controller
     {
-        private IPublisherAppService _publisherAppService;
+        private readonly IPublisherAppService _publisherAppService;
 
         public PublishersController(IPublisherAppService publisherAppService)
         {
@@ -19,10 +23,10 @@ namespace Eureka.Spe.Web.Controllers
             return View();
         }
 
-        public ActionResult CreateOrEdit(int? id)
+        public async Task<ActionResult> CreateOrEdit(int? id)
         {
             if (!id.HasValue) return View(new PublisherDto());
-            var found = _publisherAppService.Get(id.Value);
+            var found = await _publisherAppService.Get(id.Value);
             return View(found);
         }
     }

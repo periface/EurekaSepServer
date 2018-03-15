@@ -1,10 +1,18 @@
 ﻿@using Castle.Core.Internal
-@model Eureka.Spe.Publishers.Dto.PublisherDto
+@model Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto
 
 @{
     Layout = null;
 }
-<form id="AddEditPublisherForm" role="form" novalidate class="form-validation">
+<style>
+    #iconPlaceHolder {
+        width: 85px;
+        height: 85px;
+        max-width: 85px;
+        max-height: 85px;
+    }
+</style>
+<form id="AddEditAcademicUnitForm" role="form" novalidate class="form-validation">
     <input type="hidden" name="Id" value="@Model.Id" />
     <input type="hidden" name="TenantId" value="@Model.TenantId" />
     <div class="row clearfix">
@@ -29,8 +37,16 @@
         <div class="col-sm-12">
             <div class="form-group form-float">
                 <div class="form-line">
-                    <input id="name" type="text" name="Name" value="@Model.Name" required maxlength="32" class="validate form-control">
+                    <input id="name" type="text" name="Name" value="@Model.Name" required class="validate form-control">
                     <label for="name" class="form-label">@L("Name")</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <input id="ShortName" type="text" name="ShortName" value="@Model.ShortName" required maxlength="32" class="validate form-control">
+                    <label for="ShortName" class="form-label">@L("ShortName")</label>
                 </div>
             </div>
         </div>
@@ -52,7 +68,7 @@
             baseUrl: "/upload",
             sizes: ["128x128"],
             optimize: true,
-            uniqueFolder: "publishers"
+            uniqueFolder: "academicunits"
         };
         enableUploadOnFileElm("#icon", function (data) {
             $("#img").val(data.FileUrl);
@@ -61,7 +77,7 @@
         }, function () {
             abp.ui.setBusy($("#upload"));
         }, uploadOptions);
-        var form = $("#AddEditPublisherForm");
+        var form = $("#AddEditAcademicUnitForm");
         $.AdminBSB.input.activate(form);
     })();
 </script>

@@ -9,9 +9,6 @@ namespace Eureka.Spe.Publishers
 {
     public interface IPublisherAppService : IApplicationService, IHavePaginatedResults<FeedPublisher, PublisherDto, BootstrapTableInput>
     {
-        Task CreateOrUpdate(PublisherDto input);
-        Task Delete(int id);
-        PublisherDto Get(int id);
         List<PublisherDto> GetPublishersSimpleList();
     }
 }

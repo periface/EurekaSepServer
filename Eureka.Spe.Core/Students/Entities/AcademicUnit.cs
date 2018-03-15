@@ -12,5 +12,6 @@ namespace Eureka.Spe.Students.Entities
         public string Img { get; set; }
         public virtual ICollection<Career> Careers { get; set; }
         public int TenantId { get; set; }
+        public string ShortName { get; set; }
     }
 }

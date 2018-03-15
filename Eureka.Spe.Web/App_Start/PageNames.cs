@@ -9,5 +9,11 @@ namespace Eureka.Spe.Web
         public const string Roles = "Roles";
         public const string Feeds = "Feeds";
         public const string Publishers = "Publishers";
+        public const string Students = "Students";
+        public const string Courses = "Courses";
+        public const string CourseCategories = "CourseCategories";
+        public const string Scholarships = "Scholarships";
+        public const string ScholarshipCategories = "ScholarshipCategories";
+        public const string AcademicUnits = "AcademicUnits";
     }
 }
