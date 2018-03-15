@@ -8,6 +8,7 @@ using Abp.Runtime.Session;
 using Abp.Threading;
 using Eureka.Spe.Configuration;
 using Eureka.Spe.Configuration.Ui;
+using Eureka.Spe.Publishers;
 using Eureka.Spe.Sessions;
 using Eureka.Spe.Web.Models;
 using Eureka.Spe.Web.Models.Layout;
@@ -20,17 +21,19 @@ namespace Eureka.Spe.Web.Controllers
         private readonly ISessionAppService _sessionAppService;
         private readonly IMultiTenancyConfig _multiTenancyConfig;
         private readonly ILanguageManager _languageManager;
+        private readonly IPublisherAppService _publisherAppService;
 
         public LayoutController(
             IUserNavigationManager userNavigationManager,
             ISessionAppService sessionAppService,
             IMultiTenancyConfig multiTenancyConfig,
-            ILanguageManager languageManager)
+            ILanguageManager languageManager, IPublisherAppService publisherAppService)
         {
             _userNavigationManager = userNavigationManager;
             _sessionAppService = sessionAppService;
             _multiTenancyConfig = multiTenancyConfig;
             _languageManager = languageManager;
+            _publisherAppService = publisherAppService;
         }
 
         [ChildActionOnly]
@@ -81,5 +84,17 @@ namespace Eureka.Spe.Web.Controllers
 
             return PartialView("_RightSideBar", viewModel);
         }
+
+        [ChildActionOnly]
+        public ViewResult PublishersSelector(int? selected)
+        {
+            ViewBag.Selected = selected ?? 0;
+
+            var publishers = _publisherAppService.GetPublishersSimpleList();
+
+            return View(publishers);
+
+        }
+
     }
 }

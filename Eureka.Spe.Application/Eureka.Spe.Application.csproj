@@ -201,6 +201,7 @@
     <Compile Include="Feeds\Dto\FeedDto.cs" />
     <Compile Include="Feeds\FeedAppService.cs" />
     <Compile Include="Feeds\IFeedAppService.cs" />
+    <Compile Include="PaginableHelpers\ApiIgnoreAttribute.cs" />
     <Compile Include="PaginableHelpers\BootstrapTableInput.cs" />
     <Compile Include="PaginableHelpers\IHavePaginatedResults.cs" />
     <Compile Include="Publishers\Dto\PublisherDto.cs" />

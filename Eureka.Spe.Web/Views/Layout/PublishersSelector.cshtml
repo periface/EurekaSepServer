@@ -1,0 +1,16 @@
+﻿@model System.Collections.Generic.List<Eureka.Spe.Publishers.Dto.PublisherDto>
+
+@{
+    Layout = null;
+}
+
+<select class="form-control js-publisher-select" name="publisherId" data-live-search="true">
+
+    <option value="0">--Seleccionar Dependencia--</option>
+    @foreach (var elm in Model)
+    {
+
+        <option @(ViewBag.Selected == elm.Id ? "selected" : "") data-publisher="@elm.Name" value="@elm.Id">@elm.Name</option>
+    }
+
+</select>

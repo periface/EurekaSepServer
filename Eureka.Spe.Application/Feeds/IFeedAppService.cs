@@ -12,5 +12,6 @@ namespace Eureka.Spe.Feeds
         Task CreateOrUpdate(FeedDto input);
         Task Delete(int id);
         Task Notify(int feedId);
+        FeedDto Get(int idValue);
     }
 }

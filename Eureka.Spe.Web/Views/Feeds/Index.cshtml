@@ -9,13 +9,13 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    @L("Categories")
+                    @L("Feeds")
                 </h2>
             </div>
             <div class="body table-responsive">
                 <table data-pagination="true"
                        data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/feed/getall" id="table" class="table table-responsive table-condensed"></table>
-                <a class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right js-add-feed">
+                <a href="@Url.Action("CreateOrEdit")" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right js-add-feed">
                     <i class="material-icons">add</i>
                 </a>
             </div>
@@ -28,6 +28,6 @@
     <script src="~/js/eModal/eModal.min.js"></script>
     <script src="~/js/bootstraptable/bootstrap-table.min.js"></script>
     <script src="~/js/bootstraptable/bootstrap-table-es-MX.min.js"></script>
-    <script src="~/Views/Feed/Index.js"></script>
+    <script src="~/Views/Feeds/Index.js"></script>
 
 }

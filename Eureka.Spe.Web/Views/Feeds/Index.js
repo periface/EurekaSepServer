@@ -8,27 +8,23 @@
             locale: 'es-Es',
             columns: [
                 {
-                    title: "Icono", field: "img", sortable: false, align: "center", formatter: (value, row, index) => {
-                        return `<img style="width:32px;height:32px;" src="${value}" />`;
-                    }
-                },
-                {
-                    title: "Nombre", field: "displayName", sortable: true, formatter: (value, row, index) => {
+                    title: "Titulo", field: "title", sortable: true, formatter: (value, row, index) => {
                         return `${value}`;
                     }
                 },
                 {
-                    title: "Marcadores", field: "markersCount", sortable: true, formatter: (value, row, index) => {
+                    title: "Dependencia", field: "publisherName", sortable: true, formatter: (value, row, index) => {
                         return `${value}`;
                     }
                 },
                 {
                     title: "Acciones",
                     formatter: (value, row, index) => {
-                        var btnEdit = `<a class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
+                        var btnEdit = `<a href="/Feeds/CreateOrEdit/${row.id}" class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
                         var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
-
+                        var btnAdvanced = `<a href="/Feeds/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
                         return [
+                            btnAdvanced,
                             btnEdit,
                             btnDelete
                         ].join(' ');
@@ -61,4 +57,31 @@
     }
 
     startTable();
+
+
+    $(".js-add-category").click(function() {
+        window.eModal.ajax({
+                loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+                url: '/Feeds/CreateOrEdit',
+                title: 'Crear categoría',
+                buttons: [
+                    {
+                        text: 'Cerrar', style: 'danger', close: true, click: function () {
+
+                        }
+                    },
+                    {
+                        text: 'Guardar', style: 'info', close: false, click: function (elm) {
+                            var data = $("#createCategory").serializeFormToObject();
+                            console.log(data);
+                        }
+                    }
+                ]
+            })
+            .then(function () {
+
+            });
+
+
+    });
 })();

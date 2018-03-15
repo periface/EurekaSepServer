@@ -14,18 +14,23 @@ namespace Eureka.Spe.Push.PushManager
         private string _appId = "bd84bab0-6d83-47d4-afb1-37793dace9d3";
         public void SendMessage(PushMessageInput input)
         {
-            var client = new OneSignalClient(_secret);
+            
+           
+        }
 
+        void SendWithOneSignal(PushMessageInput input)
+        {
+            var client = new OneSignalClient(_secret);
             var options = new NotificationCreateOptions
             {
                 AppId = Guid.Parse(_appId),
-                IncludedSegments = input.Segments,
-                IncludePlayerIds = input.Players
+                DeliverToAndroid = true,
+                DeliverToIos = true,
             };
+
             options.Contents.Add(LanguageCodes.Spanish, input.Desc);
             options.Contents.Add("Id", input.ElementId);
-            client.Notifications.Create(options);
-            
+            var result = client.Notifications.Create(options);
         }
     }
 }

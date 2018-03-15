@@ -52,7 +52,7 @@ namespace Eureka.Spe.Web
                     )
                 ).AddItem(
                     new MenuItemDefinition(
-                            PageNames.Roles,
+                            PageNames.Feeds,
                             L("Feeds"),
                             url: "",
                             icon: "local_offer",
@@ -60,14 +60,14 @@ namespace Eureka.Spe.Web
                         )
                         .AddItem(
                             new MenuItemDefinition(
-                                PageNames.About,
+                                PageNames.Publishers,
                                 L("Publishers"),
                                 url: "Publishers"
                             )
                         )
                         .AddItem(
                             new MenuItemDefinition(
-                                PageNames.About,
+                                PageNames.Feeds,
                                 L("FeedList"),
                                 url: "Feeds"
                             )

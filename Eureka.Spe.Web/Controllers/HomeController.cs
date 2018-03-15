@@ -16,9 +16,9 @@ namespace Eureka.Spe.Web.Controllers
             _feedAppService = feedAppService;
         }
 
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             return View();
         }
-	}
+    }
 }

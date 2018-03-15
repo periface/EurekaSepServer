@@ -1,0 +1,147 @@
+﻿
+@using Abp.Extensions
+@model Eureka.Spe.Feeds.Dto.FeedDto
+@{
+    ViewBag.ActiveMenu = PageNames.Feeds; //The menu item will be active for this page.
+}
+@section Styles{
+    <style>
+        /*.feed-img {
+            width: 200px;
+            height: 100px;
+            max-width: 200px;
+            max-height: 100px;
+        }*/
+    </style>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("CreateOrEditFeed")
+                </h2>
+            </div>
+            <div class="body table-responsive">
+                <form name="CreateEditFeedForm" id="CreateEditFeedForm" role="form" class="form-validation">
+                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <input type="hidden" name="TenantId" value="@Model.TenantId" />
+                    <div class="row clearfix">
+                        <div class="col-sm-4">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="" id="upload">
+                                            @if (Model.Img.IsNullOrEmpty())
+                                            {
+                                                <img id="imgPlaceHolder" class="img-responsive feed-img" src="http://www.gaia-earth.co.uk/img/placeholder-img.jpg" />
+                                            }
+                                            else
+                                            {
+                                                <img id="imgPlaceHolder" class="img-responsive feed-img" src="@Model.Img" />
+                                            }
+                                            <input name="icon" id="icon" type="file" style="display: none" class="validate form-control">
+                                            <input type="hidden" value="@Model.Img" name="img" id="img" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            @{Html.RenderAction("PublishersSelector","Layout",new{ selected = Model.PublisherId });}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input id="name" type="text" name="Title" value="@Model.Title" required maxlength="32" class="validate form-control">
+                                            <label for="name" class="form-label">@L("Title")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <label for="name" class="form-label">@L("Description")</label>
+                                            <textarea name="Description" class="form-control">@Model.Description</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="">
+                                            <input id="Notify" type="checkbox" name="Notify" value="true" class="form-control" />
+                                            <label for="Notify" class="form-label">@L("Notify")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">@L("Content")</label>
+                                        <textarea name="content" id="content" class="form-control">@Model.Content</textarea>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary">@L("Save")</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="~/js/helpers.js"></script>
+    <script>
+        (function () {
+            var service = abp.services.app.feed;
+            var tinyMce;
+            startTinyMce("#content", function (instance) {
+                tinyMce = instance;
+            });
+            var uploadOptions = {
+                baseUrl: "/upload",
+                sizes: ["128x128"],
+                optimize: true,
+                uniqueFolder: "feeds"
+            };
+            enableUploadOnFileElm("#icon", function (data) {
+                $("#img").val(data.FileUrl);
+                $("#imgPlaceHolder").attr("src", data.FileUrl);
+                abp.ui.clearBusy($("#upload"));
+            }, function () {
+                abp.ui.setBusy($("#upload"));
+            }, uploadOptions);
+
+            $("#CreateEditFeedForm").on("submit",
+                function (e) {
+                    e.preventDefault();
+                    var data = $(this).serializeFormToObject();
+                    data.content = tinyMce.save();
+                    console.log(data);
+                    service.createOrUpdate(data).done(function () {
+                        abp.notify.success("Cambios guardados...");
+                    });
+                });
+            $("#imgPlaceHolder").click(function () {
+                $("#icon").click();
+            });
+        })();
+    </script>
+}

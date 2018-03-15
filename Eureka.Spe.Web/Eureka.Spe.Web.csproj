@@ -2944,8 +2944,9 @@
     </Content>
     <Content Include="Views\Account\_TenantChange.js" />
     <Content Include="Views\Account\_TenantChangeModal.js" />
-    <Content Include="Views\Feed\Index.js" />
+    <Content Include="Views\Feeds\Index.js" />
     <Content Include="Views\Home\Index.js" />
+    <Content Include="Views\Publishers\Index.js" />
     <Content Include="Views\Roles\Index.js" />
     <Content Include="Views\Roles\_EditRoleModal.js" />
     <Content Include="Views\Shared\_Layout.css" />
@@ -2970,12 +2971,13 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\FeedController.cs" />
+    <Compile Include="Controllers\FeedsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PublishersController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Models\Account\TenantChangeModalViewModel.cs" />
@@ -3120,7 +3122,9 @@
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\Publishers\CreateOrEdit.cshtml" />
     <Content Include="Views\Publishers\Index.cshtml" />
-    <Content Include="Views\Feed\Index.cshtml" />
+    <Content Include="Views\Feeds\Index.cshtml" />
+    <Content Include="Views\Feeds\CreateOrEdit.cshtml" />
+    <Content Include="Views\Layout\PublishersSelector.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3141,6 +3145,10 @@
       <Project>{3979f157-deb0-4878-ab1d-4cef6b5a1300}</Project>
       <Name>Eureka.Spe.EntityFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Eureka.Spe.FileUpload\Eureka.Spe.FileUpload.csproj">
+      <Project>{DC3AC9BA-85CF-44EF-8488-002742AD8C36}</Project>
+      <Name>Eureka.Spe.FileUpload</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Eureka.Spe.Push\Eureka.Spe.Push.csproj">
       <Project>{BF0C58D7-1D83-441D-9040-A87FD40513EB}</Project>
       <Name>Eureka.Spe.Push</Name>
@@ -3152,6 +3160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

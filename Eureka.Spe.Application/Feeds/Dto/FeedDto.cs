@@ -13,5 +13,10 @@ namespace Eureka.Spe.Feeds.Dto
         public string Img { get; set; }
         public int TenantId { get; set; }
         public bool Notify { get; set; }
+        public int PublisherId { get; set; }
+
+        public string PublisherName { get; set; }
+
+
     }
 }

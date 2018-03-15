@@ -8,5 +8,6 @@ namespace Eureka.Spe.Web
         public const string Users = "Users";
         public const string Roles = "Roles";
         public const string Feeds = "Feeds";
+        public const string Publishers = "Publishers";
     }
 }

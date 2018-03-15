@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Abp.Application.Services;
 using Eureka.Spe.NewsFeed.Entities;
 using Eureka.Spe.PaginableHelpers;
@@ -11,5 +12,6 @@ namespace Eureka.Spe.Publishers
         Task CreateOrUpdate(PublisherDto input);
         Task Delete(int id);
         PublisherDto Get(int id);
+        List<PublisherDto> GetPublishersSimpleList();
     }
 }

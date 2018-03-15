@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
@@ -65,6 +66,12 @@ namespace Eureka.Spe.Publishers
         {
             var publisher = _repository.Get(id);
             return publisher.MapTo<PublisherDto>();
+        }
+
+        public List<PublisherDto> GetPublishersSimpleList()
+        {
+            var all = _repository.GetAllList();
+            return all.Select(a => a.MapTo<PublisherDto>()).ToList();
         }
     }
 }

@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Push", "Push", "{E8675522-A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eureka.Spe.Push", "Eureka.Spe.Push\Eureka.Spe.Push.csproj", "{BF0C58D7-1D83-441D-9040-A87FD40513EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eureka.Spe.FileUpload", "Eureka.Spe.FileUpload\Eureka.Spe.FileUpload.csproj", "{DC3AC9BA-85CF-44EF-8488-002742AD8C36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{BF0C58D7-1D83-441D-9040-A87FD40513EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF0C58D7-1D83-441D-9040-A87FD40513EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF0C58D7-1D83-441D-9040-A87FD40513EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3AC9BA-85CF-44EF-8488-002742AD8C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3AC9BA-85CF-44EF-8488-002742AD8C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3AC9BA-85CF-44EF-8488-002742AD8C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3AC9BA-85CF-44EF-8488-002742AD8C36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{C602C47E-F379-40A3-A146-4F19105B3491} = {7E85C7E5-70BD-4C9D-B052-D95955F46609}
 		{6F98C2F2-898A-421B-BE3D-68FE69EC0646} = {7408541C-F99C-4197-B203-136115BD1CB9}
 		{BF0C58D7-1D83-441D-9040-A87FD40513EB} = {E8675522-A605-42B0-BD7D-E0306BFCFFF1}
+		{DC3AC9BA-85CF-44EF-8488-002742AD8C36} = {7408541C-F99C-4197-B203-136115BD1CB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F17AE95D-218E-4AB3-96B5-FB6A137C9E71}
