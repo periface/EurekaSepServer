@@ -2945,6 +2945,7 @@
     </Content>
     <Content Include="Views\Account\_TenantChange.js" />
     <Content Include="Views\Account\_TenantChangeModal.js" />
+    <Content Include="Views\Careers\Index.js" />
     <Content Include="Views\Feeds\Index.js" />
     <Content Include="Views\Home\Index.js" />
     <Content Include="Views\Publishers\Index.js" />
@@ -2974,6 +2975,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AcademicUnitsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\FeedsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PublishersController.cs" />
@@ -3133,6 +3135,7 @@
     <Content Include="Views\Students\CreateOrEdit.cshtml" />
     <Content Include="Views\AcademicUnits\Index.cshtml" />
     <Content Include="Views\AcademicUnits\CreateOrEdit.cshtml" />
+    <Content Include="Views\Careers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

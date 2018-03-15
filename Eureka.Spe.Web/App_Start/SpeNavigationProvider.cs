@@ -126,15 +126,20 @@ namespace Eureka.Spe.Web
                             new MenuItemDefinition(
                                 PageNames.AcademicUnits,
                                 L("AcademicUnits"),
-                                url: "AcademicUnits",
-                                icon: "local_offer"
+                                url: "AcademicUnits"
                             )
-                        ).AddItem(
+                        )
+                        .AddItem(
+                            new MenuItemDefinition(
+                                    PageNames.Careers,
+                                    L("Careers"),
+                                    url: "Careers"
+                                ))
+                        .AddItem(
                         new MenuItemDefinition(
                             PageNames.Students,
                             L("StudentsList"),
-                            url: "Students",
-                            icon: "local_offer"
+                            url: "Students"
                         )
                     )
                 )

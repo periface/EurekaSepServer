@@ -15,5 +15,6 @@ namespace Eureka.Spe.Web
         public const string Scholarships = "Scholarships";
         public const string ScholarshipCategories = "ScholarshipCategories";
         public const string AcademicUnits = "AcademicUnits";
+        public const string Careers = "Careers";
     }
 }

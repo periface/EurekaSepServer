@@ -6261,3 +6261,362 @@ WARN  2018-03-15 12:18:23,171 [19   ] naries.DictionaryBasedLocalizationSource -
 DEBUG 2018-03-15 12:19:48,869 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c1e69811-94ce-438a-8053-fd85feb3267c
 DEBUG 2018-03-15 12:19:49,385 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"228d4f94-3432-44a0-af21-e858ba7c9646","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:19:49.3852798-06:00","Properties":{}}
 DEBUG 2018-03-15 12:19:49,397 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 228d4f94-3432-44a0-af21-e858ba7c9646
+DEBUG 2018-03-15 12:20:58,099 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 228d4f94-3432-44a0-af21-e858ba7c9646
+DEBUG 2018-03-15 12:20:58,528 [69   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1b6dc65a-fd38-44e6-8953-c575796d0da2","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:20:58.5281934-06:00","Properties":{}}
+DEBUG 2018-03-15 12:20:58,537 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1b6dc65a-fd38-44e6-8953-c575796d0da2
+WARN  2018-03-15 12:21:00,486 [15   ] naries.DictionaryBasedLocalizationSource - Can not find 'CreateOrEditFeed' in localization source 'Spe'!
+WARN  2018-03-15 12:21:00,514 [15   ] naries.DictionaryBasedLocalizationSource - Can not find 'Title' in localization source 'Spe'!
+WARN  2018-03-15 12:21:00,514 [15   ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+WARN  2018-03-15 12:21:00,515 [15   ] naries.DictionaryBasedLocalizationSource - Can not find 'Notify' in localization source 'Spe'!
+WARN  2018-03-15 12:21:00,515 [15   ] naries.DictionaryBasedLocalizationSource - Can not find 'Content' in localization source 'Spe'!
+DEBUG 2018-03-15 12:21:00,583 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1b6dc65a-fd38-44e6-8953-c575796d0da2
+DEBUG 2018-03-15 12:21:01,310 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"8c8d9b07-35de-435d-bd79-e2fcfc7dcd3c","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:21:01.3104716-06:00","Properties":{}}
+DEBUG 2018-03-15 12:21:01,317 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 8c8d9b07-35de-435d-bd79-e2fcfc7dcd3c
+DEBUG 2018-03-15 12:21:26,114 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 8c8d9b07-35de-435d-bd79-e2fcfc7dcd3c
+DEBUG 2018-03-15 12:21:26,471 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4044a59d-f56c-40c8-a3d1-04975a294ef6","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:21:26.4719875-06:00","Properties":{}}
+DEBUG 2018-03-15 12:21:26,479 [66   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4044a59d-f56c-40c8-a3d1-04975a294ef6
+DEBUG 2018-03-15 12:22:03,650 [21   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2018-03-15 12:22:03,652 [21   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:22:03,652 [21   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:22:03,652 [21   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2018-03-15 12:22:13,295 [64   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-03-15 12:22:13,314 [64   ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-03-15 12:22:13,325 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Web.SpeWebModule, Eureka.Spe.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,327 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeDataModule, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,327 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,327 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,327 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,327 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,328 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,328 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,328 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeCoreModule, Eureka.Spe.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,328 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Push.EurekaPushModule, Eureka.Spe.Push, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,328 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeApplicationModule, Eureka.Spe.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,328 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,329 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Api.SpeWebApiModule, Eureka.Spe.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,329 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,329 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,329 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,329 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,329 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:13,332 [64   ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-03-15 12:22:13,600 [64   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:22:13,600 [64   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:22:13,600 [64   ] o.Configuration.LanguageManagementConfig - Converted Spe (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:22:13,600 [64   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:22:13,975 [64   ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: Eureka.Spe.EntityFramework.SpeDbContext, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:22:15,418 [64   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-03-15 12:22:15,423 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-03-15 12:22:15,429 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-03-15 12:22:15,431 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: Spe
+DEBUG 2018-03-15 12:22:15,432 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-03-15 12:22:15,484 [64   ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:22:15,527 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 20 classes define auto mapping attributes
+DEBUG 2018-03-15 12:22:15,527 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-03-15 12:22:15,531 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-03-15 12:22:15,531 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.CreateUserDto
+DEBUG 2018-03-15 12:22:15,531 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UpdateUserDto
+DEBUG 2018-03-15 12:22:15,531 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UserDto
+DEBUG 2018-03-15 12:22:15,531 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Students.Dto.StudentDto
+DEBUG 2018-03-15 12:22:15,531 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.CreateRoleDto
+DEBUG 2018-03-15 12:22:15,531 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.PermissionDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.RoleDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.EditTenantDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.TenantDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Publishers.Dto.PublisherDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Feeds.Dto.FeedDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Courses.Dto.CourseDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.CourseCategories.Dto.CourseCategoryDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Careers.Dto.CareerDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantChangeViewModel
+DEBUG 2018-03-15 12:22:15,532 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2018-03-15 12:22:16,510 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2018-03-15 12:22:16,511 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2018-03-15 12:22:16,512 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Students.IStudentAppService' with service name 'app/student'.
+DEBUG 2018-03-15 12:22:16,513 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2018-03-15 12:22:16,514 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2018-03-15 12:22:16,515 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2018-03-15 12:22:16,516 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2018-03-15 12:22:16,517 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Publishers.IPublisherAppService' with service name 'app/publisher'.
+DEBUG 2018-03-15 12:22:16,518 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Feeds.IFeedAppService' with service name 'app/feed'.
+DEBUG 2018-03-15 12:22:16,519 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Courses.ICourseAppService' with service name 'app/course'.
+DEBUG 2018-03-15 12:22:16,520 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Careers.ICareerAppService' with service name 'app/career'.
+DEBUG 2018-03-15 12:22:16,521 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.AcademicUnits.IAcademicUnitAppService' with service name 'app/academicUnit'.
+DEBUG 2018-03-15 12:22:19,346 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"4044a59d-f56c-40c8-a3d1-04975a294ef6","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:22:19.3042702-06:00","Properties":{}}
+DEBUG 2018-03-15 12:22:19,346 [66   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"4044a59d-f56c-40c8-a3d1-04975a294ef6","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:22:19.3042702-06:00","Properties":{}}
+DEBUG 2018-03-15 12:22:19,348 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"4044a59d-f56c-40c8-a3d1-04975a294ef6","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:22:19.3042702-06:00","Properties":{}}
+DEBUG 2018-03-15 12:22:21,452 [71   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"4044a59d-f56c-40c8-a3d1-04975a294ef6","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:22:19.3042702-06:00","Properties":{}}
+DEBUG 2018-03-15 12:23:20,470 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 4044a59d-f56c-40c8-a3d1-04975a294ef6
+DEBUG 2018-03-15 12:23:20,994 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f131f7fb-6c13-4cd4-a4bf-c7bcca110bf3","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:23:20.9944386-06:00","Properties":{}}
+DEBUG 2018-03-15 12:23:21,029 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f131f7fb-6c13-4cd4-a4bf-c7bcca110bf3
+DEBUG 2018-03-15 12:23:42,707 [65   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f131f7fb-6c13-4cd4-a4bf-c7bcca110bf3
+DEBUG 2018-03-15 12:23:43,023 [71   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1f37f8ee-075e-411d-99e2-654b3689e655","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:23:43.0236413-06:00","Properties":{}}
+DEBUG 2018-03-15 12:23:43,031 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1f37f8ee-075e-411d-99e2-654b3689e655
+DEBUG 2018-03-15 12:24:06,857 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1f37f8ee-075e-411d-99e2-654b3689e655
+DEBUG 2018-03-15 12:24:07,208 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9fec48ad-142b-4c20-a290-bd9636d39acc","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:24:07.2080595-06:00","Properties":{}}
+DEBUG 2018-03-15 12:24:07,217 [71   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9fec48ad-142b-4c20-a290-bd9636d39acc
+WARN  2018-03-15 12:24:12,572 [71   ] naries.DictionaryBasedLocalizationSource - Can not find 'ShortName' in localization source 'Spe'!
+WARN  2018-03-15 12:24:12,573 [71   ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+WARN  2018-03-15 12:24:22,086 [6    ] naries.DictionaryBasedLocalizationSource - Can not find 'ShortName' in localization source 'Spe'!
+WARN  2018-03-15 12:24:22,086 [6    ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+WARN  2018-03-15 12:24:34,592 [59   ] naries.DictionaryBasedLocalizationSource - Can not find 'ShortName' in localization source 'Spe'!
+WARN  2018-03-15 12:24:34,592 [59   ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+DEBUG 2018-03-15 12:24:58,816 [71   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9fec48ad-142b-4c20-a290-bd9636d39acc
+DEBUG 2018-03-15 12:24:59,147 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"dd124e97-fa3b-404d-bfd4-0af67f62da02","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:24:59.1462528-06:00","Properties":{}}
+DEBUG 2018-03-15 12:24:59,155 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: dd124e97-fa3b-404d-bfd4-0af67f62da02
+DEBUG 2018-03-15 12:26:05,224 [68   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: dd124e97-fa3b-404d-bfd4-0af67f62da02
+DEBUG 2018-03-15 12:26:05,570 [68   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"34b7236c-474c-42ea-aea1-f10428b56c49","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:26:05.5708946-06:00","Properties":{}}
+DEBUG 2018-03-15 12:26:05,579 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 34b7236c-474c-42ea-aea1-f10428b56c49
+DEBUG 2018-03-15 12:26:34,565 [65   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2018-03-15 12:26:34,566 [65   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:26:34,566 [65   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:26:34,566 [65   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2018-03-15 12:26:44,466 [64   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-03-15 12:26:44,479 [64   ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-03-15 12:26:44,485 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Web.SpeWebModule, Eureka.Spe.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,487 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeDataModule, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,487 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,488 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,488 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,488 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,488 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,488 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,489 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeCoreModule, Eureka.Spe.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,489 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Push.EurekaPushModule, Eureka.Spe.Push, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,489 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeApplicationModule, Eureka.Spe.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,489 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,489 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Api.SpeWebApiModule, Eureka.Spe.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,489 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,489 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,490 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,490 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,490 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:44,493 [64   ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-03-15 12:26:44,679 [64   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:26:44,679 [64   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:26:44,680 [64   ] o.Configuration.LanguageManagementConfig - Converted Spe (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:26:44,680 [64   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:26:45,033 [64   ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: Eureka.Spe.EntityFramework.SpeDbContext, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:26:46,433 [64   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-03-15 12:26:46,439 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-03-15 12:26:46,445 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-03-15 12:26:46,447 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: Spe
+DEBUG 2018-03-15 12:26:46,448 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-03-15 12:26:46,496 [64   ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:26:46,537 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 20 classes define auto mapping attributes
+DEBUG 2018-03-15 12:26:46,537 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-03-15 12:26:46,540 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-03-15 12:26:46,540 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.CreateUserDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UpdateUserDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UserDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Students.Dto.StudentDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.CreateRoleDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.PermissionDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.RoleDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.EditTenantDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.TenantDto
+DEBUG 2018-03-15 12:26:46,541 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Publishers.Dto.PublisherDto
+DEBUG 2018-03-15 12:26:46,542 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Feeds.Dto.FeedDto
+DEBUG 2018-03-15 12:26:46,542 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Courses.Dto.CourseDto
+DEBUG 2018-03-15 12:26:46,542 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.CourseCategories.Dto.CourseCategoryDto
+DEBUG 2018-03-15 12:26:46,542 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Careers.Dto.CareerDto
+DEBUG 2018-03-15 12:26:46,542 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto
+DEBUG 2018-03-15 12:26:46,542 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantChangeViewModel
+DEBUG 2018-03-15 12:26:46,542 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2018-03-15 12:26:47,430 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2018-03-15 12:26:47,431 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2018-03-15 12:26:47,432 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Students.IStudentAppService' with service name 'app/student'.
+DEBUG 2018-03-15 12:26:47,433 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2018-03-15 12:26:47,434 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2018-03-15 12:26:47,435 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2018-03-15 12:26:47,436 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2018-03-15 12:26:47,437 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Publishers.IPublisherAppService' with service name 'app/publisher'.
+DEBUG 2018-03-15 12:26:47,438 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Feeds.IFeedAppService' with service name 'app/feed'.
+DEBUG 2018-03-15 12:26:47,439 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Courses.ICourseAppService' with service name 'app/course'.
+DEBUG 2018-03-15 12:26:47,441 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Careers.ICareerAppService' with service name 'app/career'.
+DEBUG 2018-03-15 12:26:47,442 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.AcademicUnits.IAcademicUnitAppService' with service name 'app/academicUnit'.
+DEBUG 2018-03-15 12:26:50,369 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"34b7236c-474c-42ea-aea1-f10428b56c49","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:26:50.3228433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:26:50,369 [66   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"34b7236c-474c-42ea-aea1-f10428b56c49","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:26:50.3228433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:26:50,374 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"34b7236c-474c-42ea-aea1-f10428b56c49","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:26:50.3228433-06:00","Properties":{}}
+WARN  2018-03-15 12:26:56,767 [17   ] naries.DictionaryBasedLocalizationSource - Can not find 'Careers' in localization source 'Spe'!
+DEBUG 2018-03-15 12:26:57,461 [67   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 34b7236c-474c-42ea-aea1-f10428b56c49
+WARN  2018-03-15 12:26:57,689 [17   ] naries.DictionaryBasedLocalizationSource - Can not find 'Careers' in localization source 'Spe'!
+DEBUG 2018-03-15 12:26:57,929 [68   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"fa4c3797-95e2-45ed-878d-3316811a23f7","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:26:57.9288433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:26:57,966 [67   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: fa4c3797-95e2-45ed-878d-3316811a23f7
+WARN  2018-03-15 12:27:30,712 [6    ] naries.DictionaryBasedLocalizationSource - Can not find 'ShortName' in localization source 'Spe'!
+WARN  2018-03-15 12:27:30,712 [6    ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+DEBUG 2018-03-15 12:28:20,780 [65   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: fa4c3797-95e2-45ed-878d-3316811a23f7
+DEBUG 2018-03-15 12:28:23,146 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"15a34094-a2e6-4834-9fed-626e742cda05","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:28:23.1468433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:28:23,157 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 15a34094-a2e6-4834-9fed-626e742cda05
+DEBUG 2018-03-15 12:29:30,553 [71   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2018-03-15 12:29:30,554 [71   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:29:30,555 [71   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:29:30,555 [71   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2018-03-15 12:29:40,282 [13   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-03-15 12:29:40,295 [13   ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-03-15 12:29:40,301 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Web.SpeWebModule, Eureka.Spe.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,304 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeDataModule, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,304 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,304 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,304 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,304 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,305 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,305 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,305 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeCoreModule, Eureka.Spe.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,305 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Push.EurekaPushModule, Eureka.Spe.Push, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,305 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeApplicationModule, Eureka.Spe.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,305 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,306 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Api.SpeWebApiModule, Eureka.Spe.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,306 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,306 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,306 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,306 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,306 [13   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:40,309 [13   ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-03-15 12:29:40,495 [13   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:29:40,496 [13   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:29:40,496 [13   ] o.Configuration.LanguageManagementConfig - Converted Spe (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:29:40,496 [13   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:29:40,875 [13   ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: Eureka.Spe.EntityFramework.SpeDbContext, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:29:42,334 [13   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-03-15 12:29:42,342 [13   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-03-15 12:29:42,349 [13   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-03-15 12:29:42,351 [13   ] Abp.Localization.LocalizationManager     - Initialized localization source: Spe
+DEBUG 2018-03-15 12:29:42,353 [13   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-03-15 12:29:42,406 [13   ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:29:42,449 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 20 classes define auto mapping attributes
+DEBUG 2018-03-15 12:29:42,449 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-03-15 12:29:42,454 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-03-15 12:29:42,454 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.CreateUserDto
+DEBUG 2018-03-15 12:29:42,454 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UpdateUserDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UserDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Students.Dto.StudentDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.CreateRoleDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.PermissionDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.RoleDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.EditTenantDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.TenantDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Publishers.Dto.PublisherDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Feeds.Dto.FeedDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Courses.Dto.CourseDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.CourseCategories.Dto.CourseCategoryDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Careers.Dto.CareerDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto
+DEBUG 2018-03-15 12:29:42,455 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantChangeViewModel
+DEBUG 2018-03-15 12:29:42,456 [13   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2018-03-15 12:29:43,516 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2018-03-15 12:29:43,517 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2018-03-15 12:29:43,518 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Students.IStudentAppService' with service name 'app/student'.
+DEBUG 2018-03-15 12:29:43,519 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2018-03-15 12:29:43,520 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2018-03-15 12:29:43,521 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2018-03-15 12:29:43,522 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2018-03-15 12:29:43,523 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Publishers.IPublisherAppService' with service name 'app/publisher'.
+DEBUG 2018-03-15 12:29:43,524 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Feeds.IFeedAppService' with service name 'app/feed'.
+DEBUG 2018-03-15 12:29:43,525 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Courses.ICourseAppService' with service name 'app/course'.
+DEBUG 2018-03-15 12:29:43,526 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Careers.ICareerAppService' with service name 'app/career'.
+DEBUG 2018-03-15 12:29:43,527 [13   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.AcademicUnits.IAcademicUnitAppService' with service name 'app/academicUnit'.
+DEBUG 2018-03-15 12:29:46,616 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"15a34094-a2e6-4834-9fed-626e742cda05","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:29:46.5658433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:29:46,616 [66   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"15a34094-a2e6-4834-9fed-626e742cda05","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:29:46.5648433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:29:46,621 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected (on reconnected event): {"ConnectionId":"15a34094-a2e6-4834-9fed-626e742cda05","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:29:46.5658433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:29:49,479 [68   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is reconnected: {"ConnectionId":"15a34094-a2e6-4834-9fed-626e742cda05","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:29:46.5658433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:29:54,172 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 15a34094-a2e6-4834-9fed-626e742cda05
+DEBUG 2018-03-15 12:29:55,499 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"90ca31a3-0d00-429a-85bc-2786d26a044b","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:29:55.4998433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:29:55,529 [67   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 90ca31a3-0d00-429a-85bc-2786d26a044b
+DEBUG 2018-03-15 12:30:31,699 [66   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 90ca31a3-0d00-429a-85bc-2786d26a044b
+DEBUG 2018-03-15 12:31:43,197 [66   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2018-03-15 12:31:43,198 [66   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:31:43,198 [66   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:31:43,198 [66   ] Abp.Modules.AbpModuleManager             - Shutting down completed.
+DEBUG 2018-03-15 12:31:53,342 [64   ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-03-15 12:31:53,358 [64   ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-03-15 12:31:53,365 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Web.SpeWebModule, Eureka.Spe.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,366 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeDataModule, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,367 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,367 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,367 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,367 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,368 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,368 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,368 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeCoreModule, Eureka.Spe.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,368 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Push.EurekaPushModule, Eureka.Spe.Push, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,368 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeApplicationModule, Eureka.Spe.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,369 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,369 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Api.SpeWebApiModule, Eureka.Spe.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,369 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,369 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,369 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,369 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,370 [64   ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:53,372 [64   ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-03-15 12:31:53,560 [64   ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:31:53,560 [64   ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:31:53,560 [64   ] o.Configuration.LanguageManagementConfig - Converted Spe (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:31:53,560 [64   ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-15 12:31:53,905 [64   ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: Eureka.Spe.EntityFramework.SpeDbContext, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-15 12:31:55,248 [64   ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-03-15 12:31:55,254 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-03-15 12:31:55,260 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-03-15 12:31:55,262 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: Spe
+DEBUG 2018-03-15 12:31:55,263 [64   ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-03-15 12:31:55,308 [64   ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-15 12:31:55,349 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Found 20 classes define auto mapping attributes
+DEBUG 2018-03-15 12:31:55,349 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-03-15 12:31:55,353 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-03-15 12:31:55,353 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.CreateUserDto
+DEBUG 2018-03-15 12:31:55,353 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UpdateUserDto
+DEBUG 2018-03-15 12:31:55,353 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UserDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Students.Dto.StudentDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.CreateRoleDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.PermissionDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.RoleDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.EditTenantDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.TenantDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Publishers.Dto.PublisherDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Feeds.Dto.FeedDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Courses.Dto.CourseDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.CourseCategories.Dto.CourseCategoryDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Careers.Dto.CareerDto
+DEBUG 2018-03-15 12:31:55,354 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto
+DEBUG 2018-03-15 12:31:55,355 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantChangeViewModel
+DEBUG 2018-03-15 12:31:55,355 [64   ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2018-03-15 12:31:56,257 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2018-03-15 12:31:56,258 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2018-03-15 12:31:56,259 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Students.IStudentAppService' with service name 'app/student'.
+DEBUG 2018-03-15 12:31:56,260 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2018-03-15 12:31:56,261 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2018-03-15 12:31:56,262 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2018-03-15 12:31:56,263 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2018-03-15 12:31:56,264 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Publishers.IPublisherAppService' with service name 'app/publisher'.
+DEBUG 2018-03-15 12:31:56,265 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Feeds.IFeedAppService' with service name 'app/feed'.
+DEBUG 2018-03-15 12:31:56,266 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Courses.ICourseAppService' with service name 'app/course'.
+DEBUG 2018-03-15 12:31:56,267 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Careers.ICareerAppService' with service name 'app/career'.
+DEBUG 2018-03-15 12:31:56,268 [64   ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.AcademicUnits.IAcademicUnitAppService' with service name 'app/academicUnit'.
+DEBUG 2018-03-15 12:32:07,112 [71   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"6e5d9051-e817-4964-b8f3-2d758a8c1c91","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:32:07.1058433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:32:07,148 [66   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 6e5d9051-e817-4964-b8f3-2d758a8c1c91
+DEBUG 2018-03-15 12:32:08,519 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e8896e4f-b209-40e5-a999-5715aeb900e3","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:32:08.5198433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:32:08,528 [59   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e8896e4f-b209-40e5-a999-5715aeb900e3
+DEBUG 2018-03-15 12:32:10,718 [68   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e8896e4f-b209-40e5-a999-5715aeb900e3
+DEBUG 2018-03-15 12:32:29,862 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 6e5d9051-e817-4964-b8f3-2d758a8c1c91
+DEBUG 2018-03-15 12:32:30,229 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"21535edc-0c7c-43b3-8254-f73e19cd70d2","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:32:30.2298433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:32:30,242 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 21535edc-0c7c-43b3-8254-f73e19cd70d2
+DEBUG 2018-03-15 12:32:34,710 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 21535edc-0c7c-43b3-8254-f73e19cd70d2
+DEBUG 2018-03-15 12:32:34,978 [65   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a9f1595f-f052-422a-b626-2d8feb058918","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:32:34.9788433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:32:34,988 [68   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a9f1595f-f052-422a-b626-2d8feb058918
+DEBUG 2018-03-15 12:32:42,797 [65   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a9f1595f-f052-422a-b626-2d8feb058918
+DEBUG 2018-03-15 12:32:43,083 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f0d64010-ef86-4889-ae63-3e17dda3476d","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:32:43.0838433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:32:43,093 [66   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f0d64010-ef86-4889-ae63-3e17dda3476d
+DEBUG 2018-03-15 12:32:47,831 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f0d64010-ef86-4889-ae63-3e17dda3476d
+DEBUG 2018-03-15 12:32:48,097 [68   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"471c89db-d062-485f-b4c0-33c2c3d85cdd","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:32:48.0978433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:32:48,105 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 471c89db-d062-485f-b4c0-33c2c3d85cdd
+DEBUG 2018-03-15 12:33:56,188 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 471c89db-d062-485f-b4c0-33c2c3d85cdd
+DEBUG 2018-03-15 12:33:56,707 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"6a1c3666-eeb9-4640-b63a-cfa8f1148f5a","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:33:56.7078433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:33:56,719 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 6a1c3666-eeb9-4640-b63a-cfa8f1148f5a
+DEBUG 2018-03-15 12:34:24,309 [71   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 6a1c3666-eeb9-4640-b63a-cfa8f1148f5a
+DEBUG 2018-03-15 12:34:24,686 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7eb68ae1-48ef-429f-831e-514761a57769","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-15T12:34:24.6868433-06:00","Properties":{}}
+DEBUG 2018-03-15 12:34:24,694 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7eb68ae1-48ef-429f-831e-514761a57769

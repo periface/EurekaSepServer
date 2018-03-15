@@ -53,5 +53,6 @@
     <text name="Students" value="Estudiantes" />
     <text name="AcademicUnits" value="Unidades Academicas" />
     <text name="StudentsList" value="Listado" />
+    <text name="Careers" value="Carreras" />
   </texts>
 </localizationDictionary>
