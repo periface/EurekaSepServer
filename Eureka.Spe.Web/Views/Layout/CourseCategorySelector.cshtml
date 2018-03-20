@@ -1,0 +1,13 @@
+﻿@model System.Collections.Generic.List<Eureka.Spe.CourseCategories.Dto.CourseCategoryDto>
+
+@{
+    Layout = null;
+}
+<select class="form-control js-courseCategory-select" name="categoryId" id="categoryId" data-live-search="true">
+
+    <option value="0">--Seleccionar Categoría--</option>
+    @foreach (var elm in Model)
+    {
+        <option @(ViewBag.Selected == elm.Id ? "selected" : "") data-publisher="@elm.Name" value="@elm.Id">@elm.Name</option>
+    }
+</select>

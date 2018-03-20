@@ -29,5 +29,10 @@ namespace Eureka.Spe.Web.Controllers
             var student = await _studentAppService.Get(id.Value);
             return View(student);
         }
+
+        public ActionResult Manage(int id)
+        {
+            return View();
+        }
     }
 }

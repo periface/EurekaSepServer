@@ -169,7 +169,7 @@ namespace Eureka.Spe.FileUpload
         {
             if (input.ApiEnabled)
             {
-                return input.Request.Request.Url.Authority;
+                return input.Request.Request.Url.Scheme +"://"+ input.Request.Request.Url.Authority;
             }
             return string.Empty;
         }

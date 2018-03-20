@@ -15,7 +15,7 @@ namespace Eureka.Spe.Web.Controllers
         [HttpPost]
         [WrapResult(false)]
         // GET: Admin/Upload
-        public ActionResult Index(string uniqueFolder, bool optimize = true, params string[] sizes)
+        public ActionResult Index(string uniqueFolder, bool optimize = true,bool apiEnabled = true, params string[] sizes)
         {
             var files = Request.Files;
             var serverRoute = HostingEnvironment.ApplicationPhysicalPath;
@@ -25,6 +25,7 @@ namespace Eureka.Spe.Web.Controllers
                 uniqueFolder)
             {
                 ClearFolder = false,
+                ApiEnabled = apiEnabled,
                 OptimizationOptions = new OptimizationOptions() { Optimize = optimize, Sizes = sizes }
             };
             var fileLocation = FileSaver.SaveFile(fileRequest);

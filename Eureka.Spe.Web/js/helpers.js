@@ -56,13 +56,17 @@ function hexToRgba(hexCode, opacity) {
     return rgb;
 }
 
-function enableUploadOnFileElm(elm, done, onUploading, options) {
+function enableUploadOnFileElm(elm, options) {
 
     if (!options) options = {
         baseUrl: "/upload",
         sizes: [],
         optimize: true,
-        uniqueFolder: "icons"
+        uniqueFolder: "icons",
+        onUploading: function () { },
+        onUploadDone: function () { },
+        onUploadError: function () { },
+        onUploadStart: function () { }
     };
 
     var baseUrl = options.baseUrl;
@@ -75,9 +79,8 @@ function enableUploadOnFileElm(elm, done, onUploading, options) {
         sizesUrl += "&sizes=" + size;
     }
     baseUrl = baseUrl + sizesUrl;
-    if (!onUploading) onUploading = function () { };
     $(elm).on("change", function () {
-        onUploading();
+        options.onUploadStart();
         var fileData = $(elm).prop("files")[0];
         var formData = new FormData();
         formData.append("file", fileData);
@@ -88,8 +91,24 @@ function enableUploadOnFileElm(elm, done, onUploading, options) {
             processData: false,
             data: formData,
             type: "post",
-            success: function (response) {
-                done(response);
+            success: options.onUploadDone,
+            error: options.onUploadError,
+            xhr: function () {
+                var jqXhr = null;
+                if (window.ActiveXObject) {
+                    jqXhr = new window.ActiveXObject("Microsoft.XMLHTTP");
+                }
+                else {
+                    jqXhr = new window.XMLHttpRequest();
+                }
+                //Upload progress
+                jqXhr.upload.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = Math.round((evt.loaded * 100) / evt.total);
+                        options.onUploading(percentComplete);
+                    }
+                }, false);
+                return jqXhr;
             }
         });
     });
@@ -273,7 +292,7 @@ var mapStyles = {
 
 
 function startTinyMce(selector, callback) {
-    if (!callback) callback = function() {};
+    if (!callback) callback = function () { };
     window.tinymce.init({
         selector: selector, setup: function (editor) {
             callback(editor);

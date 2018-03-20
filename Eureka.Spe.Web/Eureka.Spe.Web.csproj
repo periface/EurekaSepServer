@@ -2946,6 +2946,8 @@
     <Content Include="Views\Account\_TenantChange.js" />
     <Content Include="Views\Account\_TenantChangeModal.js" />
     <Content Include="Views\Careers\Index.js" />
+    <Content Include="Views\CourseCategories\Index.js" />
+    <Content Include="Views\Courses\Index.js" />
     <Content Include="Views\Feeds\Index.js" />
     <Content Include="Views\Home\Index.js" />
     <Content Include="Views\Publishers\Index.js" />
@@ -2976,6 +2978,8 @@
     <Compile Include="Controllers\AcademicUnitsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CareersController.cs" />
+    <Compile Include="Controllers\CourseCategoriesController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\FeedsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PublishersController.cs" />
@@ -3139,6 +3143,12 @@
     <Content Include="Views\Careers\CreateOrEdit.cshtml" />
     <Content Include="Views\Layout\AcademicUnitsSelector.cshtml" />
     <Content Include="Views\Layout\CareersSelector.cshtml" />
+    <Content Include="Views\Students\Manage.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\Courses\CreateOrEdit.cshtml" />
+    <Content Include="Views\CourseCategories\Index.cshtml" />
+    <Content Include="Views\CourseCategories\CreateOrEdit.cshtml" />
+    <Content Include="Views\Layout\CourseCategorySelector.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

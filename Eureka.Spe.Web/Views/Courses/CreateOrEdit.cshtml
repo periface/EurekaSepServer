@@ -1,25 +1,35 @@
-﻿
-@using Abp.Extensions
-@model Eureka.Spe.Feeds.Dto.FeedDto
+﻿@using Castle.Core.Internal
+@model Eureka.Spe.Courses.Dto.CourseDto
+
+@functions {
+    private string ParseDate(DateTime? modelRegistrationsEnd)
+    {
+        if (modelRegistrationsEnd.HasValue) return modelRegistrationsEnd.Value.ToString("yyyy/MM/dd");
+        return string.Empty;
+    }
+
+}
 @{
-    ViewBag.ActiveMenu = PageNames.Feeds; //The menu item will be active for this page.
+    ViewBag.ActiveMenu = PageNames.Courses; //The menu item will be active for this page.
 }
 @section Styles{
     <style>
-        /*.feed-img {
+        .feed-img {
             width: 200px;
             height: 100px;
             max-width: 200px;
             max-height: 100px;
-        }*/
+            margin: 0 auto;
+        }
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet" />
 }
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
                 <h2>
-                    @L("CreateOrEditFeed")
+                    @L("CreateOrEditCourse")
                 </h2>
             </div>
             <div class="body table-responsive">
@@ -50,7 +60,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            @{Html.RenderAction("PublishersSelector","Layout",new{ selected = Model.PublisherId });}
+                                            @{Html.RenderAction("CourseCategorySelector", "Layout", new { selected = Model.CategoryId });}
                                         </div>
                                     </div>
                                 </div>
@@ -69,6 +79,16 @@
                                 <div class="col-sm-12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
+                                            <input id="Price" type="number" name="Price" value="@Model.Price" class="validate form-control">
+                                            <label for="Price" class="form-label">@L("Price")</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-sm-12">
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
                                             <label for="name" class="form-label">@L("Description")</label>
                                             <textarea name="Description" class="form-control">@Model.Description</textarea>
                                         </div>
@@ -77,15 +97,47 @@
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="name" class="form-label">@L("Content")</label>
-                                        <textarea name="content" id="content" class="form-control">@Model.Content</textarea>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="control-label">
+                                        Inicio de inscripciones
+                                    </label>
+                                    <input type="text" class="datepicker-elm form-control" name="RegistrationsStart" value="@ParseDate(Model.RegistrationsStart)" />
 
-                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class="control-label">
+                                        Fin de inscripciones
+                                    </label>
+                                    <input type="text" class="datepicker-elm form-control" name="RegistrationsEnd" value="@ParseDate(Model.RegistrationsEnd)" />
+
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label class="control-label">
+                                        Inicio del Curso
+                                    </label>
+                                    <input type="text" class="datepicker-elm form-control" name="StartDate" value="@ParseDate(Model.StartDate)" />
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class="control-label">
+                                        Fin del Curso
+                                    </label>
+                                    <input type="text" class="datepicker-elm form-control" name="EndDate" value="@ParseDate(Model.EndDate)" />
+
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <textarea name="content" id="content" class="form-control">@Model.Content</textarea>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
                         </div>
                     </div>
 
@@ -98,9 +150,10 @@
 @section Scripts{
     <script src="~/js/tinymce/js/tinymce/tinymce.min.js"></script>
     <script src="~/js/helpers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
     <script>
         (function () {
-            var service = abp.services.app.feed;
+            var service = abp.services.app.course;
             var tinyMce;
             startTinyMce("#content", function (instance) {
                 tinyMce = instance;
@@ -109,7 +162,7 @@
                 baseUrl: "/upload",
                 sizes: ["128x128"],
                 optimize: true,
-                uniqueFolder: "feeds",
+                uniqueFolder: "courses",
                 onUploadStart: function () {
                     abp.ui.setBusy($("#upload"));
                 },
@@ -129,7 +182,7 @@
                     abp.ui.clearBusy($("#upload"));
                 }
             };
-            enableUploadOnFileElm("#icon",uploadOptions);
+            enableUploadOnFileElm("#icon", uploadOptions);
 
             $("#CreateEditFeedForm").on("submit",
                 function (e) {
@@ -144,6 +197,16 @@
             $("#imgPlaceHolder").click(function () {
                 $("#icon").click();
             });
+
+
+
+            function startDateTimes() {
+                $('.datepicker-elm').datepicker({
+                    format:"yyyy/mm/dd"
+                });
+            }
+
+            startDateTimes();
         })();
     </script>
 }

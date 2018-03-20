@@ -21,7 +21,7 @@ namespace Eureka.Spe.Courses
 
         public IQueryable<Course> GetFilteredQuery(IQueryable<Course> all, BootstrapTableInput input)
         {
-            all = all.WhereIf(string.IsNullOrEmpty(input.search), a => a.Title.Contains(input.search));
+            all = all.WhereIf(!string.IsNullOrEmpty(input.search), a => a.Title.Contains(input.search));
             return all;
         }
 
@@ -38,16 +38,22 @@ namespace Eureka.Spe.Courses
 
         public PagedResultDto<CourseDto> GetAll(BootstrapTableInput input)
         {
-            var all = _repository.GetAll();
+            var all = _repository.GetAllIncluding(a=>a.CourseCategory);
 
             var filtered = GetFilteredQuery(all, input);
 
             var ordered = GetOrderedQuery(filtered, input);
 
             var paged = ordered.Skip(input.offset).Take(input.limit).ToList();
-            return new PagedResultDto<CourseDto>(filtered.Count(), paged.Select(a => a.MapTo<CourseDto>()).ToList());
+            return new PagedResultDto<CourseDto>(filtered.Count(), paged.Select(Map).ToList());
         }
 
+        public CourseDto Map(Course course)
+        {
+            var mapped = course.MapTo<CourseDto>();
+            mapped.CategoryName = course.CourseCategory?.Name;
+            return mapped;
+        }
         public async Task CreateOrUpdate(CourseDto input)
         {
             var elm = input.MapTo<Course>();
@@ -59,9 +65,10 @@ namespace Eureka.Spe.Courses
             await _repository.DeleteAsync(id);
         }
 
-        public Task<CourseDto> Get(int id)
+        public async Task<CourseDto> Get(int id)
         {
-            throw new System.NotImplementedException();
+            var course = await _repository.GetAsync(id);
+            return course.MapTo<CourseDto>();
         }
     }
 }

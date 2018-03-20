@@ -94,7 +94,7 @@
         function () {
             var id = $(this).data("id");
 
-            abp.message.confirm("Desea eliminar este element?",
+            abp.message.confirm("Desea eliminar este elemento?",
                 function(response) {
                     if (response) {
                         service.delete(id).done(function () {

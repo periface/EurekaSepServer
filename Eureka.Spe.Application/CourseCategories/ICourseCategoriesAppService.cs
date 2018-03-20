@@ -1,13 +1,14 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Abp.Application.Services;
 using Eureka.Spe.CourseCategories.Dto;
 using Eureka.Spe.Courses.Entities;
 using Eureka.Spe.PaginableHelpers;
 
 namespace Eureka.Spe.CourseCategories
 {
-    public interface ICourseCategoriesAppService : IHavePaginatedResults<CourseCategory,CourseCategoryDto,BootstrapTableInput>
+    public interface ICourseCategoriesAppService :IApplicationService, IHavePaginatedResults<CourseCategory,CourseCategoryDto,BootstrapTableInput>
     {
-        Task CreateOrUpdate(CourseCategoryDto input);
-        Task Delete(int id);
+        List<CourseCategoryDto> GetCourseList();
     }
 }

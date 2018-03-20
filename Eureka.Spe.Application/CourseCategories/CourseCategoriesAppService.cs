@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
@@ -22,7 +23,7 @@ namespace Eureka.Spe.CourseCategories
 
         public IQueryable<CourseCategory> GetFilteredQuery(IQueryable<CourseCategory> all, BootstrapTableInput input)
         {
-            all = all.WhereIf(string.IsNullOrEmpty(input.search), a => a.Name.Contains(input.search));
+            all = all.WhereIf(!string.IsNullOrEmpty(input.search), a => a.Name.Contains(input.search));
             return all;
         }
 
@@ -60,9 +61,16 @@ namespace Eureka.Spe.CourseCategories
             await _repository.DeleteAsync(id);
         }
 
-        public Task<CourseCategoryDto> Get(int id)
+        public async Task<CourseCategoryDto> Get(int id)
         {
-            throw new NotImplementedException();
+            var elm = await _repository.GetAsync(id);
+            return elm.MapTo<CourseCategoryDto>();
+        }
+
+        public List<CourseCategoryDto> GetCourseList()
+        {
+            var courses = _repository.GetAllList();
+            return courses.Select(a => a.MapTo<CourseCategoryDto>()).ToList();
         }
     }
 }

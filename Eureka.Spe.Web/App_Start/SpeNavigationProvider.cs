@@ -77,21 +77,21 @@ namespace Eureka.Spe.Web
                     new MenuItemDefinition(
                             PageNames.Courses,
                             L("Courses"),
-                            url: "About",
+                            url: "",
                             icon: "local_offer"
                         )
                         .AddItem(
                             new MenuItemDefinition(
                                 PageNames.CourseCategories,
                                 L("Categories"),
-                                url: "About"
+                                url: "CourseCategories"
                             )
                         )
                         .AddItem(
                             new MenuItemDefinition(
                                 PageNames.Courses,
                                 L("CourseList"),
-                                url: "About"
+                                url: "Courses"
                             )
                         )
                 )
@@ -99,22 +99,8 @@ namespace Eureka.Spe.Web
                     new MenuItemDefinition(
                             PageNames.Scholarships,
                             L("Scholarships"),
-                            url: "About",
+                            url: "Scholarships",
                             icon: "local_offer"
-                        )
-                        .AddItem(
-                            new MenuItemDefinition(
-                                PageNames.ScholarshipCategories,
-                                L("Categories"),
-                                url: "About"
-                            )
-                        )
-                        .AddItem(
-                            new MenuItemDefinition(
-                                PageNames.Scholarships,
-                                L("ScholarshipList"),
-                                url: "About"
-                            )
                         )
                 )
                 .AddItem(

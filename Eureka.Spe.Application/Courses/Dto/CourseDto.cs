@@ -1,4 +1,5 @@
-﻿using Abp.Application.Services.Dto;
+﻿using System;
+using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Eureka.Spe.Courses.Entities;
 
@@ -14,5 +15,12 @@ namespace Eureka.Spe.Courses.Dto
         public decimal? Price { get; set; }
         public string Img { get; set; }
         public int TenantId { get; set; }
+        public string CategoryName { get; set; }
+
+        public bool IsActive { get; set; }
+        public DateTime? RegistrationsStart { get; set; }
+        public DateTime? RegistrationsEnd { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
     }
 }

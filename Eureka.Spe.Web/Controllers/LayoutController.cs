@@ -12,6 +12,7 @@ using Eureka.Spe.AcademicUnits.Dto;
 using Eureka.Spe.Careers;
 using Eureka.Spe.Configuration;
 using Eureka.Spe.Configuration.Ui;
+using Eureka.Spe.CourseCategories;
 using Eureka.Spe.Publishers;
 using Eureka.Spe.Sessions;
 using Eureka.Spe.Web.Models;
@@ -28,12 +29,12 @@ namespace Eureka.Spe.Web.Controllers
         private readonly IPublisherAppService _publisherAppService;
         private readonly IAcademicUnitAppService _academicUnitAppService;
         private readonly ICareerAppService _careerAppService;
-
+        private readonly ICourseCategoriesAppService _courseCategoriesAppService;
         public LayoutController(
             IUserNavigationManager userNavigationManager,
             ISessionAppService sessionAppService,
             IMultiTenancyConfig multiTenancyConfig,
-            ILanguageManager languageManager, IPublisherAppService publisherAppService, IAcademicUnitAppService academicUnitAppService, ICareerAppService careerAppService)
+            ILanguageManager languageManager, IPublisherAppService publisherAppService, IAcademicUnitAppService academicUnitAppService, ICareerAppService careerAppService, ICourseCategoriesAppService courseCategoriesAppService)
         {
             _userNavigationManager = userNavigationManager;
             _sessionAppService = sessionAppService;
@@ -42,6 +43,7 @@ namespace Eureka.Spe.Web.Controllers
             _publisherAppService = publisherAppService;
             _academicUnitAppService = academicUnitAppService;
             _careerAppService = careerAppService;
+            _courseCategoriesAppService = courseCategoriesAppService;
         }
 
         [ChildActionOnly]
@@ -121,6 +123,16 @@ namespace Eureka.Spe.Web.Controllers
             var careers = _careerAppService.GetCareersList();
 
             return View(careers);
+
+        }
+        [ChildActionOnly]
+        public ViewResult CourseCategorySelector(int? selected)
+        {
+            ViewBag.Selected = selected ?? 0;
+
+            var categories = _courseCategoriesAppService.GetCourseList();
+
+            return View(categories);
 
         }
     }

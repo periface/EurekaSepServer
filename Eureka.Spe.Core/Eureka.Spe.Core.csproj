@@ -186,9 +186,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IHasAcademicUnit.cs" />
     <Compile Include="Contracts\IHasBasicInfo.cs" />
+    <Compile Include="Contracts\IHasFeeds.cs" />
     <Compile Include="Contracts\IHasPersonInfo.cs" />
     <Compile Include="Contracts\IHasPublishableInfo.cs" />
+    <Compile Include="Contracts\IShouldBeActivable.cs" />
     <Compile Include="Courses\Entities\Course.cs" />
     <Compile Include="Courses\Entities\CourseCategory.cs" />
     <Compile Include="Groups\Entities\Group.cs" />

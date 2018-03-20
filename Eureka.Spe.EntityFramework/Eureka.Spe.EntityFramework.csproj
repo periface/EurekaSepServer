@@ -237,6 +237,18 @@
     <Compile Include="Migrations\201803151800055_ShortNameForAcademicUnit.Designer.cs">
       <DependentUpon>201803151800055_ShortNameForAcademicUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803201601171_FeedsToAcademicUnitsMTM.cs" />
+    <Compile Include="Migrations\201803201601171_FeedsToAcademicUnitsMTM.Designer.cs">
+      <DependentUpon>201803201601171_FeedsToAcademicUnitsMTM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803201939030_CourseCategoryFix.cs" />
+    <Compile Include="Migrations\201803201939030_CourseCategoryFix.Designer.cs">
+      <DependentUpon>201803201939030_CourseCategoryFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803202128005_CourseConfigurationProperties.cs" />
+    <Compile Include="Migrations\201803202128005_CourseConfigurationProperties.Designer.cs">
+      <DependentUpon>201803202128005_CourseConfigurationProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -274,6 +286,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803151800055_ShortNameForAcademicUnit.resx">
       <DependentUpon>201803151800055_ShortNameForAcademicUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803201601171_FeedsToAcademicUnitsMTM.resx">
+      <DependentUpon>201803201601171_FeedsToAcademicUnitsMTM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803201939030_CourseCategoryFix.resx">
+      <DependentUpon>201803201939030_CourseCategoryFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803202128005_CourseConfigurationProperties.resx">
+      <DependentUpon>201803202128005_CourseConfigurationProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

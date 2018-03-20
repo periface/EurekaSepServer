@@ -59,7 +59,7 @@ namespace Eureka.Spe.Feeds
             return paged.Select(a =>
             {
                 var mapped = a.MapTo<FeedDto>();
-                mapped.PublisherName = a.Publisher.Name;
+                mapped.PublisherName = a.Publisher?.Name;
                 return mapped;
             }).ToList();
         }
