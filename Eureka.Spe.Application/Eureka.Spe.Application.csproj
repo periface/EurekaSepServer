@@ -215,6 +215,9 @@
     <Compile Include="Publishers\Dto\PublisherDto.cs" />
     <Compile Include="Publishers\IPublisherAppService.cs" />
     <Compile Include="Publishers\PublisherAppService.cs" />
+    <Compile Include="Scholarships\Dto\ScholarshipDto.cs" />
+    <Compile Include="Scholarships\IScholarshipAppService.cs" />
+    <Compile Include="Scholarships\ScholarshipAppService.cs" />
     <Compile Include="SpeApplicationModule.cs" />
     <Compile Include="SpeAppServiceBase.cs" />
     <Compile Include="Authorization\Accounts\AccountAppService.cs" />

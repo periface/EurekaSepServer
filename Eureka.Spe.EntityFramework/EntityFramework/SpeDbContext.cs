@@ -6,6 +6,7 @@ using Eureka.Spe.Authorization.Users;
 using Eureka.Spe.Courses.Entities;
 using Eureka.Spe.MultiTenancy;
 using Eureka.Spe.NewsFeed.Entities;
+using Eureka.Spe.Scholarships.Entities;
 using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.EntityFramework
@@ -25,6 +26,8 @@ namespace Eureka.Spe.EntityFramework
         public IDbSet<Course> Courses { get; set; }
         public IDbSet<CourseCategory> CourseCategories { get; set; }
 
+        public IDbSet<Scholarship> Scholarships { get; set; }
+        public IDbSet<ScholarshipSection> ScholarshipSections { get; set; }
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not

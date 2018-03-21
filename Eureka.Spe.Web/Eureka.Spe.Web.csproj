@@ -2953,6 +2953,7 @@
     <Content Include="Views\Publishers\Index.js" />
     <Content Include="Views\Roles\Index.js" />
     <Content Include="Views\Roles\_EditRoleModal.js" />
+    <Content Include="Views\Scholarships\Index.js" />
     <Content Include="Views\Shared\_Layout.css" />
     <Content Include="Views\Shared\_Layout.js" />
     <Content Include="Views\Students\Index.js" />
@@ -2985,6 +2986,7 @@
     <Compile Include="Controllers\PublishersController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\ScholarshipsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
@@ -3149,6 +3151,9 @@
     <Content Include="Views\CourseCategories\Index.cshtml" />
     <Content Include="Views\CourseCategories\CreateOrEdit.cshtml" />
     <Content Include="Views\Layout\CourseCategorySelector.cshtml" />
+    <Content Include="Views\Scholarships\Index.cshtml" />
+    <Content Include="Views\Scholarships\CreateOrEdit.cshtml" />
+    <Content Include="Views\Scholarships\Manage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

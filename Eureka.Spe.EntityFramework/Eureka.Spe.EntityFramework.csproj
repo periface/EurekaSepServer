@@ -249,6 +249,14 @@
     <Compile Include="Migrations\201803202128005_CourseConfigurationProperties.Designer.cs">
       <DependentUpon>201803202128005_CourseConfigurationProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803211742202_ScholarshipSection.cs" />
+    <Compile Include="Migrations\201803211742202_ScholarshipSection.Designer.cs">
+      <DependentUpon>201803211742202_ScholarshipSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803211833140_ScholarshipSectionForeignKeyFix.cs" />
+    <Compile Include="Migrations\201803211833140_ScholarshipSectionForeignKeyFix.Designer.cs">
+      <DependentUpon>201803211833140_ScholarshipSectionForeignKeyFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -295,6 +303,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803202128005_CourseConfigurationProperties.resx">
       <DependentUpon>201803202128005_CourseConfigurationProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803211742202_ScholarshipSection.resx">
+      <DependentUpon>201803211742202_ScholarshipSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803211833140_ScholarshipSectionForeignKeyFix.resx">
+      <DependentUpon>201803211833140_ScholarshipSectionForeignKeyFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
