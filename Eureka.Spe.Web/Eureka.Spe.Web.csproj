@@ -2954,6 +2954,7 @@
     <Content Include="Views\Roles\Index.js" />
     <Content Include="Views\Roles\_EditRoleModal.js" />
     <Content Include="Views\Scholarships\Index.js" />
+    <Content Include="Views\Scholarships\Manage.js" />
     <Content Include="Views\Shared\_Layout.css" />
     <Content Include="Views\Shared\_Layout.js" />
     <Content Include="Views\Students\Index.js" />
@@ -3154,6 +3155,8 @@
     <Content Include="Views\Scholarships\Index.cshtml" />
     <Content Include="Views\Scholarships\CreateOrEdit.cshtml" />
     <Content Include="Views\Scholarships\Manage.cshtml" />
+    <Content Include="Views\Scholarships\Sections.cshtml" />
+    <Content Include="Views\Scholarships\Notifications.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -37,5 +37,16 @@ namespace Eureka.Spe.Web.Controllers
             var sholarship = await _scholarshipAppService.Get(id);
             return View(sholarship);
         }
+
+
+        public ActionResult Sections(int id)
+        {
+            return View();
+        }
+
+        public ActionResult Notifications(int id)
+        {
+            return View();
+        }
     }
 }
