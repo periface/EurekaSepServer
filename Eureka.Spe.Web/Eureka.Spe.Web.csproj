@@ -3157,6 +3157,7 @@
     <Content Include="Views\Scholarships\Manage.cshtml" />
     <Content Include="Views\Scholarships\Sections.cshtml" />
     <Content Include="Views\Scholarships\Notifications.cshtml" />
+    <Content Include="Views\Feeds\Manage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

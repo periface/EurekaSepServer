@@ -3590,3 +3590,456 @@ DEBUG 2018-03-21 15:11:20,923 [51   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 DEBUG 2018-03-21 15:11:36,907 [51   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 86439962-55ee-4af9-9792-f7ac4a1eaf68
 DEBUG 2018-03-21 15:11:37,533 [51   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"41fca298-d9d3-4c0d-8bd4-c661d144ca6f","IpAddress":"148.237.42.44","TenantId":1,"UserId":2,"ConnectTime":"2018-03-21T15:11:37.5335931-06:00","Properties":{}}
 DEBUG 2018-03-21 15:11:37,543 [83   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 41fca298-d9d3-4c0d-8bd4-c661d144ca6f
+DEBUG 2018-03-28 13:47:18,220 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-03-28 13:47:18,238 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-03-28 13:47:18,247 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Web.SpeWebModule, Eureka.Spe.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,249 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeDataModule, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,250 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,250 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,250 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,250 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeCoreModule, Eureka.Spe.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,251 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Push.EurekaPushModule, Eureka.Spe.Push, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,252 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeApplicationModule, Eureka.Spe.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,252 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,252 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Api.SpeWebApiModule, Eureka.Spe.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,252 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,252 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,252 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,253 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,253 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:18,257 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-03-28 13:47:18,575 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-28 13:47:18,575 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-28 13:47:18,575 [1    ] o.Configuration.LanguageManagementConfig - Converted Spe (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-28 13:47:18,575 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-03-28 13:47:19,025 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: Eureka.Spe.EntityFramework.SpeDbContext, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-03-28 13:47:21,739 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-03-28 13:47:21,773 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-03-28 13:47:21,783 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-03-28 13:47:21,787 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Spe
+DEBUG 2018-03-28 13:47:21,789 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-03-28 13:47:21,855 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-03-28 13:47:21,933 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 21 classes define auto mapping attributes
+DEBUG 2018-03-28 13:47:21,933 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-03-28 13:47:21,938 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-03-28 13:47:21,938 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.CreateUserDto
+DEBUG 2018-03-28 13:47:21,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UpdateUserDto
+DEBUG 2018-03-28 13:47:21,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UserDto
+DEBUG 2018-03-28 13:47:21,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Students.Dto.StudentDto
+DEBUG 2018-03-28 13:47:21,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.CreateRoleDto
+DEBUG 2018-03-28 13:47:21,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.PermissionDto
+DEBUG 2018-03-28 13:47:21,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.RoleDto
+DEBUG 2018-03-28 13:47:21,939 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.EditTenantDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.TenantDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Scholarships.Dto.ScholarshipDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Publishers.Dto.PublisherDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Feeds.Dto.FeedDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Courses.Dto.CourseDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.CourseCategories.Dto.CourseCategoryDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Careers.Dto.CareerDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantChangeViewModel
+DEBUG 2018-03-28 13:47:21,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2018-03-28 13:47:23,349 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2018-03-28 13:47:23,350 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2018-03-28 13:47:23,351 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Students.IStudentAppService' with service name 'app/student'.
+DEBUG 2018-03-28 13:47:23,353 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2018-03-28 13:47:23,355 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2018-03-28 13:47:23,356 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2018-03-28 13:47:23,358 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2018-03-28 13:47:23,359 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Scholarships.IScholarshipAppService' with service name 'app/scholarship'.
+DEBUG 2018-03-28 13:47:23,360 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Publishers.IPublisherAppService' with service name 'app/publisher'.
+DEBUG 2018-03-28 13:47:23,362 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Feeds.IFeedAppService' with service name 'app/feed'.
+DEBUG 2018-03-28 13:47:23,364 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Courses.ICourseAppService' with service name 'app/course'.
+DEBUG 2018-03-28 13:47:23,365 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.CourseCategories.ICourseCategoriesAppService' with service name 'app/courseCategories'.
+DEBUG 2018-03-28 13:47:23,367 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Careers.ICareerAppService' with service name 'app/career'.
+DEBUG 2018-03-28 13:47:23,368 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.AcademicUnits.IAcademicUnitAppService' with service name 'app/academicUnit'.
+WARN  2018-03-28 13:47:29,268 [5    ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   at Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   at System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   at Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   at Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   at Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   at Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   at System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   at Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   at Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   at Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+WARN  2018-03-28 13:47:36,325 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Courses' in localization source 'Spe'!
+WARN  2018-03-28 13:47:36,336 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Categories' in localization source 'Spe'!
+WARN  2018-03-28 13:47:36,337 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'CourseList' in localization source 'Spe'!
+WARN  2018-03-28 13:47:36,339 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Scholarships' in localization source 'Spe'!
+WARN  2018-03-28 13:47:36,342 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Students' in localization source 'Spe'!
+WARN  2018-03-28 13:47:36,351 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'AcademicUnits' in localization source 'Spe'!
+WARN  2018-03-28 13:47:36,352 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'Careers' in localization source 'Spe'!
+WARN  2018-03-28 13:47:36,354 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'StudentsList' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,887 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'Feeds' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,891 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'Publishers' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,892 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'FeedList' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,892 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'Courses' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,896 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'Categories' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,897 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'CourseList' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,898 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'Scholarships' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,898 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'Students' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,902 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'AcademicUnits' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,902 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'Careers' in localization source 'Spe'!
+WARN  2018-03-28 13:48:06,903 [7    ] naries.DictionaryBasedLocalizationSource - Can not find 'StudentsList' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,228 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Feeds' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,235 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Publishers' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,236 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'FeedList' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,237 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Courses' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,244 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Categories' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,245 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'CourseList' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,246 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Scholarships' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,247 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Students' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,255 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'AcademicUnits' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,256 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'Careers' in localization source 'Spe'!
+WARN  2018-03-28 13:48:08,258 [9    ] naries.DictionaryBasedLocalizationSource - Can not find 'StudentsList' in localization source 'Spe'!
+DEBUG 2018-03-28 13:48:09,577 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7401fd00-a723-4bf1-aaab-ef6745cec33f","IpAddress":"192.168.1.68","TenantId":1,"UserId":2,"ConnectTime":"2018-03-28T13:48:09.5623817-06:00","Properties":{}}
+DEBUG 2018-03-28 13:48:09,664 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7401fd00-a723-4bf1-aaab-ef6745cec33f
+DEBUG 2018-03-28 13:48:34,367 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7401fd00-a723-4bf1-aaab-ef6745cec33f
+DEBUG 2018-03-28 13:48:35,215 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"81e01640-1281-492b-afd5-a1e68114dd91","IpAddress":"192.168.1.68","TenantId":1,"UserId":2,"ConnectTime":"2018-03-28T13:48:35.215849-06:00","Properties":{}}
+DEBUG 2018-03-28 13:48:35,236 [14   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 81e01640-1281-492b-afd5-a1e68114dd91
+DEBUG 2018-03-28 13:48:52,761 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 81e01640-1281-492b-afd5-a1e68114dd91
+DEBUG 2018-03-28 13:48:53,625 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"595fdf7e-60be-46de-ada8-0ee9b3083a16","IpAddress":"192.168.1.68","TenantId":1,"UserId":2,"ConnectTime":"2018-03-28T13:48:53.625902-06:00","Properties":{}}
+DEBUG 2018-03-28 13:48:53,642 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 595fdf7e-60be-46de-ada8-0ee9b3083a16
+WARN  2018-03-28 13:48:56,632 [13   ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+DEBUG 2018-03-28 23:02:31,114 [176  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 595fdf7e-60be-46de-ada8-0ee9b3083a16
+DEBUG 2018-03-28 23:02:37,153 [176  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f3c83422-628c-4d92-8ad7-d6328ecba30d","IpAddress":"192.168.1.68","TenantId":1,"UserId":null,"ConnectTime":"2018-03-28T23:02:37.1533806-06:00","Properties":{}}
+DEBUG 2018-03-29 10:14:33,023 [177  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f3c83422-628c-4d92-8ad7-d6328ecba30d
+WARN  2018-03-30 10:01:41,770 [201  ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: El usuario actual no ha iniciado sesión en la aplicación!
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   en System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   en System.Threading.Tasks.Task.Execute()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   en Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   en Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+Abp.Authorization.AbpAuthorizationException: El usuario actual no ha iniciado sesión en la aplicación!
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   en System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   en System.Threading.Tasks.Task.Execute()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   en Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   en Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+DEBUG 2018-03-30 10:01:45,728 [185  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"f4c54bd4-8c85-4c6d-a32c-14d0f55f90cd","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-03-30T10:01:45.7284404-06:00","Properties":{}}
+DEBUG 2018-03-30 10:01:45,743 [194  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: f4c54bd4-8c85-4c6d-a32c-14d0f55f90cd
+DEBUG 2018-03-30 10:01:50,999 [194  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f4c54bd4-8c85-4c6d-a32c-14d0f55f90cd
+DEBUG 2018-03-30 10:01:51,791 [193  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"bebb177b-bc6f-4897-81aa-6e3771d55a74","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-03-30T10:01:51.7917872-06:00","Properties":{}}
+DEBUG 2018-03-30 10:01:51,832 [193  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: bebb177b-bc6f-4897-81aa-6e3771d55a74
+WARN  2018-03-30 10:01:54,992 [194  ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+DEBUG 2018-03-30 19:21:08,642 [188  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: bebb177b-bc6f-4897-81aa-6e3771d55a74
+DEBUG 2018-03-30 19:21:15,251 [161  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1ce87fd7-4e35-477f-ad3a-8638abc4fe32","IpAddress":"192.168.1.69","TenantId":1,"UserId":null,"ConnectTime":"2018-03-30T19:21:15.2513861-06:00","Properties":{}}
+DEBUG 2018-03-31 12:23:32,670 [162  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1ce87fd7-4e35-477f-ad3a-8638abc4fe32
+WARN  2018-04-01 14:41:02,932 [153  ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: El usuario actual no ha iniciado sesión en la aplicación!
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   en System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   en System.Threading.Tasks.Task.Execute()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   en Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   en Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+Abp.Authorization.AbpAuthorizationException: El usuario actual no ha iniciado sesión en la aplicación!
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   en System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   en System.Threading.Tasks.Task.Execute()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   en Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   en Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+DEBUG 2018-04-01 14:41:07,390 [136  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"6b07033a-9022-4821-963a-136ef6ae4ffb","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T14:41:07.3909521-05:00","Properties":{}}
+DEBUG 2018-04-01 14:41:07,409 [188  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 6b07033a-9022-4821-963a-136ef6ae4ffb
+DEBUG 2018-04-01 14:41:10,908 [136  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 6b07033a-9022-4821-963a-136ef6ae4ffb
+DEBUG 2018-04-01 14:41:11,774 [136  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e30e0e66-6ebd-459a-83ba-f9784798f963","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T14:41:11.7732028-05:00","Properties":{}}
+DEBUG 2018-04-01 14:41:11,837 [188  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e30e0e66-6ebd-459a-83ba-f9784798f963
+WARN  2018-04-01 16:57:30,659 [151  ] Abp.Logging.LogHelper                    - Abp.Authorization.AbpAuthorizationException: El usuario actual no ha iniciado sesión en la aplicación!
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   en System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   en System.Threading.Tasks.Task.Execute()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   en Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   en Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+Abp.Authorization.AbpAuthorizationException: El usuario actual no ha iniciado sesión en la aplicación!
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__19.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<CheckPermissions>d__22.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Abp.Authorization.AuthorizationHelper.<AuthorizeAsync>d__20.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.<>c__DisplayClass15_0.<Run>b__0(Task t)
+   en System.Threading.Tasks.ContinuationTaskFromTask.InnerInvoke()
+   en System.Threading.Tasks.Task.Execute()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en Nito.AsyncEx.Synchronous.TaskExtensions.WaitAndUnwrapException(Task task)
+   en Nito.AsyncEx.AsyncContext.Run(Func`1 action)
+   en Abp.Authorization.AuthorizationHelperExtensions.Authorize(IAuthorizationHelper authorizationHelper, MethodInfo methodInfo, Type type)
+   en Abp.Web.Mvc.Authorization.AbpMvcAuthorizeFilter.OnAuthorization(AuthorizationContext filterContext)
+DEBUG 2018-04-01 16:57:36,946 [126  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ba2710ea-af53-4045-a442-e3033767228c","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T16:57:36.9463679-05:00","Properties":{}}
+DEBUG 2018-04-01 16:57:36,967 [126  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ba2710ea-af53-4045-a442-e3033767228c
+DEBUG 2018-04-01 16:57:40,224 [126  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: ba2710ea-af53-4045-a442-e3033767228c
+DEBUG 2018-04-01 16:57:40,819 [139  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"eb28f9c7-e409-43fc-861c-b3b5cc2f8b6f","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T16:57:40.8195895-05:00","Properties":{}}
+DEBUG 2018-04-01 16:57:40,829 [170  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: eb28f9c7-e409-43fc-861c-b3b5cc2f8b6f
+WARN  2018-04-01 16:57:44,239 [139  ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+DEBUG 2018-04-01 16:58:02,233 [126  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e30e0e66-6ebd-459a-83ba-f9784798f963
+DEBUG 2018-04-01 16:58:04,232 [202  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: eb28f9c7-e409-43fc-861c-b3b5cc2f8b6f
+DEBUG 2018-04-01 16:58:04,863 [151  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"2b108c0d-03f3-4470-a194-37a9bb616408","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T16:58:04.8639647-05:00","Properties":{}}
+DEBUG 2018-04-01 16:58:04,882 [186  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 2b108c0d-03f3-4470-a194-37a9bb616408
+WARN  2018-04-01 16:58:06,634 [169  ] naries.DictionaryBasedLocalizationSource - Can not find 'CreateOrEditFeed' in localization source 'Spe'!
+WARN  2018-04-01 16:58:06,747 [169  ] naries.DictionaryBasedLocalizationSource - Can not find 'Title' in localization source 'Spe'!
+WARN  2018-04-01 16:58:06,748 [169  ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+WARN  2018-04-01 16:58:06,749 [169  ] naries.DictionaryBasedLocalizationSource - Can not find 'Content' in localization source 'Spe'!
+DEBUG 2018-04-01 16:58:06,953 [126  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 2b108c0d-03f3-4470-a194-37a9bb616408
+DEBUG 2018-04-01 16:58:09,842 [151  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"a17c9662-07fe-487e-b0c6-cb11c0675ff3","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T16:58:09.8422495-05:00","Properties":{}}
+DEBUG 2018-04-01 16:58:09,859 [202  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: a17c9662-07fe-487e-b0c6-cb11c0675ff3
+DEBUG 2018-04-01 16:58:29,957 [184  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: a17c9662-07fe-487e-b0c6-cb11c0675ff3
+DEBUG 2018-04-01 16:58:30,770 [126  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9ff30690-857d-482a-8cba-36a18581c585","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T16:58:30.7704465-05:00","Properties":{}}
+DEBUG 2018-04-01 16:58:30,791 [158  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9ff30690-857d-482a-8cba-36a18581c585
+DEBUG 2018-04-01 16:58:32,335 [202  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 9ff30690-857d-482a-8cba-36a18581c585
+DEBUG 2018-04-01 16:58:34,698 [139  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1ec0c01f-2723-47ac-8cf6-0a251dce50d0","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T16:58:34.6986712-05:00","Properties":{}}
+DEBUG 2018-04-01 16:58:34,713 [169  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1ec0c01f-2723-47ac-8cf6-0a251dce50d0
+WARN  2018-04-01 16:58:35,867 [202  ] naries.DictionaryBasedLocalizationSource - Can not find 'CreateOrEditFeed' in localization source 'Spe'!
+WARN  2018-04-01 16:58:35,907 [202  ] naries.DictionaryBasedLocalizationSource - Can not find 'Title' in localization source 'Spe'!
+WARN  2018-04-01 16:58:35,908 [202  ] naries.DictionaryBasedLocalizationSource - Can not find 'Description' in localization source 'Spe'!
+WARN  2018-04-01 16:58:35,908 [202  ] naries.DictionaryBasedLocalizationSource - Can not find 'Content' in localization source 'Spe'!
+DEBUG 2018-04-01 16:58:36,078 [186  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1ec0c01f-2723-47ac-8cf6-0a251dce50d0
+DEBUG 2018-04-01 16:58:37,358 [126  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"aeae12d5-ff7c-4cf2-81ce-dceffceef179","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T16:58:37.3588233-05:00","Properties":{}}
+DEBUG 2018-04-01 16:58:37,371 [139  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: aeae12d5-ff7c-4cf2-81ce-dceffceef179
+DEBUG 2018-04-01 16:58:39,975 [151  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: aeae12d5-ff7c-4cf2-81ce-dceffceef179
+DEBUG 2018-04-01 16:58:40,592 [139  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"809a3481-3dd1-4fc2-b459-64cd4cecf8a9","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T16:58:40.5920082-05:00","Properties":{}}
+DEBUG 2018-04-01 16:58:40,605 [170  ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 809a3481-3dd1-4fc2-b459-64cd4cecf8a9
+DEBUG 2018-04-01 17:26:09,501 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-04-01 17:26:09,527 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2018-04-01 17:26:09,538 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Web.SpeWebModule, Eureka.Spe.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,541 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeDataModule, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,542 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,542 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeCoreModule, Eureka.Spe.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Push.EurekaPushModule, Eureka.Spe.Push, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.SpeApplicationModule, Eureka.Spe.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Eureka.Spe.Api.SpeWebApiModule, Eureka.Spe.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,546 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,546 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,546 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=3.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:09,553 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2018-04-01 17:26:10,133 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-04-01 17:26:10,133 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-04-01 17:26:10,133 [1    ] o.Configuration.LanguageManagementConfig - Converted Spe (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-04-01 17:26:10,133 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-04-01 17:26:11,175 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: Eureka.Spe.EntityFramework.SpeDbContext, Eureka.Spe.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-04-01 17:26:16,002 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-04-01 17:26:16,060 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-04-01 17:26:16,074 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-04-01 17:26:16,079 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Spe
+DEBUG 2018-04-01 17:26:16,084 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-04-01 17:26:16,178 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-04-01 17:26:16,332 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 21 classes define auto mapping attributes
+DEBUG 2018-04-01 17:26:16,332 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-04-01 17:26:16,342 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-04-01 17:26:16,343 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.CreateUserDto
+DEBUG 2018-04-01 17:26:16,344 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UpdateUserDto
+DEBUG 2018-04-01 17:26:16,344 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Users.Dto.UserDto
+DEBUG 2018-04-01 17:26:16,344 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Students.Dto.StudentDto
+DEBUG 2018-04-01 17:26:16,345 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.CreateRoleDto
+DEBUG 2018-04-01 17:26:16,345 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.PermissionDto
+DEBUG 2018-04-01 17:26:16,345 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Roles.Dto.RoleDto
+DEBUG 2018-04-01 17:26:16,345 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.EditTenantDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.MultiTenancy.Dto.TenantDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Scholarships.Dto.ScholarshipDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Publishers.Dto.PublisherDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Feeds.Dto.FeedDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Courses.Dto.CourseDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.CourseCategories.Dto.CourseCategoryDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Careers.Dto.CareerDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto
+DEBUG 2018-04-01 17:26:16,346 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantChangeViewModel
+DEBUG 2018-04-01 17:26:16,347 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Eureka.Spe.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2018-04-01 17:26:18,712 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2018-04-01 17:26:18,714 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2018-04-01 17:26:18,717 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Students.IStudentAppService' with service name 'app/student'.
+DEBUG 2018-04-01 17:26:18,718 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2018-04-01 17:26:18,720 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2018-04-01 17:26:18,721 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2018-04-01 17:26:18,723 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2018-04-01 17:26:18,725 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Scholarships.IScholarshipAppService' with service name 'app/scholarship'.
+DEBUG 2018-04-01 17:26:18,726 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Publishers.IPublisherAppService' with service name 'app/publisher'.
+DEBUG 2018-04-01 17:26:18,729 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Feeds.IFeedAppService' with service name 'app/feed'.
+DEBUG 2018-04-01 17:26:18,732 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Courses.ICourseAppService' with service name 'app/course'.
+DEBUG 2018-04-01 17:26:18,734 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.CourseCategories.ICourseCategoriesAppService' with service name 'app/courseCategories'.
+DEBUG 2018-04-01 17:26:18,736 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.Careers.ICareerAppService' with service name 'app/career'.
+DEBUG 2018-04-01 17:26:18,740 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'Eureka.Spe.AcademicUnits.IAcademicUnitAppService' with service name 'app/academicUnit'.
+DEBUG 2018-04-01 17:26:37,584 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e1dec953-6f5e-446c-b8d5-95cc3579afbf","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:26:37.5702601-05:00","Properties":{}}
+DEBUG 2018-04-01 17:26:37,650 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e1dec953-6f5e-446c-b8d5-95cc3579afbf
+DEBUG 2018-04-01 17:26:40,702 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e1dec953-6f5e-446c-b8d5-95cc3579afbf
+DEBUG 2018-04-01 17:26:41,162 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"fd7adecd-572f-4057-8d71-5e4a7b30535c","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:26:41.1624656-05:00","Properties":{}}
+DEBUG 2018-04-01 17:26:41,180 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: fd7adecd-572f-4057-8d71-5e4a7b30535c
+DEBUG 2018-04-01 17:27:45,158 [7    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: fd7adecd-572f-4057-8d71-5e4a7b30535c
+DEBUG 2018-04-01 17:27:45,913 [12   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"34276233-4d0c-4c8f-b730-4020600f982d","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:27:45.9131691-05:00","Properties":{}}
+DEBUG 2018-04-01 17:27:45,934 [19   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 34276233-4d0c-4c8f-b730-4020600f982d
+DEBUG 2018-04-01 17:29:54,475 [12   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 34276233-4d0c-4c8f-b730-4020600f982d
+DEBUG 2018-04-01 17:29:55,228 [24   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"10edee3a-adc4-41c2-ba2c-fd72e64dc83a","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:29:55.2285655-05:00","Properties":{}}
+DEBUG 2018-04-01 17:29:55,240 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 10edee3a-adc4-41c2-ba2c-fd72e64dc83a
+DEBUG 2018-04-01 17:35:52,212 [52   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 10edee3a-adc4-41c2-ba2c-fd72e64dc83a
+DEBUG 2018-04-01 17:35:53,547 [48   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d3a1f182-8ba3-443e-af4c-8983e380aad6","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:35:53.547054-05:00","Properties":{}}
+DEBUG 2018-04-01 17:35:53,643 [48   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d3a1f182-8ba3-443e-af4c-8983e380aad6
+DEBUG 2018-04-01 17:44:45,732 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d3a1f182-8ba3-443e-af4c-8983e380aad6
+DEBUG 2018-04-01 17:44:47,076 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7c9d65c8-6eed-4bdf-9b50-56019def29ca","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:44:47.0765529-05:00","Properties":{}}
+DEBUG 2018-04-01 17:44:47,104 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7c9d65c8-6eed-4bdf-9b50-56019def29ca
+DEBUG 2018-04-01 17:45:34,920 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7c9d65c8-6eed-4bdf-9b50-56019def29ca
+DEBUG 2018-04-01 17:45:36,096 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"fca8b03a-a6ee-464e-be0b-c9c99a6a7486","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:45:36.0963567-05:00","Properties":{}}
+DEBUG 2018-04-01 17:45:36,134 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: fca8b03a-a6ee-464e-be0b-c9c99a6a7486
+DEBUG 2018-04-01 17:46:31,661 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: fca8b03a-a6ee-464e-be0b-c9c99a6a7486
+DEBUG 2018-04-01 17:46:32,542 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e25bd686-8a47-48b5-8f58-3ddfd0e011fc","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:46:32.5425852-05:00","Properties":{}}
+DEBUG 2018-04-01 17:46:32,559 [58   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e25bd686-8a47-48b5-8f58-3ddfd0e011fc
+DEBUG 2018-04-01 17:47:02,029 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e25bd686-8a47-48b5-8f58-3ddfd0e011fc
+DEBUG 2018-04-01 17:47:03,228 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"79cd2920-bb45-49fa-a90e-c0bef90acc7d","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:47:03.2273403-05:00","Properties":{}}
+DEBUG 2018-04-01 17:47:03,256 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 79cd2920-bb45-49fa-a90e-c0bef90acc7d
+DEBUG 2018-04-01 17:47:06,905 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 79cd2920-bb45-49fa-a90e-c0bef90acc7d
+DEBUG 2018-04-01 17:47:08,165 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"7fd849f4-35b2-4093-9b9c-5bdced6c9577","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:47:08.1656227-05:00","Properties":{}}
+DEBUG 2018-04-01 17:47:08,188 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 7fd849f4-35b2-4093-9b9c-5bdced6c9577
+DEBUG 2018-04-01 17:47:14,927 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 7fd849f4-35b2-4093-9b9c-5bdced6c9577
+DEBUG 2018-04-01 17:47:16,184 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"96205975-5617-4a94-9dcb-82cc0fa642d4","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:47:16.1840814-05:00","Properties":{}}
+DEBUG 2018-04-01 17:47:16,201 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 96205975-5617-4a94-9dcb-82cc0fa642d4
+DEBUG 2018-04-01 17:47:37,893 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 96205975-5617-4a94-9dcb-82cc0fa642d4
+DEBUG 2018-04-01 17:47:39,385 [21   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"d08adc2f-2602-4072-bd4a-6eb20be366a1","IpAddress":"192.168.1.69","TenantId":1,"UserId":2,"ConnectTime":"2018-04-01T17:47:39.3854084-05:00","Properties":{}}
+DEBUG 2018-04-01 17:47:39,420 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: d08adc2f-2602-4072-bd4a-6eb20be366a1
+DEBUG 2018-04-01 18:10:08,511 [63   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: d08adc2f-2602-4072-bd4a-6eb20be366a1
