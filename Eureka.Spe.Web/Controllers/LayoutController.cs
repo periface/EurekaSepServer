@@ -13,6 +13,8 @@ using Eureka.Spe.Careers;
 using Eureka.Spe.Configuration;
 using Eureka.Spe.Configuration.Ui;
 using Eureka.Spe.CourseCategories;
+using Eureka.Spe.Notifications;
+using Eureka.Spe.Notifications.Dto;
 using Eureka.Spe.Publishers;
 using Eureka.Spe.Sessions;
 using Eureka.Spe.Web.Models;
@@ -30,11 +32,12 @@ namespace Eureka.Spe.Web.Controllers
         private readonly IAcademicUnitAppService _academicUnitAppService;
         private readonly ICareerAppService _careerAppService;
         private readonly ICourseCategoriesAppService _courseCategoriesAppService;
+        private readonly INotificationAppService _notificationAppService;
         public LayoutController(
             IUserNavigationManager userNavigationManager,
             ISessionAppService sessionAppService,
             IMultiTenancyConfig multiTenancyConfig,
-            ILanguageManager languageManager, IPublisherAppService publisherAppService, IAcademicUnitAppService academicUnitAppService, ICareerAppService careerAppService, ICourseCategoriesAppService courseCategoriesAppService)
+            ILanguageManager languageManager, IPublisherAppService publisherAppService, IAcademicUnitAppService academicUnitAppService, ICareerAppService careerAppService, ICourseCategoriesAppService courseCategoriesAppService, INotificationAppService notificationAppService)
         {
             _userNavigationManager = userNavigationManager;
             _sessionAppService = sessionAppService;
@@ -44,6 +47,7 @@ namespace Eureka.Spe.Web.Controllers
             _academicUnitAppService = academicUnitAppService;
             _careerAppService = careerAppService;
             _courseCategoriesAppService = courseCategoriesAppService;
+            _notificationAppService = notificationAppService;
         }
 
         [ChildActionOnly]
@@ -136,5 +140,33 @@ namespace Eureka.Spe.Web.Controllers
 
         }
         
+        public ViewResult GetAcademicUnitsForEntity(string entityName, int id)
+        {
+            
+            var academicUnits = _academicUnitAppService.GetAcademicUnitSimpleListForEntity(entityName,id);
+            return View(new ElementsForEntity()
+            {
+                EntityName = entityName,
+                Id = id,
+                AcademicUnitsSelected = academicUnits
+            });
+        }
+        public ViewResult GetNotificationsForEntity(string entityName, int id)
+        {
+            var notifications = _notificationAppService.GetNotificationsSimpleListForEntity(entityName,id);
+            return View(new ElementsForEntity()
+            {
+                EntityName = entityName,
+                Id = id,
+                Notifications = notifications
+            });
+        }
+        public class ElementsForEntity
+        {
+            public string EntityName { get; set; }
+            public int Id { get; set; }
+            public List<AcademicUnitSelectedDto> AcademicUnitsSelected { get; set; }
+            public List<NotificationDto> Notifications { get; set; }
+        }
     }
 }

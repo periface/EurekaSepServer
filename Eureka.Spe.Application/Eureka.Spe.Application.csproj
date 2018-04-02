@@ -59,6 +59,12 @@
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
@@ -194,6 +200,7 @@
   <ItemGroup>
     <Compile Include="AcademicUnits\AcademicUnitAppService.cs" />
     <Compile Include="AcademicUnits\Dto\AcademicUnitDto.cs" />
+    <Compile Include="AcademicUnits\helpers\AcademicUnitComparer.cs" />
     <Compile Include="AcademicUnits\IAcademicUnitAppService.cs" />
     <Compile Include="Careers\CareerAppService.cs" />
     <Compile Include="Careers\Dto\CareersGroupedList.cs" />
@@ -206,9 +213,17 @@
     <Compile Include="Courses\CourseAppService.cs" />
     <Compile Include="Courses\Dto\CourseDto.cs" />
     <Compile Include="Courses\ICourseAppService.cs" />
+    <Compile Include="AcademicUnits\Dto\AcademicUnitSelectedDto.cs" />
+    <Compile Include="AcademicUnits\Dto\AddToEntityInput.cs" />
     <Compile Include="Feeds\Dto\FeedDto.cs" />
     <Compile Include="Feeds\FeedAppService.cs" />
     <Compile Include="Feeds\IFeedAppService.cs" />
+    <Compile Include="Notifications\Dto\NotificationDto.cs" />
+    <Compile Include="Notifications\Dto\NotificationPaginableInput.cs" />
+    <Compile Include="Notifications\INotificationAppService.cs" />
+    <Compile Include="Notifications\NotificationAppService.cs" />
+    <Compile Include="Notifications\Scheduler\NotificationScheduler.cs" />
+    <Compile Include="Notifications\Scheduler\SendNotificationArgs.cs" />
     <Compile Include="PaginableHelpers\ApiIgnoreAttribute.cs" />
     <Compile Include="PaginableHelpers\BootstrapTableInput.cs" />
     <Compile Include="PaginableHelpers\IHavePaginatedResults.cs" />

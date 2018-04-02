@@ -52,7 +52,6 @@ namespace Eureka.Spe.Web.Controllers
                 Feed = feed
             });
         }
-
         public class ManageFeedViewModel
         {
             public List<AcademicUnitDto> AcademicUnits { get; set; } = new List<AcademicUnitDto>();

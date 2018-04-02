@@ -1,0 +1,116 @@
+﻿@model Eureka.Spe.Web.Controllers.LayoutController.ElementsForEntity
+
+@{
+    Layout = null;
+}
+<style>
+    .notification-holder {
+        background: #E8E8E8;
+        padding: 10px;
+        border-radius: 10px;
+    }
+</style>
+<div class="row">
+    <div class="col-sm-12">
+        <input type="hidden" id="Id" value="@Model.Id" />
+        <input type="hidden" id="EntityName" value="@Model.EntityName" />
+        @if (!Model.Notifications.Any())
+        {
+            <h2>Aún no se han agendado notificaciones para este elemento...</h2>
+        }
+        else
+        {
+            <div class="row">
+                @foreach (var modelNotification in Model.Notifications)
+                {
+                    <div class="col-md-3">
+                        <div class="notification-holder">
+                            <h4>Notificación #@modelNotification.Id</h4>
+                            <p>
+                                <code>Titulo: @modelNotification.Title </code>
+                            </p>
+                            <p>
+                                <code>Mensaje: @modelNotification.Message</code>
+                            </p>
+                            
+                            <p>
+                                <code>Fecha: @modelNotification.NotifyDate.ToShortDateString()</code>
+                            </p>
+
+                            <p>
+                                <a class="btn btn-xs btn-default">Ver datos</a>
+                                <a class="btn btn-xs btn-default">Detalle</a>
+                            </p>
+                        </div>
+                    </div>
+
+                }
+            </div>
+
+        }
+    </div>
+    <div class="col-sm-12">
+        <button class="btn btn-primary js-place-notification" type="button">
+            Agendar Notificación
+        </button>
+    </div>
+</div>
+
+
+<script>
+    ///Requires jquery
+    (function () {
+        var service = abp.services.app.notification;
+        var modalIsOpen = false;
+        $(".js-place-notification").click(function () {
+            window.eModal.ajax({
+                loadingHtml:
+                '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+                url: '/Notifications/Schedule?entitype=feeds&entityId=' + $("#Id").val(),
+                title: 'Notificación',
+                buttons: [
+                    {
+                        text: 'Cerrar',
+                        style: 'danger',
+                        close: true,
+                        click: function () {
+
+                        }
+                    },
+                    {
+                        text: 'Agendar', style: 'info', close: false, click: function (elm) {
+                            save();
+                        }
+                    }
+                ]
+            })
+                .then(function () {
+                    bindEnter();
+                });
+        });
+        function save() {
+            var data = $("#ScheduleForm").serializeFormToObject();
+            service.createOrUpdate(data).done(function () {
+                window.eModal.close();
+                modalIsOpen = false;
+                unBindEnter();
+                abp.notify.success("Notificación agendada...");
+            });
+        }
+        function enterFunc(e) {
+            if (e.keyCode === 13 && modalIsOpen) {
+                e.preventDefault();
+                save();
+            }
+        }
+
+        function bindEnter() {
+            unBindEnter();
+            $(document).on('keypress',
+                'input', enterFunc);
+        }
+        function unBindEnter() {
+            $(document).unbind("keypress", enterFunc);
+        }
+    })();
+</script>

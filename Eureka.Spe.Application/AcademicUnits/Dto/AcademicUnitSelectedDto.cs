@@ -1,11 +1,11 @@
-﻿using Abp.Application.Services.Dto;
+using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.AcademicUnits.Dto
 {
     [AutoMap(typeof(AcademicUnit))]
-    public class AcademicUnitDto : EntityDto
+    public class AcademicUnitSelectedDto : EntityDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

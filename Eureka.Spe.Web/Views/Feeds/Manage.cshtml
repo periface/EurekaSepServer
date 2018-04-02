@@ -14,8 +14,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#notifications" data-url="/Feed/Notifications/" aria-controls="notifications" role="tab" data-toggle="tab">Notificaciones</a></li>
-                            <li role="presentation"><a href="#tags" data-url="/Feed/AcademicUnits/" aria-controls="tags" role="tab" data-toggle="tab">Unidades Acádemicas</a></li>
+                            <li role="presentation" class="active"><a href="#notifications" data-url="/Layout/GetNotificationsForEntity?entityName=feeds&id=" aria-controls="notifications" role="tab" data-toggle="tab">Notificaciones</a></li>
+                            <li role="presentation"><a href="#tags" data-url="/Layout/GetAcademicUnitsForEntity?entityName=feeds&id=" aria-controls="tags" role="tab" data-toggle="tab">Unidades Acádemicas</a></li>
                         </ul>
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="sections">
@@ -35,8 +35,9 @@
     <script src="~/js/helpers.js"></script>
     <script>
         (function () {
-            console.log($("#Id").val());
-            startTabListener($("#sections"), $("#Id").val());
+            var id = $("#Id").val();
+            startTabListener($("#sections"), id);
+            loadUrlInDiv("#sections", "/Layout/GetNotificationsForEntity?entityName=feeds&id=" + id);
         })();
     </script>
 

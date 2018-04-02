@@ -20,7 +20,7 @@ namespace Eureka.Spe.PhoneNotifications.Entities
         public string Data { get; set; }
         //Scholarship,Feed,Course, etc.
         public string AssignedTo { get; set; }
-
+        public int AssignedToId { get; set; } 
         public virtual ICollection<SendNotificationsStatus> SendNotificationsStatuses { get; set; }
         
     }

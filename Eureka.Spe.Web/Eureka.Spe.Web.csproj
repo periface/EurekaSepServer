@@ -2984,6 +2984,7 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\FeedsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\PublishersController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -3158,6 +3159,9 @@
     <Content Include="Views\Scholarships\Sections.cshtml" />
     <Content Include="Views\Scholarships\Notifications.cshtml" />
     <Content Include="Views\Feeds\Manage.cshtml" />
+    <Content Include="Views\Layout\GetAcademicUnitsForEntity.cshtml" />
+    <Content Include="Views\Layout\GetNotificationsForEntity.cshtml" />
+    <Content Include="Views\Notifications\Schedule.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,54 @@
+﻿@model Eureka.Spe.Web.Controllers.LayoutController.ElementsForEntity
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <input type="hidden" id="Id" value="@Model.Id" />
+        <input type="hidden" id="EntityName" value="@Model.EntityName" />
+        @foreach (var role in Model.AcademicUnitsSelected)
+    {
+        <div class="col-sm-3">
+            <input type="checkbox" name="academicunit" data-id="@role.Id" title="@role.Description" class="filled-in" id="@string.Format("role{0}", role.Id)" @(role.Selected ? "checked" : "") />
+            <label for="@string.Format("role{0}", role.Id)" title="@role.Name">@role.Name</label>
+        </div>
+}
+    </div>
+    <div class="col-sm-12">
+        <button class="btn btn-primary js-save-units" type="button">
+            @L("Save")
+        </button>
+    </div>
+</div>
+
+
+<script>
+    ///Requires jquery
+    (function() {
+        var service = abp.services.app.academicUnit;
+        $(".js-save-units").click(function() {
+            var values = [];
+            var checkboxes = $("input[name='academicunit']:checked");
+            if (checkboxes) {
+                for (var roleIndex = 0; roleIndex < checkboxes.length; roleIndex++) {
+                    var checkbox = $(checkboxes[roleIndex]);
+                    var value = checkbox.attr('data-id');
+                    values.push(value);
+                }
+            }
+            var result = {
+                ids: values,
+                id: $("#Id").val(),
+                entityName:$("#EntityName").val()
+            }
+            console.log(result);
+            service.addAcademicUnitToEntity(result).done(function() {
+                
+            });
+        });
+
+
+    })();
+</script>

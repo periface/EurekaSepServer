@@ -197,6 +197,8 @@
     <Compile Include="Groups\Entities\Group.cs" />
     <Compile Include="NewsFeed\Entities\Feed.cs" />
     <Compile Include="NewsFeed\Entities\FeedPublisher.cs" />
+    <Compile Include="NewsFeed\FeedManager.cs" />
+    <Compile Include="NewsFeed\IFeedManager.cs" />
     <Compile Include="PhoneNotifications\Entities\PhoneNotification.cs" />
     <Compile Include="Scholarships\Entities\Scholarship.cs" />
     <Compile Include="Scholarships\Entities\ScholarshipSection.cs" />
@@ -223,11 +225,13 @@
     <Compile Include="Authorization\Users\User.cs" />
     <Compile Include="Authorization\Users\UserManager.cs" />
     <Compile Include="Authorization\Users\UserStore.cs" />
+    <Compile Include="Students\AcademicUnitManager.cs" />
     <Compile Include="Students\Entities\AcademicUnit.cs" />
     <Compile Include="Students\Entities\Career.cs" />
     <Compile Include="Students\Entities\FbInfo.cs" />
     <Compile Include="Students\Entities\PhoneInfo.cs" />
     <Compile Include="Students\Entities\Student.cs" />
+    <Compile Include="Students\IAcademicUnitManager.cs" />
     <Compile Include="Tags\Entities\Tag.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
   </ItemGroup>
@@ -264,7 +268,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\Spe-vi.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Students\HelperClasses\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

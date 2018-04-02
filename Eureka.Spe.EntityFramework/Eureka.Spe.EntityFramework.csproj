@@ -257,6 +257,10 @@
     <Compile Include="Migrations\201803211833140_ScholarshipSectionForeignKeyFix.Designer.cs">
       <DependentUpon>201803211833140_ScholarshipSectionForeignKeyFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804022128074_AssignedToIdForNotification.cs" />
+    <Compile Include="Migrations\201804022128074_AssignedToIdForNotification.Designer.cs">
+      <DependentUpon>201804022128074_AssignedToIdForNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -309,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803211833140_ScholarshipSectionForeignKeyFix.resx">
       <DependentUpon>201803211833140_ScholarshipSectionForeignKeyFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804022128074_AssignedToIdForNotification.resx">
+      <DependentUpon>201804022128074_AssignedToIdForNotification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

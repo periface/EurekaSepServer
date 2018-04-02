@@ -5,8 +5,11 @@ using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
+using Castle.Components.DictionaryAdapter;
 using Eureka.Spe.AcademicUnits.Dto;
+using Eureka.Spe.AcademicUnits.helpers;
 using Eureka.Spe.PaginableHelpers;
+using Eureka.Spe.Students;
 using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.AcademicUnits
@@ -14,10 +17,11 @@ namespace Eureka.Spe.AcademicUnits
     public class AcademicUnitAppService : IAcademicUnitAppService
     {
         private readonly IRepository<AcademicUnit> _repository;
-
-        public AcademicUnitAppService(IRepository<AcademicUnit> repository)
+        private readonly IAcademicUnitManager _academicUnitManager;
+        public AcademicUnitAppService(IRepository<AcademicUnit> repository, IAcademicUnitManager academicUnitManager)
         {
             _repository = repository;
+            _academicUnitManager = academicUnitManager;
         }
 
         public IQueryable<AcademicUnit> GetFilteredQuery(IQueryable<AcademicUnit> all, BootstrapTableInput input)
@@ -70,6 +74,47 @@ namespace Eureka.Spe.AcademicUnits
         {
             var all = _repository.GetAllList();
             return all.Select(a => a.MapTo<AcademicUnitDto>()).ToList();
+        }
+
+        public List<AcademicUnitSelectedDto> GetAcademicUnitSimpleListForEntity(string entityName, int id)
+        {
+            var result = new List<AcademicUnitSelectedDto>();
+            var found = GetAcademicUnitsForEntity(entityName, id);
+            var all = _repository.GetAllList().Select(a => a.MapTo<AcademicUnitDto>()).ToList();
+
+            var academicUnitsNonSelected = all.Where(x=> found.All(a => a.Id != x.Id));
+
+            result.AddRange(found.Select(a =>
+            {
+                var mapped = a.MapTo<AcademicUnitSelectedDto>();
+                mapped.Selected = true;
+                return mapped;
+            }));
+            result.AddRange(academicUnitsNonSelected.Select(a =>
+            {
+                var mapped = a.MapTo<AcademicUnitSelectedDto>();
+                mapped.Selected = false;
+                return mapped;
+            }));
+            return result;
+        }
+        
+
+        public async Task AddAcademicUnitToEntity(AddToEntityInput input)
+        {
+            await _academicUnitManager.AddAcademicUnitsToEntity(input.EntityName, input.Id, input.Ids);
+        }
+
+        public List<AcademicUnitDto> GetAcademicUnitsForEntity(string entityName, int id)
+        {
+            switch (entityName)
+            {
+                case "feeds":
+                    var academicUnitsForFeeds = _repository.GetAllIncluding(a => a.Feeds).Where(a => a.Feeds.Any(f => f.Id == id)).ToList();
+                    return academicUnitsForFeeds.Select(a => a.MapTo<AcademicUnitDto>()).ToList();
+                default:
+                    return new EditableList<AcademicUnitDto>();
+            }
         }
     }
 }

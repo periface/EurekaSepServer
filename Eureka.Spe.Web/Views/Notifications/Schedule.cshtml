@@ -1,0 +1,44 @@
+﻿@model Eureka.Spe.Notifications.Dto.NotificationDto
+
+@{
+    Layout = null;
+}
+<form id="ScheduleForm" role="form" novalidate class="form-validation">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <input type="hidden" name="TenantId" value="@Model.TenantId" />
+    <input type="hidden" name="AssignedToId" value="@Model.AssignedToId" />
+    <input type="hidden" name="AssignedTo" value="@Model.AssignedTo" />
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <input id="Title" type="text" name="Title" value="@Model.Title" required maxlength="32" class="validate form-control">
+                    <label for="Title" class="form-label">@L("Title")</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group form-float">
+                <div class="form-line">
+
+                    <label for="name" class="form-label">@L("Message")</label>
+                    <textarea name="Message" class="form-control">@Model.Message</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group form-float">
+                <div class="form-line">
+                    <input id="NotifyDate" type="date" name="NotifyDate" value="@Model.NotifyDate" required maxlength="32" class="validate form-control">
+                    <label for="Title" class="form-label">@L("Fecha")</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    (function() {
+        var form = $("#ScheduleForm");
+        $.AdminBSB.input.activate(form);
+    })();
+</script>

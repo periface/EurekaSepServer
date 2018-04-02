@@ -113,13 +113,6 @@ function enableUploadOnFileElm(elm, options) {
         });
     });
 }
-$('[data-toggle="tab"]').click(function () {
-    console.log("click");
-    var href = $(this).data("url");
-    var div = $(this).attr("href");
-    href = href + id;
-    loadUrlInDiv(div, href);
-});
 function startTabListener(container,id) {
     $('[data-toggle="tab"]').click(function () {
         console.log(id);
@@ -132,12 +125,9 @@ function startTabListener(container,id) {
 function loadUrlInDiv(div, url) {
     $(div).empty();
     $(div).load(url, function (response, status, xhr) {
-        //console.log(response);
-        //console.log(status);
         if (status === "error") {
             $(div).append("<h2>Error</h2>");
         }
-        //console.log(xhr);
     });
 }
 var mapStyles = {

@@ -8,7 +8,5 @@ namespace Eureka.Spe.Courses
 {
     public interface ICourseAppService : IApplicationService, IHavePaginatedResults<Course,CourseDto,BootstrapTableInput>
     {
-        Task CreateOrUpdate(CourseDto input);
-        Task Delete(int id);
     }
 }
