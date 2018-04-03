@@ -36,20 +36,22 @@ namespace Eureka.Spe.Push.PushManager
         public async Task<Result> SendMessage(PushMessageInput input)
         {
             var result = await SendWithFcm(input);
-            return new Result(result.StatusCode.ToString(),result.MessageResponse.ResponseContent,result.ReasonPhrase);
+            return new Result(result.StatusCode.ToString(), result.MessageResponse.Failure, result.MessageResponse.Results.Select(a => a.Error).ToList(), result.ReasonPhrase);
         }
 
         public class Result
         {
-            public Result(string code,string response,string phrase)
+            public Result(string code, int failure, List<string> response, string phrase)
             {
                 Code = code;
                 Response = response;
                 Phrase = phrase;
+                Failure = failure;
             }
             public string Code { get; set; }
-            public string Response { get; set; }
+            public List<string> Response { get; set; }
             public string Phrase { get; set; }
+            public int Failure { get; set; }
         }
         public void RegisterPhone(string identifier, string model)
         {
@@ -61,9 +63,9 @@ namespace Eureka.Spe.Push.PushManager
             });
         }
 
-        public void AddTagsToPhone(string identifier,  Dictionary<string,object> tags)
+        public void AddTagsToPhone(string identifier, Dictionary<string, object> tags)
         {
-            _client.Devices.Edit(identifier,new DeviceEditOptions()
+            _client.Devices.Edit(identifier, new DeviceEditOptions()
             {
                 Tags = tags
             });

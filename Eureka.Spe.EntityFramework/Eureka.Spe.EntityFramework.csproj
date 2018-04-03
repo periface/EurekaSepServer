@@ -261,6 +261,14 @@
     <Compile Include="Migrations\201804022128074_AssignedToIdForNotification.Designer.cs">
       <DependentUpon>201804022128074_AssignedToIdForNotification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804031653176_NotificationSentProperty.cs" />
+    <Compile Include="Migrations\201804031653176_NotificationSentProperty.Designer.cs">
+      <DependentUpon>201804031653176_NotificationSentProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804031659331_NotificationTriedProperty.cs" />
+    <Compile Include="Migrations\201804031659331_NotificationTriedProperty.Designer.cs">
+      <DependentUpon>201804031659331_NotificationTriedProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -316,6 +324,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804022128074_AssignedToIdForNotification.resx">
       <DependentUpon>201804022128074_AssignedToIdForNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804031653176_NotificationSentProperty.resx">
+      <DependentUpon>201804031653176_NotificationSentProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804031659331_NotificationTriedProperty.resx">
+      <DependentUpon>201804031659331_NotificationTriedProperty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -42,7 +42,7 @@ namespace Eureka.Spe.Web.Controllers
                     return View(new NotificationDto()
                     {
                         AssignedTo = "feeds",
-                        Data = "",
+                        Data = "{type:" + entitype + ",id:" + entityId.Value+"}",
                         Message = feed.Description,
                         Title = feed.Title,
                         AssignedToId = entityId.Value

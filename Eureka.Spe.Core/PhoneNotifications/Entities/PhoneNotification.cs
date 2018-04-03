@@ -33,5 +33,7 @@ namespace Eureka.Spe.PhoneNotifications.Entities
         public string ResultContent { get; set; }
 
         public string Token { get; set; }
+        public bool Sent { get; set; }
+        public bool SendTried { get; set; }
     }
 }

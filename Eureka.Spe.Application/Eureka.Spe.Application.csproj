@@ -221,6 +221,7 @@
     <Compile Include="Notifications\Dto\NotificationDto.cs" />
     <Compile Include="Notifications\Dto\NotificationPaginableInput.cs" />
     <Compile Include="Notifications\INotificationAppService.cs" />
+    <Compile Include="Notifications\Job\NotificationBackgroundJob.cs" />
     <Compile Include="Notifications\NotificationAppService.cs" />
     <Compile Include="Notifications\Scheduler\NotificationScheduler.cs" />
     <Compile Include="Notifications\Scheduler\SendNotificationArgs.cs" />

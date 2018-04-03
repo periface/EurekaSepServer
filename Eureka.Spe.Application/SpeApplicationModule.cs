@@ -5,8 +5,10 @@ using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Modules;
+using Abp.Threading.BackgroundWorkers;
 using Eureka.Spe.Authorization.Roles;
 using Eureka.Spe.Authorization.Users;
+using Eureka.Spe.Notifications.Job;
 using Eureka.Spe.Push;
 using Eureka.Spe.Roles.Dto;
 using Eureka.Spe.Users.Dto;
@@ -18,6 +20,12 @@ namespace Eureka.Spe
     {
         public override void PreInitialize()
         {
+        }
+
+        public override void PostInitialize()
+        {
+            var workManager = IocManager.Resolve<IBackgroundWorkerManager>();
+            workManager.Add(IocManager.Resolve<NotificationBackgroundJob>());
         }
 
         public override void Initialize()

@@ -52,11 +52,10 @@ namespace Eureka.Spe.Notifications.Scheduler
 
                     //Obtiene todos los estudiantes de la unidad academica
                     var students = _students.GetAll()
-                        .Include(a => a.Career)
-                        .Where(a => feed.AcademicUnits.Any(f => f.Id == a.Career.AcademicUnitId));
-
-                    students = students.Include(a => a.PhoneInfos);
-                    foreach (var student in students)
+                        .Include(a => a.Career).Include(a=>a.PhoneInfos).ToList();
+                    var studentsEnum = students.Where(a => feed.AcademicUnits.Any(f => f.Id == a.Career.AcademicUnitId));
+                    
+                    foreach (var student in studentsEnum)
                     {
                         result.AddRange(student.PhoneInfos.Select(a => a.Token));
                     }
