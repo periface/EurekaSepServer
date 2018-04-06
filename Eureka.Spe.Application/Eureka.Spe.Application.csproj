@@ -258,6 +258,12 @@
     <Compile Include="Roles\Dto\PermissionDto.cs" />
     <Compile Include="Roles\Dto\RoleDto.cs" />
     <Compile Include="Roles\IRoleAppService.cs" />
+    <Compile Include="Stats\Dto\ClickDto.cs" />
+    <Compile Include="Stats\Dto\GetAllMetricRequest.cs" />
+    <Compile Include="Stats\Dto\GetSingleElementMetricRequest.cs" />
+    <Compile Include="Stats\Dto\MetricDto.cs" />
+    <Compile Include="Stats\IStatsAppService.cs" />
+    <Compile Include="Stats\StatsAppService.cs" />
     <Compile Include="Students\Dto\CheckStudentInfoInput.cs" />
     <Compile Include="Students\Dto\StudentDto.cs" />
     <Compile Include="Students\IStudentAppService.cs" />

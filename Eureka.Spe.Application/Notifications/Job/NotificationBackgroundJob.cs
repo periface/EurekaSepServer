@@ -32,7 +32,9 @@ namespace Eureka.Spe.Notifications.Job
 
             var notificationsOnThisDay = notifications.Where(a =>a.NotifyDate.Month == DateTime.Now.Month 
             && a.NotifyDate.Year == DateTime.Now.Year 
-            && a.NotifyDate.Day == DateTime.Now.Day).ToList();
+            && a.NotifyDate.Day == DateTime.Now.Day 
+            && a.NotifyDate.Hour == DateTime.Now.Hour 
+            && a.NotifyDate.Minute == DateTime.Now.Minute).ToList();
 
 
             foreach (var phoneNotification in notificationsOnThisDay)

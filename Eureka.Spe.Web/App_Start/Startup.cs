@@ -33,7 +33,6 @@ namespace Eureka.Spe.Web
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             app.MapSignalR();
-
             //ENABLE TO USE HANGFIRE dashboard (Requires enabling Hangfire in SpeWebModule)
             //app.UseHangfireDashboard("/hangfire", new DashboardOptions
             //{

@@ -90,6 +90,8 @@
         });
         function save() {
             var data = $("#ScheduleForm").serializeFormToObject();
+            console.log(data);
+            data.NotifyDate = data.NotifyDate + " " + data.NotifyTime;
             service.createOrUpdate(data).done(function () {
                 window.eModal.close();
                 modalIsOpen = false;

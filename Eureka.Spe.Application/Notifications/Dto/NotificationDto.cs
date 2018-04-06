@@ -10,7 +10,7 @@ namespace Eureka.Spe.Notifications.Dto
     {
         public string Title { get; set; }
         public string Message { get; set; }
-        public DateTime NotifyDate { get; set; }
+        public DateTime NotifyDate { get; set; } = DateTime.Now;
         public string Data { get; set; }
         //Scholarship,Feed,Course, etc.
         public string AssignedTo { get; set; }

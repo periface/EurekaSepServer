@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Abp.Application.Services;
 using Abp.Configuration.Startup;
 using Abp.Modules;
@@ -28,6 +29,12 @@ namespace Eureka.Spe.Api
 
 
             Configuration.Modules.AbpWebApi().HttpConfiguration.Filters.Add(new HostAuthenticationFilter("Bearer"));
+            CorsHelpers.WebApiConfig.Register(GlobalConfiguration.Configuration);
+            var cors = new EnableCorsAttribute(
+                "*",
+                "*",
+                "*");
+            Configuration.Modules.AbpWebApi().HttpConfiguration.EnableCors(cors);
         }
     }
 }

@@ -60,6 +60,7 @@ namespace Eureka.Spe.Feeds
             {
                 var mapped = a.MapTo<FeedDto>();
                 mapped.PublisherName = a.Publisher?.Name;
+                mapped.PublisherImg = a.Publisher?.Img;
                 return mapped;
             }).ToList();
         }

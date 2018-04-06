@@ -8,6 +8,7 @@ using Eureka.Spe.MultiTenancy;
 using Eureka.Spe.NewsFeed.Entities;
 using Eureka.Spe.PhoneNotifications.Entities;
 using Eureka.Spe.Scholarships.Entities;
+using Eureka.Spe.Stats.Entities;
 using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.EntityFramework
@@ -33,6 +34,9 @@ namespace Eureka.Spe.EntityFramework
 
         public IDbSet<PhoneNotification> PhoneNotifications { get; set; }
         public IDbSet<SendNotificationsStatus> SendNotificationsStatuses { get; set; }
+
+        public IDbSet<ClickElement> ClickElements { get; set; }
+        public IDbSet<MetricElement> MetricElements { get; set; }
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not

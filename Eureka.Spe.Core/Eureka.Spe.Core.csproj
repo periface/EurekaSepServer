@@ -225,6 +225,8 @@
     <Compile Include="Authorization\Users\User.cs" />
     <Compile Include="Authorization\Users\UserManager.cs" />
     <Compile Include="Authorization\Users\UserStore.cs" />
+    <Compile Include="Stats\Entities\ClickElement.cs" />
+    <Compile Include="Stats\Entities\MetricElement.cs" />
     <Compile Include="Students\AcademicUnitManager.cs" />
     <Compile Include="Students\Entities\AcademicUnit.cs" />
     <Compile Include="Students\Entities\Career.cs" />
