@@ -10,6 +10,7 @@ using Eureka.Spe.NewsFeed.Entities;
 using Eureka.Spe.PaginableHelpers;
 using Eureka.Spe.Push.PushManager;
 using Eureka.Spe.Push.PushManager.Inputs;
+using Eureka.Spe.Stats;
 
 namespace Eureka.Spe.Feeds
 {
@@ -17,10 +18,12 @@ namespace Eureka.Spe.Feeds
     {
         private readonly IRepository<Feed> _repository;
         private readonly IPushManager _pushManager;
-        public FeedAppService(IRepository<Feed> repository, IPushManager pushManager)
+        private readonly IStatsManager _statsManager;
+        public FeedAppService(IRepository<Feed> repository, IPushManager pushManager, IStatsManager statsManager)
         {
             _repository = repository;
             _pushManager = pushManager;
+            _statsManager = statsManager;
         }
 
         public IQueryable<Feed> GetFilteredQuery(IQueryable<Feed> all, BootstrapTableInput input)
@@ -61,6 +64,7 @@ namespace Eureka.Spe.Feeds
                 var mapped = a.MapTo<FeedDto>();
                 mapped.PublisherName = a.Publisher?.Name;
                 mapped.PublisherImg = a.Publisher?.Img;
+                mapped.Clicks = _statsManager.GetClicksForOneEntitiesInType("feeds", a.Id).Count();
                 return mapped;
             }).ToList();
         }
@@ -69,20 +73,6 @@ namespace Eureka.Spe.Feeds
         {
             var mapped = input.MapTo<Feed>();
             await _repository.InsertOrUpdateAndGetIdAsync(mapped);
-            if (input.Notify)
-            {
-
-                var result = await _pushManager.SendMessage(new PushMessageInput()
-                {
-                    Desc = mapped.Title,
-                    Segments = new List<string>()
-                    {
-                        "All"
-                    },
-                    ElementId = mapped.Id.ToString(),
-                    TypeOfElement = "FEED"
-                });
-            }
         }
 
         public async Task Delete(int id)

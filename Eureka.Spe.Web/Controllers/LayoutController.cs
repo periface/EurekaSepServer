@@ -14,7 +14,6 @@ using Eureka.Spe.Configuration;
 using Eureka.Spe.Configuration.Ui;
 using Eureka.Spe.CourseCategories;
 using Eureka.Spe.Notifications;
-using Eureka.Spe.Notifications.Dto;
 using Eureka.Spe.Publishers;
 using Eureka.Spe.Sessions;
 using Eureka.Spe.Web.Models;
@@ -22,7 +21,7 @@ using Eureka.Spe.Web.Models.Layout;
 
 namespace Eureka.Spe.Web.Controllers
 {
-    public class LayoutController : SpeControllerBase
+    public partial class LayoutController : SpeControllerBase
     {
         private readonly IUserNavigationManager _userNavigationManager;
         private readonly ISessionAppService _sessionAppService;
@@ -144,29 +143,13 @@ namespace Eureka.Spe.Web.Controllers
         {
             
             var academicUnits = _academicUnitAppService.GetAcademicUnitSimpleListForEntity(entityName,id);
-            return View(new ElementsForEntity()
+            return View(new Models.NotificationRequest.LayoutController.ElementsForEntity()
             {
                 EntityName = entityName,
                 Id = id,
                 AcademicUnitsSelected = academicUnits
             });
         }
-        public ViewResult GetNotificationsForEntity(string entityName, int id)
-        {
-            var notifications = _notificationAppService.GetNotificationsSimpleListForEntity(entityName,id);
-            return View(new ElementsForEntity()
-            {
-                EntityName = entityName,
-                Id = id,
-                Notifications = notifications
-            });
-        }
-        public class ElementsForEntity
-        {
-            public string EntityName { get; set; }
-            public int Id { get; set; }
-            public List<AcademicUnitSelectedDto> AcademicUnitsSelected { get; set; }
-            public List<NotificationDto> Notifications { get; set; }
-        }
+        
     }
 }

@@ -17,5 +17,6 @@ namespace Eureka.Spe.Feeds.Dto
 
         public string PublisherName { get; set; }
         public string PublisherImg { get; set; }
+        public int Clicks { get; set; }
     }
 }

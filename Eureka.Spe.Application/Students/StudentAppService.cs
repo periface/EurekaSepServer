@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abp.Application.Services.Dto;
+﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using Eureka.Spe.PaginableHelpers;
 using Eureka.Spe.Students.Dto;
 using Eureka.Spe.Students.Entities;
+using Microsoft.AspNet.Identity;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Eureka.Spe.Students
 {
     public class StudentAppService : IStudentAppService
     {
         private readonly IRepository<Student> _repository;
-
-        public StudentAppService(IRepository<Student> repository)
+        private readonly IRepository<AcademicUnit> _academicUnitRepository;
+        public StudentAppService(IRepository<Student> repository, IRepository<AcademicUnit> academicUnitRepository)
         {
             _repository = repository;
+            _academicUnitRepository = academicUnitRepository;
         }
 
         public IQueryable<Student> GetFilteredQuery(IQueryable<Student> all, BootstrapTableInput input)
@@ -56,6 +58,10 @@ namespace Eureka.Spe.Students
         public async Task CreateOrUpdate(StudentDto input)
         {
             var mapped = input.MapTo<Student>();
+
+            mapped.Password = new PasswordHasher().HashPassword(input.Password);
+
+
             await _repository.InsertOrUpdateAndGetIdAsync(mapped);
         }
 
@@ -69,9 +75,14 @@ namespace Eureka.Spe.Students
             await _repository.DeleteAsync(id);
         }
 
-        public Task SetPhone(string token)
+        public async Task SetPhone(PhoneInfoDto phone)
         {
-            throw new NotImplementedException();
+            var student = await Task.FromResult(_repository.GetAllIncluding(a => a.PhoneInfos).FirstOrDefault(a => a.Id == phone.StudentId));
+            if (student == null) return;
+            var phoneCoincidence = student.PhoneInfos.FirstOrDefault(a => a.Token == phone.Token);
+            if (phoneCoincidence != null) return;
+            var mapped = phone.MapTo<PhoneInfo>();
+            student.PhoneInfos.Add(mapped);
         }
 
         public Task SetFacebookToken(string token)
@@ -79,9 +90,47 @@ namespace Eureka.Spe.Students
             throw new NotImplementedException();
         }
 
-        public Task ConfirmInfo(CheckStudentInfoInput input)
+        public async Task<StudentDto> ConfirmInfo(CheckStudentInfoInput input)
         {
-            throw new NotImplementedException();
+            var student = await _repository.GetAllIncluding(a=>a.Career).FirstOrDefaultAsync(a => a.EnrollCode == input.EnrollCode);
+            if(student == null) return new StudentDto();
+            var uncrypt = new PasswordHasher().VerifyHashedPassword(student.Password, input.Password);
+            return uncrypt == PasswordVerificationResult.Success ? MapStudent(student) : new StudentDto();
+        }
+
+        private StudentDto MapStudent(Student student)
+        {
+            var mapped = student.MapTo<StudentDto>();
+
+            mapped.AcademicInfo = new AdacemicInfoDto
+            {
+                Career = student.Career.Name,
+                CareerId = student.Career.Id
+            };
+
+
+            var academicUnit = _academicUnitRepository.Get(student.Career.AcademicUnitId);
+
+            mapped.AcademicInfo.AcademicUnit = academicUnit.Name;
+            mapped.AcademicInfo.AcademicUnitId = academicUnit.Id;
+
+            return mapped;
+        }
+
+        public async Task<List<PhoneInfoDto>> GetPhonesForStudent(int studentId)
+        {
+            var student = await Task.FromResult(_repository.GetAllIncluding(a => a.PhoneInfos).FirstOrDefault(a => a.Id == studentId));
+            return student.PhoneInfos.Select(a => a.MapTo<PhoneInfoDto>()).ToList();
+        }
+
+
+        public async Task<StudentDto> RegisterStudentAccount(StudentDto input)
+        {
+            var passwordHash = new PasswordHasher().HashPassword(input.Password);
+            input.Password = passwordHash;
+            var mapped = input.MapTo<Student>();
+            await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+            return mapped.MapTo<StudentDto>();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model Eureka.Spe.Web.Controllers.LayoutController.ElementsForEntity
+﻿@model Eureka.Spe.Web.Models.NotificationRequest.LayoutController.ElementsForEntity
 
 @{
     Layout = null;
@@ -27,18 +27,19 @@
                         <div class="notification-holder">
                             <h4>Notificación #@modelNotification.Id</h4>
                             <p>
-                                <code>Titulo: @modelNotification.Title </code>
+                                Titulo: <code>@modelNotification.Title </code>
                             </p>
                             <p>
-                                <code>Mensaje: @modelNotification.Message</code>
+                                Mensaje: <code>@modelNotification.Message</code>
                             </p>
                             
                             <p>
-                                <code>Fecha: @modelNotification.NotifyDate.ToShortDateString()</code>
+                                Fecha: <code>@modelNotification.NotifyDate.ToShortDateString()</code>
                             </p>
-
                             <p>
-                                <a class="btn btn-xs btn-default">Ver datos</a>
+                                Datos:<code>@modelNotification.Data </code> 
+                            </p>
+                            <p>
                                 <a class="btn btn-xs btn-default">Detalle</a>
                             </p>
                         </div>

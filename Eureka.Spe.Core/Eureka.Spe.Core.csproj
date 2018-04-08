@@ -200,6 +200,7 @@
     <Compile Include="NewsFeed\FeedManager.cs" />
     <Compile Include="NewsFeed\IFeedManager.cs" />
     <Compile Include="PhoneNotifications\Entities\PhoneNotification.cs" />
+    <Compile Include="PhoneNotifications\Entities\SendNotificationsStatus.cs" />
     <Compile Include="Scholarships\Entities\Scholarship.cs" />
     <Compile Include="Scholarships\Entities\ScholarshipSection.cs" />
     <Compile Include="SpeConsts.cs" />
@@ -227,6 +228,8 @@
     <Compile Include="Authorization\Users\UserStore.cs" />
     <Compile Include="Stats\Entities\ClickElement.cs" />
     <Compile Include="Stats\Entities\MetricElement.cs" />
+    <Compile Include="Stats\IStatsManager.cs" />
+    <Compile Include="Stats\StatsManager.cs" />
     <Compile Include="Students\AcademicUnitManager.cs" />
     <Compile Include="Students\Entities\AcademicUnit.cs" />
     <Compile Include="Students\Entities\Career.cs" />

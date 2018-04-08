@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Abp.Application.Services;
 using Eureka.Spe.PaginableHelpers;
 using Eureka.Spe.Students.Dto;
@@ -8,12 +9,14 @@ namespace Eureka.Spe.Students
 {
     public interface IStudentAppService : IApplicationService,IHavePaginatedResults<Student,StudentDto,BootstrapTableInput>
     {
-        Task SetPhone(string token);
+        Task SetPhone(PhoneInfoDto phone);
 
         Task SetFacebookToken(string token);
 
-        Task ConfirmInfo(CheckStudentInfoInput input);
+        Task<StudentDto> ConfirmInfo(CheckStudentInfoInput input);
 
-        Task<StudentDto> Get(int id);
+        Task<List<PhoneInfoDto>> GetPhonesForStudent(int studentId);
+
+
     }
 }

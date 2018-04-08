@@ -152,6 +152,10 @@
       <HintPath>..\packages\System.Linq.Dynamic.Core.1.0.8.2\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -177,6 +181,10 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -220,6 +228,7 @@
     <Compile Include="Feeds\IFeedAppService.cs" />
     <Compile Include="Notifications\Dto\NotificationDto.cs" />
     <Compile Include="Notifications\Dto\NotificationPaginableInput.cs" />
+    <Compile Include="Notifications\Dto\StudentNotificationsResult.cs" />
     <Compile Include="Notifications\INotificationAppService.cs" />
     <Compile Include="Notifications\Job\NotificationBackgroundJob.cs" />
     <Compile Include="Notifications\NotificationAppService.cs" />
@@ -264,6 +273,7 @@
     <Compile Include="Stats\Dto\MetricDto.cs" />
     <Compile Include="Stats\IStatsAppService.cs" />
     <Compile Include="Stats\StatsAppService.cs" />
+    <Compile Include="Students\Dto\AdacemicInfoDto.cs" />
     <Compile Include="Students\Dto\CheckStudentInfoInput.cs" />
     <Compile Include="Students\Dto\StudentDto.cs" />
     <Compile Include="Students\IStudentAppService.cs" />

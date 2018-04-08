@@ -6,6 +6,5 @@ namespace Eureka.Spe.Notifications.Scheduler
     public class SendNotificationArgs
     {
         public int NotificationId { get; set; }
-        public string Token { get; set; }
     }
 }

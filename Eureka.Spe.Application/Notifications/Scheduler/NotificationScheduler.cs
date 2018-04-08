@@ -35,14 +35,15 @@ namespace Eureka.Spe.Notifications.Scheduler
             {
                 notification.SendNotificationsStatuses.Add(new SendNotificationsStatus()
                 {
-                    Token = token
+                    Token = token.Token,
+                    StudentId = token.StudentId
                 });
             }
         }
 
-        private IEnumerable<string> GetPhoneTokens(PhoneNotification notification)
+        private IEnumerable<StudentPhoneTokenInfo> GetPhoneTokens(PhoneNotification notification)
         {
-            var result = new List<string>();
+            var result = new List<StudentPhoneTokenInfo>();
             switch (notification.AssignedTo)
             {
                 case "feeds":
@@ -57,14 +58,21 @@ namespace Eureka.Spe.Notifications.Scheduler
                     
                     foreach (var student in studentsEnum)
                     {
-                        result.AddRange(student.PhoneInfos.Select(a => a.Token));
+                        result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
+                        {
+                            Token = a.Token,
+                            StudentId = a.StudentId
+                        }));
                     }
-                    break;
-                default:
                     break;
             }
             return result;
         }
 
+        private class StudentPhoneTokenInfo
+        {
+            public string Token { get; set; }
+            public int StudentId { get; set; }
+        }
     }
 }

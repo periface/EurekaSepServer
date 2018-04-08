@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Abp.Application.Services.Dto;
+﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.BackgroundJobs;
 using Abp.Domain.Repositories;
@@ -10,6 +6,10 @@ using Abp.Linq.Extensions;
 using Eureka.Spe.Notifications.Dto;
 using Eureka.Spe.Notifications.Scheduler;
 using Eureka.Spe.PhoneNotifications.Entities;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.Notifications
 {
@@ -17,10 +17,14 @@ namespace Eureka.Spe.Notifications
     {
         private readonly IRepository<PhoneNotification> _repository;
         private readonly IBackgroundJobManager _backgroundJobManager;
-        public NotificationAppService(IRepository<PhoneNotification> repository, IBackgroundJobManager backgroundJobManager)
+        private readonly IRepository<SendNotificationsStatus> _statusRepository;
+        private readonly IRepository<Student> _studentRepository;
+        public NotificationAppService(IRepository<PhoneNotification> repository, IBackgroundJobManager backgroundJobManager, IRepository<SendNotificationsStatus> statusRepository, IRepository<Student> studentRepository)
         {
             _repository = repository;
             _backgroundJobManager = backgroundJobManager;
+            _statusRepository = statusRepository;
+            _studentRepository = studentRepository;
         }
 
         public IQueryable<PhoneNotification> GetFilteredQuery(IQueryable<PhoneNotification> all, NotificationPaginableInput input)
@@ -49,7 +53,7 @@ namespace Eureka.Spe.Notifications
             var ordered = GetOrderedQuery(filtered, input);
 
             var paged = ordered.Skip(input.offset).Take(input.limit).ToList();
-            return new PagedResultDto<NotificationDto>(filtered.Count(), paged.Select(a=>a.MapTo<NotificationDto>()).ToList());
+            return new PagedResultDto<NotificationDto>(filtered.Count(), paged.Select(a => a.MapTo<NotificationDto>()).ToList());
         }
 
         public async Task CreateOrUpdate(NotificationDto input)
@@ -58,7 +62,7 @@ namespace Eureka.Spe.Notifications
             await _repository.InsertOrUpdateAndGetIdAsync(elm);
             await _backgroundJobManager.EnqueueAsync<NotificationScheduler, SendNotificationArgs>(new SendNotificationArgs()
             {
-                NotificationId = elm.Id,
+                NotificationId = elm.Id
             });
         }
 
@@ -84,6 +88,55 @@ namespace Eureka.Spe.Notifications
                     return notifications.ToList().Select(a => a.MapTo<NotificationDto>()).ToList();
             }
             return new List<NotificationDto>();
+        }
+
+        public int GetNotificationNotReadedForStudent(int id)
+        {
+            var result = new StudentNotificationsResult();
+
+            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == id).ToList();
+
+            result.Notifications = new List<SimpleNotificationResult>();
+            foreach (var notification in notifications.Where(a=>!a.Readed))
+            {
+                result.Notifications.Add(new SimpleNotificationResult()
+                {
+                    Data = notification.PhoneNotification.Data,
+                    Message = notification.PhoneNotification.Message,
+                    Title = notification.PhoneNotification.Title,
+                    Id = notification.Id,
+                    Readed = notification.Readed
+                });
+            }
+
+            return result.Notifications.Count;
+        }
+
+        public async Task SetAsReaded(int id)
+        {
+            var notification = await _statusRepository.GetAsync(id);
+            notification.Readed = true;
+        }
+        public StudentNotificationsResult GetNotificationsForStudent(int id)
+        {
+            var result = new StudentNotificationsResult();
+
+            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == id).OrderBy(a=>a.Readed).ToList();
+
+            result.Notifications = new List<SimpleNotificationResult>();
+            foreach (var notification in notifications)
+            {
+                result.Notifications.Add(new SimpleNotificationResult()
+                {
+                    Data = notification.PhoneNotification.Data,
+                    Message = notification.PhoneNotification.Message,
+                    Title = notification.PhoneNotification.Title,
+                    Id= notification.Id,
+                    Readed = notification.Readed
+                });
+            }
+
+            return result;
         }
     }
 }

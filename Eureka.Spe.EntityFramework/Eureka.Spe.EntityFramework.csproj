@@ -273,6 +273,18 @@
     <Compile Include="Migrations\201804062130260_MetricDataElements.Designer.cs">
       <DependentUpon>201804062130260_MetricDataElements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804081758052_StudentPassword.cs" />
+    <Compile Include="Migrations\201804081758052_StudentPassword.Designer.cs">
+      <DependentUpon>201804081758052_StudentPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804082126286_StudentIdForStatus.cs" />
+    <Compile Include="Migrations\201804082126286_StudentIdForStatus.Designer.cs">
+      <DependentUpon>201804082126286_StudentIdForStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804082204559_ReadedForStatus.cs" />
+    <Compile Include="Migrations\201804082204559_ReadedForStatus.Designer.cs">
+      <DependentUpon>201804082204559_ReadedForStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -337,6 +349,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804062130260_MetricDataElements.resx">
       <DependentUpon>201804062130260_MetricDataElements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081758052_StudentPassword.resx">
+      <DependentUpon>201804081758052_StudentPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804082126286_StudentIdForStatus.resx">
+      <DependentUpon>201804082126286_StudentIdForStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804082204559_ReadedForStatus.resx">
+      <DependentUpon>201804082204559_ReadedForStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

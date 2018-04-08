@@ -19,5 +19,6 @@ namespace Eureka.Spe.Students.Entities
 
         public virtual ICollection<PhoneInfo> PhoneInfos { get; set; }
         public int TenantId { get; set; }
+        public string Password { get; set; }
     }
 }

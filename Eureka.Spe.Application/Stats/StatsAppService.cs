@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Eureka.Spe.Stats.Dto;
@@ -11,11 +13,12 @@ namespace Eureka.Spe.Stats
     {
         private readonly IRepository<MetricElement> _metricElementRepository;
         private readonly IRepository<ClickElement> _clickElementRepository;
-
-        public StatsAppService(IRepository<MetricElement> metricElementRepository, IRepository<ClickElement> clickElementRepository)
+        private readonly IStatsManager _statsManager;
+        public StatsAppService(IRepository<MetricElement> metricElementRepository, IRepository<ClickElement> clickElementRepository, IStatsManager statsManager)
         {
             _metricElementRepository = metricElementRepository;
             _clickElementRepository = clickElementRepository;
+            _statsManager = statsManager;
         }
 
         public async Task AddClick(ClickDto input)
@@ -30,8 +33,20 @@ namespace Eureka.Spe.Stats
             await _metricElementRepository.InsertAndGetIdAsync(mapped);
         }
 
+        public bool CanSendFeedBack(GetSingleElementMetricRequest input)
+        {
+            var metrics = _statsManager.GetMetricsForOneEntitiesInType(input.EntityType, input.EntityId);
+            return metrics.Any(a => a.StudentId == input.StudentId);
+        }
+        public List<MetricDto> GetMetricsForElement(GetSingleElementMetricRequest input)
+        {
+            var metrics = _statsManager.GetMetricsForOneEntitiesInType(input.EntityType, input.EntityId);
+            return metrics.ToList().Select(a => a.MapTo<MetricDto>()).ToList();
+        }
 
-
-
+        public List<ClickDto> GetClickForElement(GetSingleElementMetricRequest input)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

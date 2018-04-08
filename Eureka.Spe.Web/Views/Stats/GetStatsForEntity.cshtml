@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+<input type="hidden" id="EntityName" value="@ViewBag.EntityName" />
+<input type="hidden" id="EntityId" value="@ViewBag.EntityId" />
+
+<h2>Estadísticas</h2>
+
+<canvas id="canvas"></canvas>
+
+
+<script>
+    (function() {
+        var service = abp.services.app.stats;
+
+        // public string EntityType { get; set; }
+        //public int EntityId { get; set; }
+        service.getMetricsForElement({
+            EntityType:$("#EntityName").val(),
+            EntityId: $("#EntityId").val()
+        }).done(function(data) {
+            console.log(data);
+        });
+    })();
+</script>

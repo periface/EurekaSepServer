@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
@@ -32,11 +33,11 @@ namespace Eureka.Spe.Notifications.Job
 
             var notificationsOnThisDay = notifications.Where(a =>a.NotifyDate.Month == DateTime.Now.Month 
             && a.NotifyDate.Year == DateTime.Now.Year 
-            && a.NotifyDate.Day == DateTime.Now.Day 
-            && a.NotifyDate.Hour == DateTime.Now.Hour 
-            && a.NotifyDate.Minute == DateTime.Now.Minute).ToList();
+            && a.NotifyDate.Day <= DateTime.Now.Day 
+            && a.NotifyDate.Hour <= DateTime.Now.Hour 
+            && a.NotifyDate.Minute <= DateTime.Now.Minute).ToList();
 
-
+            var serializer = new JavaScriptSerializer();
             foreach (var phoneNotification in notificationsOnThisDay)
             {
                 foreach (var phoneNotificationSendNotificationsStatus
@@ -47,11 +48,12 @@ namespace Eureka.Spe.Notifications.Job
                     {
                         Desc = phoneNotification.Message,
                         Title = phoneNotification.Title,
-                        Players = new List<string>() { phoneNotificationSendNotificationsStatus.Token }
+                        Players = new List<string>() { phoneNotificationSendNotificationsStatus.Token },
+                        Data = serializer.Deserialize<DataMessageRequest>(phoneNotification.Data)
                     };
                     var sendResult = AsyncHelper.RunSync(() => _pushManager.SendMessage(message));
 
-                    if (sendResult.Failure <= 0)
+                    if (sendResult.Failure <= 0 && sendResult.Code != "BadRequest")
                     {
                         phoneNotificationSendNotificationsStatus.Sent = true;
                     }

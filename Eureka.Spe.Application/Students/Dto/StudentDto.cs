@@ -14,5 +14,24 @@ namespace Eureka.Spe.Students.Dto
         public int SchoolStudentId { get; set; }
         public int CareerId { get; set; }
         public int TenantId { get; set; }
+        public string Password { get; set; }
+        public AdacemicInfoDto AcademicInfo { get; set; }
+    }
+
+    [AutoMap(typeof(PhoneInfo))]
+
+    public class PhoneInfoDto
+    {
+        public string Token { get; set; }
+        public int StudentId { get; set; }
+        public string Cordova { get; set; }
+        public string Model { get; set; }
+        public string Platform { get; set; }
+        public string Uuid { get; set; }
+        public string Version { get; set; }
+        public string Manufacturer { get; set; }
+        public bool IsVirtual { get; set; }
+        public string Serial { get; set; }
+        public int TenantId { get; set; }
     }
 }
