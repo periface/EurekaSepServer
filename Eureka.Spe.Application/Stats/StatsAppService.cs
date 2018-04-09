@@ -41,71 +41,80 @@ namespace Eureka.Spe.Stats
         {
             var result = new List<NotificationsResult>();
             var phoneNotifications = _phoneNotificationsRepository.GetAllIncluding(a => a.SendNotificationsStatuses)
-                .FirstOrDefault(a => a.AssignedTo == input.EntityType && a.AssignedToId == input.EntityId);
-            var phoneStatusesList = new List<SendNotificationsStatus>();
-            if (phoneNotifications != null)
-            {
-                var phoneStatuses = phoneNotifications.SendNotificationsStatuses;
-                if (input.EndDate.HasValue && input.StartDate.HasValue)
-                {
-                    phoneStatusesList = phoneStatuses.Where(a => a.CreationTime.Year <= input.EndDate.Value.Year &&
-                                                 a.CreationTime.Year >= input.StartDate.Value.Year &&
+                .Where(a => a.AssignedTo == input.EntityType && a.AssignedToId == input.EntityId);
 
-                                                 a.CreationTime.Month <= input.EndDate.Value.Month &&
-                                                 a.CreationTime.Month >= input.StartDate.Value.Month
-                    ).ToList();
+            foreach (var phoneNotification in phoneNotifications)
+            {
+                if (phoneNotification != null)
+                {
+                    var phoneStatuses = phoneNotification.SendNotificationsStatuses;
+                    List<SendNotificationsStatus> phoneStatusesList;
+                    if (input.EndDate.HasValue && input.StartDate.HasValue)
+                    {
+                        phoneStatusesList = phoneStatuses.Where(a => a.CreationTime.Year <= input.EndDate.Value.Year &&
+                                                                     a.CreationTime.Year >= input.StartDate.Value.Year &&
+
+                                                                     a.CreationTime.Month <= input.EndDate.Value.Month &&
+                                                                     a.CreationTime.Month >= input.StartDate.Value.Month
+                            )
+                            .ToList();
+                        if (input.ByDay)
+                        {
+                            phoneStatusesList = phoneStatusesList
+                                .Where(a => a.CreationTime.Day <= input.EndDate.Value.Day &&
+                                            a.CreationTime.Day >= input.StartDate.Value.Day)
+                                .ToList();
+                        }
+                    }
+                    else
+                    {
+                        phoneStatusesList = phoneStatuses.ToList();
+                    }
                     if (input.ByDay)
                     {
-                        phoneStatusesList = phoneStatusesList.Where(a => a.CreationTime.Day <= input.EndDate.Value.Day &&
-                                                     a.CreationTime.Day >= input.StartDate.Value.Day).ToList();
-                    }
-                }
-                if (input.ByDay)
-                {
-                    var query = phoneStatusesList.GroupBy(a => new { a.CreationTime.Year, a.CreationTime.Month, a.CreationTime.Day })
-                        .Select(i => new
-                        {
-                            i.Key.Year,
-                            i.Key.Month,
-                            i.Key.Day,
-                            i
-                        });
+                        var query = phoneStatusesList.GroupBy(a => new { a.CreationTime.Year, a.CreationTime.Month, a.CreationTime.Day })
+                            .Select(i => new
+                            {
+                                i.Key.Year,
+                                i.Key.Month,
+                                i.Key.Day,
+                                i
+                            });
 
-                    foreach (var element in query.ToList())
-                    {
-                        var metricsResult = new NotificationsResult
+                        foreach (var element in query.ToList())
                         {
-                            Date = new DateTime(element.Year, element.Month, element.Day).ToString("dd-MMMM-yyyy"),
-                            SeenCount = element.i.Where(a=>a.Readed).Select(a => a.MapTo<MetricDto>()).Count(),
-                            UnseenCount = element.i.Where(a => !a.Readed).Select(a => a.MapTo<MetricDto>()).Count()
-                        };
-                        result.Add(metricsResult);
+                            var metricsResult = new NotificationsResult
+                            {
+                                Date = new DateTime(element.Year, element.Month, element.Day).ToString("dd-MMMM-yyyy"),
+                                SeenCount = element.i.Count(a => a.Readed),
+                                UnseenCount = element.i.Count(a => !a.Readed)
+                            };
+                            result.Add(metricsResult);
+                        }
                     }
-                    return result;
-                }
-                else
-                {
-                    var query = phoneStatusesList.GroupBy(a => new { a.CreationTime.Year, a.CreationTime.Month })
-                        .Select(i => new
-                        {
-                            i.Key.Year,
-                            i.Key.Month,
-                            i
-                        });
-                    foreach (var element in query.ToList())
+                    else
                     {
-                        var metricsResult = new NotificationsResult
+                        var query = phoneStatusesList.GroupBy(a => new { a.CreationTime.Year, a.CreationTime.Month })
+                            .Select(i => new
+                            {
+                                i.Key.Year,
+                                i.Key.Month,
+                                i
+                            });
+                        foreach (var element in query.ToList())
                         {
-                            Date = new DateTime(element.Year, element.Month, 1).ToString("MMMM-yyyy"),
-                            SeenCount = element.i.Where(a => a.Readed).Select(a => a.MapTo<MetricDto>()).Count(),
-                            UnseenCount = element.i.Where(a => !a.Readed && a.Sent).Select(a => a.MapTo<MetricDto>()).Count(),
-                            
-                        };
-                        result.Add(metricsResult);
+                            var metricsResult = new NotificationsResult
+                            {
+                                Date = new DateTime(element.Year, element.Month, 1).ToString("MMMM-yyyy"),
+                                SeenCount = element.i.Count(a => a.Readed),
+                                UnseenCount = element.i.Count(a => !a.Readed && a.Sent),
+                            };
+                            result.Add(metricsResult);
+                        }
                     }
-                    return result;
                 }
             }
+
             return result;
         }
 

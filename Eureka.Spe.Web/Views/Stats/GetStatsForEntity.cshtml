@@ -44,29 +44,53 @@
         var service = abp.services.app.stats;
         var myBarChart;
         function startStats(startDate, endDate, byDay) {
+            abp.ui.setBusy($("#chart"));
             if (myBarChart) {
                 myBarChart.destroy();
             }
-            abp.ui.setBusy($("#chart"));
-            // public string EntityType { get; set; }
-            //public int EntityId { get; set; }
-            service.getMetricsForElement({
+            var asyncCalls = [];
+            asyncCalls.push(service.getMetricsForElement({
                 EntityType: $("#EntityName").val(),
                 EntityId: $("#EntityId").val(),
                 StartDate: startDate,
                 EndDate: endDate,
                 ByDay: byDay
-            }).done(function (data) {
-                service.getClickForElement({
-                    EntityType: $("#EntityName").val(),
-                    EntityId: $("#EntityId").val(),
-                    StartDate: startDate,
-                    EndDate: endDate,
-                    ByDay: byDay
-                }).done(function (clicksData) {
-                    abp.ui.clearBusy($("#chart"));
-                    buildChart(data, clicksData);
-                });
+            }));
+            asyncCalls.push(service.getClickForElement({
+                EntityType: $("#EntityName").val(),
+                EntityId: $("#EntityId").val(),
+                StartDate: startDate,
+                EndDate: endDate,
+                ByDay: byDay
+            }));
+
+            asyncCalls.push(service.getNotificationsStatsForElement({
+                EntityType: $("#EntityName").val(),
+                EntityId: $("#EntityId").val(),
+                StartDate: startDate,
+                EndDate: endDate,
+                ByDay: byDay
+            }));
+
+            $.when.apply(this, asyncCalls).done(function () {
+                abp.ui.clearBusy($("#chart"));
+                var data = {};
+                var clicksData = {};
+                var notificationsData = {};
+                for (var i = 0; i < arguments.length; i++) {
+                    var dataobject = arguments[i][0];
+                    if (i === 0) {
+                        data = dataobject;
+                    }
+                    if (i === 1) {
+                        clicksData = dataobject;
+                    }
+                    if (i === 2) {
+                        notificationsData = dataobject;
+                    }
+                }
+                console.log(notificationsData);
+                buildChart(data, clicksData, notificationsData);
             });
         }
         function getDataSetsForClicks(data) {
@@ -81,11 +105,31 @@
             }
             return result;
         }
-        function buildChart(data, clickData) {
+        function getDataSetsForNotifications(data) {
+            var result = [{
+                type: 'line', fill: false, borderColor: "red", borderWidth: 2, backgroundColor: "red",
+                data: [],
+                label: "Notificaciones (No vistas)"
+            },
+            {
+                type: 'line', fill: false, borderColor: "green", borderWidth: 2, backgroundColor: "green",
+                data: [],
+                label: "Notificaciones (Vistas)"
+            }];
+            for (var i = 0; i < data.length; i++) {
+                result[0].data.push(data[i].unseenCount);
+                result[1].data.push(data[i].seenCount);
+            }
+            return result;
+        }
+        function buildChart(data, clickData, notificationsData) {
             var dataLabels = getDataLabels(data);
             var dataSets = getDataSets(data);
             var dataSetsForClicks = getDataSetsForClicks(clickData);
+            var dataSetsForNotifications = getDataSetsForNotifications(notificationsData);
             dataSets.push(dataSetsForClicks);
+            dataSets.push(dataSetsForNotifications[0]);
+            dataSets.push(dataSetsForNotifications[1]);
             var chartData = {
                 labels: dataLabels,
                 datasets: dataSets
@@ -100,7 +144,7 @@
                     },
                     title: {
                         display: true,
-                        text: '¿La información fue de ayuda? / Clicks'
+                        text: '¿La información fue de ayuda? / Clicks / Notificaciones'
                     },
                     scales: {
                         yAxes: [{ ticks: { beginAtZero: true } }]
