@@ -123,8 +123,10 @@ function startTabListener(container,id) {
 }
 
 function loadUrlInDiv(div, url) {
+    abp.ui.setBusy($(div));
     $(div).empty();
     $(div).load(url, function (response, status, xhr) {
+        abp.ui.clearBusy($(div));
         if (status === "error") {
             $(div).append("<h2>Error</h2>");
         }
