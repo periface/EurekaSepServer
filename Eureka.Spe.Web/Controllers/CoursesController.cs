@@ -26,5 +26,11 @@ namespace Eureka.Spe.Web.Controllers
             var course = await _courseAppService.Get(id.Value);
             return View(course);
         }
+
+        public async Task<ActionResult> Manage(int id)
+        {
+            var model = await _courseAppService.Get(id);
+            return View(model);
+        }
     }
 }

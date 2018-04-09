@@ -80,14 +80,8 @@ namespace Eureka.Spe.Notifications
         public List<NotificationDto> GetNotificationsSimpleListForEntity(string entityName, int id)
         {
             var notifications = _repository.GetAllIncluding(a => a.SendNotificationsStatuses);
-
-            switch (entityName)
-            {
-                case "feeds":
-                    notifications = notifications.Where(a => a.AssignedToId == id);
-                    return notifications.ToList().Select(a => a.MapTo<NotificationDto>()).ToList();
-            }
-            return new List<NotificationDto>();
+            notifications = notifications.Where(a => a.AssignedToId == id && a.AssignedTo == entityName);
+            return notifications.ToList().Select(a => a.MapTo<NotificationDto>()).ToList();
         }
 
         public int GetNotificationNotReadedForStudent(int id)

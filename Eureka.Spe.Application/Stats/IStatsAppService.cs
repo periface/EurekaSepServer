@@ -11,6 +11,7 @@ namespace Eureka.Spe.Stats
         Task AddStat(MetricDto input);
         List<MetricsResult> GetMetricsForElement(GetSingleElementMetricRequest input);
         List<ClicksResult> GetClickForElement(GetSingleElementMetricRequest input);
+        List<NotificationsResult> GetNotificationsStatsForElement(GetSingleElementMetricRequest input);
         bool CanSendFeedBack(GetSingleElementMetricRequest input);
     }
 }

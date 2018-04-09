@@ -20,9 +20,11 @@
                 {
                     title: "Acciones",
                     formatter: (value, row, index) => {
+                        var btnAdvanced = `<a href="/Courses/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
                         var btnEdit = `<a href="/Courses/CreateOrEdit/${row.id}" class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
                         var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
                         return [
+                            btnAdvanced,
                             btnEdit,
                             btnDelete
                         ].join(' ');

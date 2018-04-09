@@ -47,14 +47,20 @@ namespace Eureka.Spe.FileUpload
                         var img = ReziseImg(leftSide, rightSide, imgLocation, fileAbsoluteDirectory + "\\");
                         if (input.OptimizationOptions.Optimize)
                         {
-                            OptimizeImg(img.FileLocation);
+                            if (Path.GetExtension(img.FileName) != ".gif")
+                            {
+                                OptimizeImg(img.FileLocation);
+                            }
                         }
                         sizes.Add(optimizationOptionsSize, GetServerPath(input) + relativeFileFolder + "/" + img.FileName);
 
                     }
                     if (input.OptimizationOptions.Optimize)
                     {
-                        OptimizeImg(imgLocation);
+                        if (Path.GetExtension(imgLocation) != ".gif")
+                        {
+                            OptimizeImg(imgLocation);
+                        }
                     }
                 }
                 //!Optimizations
@@ -169,7 +175,7 @@ namespace Eureka.Spe.FileUpload
         {
             if (input.ApiEnabled)
             {
-                return input.Request.Request.Url.Scheme +"://"+ input.Request.Request.Url.Authority;
+                return input.Request.Request.Url.Scheme + "://" + input.Request.Request.Url.Authority;
             }
             return string.Empty;
         }

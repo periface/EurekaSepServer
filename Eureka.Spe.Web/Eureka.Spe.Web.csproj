@@ -15,7 +15,7 @@
     <RootNamespace>Eureka.Spe.Web</RootNamespace>
     <AssemblyName>Eureka.Spe.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -2948,6 +2948,7 @@
     <Content Include="Views\Careers\Index.js" />
     <Content Include="Views\CourseCategories\Index.js" />
     <Content Include="Views\Courses\Index.js" />
+    <Content Include="Views\Courses\Manage.js" />
     <Content Include="Views\Feeds\Index.js" />
     <Content Include="Views\Feeds\Manage.js" />
     <Content Include="Views\Home\Index.js" />
@@ -3166,6 +3167,7 @@
     <Content Include="Views\Notifications\GetNotificationsForEntity.cshtml" />
     <Content Include="Views\Notifications\Schedule.cshtml" />
     <Content Include="Views\Stats\GetStatsForEntity.cshtml" />
+    <Content Include="Views\Courses\Manage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -272,6 +272,7 @@
     <Compile Include="Stats\Dto\GetAllMetricRequest.cs" />
     <Compile Include="Stats\Dto\GetSingleElementMetricRequest.cs" />
     <Compile Include="Stats\Dto\MetricDto.cs" />
+    <Compile Include="Stats\Dto\NotificationsResult.cs" />
     <Compile Include="Stats\IStatsAppService.cs" />
     <Compile Include="Stats\Dto\MetricsResult.cs" />
     <Compile Include="Stats\StatsAppService.cs" />

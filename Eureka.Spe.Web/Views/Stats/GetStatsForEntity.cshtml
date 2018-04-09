@@ -6,22 +6,32 @@
 @functions {
     private string ParseDate(DateTime? modelRegistrationsEnd)
     {
-        if (modelRegistrationsEnd.HasValue) return modelRegistrationsEnd.Value.ToString("yyyy/MM/dd");
+        if (modelRegistrationsEnd.HasValue) return modelRegistrationsEnd.Value.ToString("yyyy-MM-dd");
         return string.Empty;
     }
 
 }
 <h2>Estadísticas</h2>
 <div class="row">
-    <div class="col-sm-3">
+    <form class="col-sm-3" id="form">
 
         <h3>Opciones</h3>
         <label>Inicio</label>
-        <input type="date" class="datepicker-elm form-control" name="StartDate" value="@ParseDate(DateTime.Now)" />
+        <input type="date" id="StartDate" class="datepicker-elm form-control" name="StartDate" value="@ParseDate(DateTime.Now)" />
         <label>Fin</label><br />
-        <input type="date" class="datepicker-elm form-control" name="EndDate" value="@ParseDate(DateTime.Now)" /><br />
-        <button type="button" class="btn btn-xs btn-primary">Filtrar</button>
-    </div>
+        <input type="date" id="EndDate" class="datepicker-elm form-control" name="EndDate" value="@ParseDate(DateTime.Now)" /><br />
+
+        <div class="form-group form-float">
+            <div class="">
+                <input type="checkbox" id="ByDay" name="ByDay" value="false" class="form-control" />
+                <label for="ByDay" class="form-label">
+                    Resultados por día
+                </label>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-sm btn-primary js-filter">Filtrar</button>
+    </form>
     <div class="col-sm-8" id="chart">
 
         <canvas id="canvas"></canvas>
@@ -32,17 +42,27 @@
 <script>
     (function () {
         var service = abp.services.app.stats;
-        function startStats() {
+        var myBarChart;
+        function startStats(startDate, endDate, byDay) {
+            if (myBarChart) {
+                myBarChart.destroy();
+            }
             abp.ui.setBusy($("#chart"));
             // public string EntityType { get; set; }
             //public int EntityId { get; set; }
             service.getMetricsForElement({
                 EntityType: $("#EntityName").val(),
-                EntityId: $("#EntityId").val()
+                EntityId: $("#EntityId").val(),
+                StartDate: startDate,
+                EndDate: endDate,
+                ByDay: byDay
             }).done(function (data) {
                 service.getClickForElement({
                     EntityType: $("#EntityName").val(),
-                    EntityId: $("#EntityId").val()
+                    EntityId: $("#EntityId").val(),
+                    StartDate: startDate,
+                    EndDate: endDate,
+                    ByDay: byDay
                 }).done(function (clicksData) {
                     abp.ui.clearBusy($("#chart"));
                     buildChart(data, clicksData);
@@ -70,7 +90,7 @@
                 labels: dataLabels,
                 datasets: dataSets
             }
-            var myBarChart = new Chart(document.getElementById('canvas'), {
+            myBarChart = new Chart(document.getElementById('canvas'), {
                 type: 'bar',
                 data: chartData,
                 options: {
@@ -107,7 +127,7 @@
                     label: "Si",
                     borderWidth: 1,
                     data: [],
-                    backgroundColor: "rgba(255, 99, 132, 0.2)"
+                    backgroundColor: "rgba(255, 99, 132, 0.2)",
                 },
                 {
                     label: "No",
@@ -128,6 +148,12 @@
             return sets;
         }
 
-        startStats();
+        startStats(null, null);
+        var byDay = false;
+        $(".js-filter").click(function () {
+            byDay = $("#ByDay").is(":checked");
+            startStats($("#StartDate").val(), $("#EndDate").val(), byDay);
+        });
+        $.AdminBSB.input.activate($("#form"));
     })();
 </script>

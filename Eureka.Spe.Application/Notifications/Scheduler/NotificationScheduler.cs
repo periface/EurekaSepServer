@@ -5,6 +5,7 @@ using Abp.BackgroundJobs;
 using Abp.Dependency;
 using Abp.Domain.Repositories;
 using Abp.Domain.Uow;
+using Eureka.Spe.Courses.Entities;
 using Eureka.Spe.NewsFeed.Entities;
 using Eureka.Spe.PhoneNotifications.Entities;
 using Eureka.Spe.Students.Entities;
@@ -16,11 +17,13 @@ namespace Eureka.Spe.Notifications.Scheduler
         private readonly IRepository<Student> _students;
         private readonly IRepository<PhoneNotification> _phoneNotificationRepository;
         private readonly IRepository<Feed> _feedRepository;
-        public NotificationScheduler(IRepository<Student> students, IRepository<PhoneNotification> phoneNotificationRepository, IRepository<Feed> feedRepository)
+        private readonly IRepository<Course> _courseRepository;
+        public NotificationScheduler(IRepository<Student> students, IRepository<PhoneNotification> phoneNotificationRepository, IRepository<Feed> feedRepository, IRepository<Course> courseRepository)
         {
             _students = students;
             _phoneNotificationRepository = phoneNotificationRepository;
             _feedRepository = feedRepository;
+            _courseRepository = courseRepository;
         }
         [UnitOfWork]
         public override void Execute(SendNotificationArgs args)
@@ -44,6 +47,8 @@ namespace Eureka.Spe.Notifications.Scheduler
         private IEnumerable<StudentPhoneTokenInfo> GetPhoneTokens(PhoneNotification notification)
         {
             var result = new List<StudentPhoneTokenInfo>();
+            var students = _students.GetAll()
+                .Include(a => a.Career).Include(a => a.PhoneInfos).ToList();
             switch (notification.AssignedTo)
             {
                 case "feeds":
@@ -52,11 +57,20 @@ namespace Eureka.Spe.Notifications.Scheduler
                     if (feed == null) break;
 
                     //Obtiene todos los estudiantes de la unidad academica
-                    var students = _students.GetAll()
-                        .Include(a => a.Career).Include(a=>a.PhoneInfos).ToList();
+                    
                     var studentsEnum = students.Where(a => feed.AcademicUnits.Any(f => f.Id == a.Career.AcademicUnitId));
                     
                     foreach (var student in studentsEnum)
+                    {
+                        result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
+                        {
+                            Token = a.Token,
+                            StudentId = a.StudentId
+                        }));
+                    }
+                    break;
+                case "courses":
+                    foreach (var student in students)
                     {
                         result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
                         {

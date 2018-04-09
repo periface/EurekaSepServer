@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using Eureka.Spe.Courses;
 using Eureka.Spe.Feeds;
 using Eureka.Spe.Notifications;
 using Eureka.Spe.Notifications.Dto;
@@ -16,10 +17,12 @@ namespace Eureka.Spe.Web.Controllers
     {
         private readonly INotificationAppService _notificationAppService;
         private readonly IFeedAppService _feedAppService;
-        public NotificationsController(INotificationAppService notificationAppService, IFeedAppService feedAppService)
+        private readonly ICourseAppService _courseAppService;
+        public NotificationsController(INotificationAppService notificationAppService, IFeedAppService feedAppService, ICourseAppService courseAppService)
         {
             _notificationAppService = notificationAppService;
             _feedAppService = feedAppService;
+            _courseAppService = courseAppService;
         }
 
         // GET: Notifications
@@ -37,16 +40,29 @@ namespace Eureka.Spe.Web.Controllers
                 return View(notification);
             }
             if (!entityId.HasValue) return View(new NotificationDto(){ AssignedTo = entitype});
+            NotificationDto model;
             switch (entitype)
             {
                 case "feeds":
                     var feed = await _feedAppService.Get(entityId.Value);
-                    var model = new NotificationDto()
+                    model = new NotificationDto()
                     {
                         AssignedTo = "feeds",
                         DataObj = new DataMessageRequest("feeds", entityId.Value),
                         Message = feed.Description,
                         Title = feed.Title,
+                        AssignedToId = entityId.Value
+                    };
+                    model.TurnToData();
+                    return View(model);
+                case "courses":
+                    var course = await _courseAppService.Get(entityId.Value);
+                    model = new NotificationDto()
+                    {
+                        AssignedTo = "courses",
+                        DataObj = new DataMessageRequest("courses", entityId.Value),
+                        Message = course.Description,
+                        Title = course.Title,
                         AssignedToId = entityId.Value
                     };
                     model.TurnToData();

@@ -7,5 +7,4 @@ namespace Eureka.Spe.Stats.Dto
             public string Date { get; set; }
             public List<ClickDto> ClickDtos { get; set; }
         }
-    
 }
