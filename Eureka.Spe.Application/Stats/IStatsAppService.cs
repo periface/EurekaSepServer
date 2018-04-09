@@ -9,8 +9,8 @@ namespace Eureka.Spe.Stats
     {
         Task AddClick(ClickDto input);
         Task AddStat(MetricDto input);
-        List<MetricDto> GetMetricsForElement(GetSingleElementMetricRequest input);
-        List<ClickDto> GetClickForElement(GetSingleElementMetricRequest input);
+        List<MetricsResult> GetMetricsForElement(GetSingleElementMetricRequest input);
+        List<ClicksResult> GetClickForElement(GetSingleElementMetricRequest input);
         bool CanSendFeedBack(GetSingleElementMetricRequest input);
     }
 }

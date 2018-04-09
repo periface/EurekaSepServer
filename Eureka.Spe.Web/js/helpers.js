@@ -65,7 +65,9 @@ function enableUploadOnFileElm(elm, options) {
         uniqueFolder: "icons",
         onUploading: function () { },
         onUploadDone: function () { },
-        onUploadError: function () { },
+        onUploadError: function() {
+            
+        },
         onUploadStart: function () { }
     };
 
@@ -124,7 +126,6 @@ function startTabListener(container,id) {
 
 function loadUrlInDiv(div, url) {
     abp.ui.setBusy($(div));
-    $(div).empty();
     $(div).load(url, function (response, status, xhr) {
         abp.ui.clearBusy($(div));
         if (status === "error") {

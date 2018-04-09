@@ -58,11 +58,21 @@ namespace Eureka.Spe.Students
         public async Task CreateOrUpdate(StudentDto input)
         {
             var mapped = input.MapTo<Student>();
+            if (input.Id != 0)
+            {
+                var existing = _repository.Get(input.Id);
+                var pass = existing.Password;
+                var entity = input.MapTo(existing);
 
-            mapped.Password = new PasswordHasher().HashPassword(input.Password);
+                entity.Password = pass;
 
-
-            await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+                await _repository.UpdateAsync(entity);
+            }
+            else
+            {
+                mapped.Password = new PasswordHasher().HashPassword(input.Password);
+                await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+            }
         }
 
         public async Task<StudentDto> Get(int id)
@@ -111,7 +121,7 @@ namespace Eureka.Spe.Students
 
             var academicUnit = _academicUnitRepository.Get(student.Career.AcademicUnitId);
 
-            mapped.AcademicInfo.AcademicUnit = academicUnit.Name;
+            mapped.AcademicInfo.AcademicUnit = academicUnit.ShortName;
             mapped.AcademicInfo.AcademicUnitId = academicUnit.Id;
 
             return mapped;

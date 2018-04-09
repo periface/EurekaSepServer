@@ -28,7 +28,7 @@ namespace Eureka.Spe.Feeds
 
         public IQueryable<Feed> GetFilteredQuery(IQueryable<Feed> all, BootstrapTableInput input)
         {
-            all = all.WhereIf(!string.IsNullOrEmpty(input.search), a => a.Title.Contains(input.search));
+            all = all.WhereIf(!string.IsNullOrEmpty(input.search), a => a.Title.Contains(input.search) || a.Publisher.Name.Contains(input.search));
             return all;
         }
 

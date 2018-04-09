@@ -127,6 +127,10 @@
                 },
                 onUploadError: function (err) {
                     abp.ui.clearBusy($("#upload"));
+
+                    abp.notify.error("Error procesando la imagen...");
+
+
                 }
             };
             enableUploadOnFileElm("#icon",uploadOptions);

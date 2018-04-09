@@ -8,19 +8,15 @@
     <div class="col-sm-12">
         <input type="hidden" id="Id" value="@Model.Id" />
         <input type="hidden" id="EntityName" value="@Model.EntityName" />
-        @foreach (var role in Model.AcademicUnitsSelected)
+        @foreach (var role in Model.AcademicUnitsSelected.OrderBy(a=>a.Name))
     {
         <div class="col-sm-3">
             <input type="checkbox" name="academicunit" data-id="@role.Id" title="@role.Description" class="filled-in" id="@string.Format("role{0}", role.Id)" @(role.Selected ? "checked" : "") />
-            <label for="@string.Format("role{0}", role.Id)" title="@role.Name">@role.Name</label>
+            <label for="@string.Format("role{0}", role.Id)" title="@role.Name">@role.ShortName</label>
         </div>
 }
     </div>
-    <div class="col-sm-12">
-        <button class="btn btn-primary js-save-units" type="button">
-            @L("Save")
-        </button>
-    </div>
+    
 </div>
 
 
@@ -28,7 +24,8 @@
     ///Requires jquery
     (function() {
         var service = abp.services.app.academicUnit;
-        $(".js-save-units").click(function() {
+
+        $("input[name='academicunit']").change(function() {
             var values = [];
             var checkboxes = $("input[name='academicunit']:checked");
             if (checkboxes) {
@@ -41,13 +38,17 @@
             var result = {
                 ids: values,
                 id: $("#Id").val(),
-                entityName:$("#EntityName").val()
+                entityName: $("#EntityName").val()
             }
             console.log(result);
-            service.addAcademicUnitToEntity(result).done(function() {
-                
+            service.addAcademicUnitToEntity(result).done(function () {
+
             });
         });
+
+        //$(".js-save-units").click(function() {
+            
+        //});
 
 
     })();

@@ -3,23 +3,131 @@
 }
 <input type="hidden" id="EntityName" value="@ViewBag.EntityName" />
 <input type="hidden" id="EntityId" value="@ViewBag.EntityId" />
+@functions {
+    private string ParseDate(DateTime? modelRegistrationsEnd)
+    {
+        if (modelRegistrationsEnd.HasValue) return modelRegistrationsEnd.Value.ToString("yyyy/MM/dd");
+        return string.Empty;
+    }
 
+}
 <h2>Estadísticas</h2>
+<div class="row">
+    <div class="col-sm-3">
 
-<canvas id="canvas"></canvas>
+        <h3>Opciones</h3>
+        <label>Inicio</label>
+        <input type="date" class="datepicker-elm form-control" name="StartDate" value="@ParseDate(DateTime.Now)" />
+        <label>Fin</label><br />
+        <input type="date" class="datepicker-elm form-control" name="EndDate" value="@ParseDate(DateTime.Now)" /><br />
+        <button type="button" class="btn btn-xs btn-primary">Filtrar</button>
+    </div>
+    <div class="col-sm-8" id="chart">
+
+        <canvas id="canvas"></canvas>
+    </div>
+</div>
 
 
 <script>
-    (function() {
+    (function () {
         var service = abp.services.app.stats;
+        function startStats() {
+            abp.ui.setBusy($("#chart"));
+            // public string EntityType { get; set; }
+            //public int EntityId { get; set; }
+            service.getMetricsForElement({
+                EntityType: $("#EntityName").val(),
+                EntityId: $("#EntityId").val()
+            }).done(function (data) {
+                service.getClickForElement({
+                    EntityType: $("#EntityName").val(),
+                    EntityId: $("#EntityId").val()
+                }).done(function (clicksData) {
+                    abp.ui.clearBusy($("#chart"));
+                    buildChart(data, clicksData);
+                });
+            });
+        }
+        function getDataSetsForClicks(data) {
+            var result = {
+                type: 'line', fill: false, borderColor: "#86C7F3", borderWidth: 2, backgroundColor: "#86C7F3",
+                data: [],
+                label: "Clicks"
 
-        // public string EntityType { get; set; }
-        //public int EntityId { get; set; }
-        service.getMetricsForElement({
-            EntityType:$("#EntityName").val(),
-            EntityId: $("#EntityId").val()
-        }).done(function(data) {
-            console.log(data);
-        });
+            };
+            for (var i = 0; i < data.length; i++) {
+                result.data.push(data[i].clickDtos.length);
+            }
+            return result;
+        }
+        function buildChart(data, clickData) {
+            var dataLabels = getDataLabels(data);
+            var dataSets = getDataSets(data);
+            var dataSetsForClicks = getDataSetsForClicks(clickData);
+            dataSets.push(dataSetsForClicks);
+            var chartData = {
+                labels: dataLabels,
+                datasets: dataSets
+            }
+            var myBarChart = new Chart(document.getElementById('canvas'), {
+                type: 'bar',
+                data: chartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: '¿La información fue de ayuda? / Clicks'
+                    },
+                    scales: {
+                        yAxes: [{ ticks: { beginAtZero: true } }]
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: true
+                    }
+                }
+            });
+        }
+        function getDataLabels(data) {
+            var labels = [];
+            for (var i = 0; i < data.length; i++) {
+                var elm = data[i];
+                labels.push(elm.date);
+            }
+            return labels;
+        }
+        function getDataSets(data) {
+
+            var sets = [
+                {
+                    label: "Si",
+                    borderWidth: 1,
+                    data: [],
+                    backgroundColor: "rgba(255, 99, 132, 0.2)"
+                },
+                {
+                    label: "No",
+                    borderWidth: 1,
+                    data: []
+                }];
+
+            for (var i = 0; i < data.length; i++) {
+                var elms = data[i].elementsDtos;
+                var negatives = elms.filter(a => a.note === 0);
+                var positives = elms.filter(a => a.note > 0);
+
+                sets[0].data.push(positives.length);
+                sets[1].data.push(negatives.length);
+            }
+
+
+            return sets;
+        }
+
+        startStats();
     })();
 </script>
