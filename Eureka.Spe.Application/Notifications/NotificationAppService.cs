@@ -115,7 +115,7 @@ namespace Eureka.Spe.Notifications
         {
             var result = new StudentNotificationsResult();
 
-            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == id).OrderBy(a=>a.Readed).ToList();
+            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == id).OrderByDescending(a=>a.CreationTime).ToList();
 
             result.Notifications = new List<SimpleNotificationResult>();
             foreach (var notification in notifications)

@@ -1,10 +1,11 @@
-﻿@using Castle.Core.Internal
+﻿@using System.Globalization
+@using Castle.Core.Internal
 @model Eureka.Spe.Courses.Dto.CourseDto
 
 @functions {
     private string ParseDate(DateTime? modelRegistrationsEnd)
     {
-        if (modelRegistrationsEnd.HasValue) return modelRegistrationsEnd.Value.ToString("yyyy/MM/dd");
+        if (modelRegistrationsEnd.HasValue) return modelRegistrationsEnd.Value.ToString("yyyy-MM-dd");
         return string.Empty;
     }
 
@@ -79,7 +80,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input id="Price" type="number" name="Price" value="@Model.Price" class="validate form-control">
+                                            <input id="Price" type="number" name="Price" value="@(Model.Price.HasValue ? Model.Price.Value.ToString(CultureInfo.InvariantCulture):"")" class="validate form-control">
                                             <label for="Price" class="form-label">@L("Price")</label>
                                         </div>
                                     </div>
@@ -102,14 +103,14 @@
                                     <label class="control-label">
                                         Inicio de inscripciones
                                     </label>
-                                    <input type="text" class="datepicker-elm form-control" name="RegistrationsStart" value="@ParseDate(Model.RegistrationsStart)" />
+                                    <input type="date" class="datepicker-elm form-control" name="RegistrationsStart" value="@ParseDate(Model.RegistrationsStart)" />
 
                                 </div>
                                 <div class="col-sm-3">
                                     <label class="control-label">
                                         Fin de inscripciones
                                     </label>
-                                    <input type="text" class="datepicker-elm form-control" name="RegistrationsEnd" value="@ParseDate(Model.RegistrationsEnd)" />
+                                    <input type="date" class="datepicker-elm form-control" name="RegistrationsEnd" value="@ParseDate(Model.RegistrationsEnd)" />
 
                                 </div>
 
@@ -117,14 +118,14 @@
                                     <label class="control-label">
                                         Inicio del Curso
                                     </label>
-                                    <input type="text" class="datepicker-elm form-control" name="StartDate" value="@ParseDate(Model.StartDate)" />
+                                    <input type="date" class="datepicker-elm form-control" name="StartDate" value="@ParseDate(Model.StartDate)" />
 
                                 </div>
                                 <div class="col-sm-3">
                                     <label class="control-label">
                                         Fin del Curso
                                     </label>
-                                    <input type="text" class="datepicker-elm form-control" name="EndDate" value="@ParseDate(Model.EndDate)" />
+                                    <input type="date" class="datepicker-elm form-control" name="EndDate" value="@ParseDate(Model.EndDate)" />
 
                                 </div>
                             </div>
@@ -206,7 +207,7 @@
                 });
             }
 
-            startDateTimes();
+            //startDateTimes();
         })();
     </script>
 }

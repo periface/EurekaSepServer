@@ -47,6 +47,8 @@ namespace Eureka.Spe.Push.PushManager
                     {
                         Title = input.Title,
                         Body = input.Desc,
+                        Sound = "default",
+                        
                     },
                     Data = input.Data,
                     Priority = Priority.High,

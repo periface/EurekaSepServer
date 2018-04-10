@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http;
 using Abp.Application.Services.Dto;
 
 namespace Eureka.Spe.PaginableHelpers
@@ -15,6 +16,7 @@ namespace Eureka.Spe.PaginableHelpers
 
         Task CreateOrUpdate(TEntityDto input);
         Task Delete(int id);
+        [HttpGet]
         Task<TEntityDto> Get(int id);
     }
 }

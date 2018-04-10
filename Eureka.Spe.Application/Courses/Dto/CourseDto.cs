@@ -22,5 +22,9 @@ namespace Eureka.Spe.Courses.Dto
         public DateTime? RegistrationsEnd { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+
+
+        public bool RegistrationsOpen { get; set; }
+        public string Duration { get; set; }
     }
 }

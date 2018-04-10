@@ -89,7 +89,7 @@ namespace Eureka.Spe.Students
         {
             var student = await Task.FromResult(_repository.GetAllIncluding(a => a.PhoneInfos).FirstOrDefault(a => a.Id == phone.StudentId));
             if (student == null) return;
-            var phoneCoincidence = student.PhoneInfos.FirstOrDefault(a => a.Token == phone.Token);
+            var phoneCoincidence = student.PhoneInfos.FirstOrDefault(a => a.Token == phone.Token );
             if (phoneCoincidence != null) return;
             var mapped = phone.MapTo<PhoneInfo>();
             student.PhoneInfos.Add(mapped);

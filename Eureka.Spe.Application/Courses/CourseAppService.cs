@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
@@ -52,6 +53,16 @@ namespace Eureka.Spe.Courses
         {
             var mapped = course.MapTo<CourseDto>();
             mapped.CategoryName = course.CourseCategory?.Name;
+
+
+            mapped.RegistrationsOpen = course.RegistrationsStart.HasValue &&
+                                       course.RegistrationsStart.Value<= DateTime.Now 
+                                       && course.RegistrationsEnd.HasValue 
+                                       && course.RegistrationsEnd >= DateTime.Now;
+
+            if (course.EndDate != null)
+                if (course.StartDate != null)
+                    mapped.Duration =  $"Duración: de {course.StartDate.Value.ToShortDateString()} al {course.EndDate.Value.ToShortDateString()}";
             return mapped;
         }
         public async Task CreateOrUpdate(CourseDto input)
@@ -68,7 +79,7 @@ namespace Eureka.Spe.Courses
         public async Task<CourseDto> Get(int id)
         {
             var course = await _repository.GetAsync(id);
-            return course.MapTo<CourseDto>();
+            return Map(course);
         }
     }
 }

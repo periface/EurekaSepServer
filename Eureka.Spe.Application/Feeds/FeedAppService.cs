@@ -93,10 +93,18 @@ namespace Eureka.Spe.Feeds
             }));
         }
 
+        private FeedDto Map(Feed input)
+        {
+            var mapped = input.MapTo<FeedDto>();
+            mapped.PublisherName = input.Publisher?.Name;
+            mapped.PublisherImg = input.Publisher?.Img;
+            mapped.Clicks = _statsManager.GetClicksForOneEntitiesInType("feeds", input.Id).Count();
+            return mapped;
+        }
         public async Task<FeedDto> Get(int idValue)
         {
-            var feed = await _repository.GetAsync(idValue);
-            return feed.MapTo<FeedDto>();
+            var feed = await Task.FromResult(_repository.GetAllIncluding(a=>a.Publisher).FirstOrDefault(a=>a.Id == idValue));
+            return Map(feed);
         }
     }
 }
