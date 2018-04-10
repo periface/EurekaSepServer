@@ -5,9 +5,12 @@
 }
 <style>
     .notification-holder {
-        background: #E8E8E8;
         padding: 10px;
         border-radius: 10px;
+        border: none;
+        -webkit-box-shadow: 6px 7px 17px -7px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 7px 17px -7px rgba(0,0,0,0.75);
+        box-shadow: 6px 7px 17px -7px rgba(0,0,0,0.75);
     }
 </style>
 <div class="row">
@@ -23,25 +26,32 @@
             <div class="row">
                 @foreach (var modelNotification in Model.Notifications)
                 {
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="notification-holder">
-                            <h4>Notificación #@modelNotification.Id</h4>
-                            <p>
-                                Titulo: <code>@modelNotification.Title </code>
-                            </p>
-                            <p>
-                                Mensaje: <code>@modelNotification.Message</code>
-                            </p>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    
+                                    <a class="btn btn-xs btn-danger pull-right js-delete-notification" data-id="@modelNotification.Id"><i class="material-icons">delete_sweep</i></a>
+                                </div>
+                            </div>
                             
-                            <p>
-                                Fecha: <code>@modelNotification.NotifyDate.ToShortDateString()</code>
-                            </p>
-                            <p>
-                                Datos:<code>@modelNotification.Data </code> 
-                            </p>
-                            <p>
-                                <a class="btn btn-xs btn-default">Detalle</a>
-                            </p>
+                            <div class="row">
+                                <div class="col-sm-3 text-center">
+                                    <img src="@modelNotification.Badge" style="width: 50px; height: 50px; margin: 0 auto" class="img-responsive" alt="Alternate Text"/>
+                                </div>
+                                <div class="col-sm-9" style="padding: 0">
+                                    <p style="font-weight: 600;">
+                                        @modelNotification.Title
+                                    </p>
+                                    <p style="font-size: 1rem;width: 90%;">
+                                        @modelNotification.Message
+                                    </p>
+                                    <p>
+                                        
+                                        <a class="btn btn-xs btn-default pull-left">Detalle</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -98,6 +108,7 @@
                 modalIsOpen = false;
                 unBindEnter();
                 abp.notify.success("Notificación agendada...");
+                abp.event.trigger('notifications');
             });
         }
         function enterFunc(e) {
@@ -115,5 +126,20 @@
         function unBindEnter() {
             $(document).unbind("keypress", enterFunc);
         }
+
+
+        $("body").on("click",
+            ".js-delete-notification",
+            function() {
+                var id = $(this).data("id");
+                abp.message.confirm("¿Eliminar elemento?", function(response) {
+                    if (response) {
+                        service.delete(id).done(function() {
+                            abp.notify.success("Elemento eliminado...");
+                            abp.event.trigger('notifications');
+                        });
+                    }
+                });
+            });
     })();
 </script>

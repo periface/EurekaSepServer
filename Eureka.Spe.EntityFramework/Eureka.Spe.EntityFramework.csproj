@@ -285,6 +285,10 @@
     <Compile Include="Migrations\201804082204559_ReadedForStatus.Designer.cs">
       <DependentUpon>201804082204559_ReadedForStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804101807068_BadgeForNotification.cs" />
+    <Compile Include="Migrations\201804101807068_BadgeForNotification.Designer.cs">
+      <DependentUpon>201804101807068_BadgeForNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -358,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804082204559_ReadedForStatus.resx">
       <DependentUpon>201804082204559_ReadedForStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804101807068_BadgeForNotification.resx">
+      <DependentUpon>201804101807068_BadgeForNotification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

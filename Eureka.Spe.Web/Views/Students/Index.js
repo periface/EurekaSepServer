@@ -30,7 +30,7 @@
                     title: "Acciones",
                     formatter: (value, row, index) => {
                         var btnEdit = `<a class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-student" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
-                        var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-publisher" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
+                        var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-student" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
 
                         return [
                             btnEdit,
@@ -98,6 +98,23 @@
                 });
         });
 
+    $("body").on("click",
+        ".js-delete-student",
+        function() {
+
+            var id = $(this).data("id");
+
+            abp.message.confirm("¿Eliminar Elemento?", function(response) {
+                if (response) {
+                    service.delete(id).done(function () {
+                        table.bootstrapTable('refresh');
+                        abp.notify.success("Elemento eliminado con éxito...");
+                    });
+                }
+            });
+
+        });
+
 
     $(".js-add-student").click(function() {
         
@@ -128,6 +145,8 @@
 
             });
     });
+
+
 
 
 })();

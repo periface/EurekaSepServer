@@ -12,6 +12,7 @@ namespace Eureka.Spe.Push.PushManager.Inputs
         public string TypeOfElement { get; set; }
         public List<string> Players { get; set; } = new List<string>();
         public dynamic Data { get; set; }
+        public string Badge { get; set; } = string.Empty;
     }
     public class DataMessageRequest
     {

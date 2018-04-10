@@ -10,6 +10,7 @@ using Eureka.Spe.Feeds;
 using Eureka.Spe.Notifications;
 using Eureka.Spe.Notifications.Dto;
 using Eureka.Spe.Push.PushManager.Inputs;
+using Eureka.Spe.Scholarships;
 
 namespace Eureka.Spe.Web.Controllers
 {
@@ -18,11 +19,13 @@ namespace Eureka.Spe.Web.Controllers
         private readonly INotificationAppService _notificationAppService;
         private readonly IFeedAppService _feedAppService;
         private readonly ICourseAppService _courseAppService;
-        public NotificationsController(INotificationAppService notificationAppService, IFeedAppService feedAppService, ICourseAppService courseAppService)
+        private readonly IScholarshipAppService _scoralshipAppService;
+        public NotificationsController(INotificationAppService notificationAppService, IFeedAppService feedAppService, ICourseAppService courseAppService, IScholarshipAppService scoralshipAppService)
         {
             _notificationAppService = notificationAppService;
             _feedAppService = feedAppService;
             _courseAppService = courseAppService;
+            _scoralshipAppService = scoralshipAppService;
         }
 
         // GET: Notifications
@@ -63,6 +66,18 @@ namespace Eureka.Spe.Web.Controllers
                         DataObj = new DataMessageRequest("courses", entityId.Value),
                         Message = course.Description,
                         Title = course.Title,
+                        AssignedToId = entityId.Value
+                    };
+                    model.TurnToData();
+                    return View(model);
+                case "scholarships":
+                    var scholarship = await _scoralshipAppService.Get(entityId.Value);
+                    model = new NotificationDto()
+                    {
+                        AssignedTo = "scholarships",
+                        DataObj = new DataMessageRequest("scholarships", entityId.Value),
+                        Message = scholarship.Description,
+                        Title = scholarship.Title,
                         AssignedToId = entityId.Value
                     };
                     model.TurnToData();

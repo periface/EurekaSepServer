@@ -1,6 +1,126 @@
-﻿
+﻿@model List<Eureka.Spe.ScholarshipSections.Dto.ScholarshipSectionDto>
 @{
     Layout = null;
 }
-<button type="button" class="btn btn-primary">Agregar</button>
+<style>
+    .content-section {
+        border: 1px solid #F44336;
+        padding: 10px;
+    }
+</style>
+<input type="hidden" id="Id" value="@ViewBag.ScholarshipId" />
+@if (!Model.Any())
+{
+    <h3>No hay secciones agregadas para esta beca...</h3>
+}
+<div class="row">
+    @foreach (var scholarshipSectionDto in Model)
+    {
+        <div class="col-sm-4">
+            <div class="content-section">
+                <h5>@scholarshipSectionDto.Title</h5>
+                <div >
+                    @Html.Raw(scholarshipSectionDto.Content)
+                </div>
+                
+                <button type="button" class="btn btn-default btn-sm js-edit-section" data-id="@scholarshipSectionDto.Id"><i class="material-icons">edit</i> Editar</button>
+            </div>
+           
+        </div>
+    }
+</div>
 
+
+
+<button type="button" class="btn btn-primary js-add-section">Agregar</button>
+
+<script>
+    (function() {
+
+        var btn = $(".js-add-section");
+        var service = abp.services.app.scholarshipSection;
+        var modalIsOpen = false;
+
+        $("body").on("click",
+            ".js-edit-section",
+            function() {
+                var id = $(this).data("id");
+                window.eModal.ajax({
+                        loadingHtml:
+                            '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+                        url: '/Scholarships/CreateOrEditSection?id=' + id+'&scholarshipId=' + $("#Id").val(),
+                        title: 'Notificación',
+                        buttons: [
+                            {
+                                text: 'Cerrar',
+                                style: 'danger',
+                                close: true,
+                                click: function () {
+
+                                }
+                            },
+                            {
+                                text: 'Guardar', style: 'info', close: false, click: function (elm) {
+                                    save();
+                                }
+                            }
+                        ]
+                    })
+                    .then(function () {
+                        bindEnter();
+                    });
+            });
+
+        btn.click(function() {
+            window.eModal.ajax({
+                    loadingHtml:
+                        '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+                    url: '/Scholarships/CreateOrEditSection?scholarshipId=' + $("#Id").val(),
+                    title: 'Notificación',
+                    buttons: [
+                        {
+                            text: 'Cerrar',
+                            style: 'danger',
+                            close: true,
+                            click: function () {
+
+                            }
+                        },
+                        {
+                            text: 'Guardar', style: 'info', close: false, click: function (elm) {
+                                save();
+                            }
+                        }
+                    ]
+                })
+                .then(function () {
+                    bindEnter();
+                });
+        });
+        function save() {
+            var data = $("#AddEditScholarshipSectionForm").serializeFormToObject();
+            service.createOrUpdate(data).done(function () {
+                window.eModal.close();
+                modalIsOpen = false;
+                unBindEnter();
+                abp.notify.success("Sección creada");
+            });
+        }
+        function enterFunc(e) {
+            if (e.keyCode === 13 && modalIsOpen) {
+                e.preventDefault();
+                save();
+            }
+        }
+
+        function bindEnter() {
+            unBindEnter();
+            $(document).on('keypress',
+                'input', enterFunc);
+        }
+        function unBindEnter() {
+            $(document).unbind("keypress", enterFunc);
+        }
+
+    })();
+</script>

@@ -7,4 +7,9 @@
 
     loadUrlInDiv("#sections", "/Scholarships/Sections/" + id);
     startTabListener("#sections", id);
+
+
+    abp.event.on('notifications', function () {
+        loadUrlInDiv("#sections", "/Notifications/GetNotificationsForEntity?entityName=scholarships&id=" + id);
+    });
 })();

@@ -3161,13 +3161,13 @@
     <Content Include="Views\Scholarships\CreateOrEdit.cshtml" />
     <Content Include="Views\Scholarships\Manage.cshtml" />
     <Content Include="Views\Scholarships\Sections.cshtml" />
-    <Content Include="Views\Scholarships\Notifications.cshtml" />
     <Content Include="Views\Feeds\Manage.cshtml" />
     <Content Include="Views\Layout\GetAcademicUnitsForEntity.cshtml" />
     <Content Include="Views\Notifications\GetNotificationsForEntity.cshtml" />
     <Content Include="Views\Notifications\Schedule.cshtml" />
     <Content Include="Views\Stats\GetStatsForEntity.cshtml" />
     <Content Include="Views\Courses\Manage.cshtml" />
+    <Content Include="Views\Scholarships\CreateOrEditSection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

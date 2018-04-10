@@ -1,8 +1,7 @@
-﻿using System.Threading.Tasks;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Feeds;
-using Eureka.Spe.Feeds.Dto;
+using Eureka.Spe.Stats;
 
 namespace Eureka.Spe.Web.Controllers
 {
@@ -10,15 +9,26 @@ namespace Eureka.Spe.Web.Controllers
     public class HomeController : SpeControllerBase
     {
         private readonly IFeedAppService _feedAppService;
-
-        public HomeController(IFeedAppService feedAppService)
+        private readonly IStatsAppService _statsAppService;
+        public HomeController(IFeedAppService feedAppService, IStatsAppService statsAppService)
         {
             _feedAppService = feedAppService;
+            _statsAppService = statsAppService;
         }
 
         public ActionResult Index()
         {
             return View();
+        }
+
+
+        public class HomeViewModel
+        {
+            public int SentNotificationsCount { get; set; }
+            public int ReadedNotificationsCount { get; set; }
+            public int TotalClicks { get; set; }
+            public int UseFullInfoCount { get; set; }
+
         }
     }
 }

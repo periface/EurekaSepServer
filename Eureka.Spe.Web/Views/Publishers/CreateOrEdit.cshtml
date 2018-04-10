@@ -63,8 +63,8 @@
                 }
             },
             onUploadDone: function (data) {
-                $("#img").val(data.FileUrl);
-                $("#iconPlaceHolder").attr("src", data.FileUrl);
+                $("#img").val(data.Sizes["128x128"]);
+                $("#iconPlaceHolder").attr("src", data.Sizes["128x128"]);
                 abp.ui.clearBusy($("#upload"));
                 abp.notify.info("Archivo procesado...");
             },

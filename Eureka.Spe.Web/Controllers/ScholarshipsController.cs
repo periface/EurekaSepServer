@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using Eureka.Spe.Scholarships;
 using Eureka.Spe.Scholarships.Dto;
+using Eureka.Spe.ScholarshipSections;
+using Eureka.Spe.ScholarshipSections.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {
@@ -13,10 +15,11 @@ namespace Eureka.Spe.Web.Controllers
     public class ScholarshipsController : Controller
     {
         private readonly IScholarshipAppService _scholarshipAppService;
-
-        public ScholarshipsController(IScholarshipAppService scholarshipAppService)
+        private readonly IScholarshipSectionAppService _scholarshipSectionAppService;
+        public ScholarshipsController(IScholarshipAppService scholarshipAppService, IScholarshipSectionAppService scholarshipSectionAppService)
         {
             _scholarshipAppService = scholarshipAppService;
+            _scholarshipSectionAppService = scholarshipSectionAppService;
         }
 
         // GET: Scholarships
@@ -39,14 +42,18 @@ namespace Eureka.Spe.Web.Controllers
         }
 
 
-        public ActionResult Sections(int id)
+        public async Task<ActionResult> Sections(int id)
         {
-            return View();
+            ViewBag.ScholarshipId = id;
+            var sections = await _scholarshipSectionAppService.GetSections(id);
+            return View(sections);
         }
 
-        public ActionResult Notifications(int id)
+        public async Task<ActionResult> CreateOrEditSection(int? id,int scholarshipId)
         {
-            return View();
+            if (!id.HasValue) return View(new ScholarshipSectionDto(){ScholarshipId = scholarshipId});
+            var elm = await _scholarshipSectionAppService.Get(id.Value);
+            return View(elm);
         }
     }
 }

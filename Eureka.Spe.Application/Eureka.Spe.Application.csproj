@@ -240,6 +240,9 @@
     <Compile Include="Publishers\Dto\PublisherDto.cs" />
     <Compile Include="Publishers\IPublisherAppService.cs" />
     <Compile Include="Publishers\PublisherAppService.cs" />
+    <Compile Include="ScholarshipSections\Dto\ScholarshipSectionDto.cs" />
+    <Compile Include="ScholarshipSections\IScholarshipSectionAppService.cs" />
+    <Compile Include="ScholarshipSections\ScholarshipSectionAppService.cs" />
     <Compile Include="Scholarships\Dto\ScholarshipDto.cs" />
     <Compile Include="Scholarships\IScholarshipAppService.cs" />
     <Compile Include="Scholarships\ScholarshipAppService.cs" />

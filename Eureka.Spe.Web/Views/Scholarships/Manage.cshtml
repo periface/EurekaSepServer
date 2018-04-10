@@ -3,6 +3,8 @@
 @{
     ViewBag.ActiveMenu = PageNames.Scholarships; //The menu item will be active for this page.
 }
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -13,8 +15,8 @@
                     <div class="col-lg-12">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#sections" data-url="/Scholarships/Sections/" aria-controls="sections" role="tab" data-toggle="tab">Secciones</a></li>
-                            <li role="presentation"><a href="#notifications" data-url="/Scholarships/Notifications/" aria-controls="notifications" role="tab" data-toggle="tab">Notificaciones</a></li>
-                            <li role="presentation"><a href="#tags" data-url="/Scholarships/Tags/" aria-controls="tags" role="tab" data-toggle="tab">Etiquetas</a></li>
+                            <li role="presentation"><a href="#notifications" data-url="/Notifications/GetNotificationsForEntity?entityName=scholarships&id=" aria-controls="notifications" role="tab" data-toggle="tab">Notificaciones</a></li>
+                            <li role="presentation"><a href="#tags" data-url="/Stats/GetStatsForEntity?entityName=scholarships&entityId=" aria-controls="tags" role="tab" data-toggle="tab">Estadísticas</a></li>
                         </ul>
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="sections">
@@ -31,8 +33,8 @@
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="~/js/eModal/eModal.min.js"></script>
-    <script src="~/js/bootstraptable/bootstrap-table.min.js"></script>
-    <script src="~/js/bootstraptable/bootstrap-table-es-MX.min.js"></script>
     <script src="~/js/helpers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
     <script src="~/Views/Scholarships/Manage.js"></script>
 }

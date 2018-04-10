@@ -28,5 +28,6 @@ namespace Eureka.Spe.Notifications.Dto
         }
 
         public dynamic DataObj { get; set; } = new ExpandoObject();
+        public string Badge { get; set; }
     }
 }

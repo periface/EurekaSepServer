@@ -9,6 +9,7 @@ using Eureka.Spe.PhoneNotifications.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Eureka.Spe.NewsFeed.Entities;
 using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.Notifications
@@ -19,12 +20,14 @@ namespace Eureka.Spe.Notifications
         private readonly IBackgroundJobManager _backgroundJobManager;
         private readonly IRepository<SendNotificationsStatus> _statusRepository;
         private readonly IRepository<Student> _studentRepository;
-        public NotificationAppService(IRepository<PhoneNotification> repository, IBackgroundJobManager backgroundJobManager, IRepository<SendNotificationsStatus> statusRepository, IRepository<Student> studentRepository)
+        private readonly IRepository<Feed> _feedRepository;
+        public NotificationAppService(IRepository<PhoneNotification> repository, IBackgroundJobManager backgroundJobManager, IRepository<SendNotificationsStatus> statusRepository, IRepository<Student> studentRepository, IRepository<Feed> feedRepository)
         {
             _repository = repository;
             _backgroundJobManager = backgroundJobManager;
             _statusRepository = statusRepository;
             _studentRepository = studentRepository;
+            _feedRepository = feedRepository;
         }
 
         public IQueryable<PhoneNotification> GetFilteredQuery(IQueryable<PhoneNotification> all, NotificationPaginableInput input)
@@ -59,11 +62,29 @@ namespace Eureka.Spe.Notifications
         public async Task CreateOrUpdate(NotificationDto input)
         {
             var elm = input.MapTo<PhoneNotification>();
+
+            elm.Badge = GetBadge(input.AssignedTo,input.AssignedToId);
+
+
             await _repository.InsertOrUpdateAndGetIdAsync(elm);
             await _backgroundJobManager.EnqueueAsync<NotificationScheduler, SendNotificationArgs>(new SendNotificationArgs()
             {
                 NotificationId = elm.Id
             });
+        }
+
+        private string GetBadge(string inputAssignedTo, int inputAssignedToId)
+        {
+            switch (inputAssignedTo)
+            {
+                case "feeds":
+                    var feed = _feedRepository.GetAllIncluding(a => a.Publisher)
+                        .FirstOrDefault(a => a.Id == inputAssignedToId);
+                    if (feed == null) return string.Empty;
+                    return feed.Publisher.Img;
+                default:
+                    return string.Empty;
+            }
         }
 
         public async Task Delete(int id)

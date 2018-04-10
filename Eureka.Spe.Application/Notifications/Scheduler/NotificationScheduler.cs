@@ -69,7 +69,7 @@ namespace Eureka.Spe.Notifications.Scheduler
                         }));
                     }
                     break;
-                case "courses":
+                default:
                     foreach (var student in students)
                     {
                         result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo

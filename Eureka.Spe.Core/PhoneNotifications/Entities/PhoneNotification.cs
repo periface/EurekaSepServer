@@ -21,6 +21,8 @@ namespace Eureka.Spe.PhoneNotifications.Entities
         public string AssignedTo { get; set; }
         public int AssignedToId { get; set; } 
         public virtual ICollection<SendNotificationsStatus> SendNotificationsStatuses { get; set; }
+
+        public string Badge { get; set; }
         
     }
 }
