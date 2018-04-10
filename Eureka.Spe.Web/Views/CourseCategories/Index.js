@@ -10,7 +10,7 @@
             columns: [
                 {
                     title: "Nombre", field: "name", sortable: true, formatter: (value, row, index) => {
-                        return `<a href="/Courses/Manage/${row.id}">${value}</a>`;
+                        return `${value}`;
                     }
                 },
                 {
@@ -18,9 +18,7 @@
                     formatter: (value, row, index) => {
                         var btnEdit = `<a class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
                         var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
-                        var btnAdvanced = `<a href="/CourseCategories/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
                         return [
-                            btnAdvanced,
                             btnEdit,
                             btnDelete
                         ].join(' ');
