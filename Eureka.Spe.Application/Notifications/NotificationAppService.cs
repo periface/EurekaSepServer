@@ -103,7 +103,23 @@ namespace Eureka.Spe.Notifications
         {
             var notifications = _repository.GetAllIncluding(a => a.SendNotificationsStatuses);
             notifications = notifications.Where(a => a.AssignedToId == id && a.AssignedTo == entityName);
-            return notifications.ToList().Select(a => a.MapTo<NotificationDto>()).ToList();
+            return notifications.ToList().Select(Map).ToList();
+        }
+
+        private NotificationDto Map(PhoneNotification phoneNotification)
+        {
+            var mapped = phoneNotification.MapTo<NotificationDto>();
+
+            mapped.SimpleNotificationStatusInfos = _statusRepository
+                .GetAllList(a => a.PhoneNotificationId == phoneNotification.Id)
+                .Select(a => new SimpleNotificationStatusInfo()
+                {
+                    Seen = a.Readed,
+                    Sent = a.Sent
+                })
+                .ToList();
+
+            return mapped;
         }
 
         public int GetNotificationNotReadedForStudent(int id)

@@ -4,7 +4,7 @@
     <link href="~/js/bootstraptable/bootstrap-table.min.css" rel="stylesheet" />
 }@{
     ViewBag.ActiveMenu = PageNames.Feeds; //The menu item will be active for this page.
- }
+}
 <style>
     #sections {
         min-height: 200px;
@@ -14,11 +14,11 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
-               Noticia: @Model.Feed.Title
+                Noticia: @Model.Feed.Title
             </div>
             <div class="body" style="min-height: 500px">
 
-                <input type="hidden" value="@Model.Feed.Id" id="Id"/>
+                <input type="hidden" value="@Model.Feed.Id" id="Id" />
                 <div class="row">
                     <div class="col-lg-12">
                         <ul class="nav nav-tabs" role="tablist">
@@ -43,5 +43,6 @@
     <script src="~/js/eModal/eModal.min.js"></script>
     <script src="~/js/helpers.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="/lib/jquery-sparkline/dist/jquery.sparkline.js"></script>
     <script src="~/Views/Feeds/Manage.js"></script>
 }

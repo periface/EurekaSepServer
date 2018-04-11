@@ -98,5 +98,9 @@ namespace Eureka.Spe.Web.Controllers
             });
         }
 
+        public ViewResult GetStatusStats(int id)
+        {
+            return View();
+        }
     }
 }
