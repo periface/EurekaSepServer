@@ -2957,7 +2957,13 @@
     <Content Include="Views\Feeds\Index.js" />
     <Content Include="Views\Feeds\Manage.js" />
     <Content Include="Views\Home\Index.js" />
+    <Content Include="Views\Notifications\GetNotificationsForEntity.css">
+      <DependentUpon>GetNotificationsForEntity.less</DependentUpon>
+    </Content>
     <Content Include="Views\Notifications\GetNotificationsForEntity.js" />
+    <Content Include="Views\Notifications\GetNotificationsForEntity.min.css">
+      <DependentUpon>GetNotificationsForEntity.css</DependentUpon>
+    </Content>
     <Content Include="Views\Publishers\Index.js" />
     <Content Include="Views\Roles\Index.js" />
     <Content Include="Views\Roles\_EditRoleModal.js" />
