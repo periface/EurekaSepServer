@@ -65,10 +65,11 @@ namespace Eureka.Spe.Courses
                     mapped.Duration =  $"Duración: de {course.StartDate.Value.ToShortDateString()} al {course.EndDate.Value.ToShortDateString()}";
             return mapped;
         }
-        public async Task CreateOrUpdate(CourseDto input)
+        public async Task<int> CreateOrUpdate(CourseDto input)
         {
             var elm = input.MapTo<Course>();
             await _repository.InsertOrUpdateAndGetIdAsync(elm);
+            return elm.Id;
         }
 
         public async Task Delete(int id)

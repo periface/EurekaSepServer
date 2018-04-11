@@ -69,10 +69,11 @@ namespace Eureka.Spe.Feeds
             }).ToList();
         }
 
-        public async Task CreateOrUpdate(FeedDto input)
+        public async Task<int> CreateOrUpdate(FeedDto input)
         {
             var mapped = input.MapTo<Feed>();
             await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+            return mapped.Id;
         }
 
         public async Task Delete(int id)

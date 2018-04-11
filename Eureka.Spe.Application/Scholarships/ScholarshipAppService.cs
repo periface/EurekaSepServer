@@ -59,10 +59,11 @@ namespace Eureka.Spe.Scholarships
             }).ToList();
         }
 
-        public async Task CreateOrUpdate(ScholarshipDto input)
+        public async Task<int> CreateOrUpdate(ScholarshipDto input)
         {
             var mapped = input.MapTo<Scholarship>();
             await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+            return mapped.Id;
         }
 
         public async Task Delete(int id)

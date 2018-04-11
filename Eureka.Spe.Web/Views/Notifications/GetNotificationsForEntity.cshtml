@@ -9,10 +9,14 @@
         padding: 10px;
         border-radius: 10px;
         border: none;
-        -webkit-box-shadow: 6px 7px 17px -7px rgba(0,0,0,0.75);
-        -moz-box-shadow: 6px 7px 17px -7px rgba(0,0,0,0.75);
-        box-shadow: 6px 7px 17px -7px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
+        box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
     }
+
+        .notification-holder > .col-sm-12 {
+            margin-bottom: 0;
+        }
 </style>
 <div class="row">
     <div class="col-sm-12">
@@ -31,14 +35,14 @@
                         <div class="notification-holder">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    
+
                                     <a class="btn btn-xs btn-danger pull-right js-delete-notification" data-id="@modelNotification.Id"><i class="material-icons">delete_sweep</i></a>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-sm-3 text-center">
-                                    <img src="@(modelNotification.Badge.IsNullOrEmpty()? "https://storefront.bindo.com/images/empty-product-img.png":modelNotification.Badge)" style="width: 50px; height: 50px; margin: 0 auto" class="img-responsive" alt="Alternate Text"/>
+                                    <img src="@(modelNotification.Badge.IsNullOrEmpty()? "https://storefront.bindo.com/images/empty-product-img.png":modelNotification.Badge)" style="width: 50px; height: 50px; margin: 0 auto" class="img-responsive" alt="Alternate Text" />
                                 </div>
                                 <div class="col-sm-9" style="padding: 0">
                                     <p style="font-weight: 600;">
@@ -48,7 +52,7 @@
                                         @modelNotification.Message
                                     </p>
                                     <p>
-                                        
+
                                         <a class="btn btn-xs btn-default pull-left">Detalle</a>
                                     </p>
                                 </div>
@@ -78,7 +82,7 @@
             window.eModal.ajax({
                 loadingHtml:
                 '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
-                url: '/Notifications/Schedule?entitype=' + $("#EntityName").val()+'&entityId=' + $("#Id").val(),
+                url: '/Notifications/Schedule?entitype=' + $("#EntityName").val() + '&entityId=' + $("#Id").val(),
                 title: 'Notificación',
                 buttons: [
                     {
@@ -131,11 +135,11 @@
 
         $("body").on("click",
             ".js-delete-notification",
-            function() {
+            function () {
                 var id = $(this).data("id");
-                abp.message.confirm("¿Eliminar elemento?", function(response) {
+                abp.message.confirm("¿Eliminar elemento?", function (response) {
                     if (response) {
-                        service.delete(id).done(function() {
+                        service.delete(id).done(function () {
                             abp.notify.success("Elemento eliminado...");
                             abp.event.trigger('notifications');
                         });

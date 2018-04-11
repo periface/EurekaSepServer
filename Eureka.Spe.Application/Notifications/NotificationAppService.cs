@@ -59,7 +59,7 @@ namespace Eureka.Spe.Notifications
             return new PagedResultDto<NotificationDto>(filtered.Count(), paged.Select(a => a.MapTo<NotificationDto>()).ToList());
         }
 
-        public async Task CreateOrUpdate(NotificationDto input)
+        public async Task<int> CreateOrUpdate(NotificationDto input)
         {
             var elm = input.MapTo<PhoneNotification>();
 
@@ -71,6 +71,7 @@ namespace Eureka.Spe.Notifications
             {
                 NotificationId = elm.Id
             });
+            return elm.Id;
         }
 
         private string GetBadge(string inputAssignedTo, int inputAssignedToId)

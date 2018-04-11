@@ -53,10 +53,11 @@ namespace Eureka.Spe.AcademicUnits
             return new PagedResultDto<AcademicUnitDto>(filtered.Count(), paged.Select(a => a.MapTo<AcademicUnitDto>()).ToList());
         }
 
-        public async Task CreateOrUpdate(AcademicUnitDto input)
+        public async Task<int> CreateOrUpdate(AcademicUnitDto input)
         {
             var elm = input.MapTo<AcademicUnit>();
             await _repository.InsertOrUpdateAndGetIdAsync(elm);
+            return elm.Id;
         }
 
         public async Task Delete(int id)

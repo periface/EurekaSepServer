@@ -4,9 +4,16 @@
 }
 <style>
     .content-section {
-        border: 1px solid #F44336;
         padding: 10px;
+        border-radius: 10px;
+        border: none;
+        -webkit-box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
+        box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
     }
+        .content-section > .col-sm-12 {
+            margin-bottom: 0;
+        }
 </style>
 <input type="hidden" id="Id" value="@ViewBag.ScholarshipId" />
 @if (!Model.Any())
@@ -18,12 +25,22 @@
     {
         <div class="col-sm-4">
             <div class="content-section">
-                <h5>@scholarshipSectionDto.Title</h5>
-                <div >
-                    @Html.Raw(scholarshipSectionDto.Content)
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a class="btn btn-xs btn-danger pull-right js-delete-scholarshipSection" data-id="@scholarshipSectionDto.Id"><i class="material-icons">delete_sweep</i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>@scholarshipSectionDto.Title</h5>
+                        <div >
+                            @Html.Raw(scholarshipSectionDto.Content)
+                        </div>
+                    </div>
                 </div>
                 
-                <button type="button" class="btn btn-default btn-sm js-edit-section" data-id="@scholarshipSectionDto.Id"><i class="material-icons">edit</i> Editar</button>
+
+                <button type="button" class="btn btn-default js-edit-section" data-id="@scholarshipSectionDto.Id">Editar</button>
             </div>
            
         </div>
@@ -122,5 +139,15 @@
             $(document).unbind("keypress", enterFunc);
         }
 
+        $("body").on("click", ".js-delete-scholarshipSection", function () {
+            var id = $(this).data("id");
+            abp.message.confirm("¿Desea eliminar este elemento?", function(response) {
+                if (response) {
+                    service.delete(id).done(function () {
+                        abp.notify.success("Sección eliminada");
+                    });
+                }
+            });
+        });
     })();
 </script>

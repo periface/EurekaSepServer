@@ -55,7 +55,17 @@ function hexToRgba(hexCode, opacity) {
         ")";
     return rgb;
 }
+function reloadPage(id) {
+    var urlSplit = window.location.href.split("/");
 
+    var last = urlSplit[urlSplit.length - 1];
+
+    var isNotNumber = isNaN(last);
+
+    if (isNotNumber) {
+        window.location.href = window.location.href + "/" + id;
+    }
+}
 function enableUploadOnFileElm(elm, options) {
 
     if (!options) options = {

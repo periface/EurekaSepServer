@@ -50,10 +50,11 @@ namespace Eureka.Spe.CourseCategories
             return  new PagedResultDto<CourseCategoryDto>(filtered.Count(),paged.Select(a=>a.MapTo<CourseCategoryDto>()).ToList());
         }
 
-        public async Task CreateOrUpdate(CourseCategoryDto input)
+        public async Task<int> CreateOrUpdate(CourseCategoryDto input)
         {
             var elm = input.MapTo<CourseCategory>();
             await _repository.InsertOrUpdateAndGetIdAsync(elm);
+            return elm.Id;
         }
 
         public async Task Delete(int id)

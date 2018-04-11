@@ -53,6 +53,15 @@
     <text name="Students" value="Estudiantes" />
     <text name="AcademicUnits" value="Unidades Academicas" />
     <text name="StudentsList" value="Listado" />
+    <text name="CreateOrEditFeed" value="Noticia" />
+    <text name="Title" value="Titulo para el elemento" />
+    <text name="Description" value="Descripción corta para el elemento" />
+    <text name="Content" value="Contenido" />
     <text name="Careers" value="Carreras" />
+    <text name="Users" value="Usuarios" />
+    <text name="IsActive" value="¿Activo?" />
+    <text name="Actions" value="Acciones" />
+    <text name="Edit" value="Editar" />
+    <text name="Delete" value="Eliminar" />
   </texts>
 </localizationDictionary>

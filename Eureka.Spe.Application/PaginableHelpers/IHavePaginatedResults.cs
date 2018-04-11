@@ -14,7 +14,7 @@ namespace Eureka.Spe.PaginableHelpers
         PagedResultDto<TEntityDto> GetAll(TPaginableInput input);
 
 
-        Task CreateOrUpdate(TEntityDto input);
+        Task<int> CreateOrUpdate(TEntityDto input);
         Task Delete(int id);
         [HttpGet]
         Task<TEntityDto> Get(int id);

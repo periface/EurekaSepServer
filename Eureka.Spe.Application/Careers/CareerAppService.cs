@@ -50,10 +50,11 @@ namespace Eureka.Spe.Careers
             return new PagedResultDto<CareerDto>(filtered.Count(), paged.Select(a => a.MapTo<CareerDto>()).ToList());
         }
 
-        public async Task CreateOrUpdate(CareerDto input)
+        public async Task<int> CreateOrUpdate(CareerDto input)
         {
             var elm = input.MapTo<Career>();
             await _repository.InsertOrUpdateAndGetIdAsync(elm);
+            return elm.Id;
         }
 
         public async Task Delete(int id)

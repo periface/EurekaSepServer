@@ -24,7 +24,7 @@
             </div>
             <div class="body table-responsive">
                 <form name="CreateEditFeedForm" id="CreateEditFeedForm" role="form" class="form-validation">
-                    <input type="hidden" name="Id" value="@Model.Id" />
+                    <input type="hidden" name="Id" id="Id" value="@Model.Id" />
                     <input type="hidden" name="TenantId" value="@Model.TenantId" />
                     <div class="row clearfix">
                         <div class="col-sm-4">
@@ -50,7 +50,9 @@
                                 <div class="col-sm-12">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            @{Html.RenderAction("PublishersSelector","Layout",new{ selected = Model.PublisherId });}
+                                            <label for="name" style="top:-15px" class="form-label">Departamento que publica</label>
+                                            @{Html.RenderAction("PublishersSelector", "Layout", new { selected = Model.PublisherId });}
+
                                         </div>
                                     </div>
                                 </div>
@@ -79,8 +81,8 @@
                         <div class="col-sm-8">
                             <div class="row clearfix">
                                 <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="name" class="form-label">@L("Content")</label>
+                                    <div class="form-group form-float">
+                                        <label for="content" class="form-label">@L("Content")</label>
                                         <textarea name="content" id="content" class="form-control">@Model.Content</textarea>
 
                                     </div>
@@ -89,7 +91,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-primary">@L("Save")</button>
+                    <button type="submit" class="btn btn-primary">@L("Save")</button>
                 </form>
             </div>
         </div>
@@ -133,16 +135,18 @@
 
                 }
             };
-            enableUploadOnFileElm("#icon",uploadOptions);
+            enableUploadOnFileElm("#icon", uploadOptions);
 
             $("#CreateEditFeedForm").on("submit",
                 function (e) {
                     e.preventDefault();
+                    $('button[type="submit"]').prop("disabled", true);
                     var data = $(this).serializeFormToObject();
                     data.content = tinyMce.save();
-                    console.log(data);
-                    service.createOrUpdate(data).done(function () {
+                    service.createOrUpdate(data).done(function (response) {
                         abp.notify.success("Cambios guardados...");
+                        $('button[type="submit"]').prop("disabled", false);
+                        reloadPage(response);
                     });
                 });
             $("#imgPlaceHolder").click(function () {

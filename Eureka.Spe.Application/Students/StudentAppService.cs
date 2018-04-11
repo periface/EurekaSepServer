@@ -55,7 +55,7 @@ namespace Eureka.Spe.Students
             return new PagedResultDto<StudentDto>(filtered.Count(), paginated.Select(a => a.MapTo<StudentDto>()).ToList());
         }
 
-        public async Task CreateOrUpdate(StudentDto input)
+        public async Task<int> CreateOrUpdate(StudentDto input)
         {
             var mapped = input.MapTo<Student>();
             if (input.Id != 0)
@@ -67,12 +67,11 @@ namespace Eureka.Spe.Students
                 entity.Password = pass;
 
                 await _repository.UpdateAsync(entity);
+                return entity.Id;
             }
-            else
-            {
-                mapped.Password = new PasswordHasher().HashPassword(input.Password);
-                await _repository.InsertOrUpdateAndGetIdAsync(mapped);
-            }
+            mapped.Password = new PasswordHasher().HashPassword(input.Password);
+            await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+            return mapped.Id;
         }
 
         public async Task<StudentDto> Get(int id)

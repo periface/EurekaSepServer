@@ -51,10 +51,11 @@ namespace Eureka.Spe.Publishers
             return query;
         }
 
-        public async Task CreateOrUpdate(PublisherDto input)
+        public async Task<int> CreateOrUpdate(PublisherDto input)
         {
             var mapped = input.MapTo<FeedPublisher>();
             await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+            return mapped.Id;
         }
 
         public async Task Delete(int id)
