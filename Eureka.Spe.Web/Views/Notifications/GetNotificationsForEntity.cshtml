@@ -4,27 +4,8 @@
 @{
     Layout = null;
 }
-<style>
-    .notification-holder {
-        padding: 10px;
-        border-radius: 10px;
-        border: none;
-        max-height: 200px;
-        min-height: 200px;
-        -webkit-box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
-        -moz-box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
-        box-shadow: -2px 9px 30px -5px rgba(0,0,0,0.75);
-    }
 
-        .notification-holder > .col-sm-12 {
-            margin-bottom: 0;
-        }
-        .sparkline {
-            position: absolute;
-            left: 85%;
-            bottom: 5%;
-        }
-</style>
+<link href="~/Views/Notifications/GetNotificationsForEntity.css" rel="stylesheet" />
 <div class="row">
     <div class="col-sm-12">
         <input type="hidden" id="Id" value="@Model.Id" />
@@ -49,7 +30,7 @@
                                 </div>
                             </div>
 
-                            <div class="row js-element-container-@modelNotification.Id" >
+                            <div class="row js-element-container-@modelNotification.Id">
                                 <div class="col-sm-3 text-center">
                                     <img src="@(modelNotification.Badge.IsNullOrEmpty()? "https://storefront.bindo.com/images/empty-product-img.png":modelNotification.Badge)" style="width: 50px; height: 50px; margin: 0 auto" class="img-responsive" alt="Alternate Text" />
                                 </div>
@@ -60,11 +41,11 @@
                                     <p style="font-size: 1rem;width: 90%;">
                                         @modelNotification.Message
                                     </p>
-                                    
+
                                 </div>
-                                
+
                             </div>
-                            
+
                             <div class="sparkline" data-type="pie" data-spot-Radius="4" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#fff"
                                  data-min-Spot-Color="rgb(255,255,255)" data-max-Spot-Color="rgb(255,255,255)" data-spot-Color="rgb(255,255,255)"
                                  data-offset="90" data-width="100%" data-height="40px" data-line-Width="2" data-line-Color="rgba(255,255,255,0.7)"
@@ -87,97 +68,4 @@
     </div>
 </div>
 
-
-<script>
-    ///Requires jquery
-    (function () {
-        var service = abp.services.app.notification;
-        function openCreateModal() {
-            window.eModal.ajax({
-                loadingHtml:
-                '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
-                url: '/Notifications/Schedule?entitype=' + $("#EntityName").val() + '&entityId=' + $("#Id").val(),
-                title: 'Notificación',
-                buttons: [
-                    {
-                        text: 'Cerrar',
-                        style: 'danger',
-                        close: true,
-                        click: function () {
-
-                        }
-                    },
-                    {
-                        text: 'Agendar', style: 'info', close: false, click: function (elm) {
-                            save();
-                        }
-                    }
-                ]
-            })
-                .then(function () {
-                    bindEnter();
-                });
-        }
-        function deleteNotification() {
-            var id = $(this).data("id");
-            abp.message.confirm("¿Eliminar elemento?", function (response) {
-                if (response) {
-                    service.delete(id).done(function () {
-                        abp.notify.success("Elemento eliminado...");
-                        abp.event.trigger('notifications');
-                    });
-                }
-            });
-
-        }
-        window.openNotificationDetails = function(e) {
-            var id = $(e).data("id");
-            
-            var container = $(".js-element-container-" + id);
-            abp.ui.setBusy(container);
-            container.load("/Notifications/GetStatusStats/" + id, function() {
-                abp.ui.clearBusy(container);
-            });
-
-        }
-        var modalIsOpen = false;
-        $(".js-place-notification").click(openCreateModal);
-        function save() {
-            var data = $("#ScheduleForm").serializeFormToObject();
-            console.log(data);
-            data.NotifyDate = data.NotifyDate + " " + data.NotifyTime;
-            service.createOrUpdate(data).done(function () {
-                window.eModal.close();
-                modalIsOpen = false;
-                unBindEnter();
-                abp.notify.success("Notificación agendada...");
-                abp.event.trigger('notifications');
-            });
-        }
-        function enterFunc(e) {
-            if (e.keyCode === 13 && modalIsOpen) {
-                e.preventDefault();
-                save();
-            }
-        }
-        function bindEnter() {
-            unBindEnter();
-            $(document).on('keypress',
-                'input', enterFunc);
-        }
-        function unBindEnter() {
-            $(document).unbind("keypress", enterFunc);
-        }
-        $("body").on("click",
-            ".js-delete-notification", deleteNotification
-        );
-        function initSparkline() {
-            $(".sparkline").each(function () {
-                var $this = $(this);
-                $this.sparkline('html', $this.data());
-            });
-        }
-
-        initSparkline();
-    })();
-</script>
+<script src="~/Views/Notifications/GetNotificationsForEntity.js"></script>

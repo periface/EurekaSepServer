@@ -6,5 +6,9 @@
   {
     "outputFile": "Views/Account/Login.css",
     "inputFile": "Views/Account/Login.less"
+  },
+  {
+    "inputFile": "Views/Notifications/GetNotificationsForEntity.less",
+    "outputFile": "Views/Notifications/GetNotificationsForEntity.css"
   }
 ]

@@ -2928,6 +2928,7 @@
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Views\AcademicUnits\CreateOrEdit.js" />
     <Content Include="Views\AcademicUnits\Index.js" />
     <Content Include="Views\Account\Login.css">
       <DependentUpon>Login.less</DependentUpon>
@@ -2945,13 +2946,18 @@
     </Content>
     <Content Include="Views\Account\_TenantChange.js" />
     <Content Include="Views\Account\_TenantChangeModal.js" />
+    <Content Include="Views\Careers\CreateOrEdit.js" />
     <Content Include="Views\Careers\Index.js" />
+    <Content Include="Views\CourseCategories\CreateOrEdit.js" />
     <Content Include="Views\CourseCategories\Index.js" />
+    <Content Include="Views\Courses\CreateOrEdit.js" />
     <Content Include="Views\Courses\Index.js" />
     <Content Include="Views\Courses\Manage.js" />
+    <Content Include="Views\Feeds\CreateOrEdit.js" />
     <Content Include="Views\Feeds\Index.js" />
     <Content Include="Views\Feeds\Manage.js" />
     <Content Include="Views\Home\Index.js" />
+    <Content Include="Views\Notifications\GetNotificationsForEntity.js" />
     <Content Include="Views\Publishers\Index.js" />
     <Content Include="Views\Roles\Index.js" />
     <Content Include="Views\Roles\_EditRoleModal.js" />
@@ -3169,6 +3175,7 @@
     <Content Include="Views\Courses\Manage.cshtml" />
     <Content Include="Views\Scholarships\CreateOrEditSection.cshtml" />
     <Content Include="Views\Notifications\GetStatusStats.cshtml" />
+    <Content Include="Views\Notifications\GetNotificationsForEntity.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

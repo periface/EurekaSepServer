@@ -18,13 +18,4 @@
     </div>
 </form>
 <script src="~/js/helpers.js"></script>
-<script>
-    (function () {
-        
-        var form = $("#AddEditCategoryForm");
-        form.on("submit", function(e) {
-            e.preventDefault();
-        });
-        $.AdminBSB.input.activate(form);
-    })();
-</script>
+<script src="~/Views/CourseCategories/CreateOrEdit.js"></script>
