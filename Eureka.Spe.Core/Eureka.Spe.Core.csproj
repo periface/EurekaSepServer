@@ -237,7 +237,12 @@
     <Compile Include="Students\Entities\PhoneInfo.cs" />
     <Compile Include="Students\Entities\Student.cs" />
     <Compile Include="Students\IAcademicUnitManager.cs" />
+    <Compile Include="Tags\Inputs\AddTagsToElementByCollectionInput.cs" />
+    <Compile Include="Tags\Inputs\AddTagsToStudentsInput.cs" />
+    <Compile Include="Tags\Inputs\AddTagToElementInput.cs" />
     <Compile Include="Tags\Entities\Tag.cs" />
+    <Compile Include="Tags\ITagManager.cs" />
+    <Compile Include="Tags\TagManager.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
   </ItemGroup>
   <ItemGroup>
