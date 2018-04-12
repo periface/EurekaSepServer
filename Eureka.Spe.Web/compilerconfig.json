@@ -8,7 +8,51 @@
     "inputFile": "Views/Account/Login.less"
   },
   {
-    "inputFile": "Views/Notifications/GetNotificationsForEntity.less",
-    "outputFile": "Views/Notifications/GetNotificationsForEntity.css"
+    "outputFile": "Views/Notifications/GetNotificationsForEntity.css",
+    "inputFile": "Views/Notifications/GetNotificationsForEntity.less"
+  },
+  {
+    "outputFile": "Views/AcademicUnits/CreateOrEdit.css",
+    "inputFile": "Views/AcademicUnits/CreateOrEdit.less"
+  },
+  {
+    "outputFile": "Views/Courses/CreateOrEdit.css",
+    "inputFile": "Views/Courses/CreateOrEdit.less"
+  },
+  {
+    "outputFile": "Views/Courses/Manage.css",
+    "inputFile": "Views/Courses/Manage.less"
+  },
+  {
+    "outputFile": "Views/Feeds/Manage.css",
+    "inputFile": "Views/Feeds/Manage.less"
+  },
+  {
+    "outputFile": "Views/Layout/GetAcademicUnitsForEntity.es5.js",
+    "inputFile": "Views/Layout/GetAcademicUnitsForEntity.js"
+  },
+  {
+    "outputFile": "Views/Notifications/GetNotificationsForEntity.es5.js",
+    "inputFile": "Views/Notifications/GetNotificationsForEntity.js"
+  },
+  {
+    "outputFile": "Views/Notifications/Schedule.es5.js",
+    "inputFile": "Views/Notifications/Schedule.js"
+  },
+  {
+    "outputFile": "Views/Publishers/CreateOrEdit.es5.js",
+    "inputFile": "Views/Publishers/CreateOrEdit.js"
+  },
+  {
+    "outputFile": "Views/Publishers/Index.es5.js",
+    "inputFile": "Views/Publishers/Index.js"
+  },
+  {
+    "outputFile": "Views/Scholarships/Sections.css",
+    "inputFile": "Views/Scholarships/Sections.less"
+  },
+  {
+    "outputFile": "Views/Students/CreateOrEdit.css",
+    "inputFile": "Views/Students/CreateOrEdit.less"
   }
 ]

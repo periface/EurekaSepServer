@@ -2928,7 +2928,13 @@
     <Content Include="Scripts\sweetalert\sweet-alert.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Views\AcademicUnits\CreateOrEdit.css">
+      <DependentUpon>CreateOrEdit.less</DependentUpon>
+    </Content>
     <Content Include="Views\AcademicUnits\CreateOrEdit.js" />
+    <Content Include="Views\AcademicUnits\CreateOrEdit.min.css">
+      <DependentUpon>CreateOrEdit.css</DependentUpon>
+    </Content>
     <Content Include="Views\AcademicUnits\Index.js" />
     <Content Include="Views\Account\Login.css">
       <DependentUpon>Login.less</DependentUpon>
@@ -2946,31 +2952,106 @@
     </Content>
     <Content Include="Views\Account\_TenantChange.js" />
     <Content Include="Views\Account\_TenantChangeModal.js" />
+    <Content Include="Views\Careers\CreateOrEdit.css">
+      <DependentUpon>CreateOrEdit.less</DependentUpon>
+    </Content>
     <Content Include="Views\Careers\CreateOrEdit.js" />
+    <Content Include="Views\Careers\CreateOrEdit.min.css">
+      <DependentUpon>CreateOrEdit.css</DependentUpon>
+    </Content>
     <Content Include="Views\Careers\Index.js" />
     <Content Include="Views\CourseCategories\CreateOrEdit.js" />
     <Content Include="Views\CourseCategories\Index.js" />
+    <Content Include="Views\Courses\CreateOrEdit.css">
+      <DependentUpon>CreateOrEdit.less</DependentUpon>
+    </Content>
     <Content Include="Views\Courses\CreateOrEdit.js" />
+    <Content Include="Views\Courses\CreateOrEdit.min.css">
+      <DependentUpon>CreateOrEdit.css</DependentUpon>
+    </Content>
     <Content Include="Views\Courses\Index.js" />
+    <Content Include="Views\Courses\Manage.css">
+      <DependentUpon>Manage.less</DependentUpon>
+    </Content>
     <Content Include="Views\Courses\Manage.js" />
+    <Content Include="Views\Courses\Manage.min.css">
+      <DependentUpon>Manage.css</DependentUpon>
+    </Content>
     <Content Include="Views\Feeds\CreateOrEdit.js" />
     <Content Include="Views\Feeds\Index.js" />
+    <Content Include="Views\Feeds\Manage.css">
+      <DependentUpon>Manage.less</DependentUpon>
+    </Content>
     <Content Include="Views\Feeds\Manage.js" />
+    <Content Include="Views\Feeds\Manage.min.css">
+      <DependentUpon>Manage.css</DependentUpon>
+    </Content>
     <Content Include="Views\Home\Index.js" />
+    <Content Include="Views\Layout\GetAcademicUnitsForEntity.es5.js">
+      <DependentUpon>GetAcademicUnitsForEntity.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Layout\GetAcademicUnitsForEntity.es5.min.js">
+      <DependentUpon>GetAcademicUnitsForEntity.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Layout\GetAcademicUnitsForEntity.js" />
     <Content Include="Views\Notifications\GetNotificationsForEntity.css">
       <DependentUpon>GetNotificationsForEntity.less</DependentUpon>
+    </Content>
+    <Content Include="Views\Notifications\GetNotificationsForEntity.es5.js">
+      <DependentUpon>GetNotificationsForEntity.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Notifications\GetNotificationsForEntity.es5.min.js">
+      <DependentUpon>GetNotificationsForEntity.es5.js</DependentUpon>
     </Content>
     <Content Include="Views\Notifications\GetNotificationsForEntity.js" />
     <Content Include="Views\Notifications\GetNotificationsForEntity.min.css">
       <DependentUpon>GetNotificationsForEntity.css</DependentUpon>
     </Content>
+    <Content Include="Views\Notifications\Schedule.es5.js">
+      <DependentUpon>Schedule.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Notifications\Schedule.es5.min.js">
+      <DependentUpon>Schedule.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Notifications\Schedule.js" />
+    <Content Include="Views\Publishers\CreateOrEdit.es5.js">
+      <DependentUpon>CreateOrEdit.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Publishers\CreateOrEdit.es5.min.js">
+      <DependentUpon>CreateOrEdit.es5.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Publishers\CreateOrEdit.js" />
+    <Content Include="Views\Publishers\Index.es5.js">
+      <DependentUpon>Index.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Publishers\Index.es5.min.js">
+      <DependentUpon>Index.es5.js</DependentUpon>
+    </Content>
     <Content Include="Views\Publishers\Index.js" />
     <Content Include="Views\Roles\Index.js" />
     <Content Include="Views\Roles\_EditRoleModal.js" />
+    <Content Include="Views\Scholarships\CreateOrEdit.js" />
+    <Content Include="Views\Scholarships\CreateOrEditSection.js" />
     <Content Include="Views\Scholarships\Index.js" />
     <Content Include="Views\Scholarships\Manage.js" />
+    <Content Include="Views\Scholarships\Sections.css">
+      <DependentUpon>Sections.less</DependentUpon>
+    </Content>
+    <Content Include="Views\Scholarships\Sections.js" />
+    <Content Include="Views\Scholarships\Sections.min.css">
+      <DependentUpon>Sections.css</DependentUpon>
+    </Content>
     <Content Include="Views\Shared\_Layout.css" />
     <Content Include="Views\Shared\_Layout.js" />
+    <Content Include="Views\Stats\GetStatsForEntity.js" />
+    <None Include="Views\Students\CreateOrEdit.less" />
+    <Content Include="Views\Students\CreateOrEdit.css">
+      <DependentUpon>CreateOrEdit.less</DependentUpon>
+    </Content>
+    <Content Include="Views\Students\CreateOrEdit.js" />
+    <Content Include="Views\Students\CreateOrEdit.min.css">
+      <DependentUpon>CreateOrEdit.css</DependentUpon>
+    </Content>
     <Content Include="Views\Students\Index.js" />
     <Content Include="Views\Tenants\Index.js" />
     <Content Include="Views\Tenants\_EditTenantModal.js" />
@@ -3182,6 +3263,12 @@
     <Content Include="Views\Scholarships\CreateOrEditSection.cshtml" />
     <Content Include="Views\Notifications\GetStatusStats.cshtml" />
     <Content Include="Views\Notifications\GetNotificationsForEntity.less" />
+    <Content Include="Views\AcademicUnits\CreateOrEdit.less" />
+    <Content Include="Views\Careers\CreateOrEdit.less" />
+    <Content Include="Views\Courses\CreateOrEdit.less" />
+    <Content Include="Views\Courses\Manage.less" />
+    <Content Include="Views\Feeds\Manage.less" />
+    <Content Include="Views\Scholarships\Sections.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

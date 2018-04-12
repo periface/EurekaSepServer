@@ -3,14 +3,7 @@
 @{
     Layout = null;
 }
-<style>
-    #iconPlaceHolder {
-        width: 85px;
-        height: 85px;
-        max-width: 85px;
-        max-height: 85px;
-    }
-</style>
+<link href="~/Views/Careers/CreateOrEdit.css" rel="stylesheet" />
 <form id="AddEditCareerForm" role="form" novalidate class="form-validation">
     <input type="hidden" name="Id" value="@Model.Id" />
     <input type="hidden" name="TenantId" value="@Model.TenantId" />

@@ -4,14 +4,7 @@
 @{
     Layout = null;
 }
-<style>
-    #iconPlaceHolder {
-        width: 85px;
-        height: 85px;
-        max-width: 85px;
-        max-height: 85px;
-    }
-</style>
+<link href="~/Views/AcademicUnits/CreateOrEdit.css" rel="stylesheet" />
 <form id="AddEditAcademicUnitForm" role="form" novalidate class="form-validation">
     <input type="hidden" name="Id" value="@Model.Id" />
     <input type="hidden" name="TenantId" value="@Model.TenantId" />
