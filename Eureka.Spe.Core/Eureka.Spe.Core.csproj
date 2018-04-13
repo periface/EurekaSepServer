@@ -194,6 +194,7 @@
     <Compile Include="Contracts\IShouldBeActivable.cs" />
     <Compile Include="Courses\Entities\Course.cs" />
     <Compile Include="Courses\Entities\CourseCategory.cs" />
+    <Compile Include="DailyMessages\Entities\Message.cs" />
     <Compile Include="Groups\Entities\Group.cs" />
     <Compile Include="NewsFeed\Entities\Feed.cs" />
     <Compile Include="NewsFeed\Entities\FeedPublisher.cs" />
