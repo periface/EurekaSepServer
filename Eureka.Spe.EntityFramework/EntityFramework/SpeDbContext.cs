@@ -4,6 +4,7 @@ using Abp.Zero.EntityFramework;
 using Eureka.Spe.Authorization.Roles;
 using Eureka.Spe.Authorization.Users;
 using Eureka.Spe.Courses.Entities;
+using Eureka.Spe.DailyMessages.Entities;
 using Eureka.Spe.MultiTenancy;
 using Eureka.Spe.NewsFeed.Entities;
 using Eureka.Spe.PhoneNotifications.Entities;
@@ -37,6 +38,9 @@ namespace Eureka.Spe.EntityFramework
 
         public IDbSet<ClickElement> ClickElements { get; set; }
         public IDbSet<MetricElement> MetricElements { get; set; }
+
+
+        public IDbSet<Message> Messages { get; set; }
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          *   But it may cause problems when working Migrate.exe of EF. If you will apply migrations on command line, do not

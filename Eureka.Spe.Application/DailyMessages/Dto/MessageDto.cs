@@ -12,5 +12,6 @@ namespace Eureka.Spe.DailyMessages.Dto
         public string Description { get; set; }
         public string Content { get; set; }
         public string Img { get; set; }
+        public int TenantId { get; set; }
     }
 }

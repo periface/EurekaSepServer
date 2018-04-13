@@ -289,6 +289,14 @@
     <Compile Include="Migrations\201804101807068_BadgeForNotification.Designer.cs">
       <DependentUpon>201804101807068_BadgeForNotification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804131830346_Messages.cs" />
+    <Compile Include="Migrations\201804131830346_Messages.Designer.cs">
+      <DependentUpon>201804131830346_Messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804131838434_MessagesTenantId.cs" />
+    <Compile Include="Migrations\201804131838434_MessagesTenantId.Designer.cs">
+      <DependentUpon>201804131838434_MessagesTenantId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -365,6 +373,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804101807068_BadgeForNotification.resx">
       <DependentUpon>201804101807068_BadgeForNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804131830346_Messages.resx">
+      <DependentUpon>201804131830346_Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804131838434_MessagesTenantId.resx">
+      <DependentUpon>201804131838434_MessagesTenantId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

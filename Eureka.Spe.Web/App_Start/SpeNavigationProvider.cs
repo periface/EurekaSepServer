@@ -105,6 +105,14 @@ namespace Eureka.Spe.Web
                 )
                 .AddItem(
                     new MenuItemDefinition(
+                        PageNames.Messages,
+                        L("Messages"),
+                        url: "Messages",
+                        icon: "local_offer"
+                    )
+                )
+                .AddItem(
+                    new MenuItemDefinition(
                         PageNames.Students,
                         L("Students"),
                         icon: "local_offer"

@@ -2994,6 +2994,8 @@
       <DependentUpon>GetAcademicUnitsForEntity.es5.js</DependentUpon>
     </Content>
     <Content Include="Views\Layout\GetAcademicUnitsForEntity.js" />
+    <Content Include="Views\Messages\CreateOrEdit.js" />
+    <Content Include="Views\Messages\Index.js" />
     <Content Include="Views\Notifications\GetNotificationsForEntity.css">
       <DependentUpon>GetNotificationsForEntity.less</DependentUpon>
     </Content>
@@ -3044,6 +3046,8 @@
     <Content Include="Views\Shared\_Layout.css" />
     <Content Include="Views\Shared\_Layout.js" />
     <Content Include="Views\Stats\GetStatsForEntity.js" />
+    <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Messages\CreateOrEdit.cshtml" />
     <None Include="Views\Students\CreateOrEdit.less" />
     <Content Include="Views\Students\CreateOrEdit.css">
       <DependentUpon>CreateOrEdit.less</DependentUpon>
@@ -3077,6 +3081,7 @@
     <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\CourseCategoriesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Models\NotificationRequest\ElementsForEntity.cs" />
     <Compile Include="Controllers\FeedsController.cs" />
