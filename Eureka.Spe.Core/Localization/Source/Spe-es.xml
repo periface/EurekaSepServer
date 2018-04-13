@@ -63,5 +63,6 @@
     <text name="Actions" value="Acciones" />
     <text name="Edit" value="Editar" />
     <text name="Delete" value="Eliminar" />
+    <text name="Messages" value="Mensajes del Rector" />
   </texts>
 </localizationDictionary>
