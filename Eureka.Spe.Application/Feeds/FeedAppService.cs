@@ -71,9 +71,21 @@ namespace Eureka.Spe.Feeds
 
         public async Task<int> CreateOrUpdate(FeedDto input)
         {
-            var mapped = input.MapTo<Feed>();
-            await _repository.InsertOrUpdateAndGetIdAsync(mapped);
-            return mapped.Id;
+
+            if (input.Id != 0)
+            {
+                var found = _repository.Get(input.Id);
+                var mapped = input.MapTo(found);
+                await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+                return mapped.Id;
+            }
+            else
+            {
+
+                var mapped = input.MapTo<Feed>();
+                await _repository.InsertOrUpdateAndGetIdAsync(mapped);
+                return mapped.Id;
+            }
         }
 
         public async Task Delete(int id)
@@ -106,6 +118,13 @@ namespace Eureka.Spe.Feeds
         {
             var feed = await Task.FromResult(_repository.GetAllIncluding(a=>a.Publisher).FirstOrDefault(a=>a.Id == idValue));
             return Map(feed);
+        }
+
+        public async Task<int> GetFeedDifCount(int input)
+        {
+            var count = await Task.FromResult(_repository.GetAll().Count());
+            var diff = (count - input);
+            return diff;
         }
     }
 }
