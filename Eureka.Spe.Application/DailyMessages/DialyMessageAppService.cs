@@ -82,5 +82,11 @@ namespace Eureka.Spe.DailyMessages
             var message = await _repository.GetAsync(id);
             return message.MapTo<MessageDto>();
         }
+
+        public MessageDto GetLatestMessage()
+        {
+            var latest = _repository.GetAll().OrderByDescending(a=>a.CreationTime).FirstOrDefault();
+            return latest.MapTo<MessageDto>();
+        }
     }
 }
