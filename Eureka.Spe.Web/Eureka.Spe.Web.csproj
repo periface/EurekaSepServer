@@ -537,6 +537,8 @@
     <Content Include="fonts\roboto\roboto.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="images\eureka.png" />
+    <Content Include="images\space_bg.gif" />
     <Content Include="images\user-img-background.jpg" />
     <Content Include="images\user.png" />
     <Content Include="js\admin.js" />

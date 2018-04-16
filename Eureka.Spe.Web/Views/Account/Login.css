@@ -8,3 +8,10 @@
 .social-icons a.btn-sm {
   margin-right: 5px;
 }
+.card {
+  border-radius: 20px;
+  opacity: 1.9;
+}
+.login-page {
+  background: url("../../images/space_bg.gif");
+}
