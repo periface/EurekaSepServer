@@ -8,8 +8,6 @@ using Abp.Linq.Extensions;
 using Eureka.Spe.Feeds.Dto;
 using Eureka.Spe.NewsFeed.Entities;
 using Eureka.Spe.PaginableHelpers;
-using Eureka.Spe.Push.PushManager;
-using Eureka.Spe.Push.PushManager.Inputs;
 using Eureka.Spe.Stats;
 
 namespace Eureka.Spe.Feeds
@@ -17,12 +15,10 @@ namespace Eureka.Spe.Feeds
     public class FeedAppService : IFeedAppService
     {
         private readonly IRepository<Feed> _repository;
-        private readonly IPushManager _pushManager;
         private readonly IStatsManager _statsManager;
-        public FeedAppService(IRepository<Feed> repository, IPushManager pushManager, IStatsManager statsManager)
+        public FeedAppService(IRepository<Feed> repository, IStatsManager statsManager)
         {
             _repository = repository;
-            _pushManager = pushManager;
             _statsManager = statsManager;
         }
 
@@ -92,20 +88,7 @@ namespace Eureka.Spe.Feeds
         {
             await _repository.DeleteAsync(id);
         }
-
-        public async Task Notify(int feedId)
-        {
-            var feed = _repository.Get(feedId);
-
-            await Task.Run(()=>_pushManager.SendMessage(new PushMessageInput()
-            {
-                Desc = feed.Title,
-                ElementId = feed.Id.ToString(),
-                TypeOfElement = "FEED",
-                Segments = new List<string>() { "All" }
-            }));
-        }
-
+        
         private FeedDto Map(Feed input)
         {
             var mapped = input.MapTo<FeedDto>();

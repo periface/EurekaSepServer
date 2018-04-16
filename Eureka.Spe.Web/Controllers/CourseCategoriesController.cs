@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Abp.Web.Mvc.Authorization;
+using Eureka.Spe.Authorization;
 using Eureka.Spe.CourseCategories;
 using Eureka.Spe.CourseCategories.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {
+    [AbpMvcAuthorize(PermissionNames.Pages_Courses)]
     public class CourseCategoriesController : Controller
     {
         private readonly ICourseCategoriesAppService _courseCategoriesAppService;

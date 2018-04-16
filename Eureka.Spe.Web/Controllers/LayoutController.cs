@@ -7,6 +7,7 @@ using Abp.Configuration.Startup;
 using Abp.Localization;
 using Abp.Runtime.Session;
 using Abp.Threading;
+using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.AcademicUnits;
 using Eureka.Spe.AcademicUnits.Dto;
 using Eureka.Spe.Careers;
@@ -21,7 +22,7 @@ using Eureka.Spe.Web.Models.Layout;
 
 namespace Eureka.Spe.Web.Controllers
 {
-    public partial class LayoutController : SpeControllerBase
+    public class LayoutController : SpeControllerBase
     {
         private readonly IUserNavigationManager _userNavigationManager;
         private readonly ISessionAppService _sessionAppService;
@@ -50,6 +51,7 @@ namespace Eureka.Spe.Web.Controllers
         }
 
         [ChildActionOnly]
+
         public PartialViewResult SideBarNav(string activeMenu = "")
         {
             var model = new SideBarNavViewModel
@@ -99,6 +101,7 @@ namespace Eureka.Spe.Web.Controllers
         }
 
         [ChildActionOnly]
+        [AbpMvcAuthorize]
         public ViewResult PublishersSelector(int? selected)
         {
             ViewBag.Selected = selected ?? 0;
@@ -109,6 +112,7 @@ namespace Eureka.Spe.Web.Controllers
 
         }
         [ChildActionOnly]
+        [AbpMvcAuthorize]
         public ViewResult AcademicUnitsSelector(int? selected)
         {
             ViewBag.Selected = selected ?? 0;
@@ -119,6 +123,7 @@ namespace Eureka.Spe.Web.Controllers
 
         }
         [ChildActionOnly]
+        [AbpMvcAuthorize]
         public ViewResult CareersSelector(int? selected)
         {
             ViewBag.Selected = selected ?? 0;
@@ -129,6 +134,7 @@ namespace Eureka.Spe.Web.Controllers
 
         }
         [ChildActionOnly]
+        [AbpMvcAuthorize]
         public ViewResult CourseCategorySelector(int? selected)
         {
             ViewBag.Selected = selected ?? 0;
@@ -138,7 +144,7 @@ namespace Eureka.Spe.Web.Controllers
             return View(categories);
 
         }
-        
+        [AbpMvcAuthorize]
         public ViewResult GetAcademicUnitsForEntity(string entityName, int id)
         {
             

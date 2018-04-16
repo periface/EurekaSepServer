@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
+using Abp.Web.Mvc.Authorization;
+using Eureka.Spe.Authorization;
 using Eureka.Spe.Courses;
+using Eureka.Spe.DailyMessages;
 using Eureka.Spe.Feeds;
 using Eureka.Spe.Notifications;
 using Eureka.Spe.Notifications.Dto;
@@ -14,18 +17,21 @@ using Eureka.Spe.Scholarships;
 
 namespace Eureka.Spe.Web.Controllers
 {
+    [AbpMvcAuthorize]
     public class NotificationsController : Controller
     {
         private readonly INotificationAppService _notificationAppService;
         private readonly IFeedAppService _feedAppService;
         private readonly ICourseAppService _courseAppService;
         private readonly IScholarshipAppService _scoralshipAppService;
-        public NotificationsController(INotificationAppService notificationAppService, IFeedAppService feedAppService, ICourseAppService courseAppService, IScholarshipAppService scoralshipAppService)
+        private readonly IDialyMessageAppService _dialyMessageAppService;
+        public NotificationsController(INotificationAppService notificationAppService, IFeedAppService feedAppService, ICourseAppService courseAppService, IScholarshipAppService scoralshipAppService, IDialyMessageAppService dialyMessageAppService)
         {
             _notificationAppService = notificationAppService;
             _feedAppService = feedAppService;
             _courseAppService = courseAppService;
             _scoralshipAppService = scoralshipAppService;
+            _dialyMessageAppService = dialyMessageAppService;
         }
 
         // GET: Notifications
@@ -78,6 +84,18 @@ namespace Eureka.Spe.Web.Controllers
                         DataObj = new DataMessageRequest("scholarships", entityId.Value),
                         Message = scholarship.Description,
                         Title = scholarship.Title,
+                        AssignedToId = entityId.Value
+                    };
+                    model.TurnToData();
+                    return View(model);
+                case "messages":
+                    var message = await _dialyMessageAppService.Get(entityId.Value);
+                    model = new NotificationDto()
+                    {
+                        AssignedTo = "messages",
+                        DataObj = new DataMessageRequest("messages",entityId.Value),
+                        Message = message.Description,
+                        Title = message.Title,
                         AssignedToId = entityId.Value
                     };
                     model.TurnToData();

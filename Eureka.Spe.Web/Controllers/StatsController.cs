@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Stats;
-using Eureka.Spe.Stats.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {
+    [AbpMvcAuthorize]
     public class StatsController : Controller
     {
         private readonly IStatsAppService _statsAppService;

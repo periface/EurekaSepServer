@@ -297,6 +297,10 @@
     <Compile Include="Migrations\201804131838434_MessagesTenantId.Designer.cs">
       <DependentUpon>201804131838434_MessagesTenantId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804152143129_StartDateForScholarships.cs" />
+    <Compile Include="Migrations\201804152143129_StartDateForScholarships.Designer.cs">
+      <DependentUpon>201804152143129_StartDateForScholarships.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -379,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804131838434_MessagesTenantId.resx">
       <DependentUpon>201804131838434_MessagesTenantId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804152143129_StartDateForScholarships.resx">
+      <DependentUpon>201804152143129_StartDateForScholarships.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

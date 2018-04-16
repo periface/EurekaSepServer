@@ -15,7 +15,7 @@
     <RootNamespace>Eureka.Spe.Web</RootNamespace>
     <AssemblyName>Eureka.Spe.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -2996,6 +2996,7 @@
     <Content Include="Views\Layout\GetAcademicUnitsForEntity.js" />
     <Content Include="Views\Messages\CreateOrEdit.js" />
     <Content Include="Views\Messages\Index.js" />
+    <Content Include="Views\Messages\Manage.js" />
     <Content Include="Views\Notifications\GetNotificationsForEntity.css">
       <DependentUpon>GetNotificationsForEntity.less</DependentUpon>
     </Content>
@@ -3048,6 +3049,7 @@
     <Content Include="Views\Stats\GetStatsForEntity.js" />
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Messages\CreateOrEdit.cshtml" />
+    <Content Include="Views\Messages\Manage.cshtml" />
     <None Include="Views\Students\CreateOrEdit.less" />
     <Content Include="Views\Students\CreateOrEdit.css">
       <DependentUpon>CreateOrEdit.less</DependentUpon>

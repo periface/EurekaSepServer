@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Abp.Web.Mvc.Authorization;
+using Eureka.Spe.Authorization;
 using Eureka.Spe.DailyMessages;
 using Eureka.Spe.DailyMessages.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {
+    [AbpMvcAuthorize]
     public class MessagesController : Controller
     {
         private readonly IDialyMessageAppService _dialyMessageAppService;
@@ -29,6 +32,12 @@ namespace Eureka.Spe.Web.Controllers
             if (!id.HasValue) return View(new MessageDto());
             var model = await _dialyMessageAppService.Get(id.Value);
             return View(model);
+        }
+
+        public async Task<ViewResult> Manage(int id)
+        {
+            var message = await _dialyMessageAppService.Get(id);
+            return View(message);
         }
     }
 }

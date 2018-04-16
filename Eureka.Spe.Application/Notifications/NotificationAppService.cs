@@ -133,9 +133,9 @@ namespace Eureka.Spe.Notifications
             {
                 result.Notifications.Add(new SimpleNotificationResult()
                 {
-                    Data = notification.PhoneNotification.Data,
-                    Message = notification.PhoneNotification.Message,
-                    Title = notification.PhoneNotification.Title,
+                    Data = notification.PhoneNotification?.Data,
+                    Message = notification.PhoneNotification?.Message,
+                    Title = notification.PhoneNotification?.Title,
                     Id = notification.Id,
                     Readed = notification.Readed
                 });
@@ -160,9 +160,9 @@ namespace Eureka.Spe.Notifications
             {
                 result.Notifications.Add(new SimpleNotificationResult()
                 {
-                    Data = notification.PhoneNotification.Data,
-                    Message = notification.PhoneNotification.Message,
-                    Title = notification.PhoneNotification.Title,
+                    Data = notification.PhoneNotification?.Data,
+                    Message = notification.PhoneNotification?.Message,
+                    Title = notification.PhoneNotification?.Title,
                     Id= notification.Id,
                     Readed = notification.Readed
                 });

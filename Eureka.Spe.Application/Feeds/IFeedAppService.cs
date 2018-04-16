@@ -9,7 +9,6 @@ namespace Eureka.Spe.Feeds
 {
     public interface IFeedAppService : IApplicationService, IHavePaginatedResults<Feed, FeedDto, BootstrapTableInput>
     {
-        Task Notify(int feedId);
         [HttpGet]
         Task<int> GetFeedDifCount(int input);
     }

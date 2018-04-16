@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Abp.Web.Mvc.Authorization;
+using Eureka.Spe.Authorization;
 using Eureka.Spe.Scholarships;
 using Eureka.Spe.Scholarships.Dto;
 using Eureka.Spe.ScholarshipSections;
@@ -11,7 +13,7 @@ using Eureka.Spe.ScholarshipSections.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {
-    
+    [AbpMvcAuthorize]
     public class ScholarshipsController : Controller
     {
         private readonly IScholarshipAppService _scholarshipAppService;

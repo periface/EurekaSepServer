@@ -1,4 +1,5 @@
-﻿using Abp.Application.Services.Dto;
+﻿using System;
+using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Eureka.Spe.Scholarships.Entities;
 
@@ -14,5 +15,11 @@ namespace Eureka.Spe.Scholarships.Dto
         public string Img { get; set; }
         public int? Sections { get; set; }
         public int TenantId { get; set; }
+
+
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+
+        public bool HasDates => StartDate.HasValue && EndDate.HasValue;
     }
 }
