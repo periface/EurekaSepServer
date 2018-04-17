@@ -9,18 +9,27 @@
             columns: [
                 {
                     title: "Titulo", field: "title", sortable: true, formatter: (value, row, index) => {
-                        return `${value}`;
+                        
+                        return `<p style="margin:0!important;text-transform: uppercase;"><strong>${value}</strong></p>
+                        <p style="margin:0!important;">
+                            <img class="img-responsive" style="width:20px;height:20px;display:inline;" src="${row.publisherImg}">
+                            ${row.publisherName}
+                        </p>`;
                     }
                 },
                 {
-                    title: "Dependencia", field: "publisherName", sortable: true, formatter: (value, row, index) => {
-                        return `${value}`;
+                    title: "Ultima actualización", field: "lastModificationTime", sortable: true, formatter: (value, row, index) => {
+                        var date = new Date(value).yyyymmddhhmm();
+                        if (!value) {
+                            return "-";
+                        }
+                        return `${date}`;
                     }
                 },
                 {
                     title: "Acciones",
                     formatter: (value, row, index) => {
-                        var btnEdit = `<a href="/Feeds/CreateOrEdit/${row.id}" class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
+                        var btnEdit = `<a href="/Feeds/CreateOrEdit/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
                         var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-feed" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
                         var btnAdvanced = `<a href="/Feeds/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
                         return [

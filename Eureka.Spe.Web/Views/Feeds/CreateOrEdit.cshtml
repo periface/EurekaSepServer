@@ -5,92 +5,185 @@
     ViewBag.ActiveMenu = PageNames.Feeds; //The menu item will be active for this page.
 }
 @section Styles{
-
+    <style>
+        
+        .feed-img {
+            width: 450px;
+            height: 200px;
+        }
+    </style>
 }
-<div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h2>
-                    @L("CreateOrEditFeed")
-                </h2>
-            </div>
-            <div class="body table-responsive">
-                <form name="CreateEditFeedForm" id="CreateEditFeedForm" role="form" class="form-validation">
-                    <input type="hidden" name="Id" id="Id" value="@Model.Id" />
-                    <input type="hidden" name="TenantId" value="@Model.TenantId" />
-                    <div class="row clearfix">
-                        <div class="col-sm-4">
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group form-float">
-                                        <div class="" id="upload">
-                                            @if (Model.Img.IsNullOrEmpty())
-                                            {
-                                                <img id="imgPlaceHolder" class="img-responsive feed-img" src="http://www.gaia-earth.co.uk/img/placeholder-img.jpg" />
-                                            }
-                                            else
-                                            {
-                                                <img id="imgPlaceHolder" class="img-responsive feed-img" src="@Model.Img" />
-                                            }
-                                            <input name="icon" id="icon" type="file" style="display: none" class="validate form-control">
-                                            <input type="hidden" value="@Model.Img" name="img" id="img" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <label for="name" style="top:-15px" class="form-label">Departamento que publica</label>
-                                            @{Html.RenderAction("PublishersSelector", "Layout", new { selected = Model.PublisherId });}
 
-                                        </div>
-                                    </div>
-                                </div>
+    <form name="CreateEditFeedForm" id="CreateEditFeedForm" role="form" class="form-validation">
+
+        <input type="hidden" name="Id" id="Id" value="@Model.Id" />
+        <input type="hidden" name="TenantId" value="@Model.TenantId" />
+        <input type="hidden" id="publisherId" value="@Model.PublisherId" />
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
+                <div class="card">
+                    <div class="body table-responsive">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="https://findicons.com/files/icons/2065/free_feed/255/feed_icons12.png" class="img-responsive" style="width: 50%; margin: 0 auto;" alt="Alternate Text" />
                             </div>
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input id="name" type="text" name="Title" value="@Model.Title" required class="validate form-control">
-                                            <label for="name" class="form-label">@L("Title")</label>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-lg-8">
+                                <h4>Mini tutorial</h4>
+                                <p>
+                                    El estado de tu aplicación aparecerá en el campo de búsqueda de la aplicación, situado en la parte superior derecha de las páginas de Play Console de tu aplicación.
+                                    Los botones
+                                </p>
                             </div>
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <label for="name" class="form-label">@L("Description")</label>
-                                            <textarea name="Description" class="form-control">@Model.Description</textarea>
-                                        </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center ">
+                <div class="card">
+
+                    <div class="header">
+                        <h2>
+                            Información básica
+                        </h2>
+                    </div>
+                    <div class="body">
+
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="name" type="text" name="Title" value="@Model.Title" required class="validate form-control">
+                                        <label for="name" class="form-label">@L("Title")*</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-8">
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group form-float">
-                                        <label for="content" class="form-label">@L("Content")</label>
-                                        <textarea name="content" id="content" class="form-control">@Model.Content</textarea>
+
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <label for="name" class="form-label">@L("Description")*</label>
+                                        <textarea name="Description" class="form-control">@Model.Description</textarea>
 
                                     </div>
+                                    <p class="help-block">
+                                        Indica una descripción corta que atraiga a los estudiantes.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">@L("Save")</button>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
+                <div class="card">
+                    <div class="header">
+                        <h2>Departamentos</h2>
+                    </div>
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-sm-11">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <label for="name" style="top: -15px" class="form-label">Departamento que publica*</label>
+                                        <div id="publisher">
+
+                                            @{Html.RenderAction("PublishersSelector", "Layout", new { selected = Model.PublisherId });}
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-default" href="@Url.Action("Index","Publishers")">Administrar departamentos</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <button title="Agregar dependencia" type="button" class="btn btn-primary js-add-publisher"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Recursos multimedia/imagenes
+                        </h2>
+                    </div>
+                    <div class="body table-responsive">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="" id="upload">
+                                        @if (Model.Img.IsNullOrEmpty())
+                                    {
+                                        <img id="imgPlaceHolder" class="img-responsive feed-img" src="http://www.gaia-earth.co.uk/img/placeholder-img.jpg" />
+                                }
+                                else
+                                {
+                                    <img id="imgPlaceHolder" class="img-responsive feed-img" src="@Model.Img" />
+                            }
+                                        <input name="icon" id="icon" type="file" style="display: none" class="validate form-control">
+                                        <input type="hidden" value="@Model.Img" name="img" id="img" />
+                                        <p class="help-block">
+                                            Agrega una imagen, procura que esta tenga un ancho mayor a la altura.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Cuerpo de la noticia
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <label for="content" class="form-label">@L("Content")*</label>
+                                    <textarea name="content" id="content" class="form-control">@Model.Content</textarea>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stick-bottom">
+                            <div class="switch-container">
+                                <span>Noticia activa</span>
+                                <div class="switch">
+                                    <label><input type="checkbox" checked><span class="lever"></span></label>
+                                </div>
+                            </div>
+                            <div class="btn-container">
+
+                                <a @(Model.Id == 0 ? "" : "href=/Feeds/Manage/" + Model.Id) @(Model.Id == 0 ? "disabled" : "") class="btn btn-lg btn-default">Administrar</a>
+                                <button type="submit" class="btn btn-lg btn-primary">Guardar noticia</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 @section Scripts{
+    <script src="~/js/eModal/eModal.min.js"></script>
     <script src="~/js/tinymce/js/tinymce/tinymce.min.js"></script>
     <script src="~/js/helpers.js"></script>
     <script src="~/Views/Feeds/CreateOrEdit.js"></script>

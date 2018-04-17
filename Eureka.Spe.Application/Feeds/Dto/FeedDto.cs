@@ -5,7 +5,7 @@ using Eureka.Spe.NewsFeed.Entities;
 namespace Eureka.Spe.Feeds.Dto
 {
     [AutoMap(typeof(Feed))]
-    public class FeedDto : EntityDto
+    public class FeedDto : FullAuditedEntityDto
     {
         public string Title { get; set; }
         public string Description { get; set; }
@@ -18,5 +18,7 @@ namespace Eureka.Spe.Feeds.Dto
         public string PublisherName { get; set; }
         public string PublisherImg { get; set; }
         public int Clicks { get; set; }
+
+        
     }
 }

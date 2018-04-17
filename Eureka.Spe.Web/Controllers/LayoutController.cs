@@ -99,8 +99,6 @@ namespace Eureka.Spe.Web.Controllers
 
             return PartialView("_RightSideBar", viewModel);
         }
-
-        [ChildActionOnly]
         [AbpMvcAuthorize]
         public ViewResult PublishersSelector(int? selected)
         {

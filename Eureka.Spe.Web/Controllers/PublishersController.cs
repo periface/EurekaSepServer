@@ -29,5 +29,13 @@ namespace Eureka.Spe.Web.Controllers
             var found = await _publisherAppService.Get(id.Value);
             return View(found);
         }
+
+        public ActionResult CreateFast()
+        {
+            return View(new PublisherDto()
+            {
+                Img = "/images/user.png"
+            });
+        }
     }
 }

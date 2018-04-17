@@ -5,37 +5,42 @@
     ViewBag.ActiveMenu = PageNames.Feeds; //The menu item will be active for this page.
 }
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h2>
-                    @L("Feeds")
-                </h2>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
+        @if (!ViewBag.HasPublishers)
+        {
+            <div class="card">
+                <div class="body">
+
+                    <h4 class="">
+                        <img style="width: 5%;" src="https://www.materialui.co/materialIcons/alert/warning_amber_144x144.png" /> Advertencia
+                    </h4>
+                    <p>
+                        No tiene departamentos creados...
+                    </p>
+
+                </div>
             </div>
+        }
+        <a class="btn btn-default waves-effect btn-lg pull-left" href="@Url.Action("Index", "Publishers")">Gestionar Departamentos</a>
+        <a href="@Url.Action("CreateOrEdit")" class="btn btn-primary waves-effect btn-lg pull-right">Crear nueva noticia</a><br /><br /><br />
+        <div class="card">
             <div class="body table-responsive">
-                
-                @if (!ViewBag.HasPublishers)
-                {
-                    <div class="alert alert-info">
-                        No tiene Departamentos dados de alta... <br/>
-                        <a class="btn btn-default" href="@Url.Action("Index", "Publishers")">Departamentos</a>
-                    </div>
-                }
-                <table data-pagination="true"
-                       data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/feed/getall" id="table" class="table table-responsive table-condensed"></table>
-                <a href="@Url.Action("CreateOrEdit")" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right js-add-feed">
-                    <i class="material-icons">add</i>
-                </a>
+
+
+                <table data-pagination="true" data-classes="table table-no-bordered table-condensed"
+                       data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/feed/getall" id="table" class="table table-responsive"></table>
             </div>
         </div>
     </div>
 </div>
+
 @section Scripts{
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="~/js/eModal/eModal.min.js"></script>
     <script src="~/js/bootstraptable/bootstrap-table.min.js"></script>
     <script src="~/js/bootstraptable/bootstrap-table-es-MX.min.js"></script>
+    <script src="~/js/helpers.js"></script>
     <script src="~/Views/Feeds/Index.js"></script>
 
 }

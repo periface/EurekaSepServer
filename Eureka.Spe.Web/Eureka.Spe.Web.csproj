@@ -15,7 +15,7 @@
     <RootNamespace>Eureka.Spe.Web</RootNamespace>
     <AssemblyName>Eureka.Spe.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -3052,6 +3052,7 @@
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Messages\CreateOrEdit.cshtml" />
     <Content Include="Views\Messages\Manage.cshtml" />
+    <Content Include="Views\Publishers\CreateFast.cshtml" />
     <None Include="Views\Students\CreateOrEdit.less" />
     <Content Include="Views\Students\CreateOrEdit.css">
       <DependentUpon>CreateOrEdit.less</DependentUpon>

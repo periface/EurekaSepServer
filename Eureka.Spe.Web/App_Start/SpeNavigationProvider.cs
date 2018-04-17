@@ -54,23 +54,9 @@ namespace Eureka.Spe.Web
                     new MenuItemDefinition(
                             PageNames.Feeds,
                             L("Feeds"),
-                            url: "",
+                            url: "Feeds",
                             icon: "local_offer",
                             requiredPermissionName: PermissionNames.Pages_Roles
-                        )
-                        .AddItem(
-                            new MenuItemDefinition(
-                                PageNames.Publishers,
-                                L("Publishers"),
-                                url: "Publishers"
-                            )
-                        )
-                        .AddItem(
-                            new MenuItemDefinition(
-                                PageNames.Feeds,
-                                L("FeedList"),
-                                url: "Feeds"
-                            )
                         )
                 )
                 .AddItem(
