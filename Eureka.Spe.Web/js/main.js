@@ -38,4 +38,44 @@
         $.blockUI.defaults.baseZ = 2000;
     }
 
+    function startDismissListener() {
+        var $dismissBtn = $(".js-dismiss");
+        $dismissBtn.click(function() {
+            var elm = $(this).data("div");
+
+            dismissAndRemember("#"+elm);
+        });
+    }
+
+    function dismissAndRemember(div) {
+        var $div = $(div);
+        $div.css("display", "none");
+        var dismissed = localStorage.getItem("dismissed");
+        if (!dismissed) {
+            dismissed = [];
+        } else {
+
+            dismissed = JSON.parse(dismissed);
+        }
+        dismissed.push(div);
+        localStorage.setItem("dismissed", JSON.stringify(dismissed));
+    }
+    function loadDismissed() {
+        var dismissed = localStorage.getItem("dismissed");
+        if (!dismissed) {
+            dismissed = [];
+        } else {
+
+            dismissed = JSON.parse(dismissed);
+        }
+
+        for (var i = 0; i < dismissed.length; i++) {
+            var div = $(dismissed[i]);
+            var $div = $(div);
+            $div.css("display", "none");
+        }
+    }
+
+    startDismissListener();
+    loadDismissed();
 })(jQuery);

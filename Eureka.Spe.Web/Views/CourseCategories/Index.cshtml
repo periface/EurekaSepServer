@@ -3,23 +3,48 @@
 
     <link href="~/js/bootstraptable/bootstrap-table.min.css" rel="stylesheet" />
 }@{
-    ViewBag.ActiveMenu = PageNames.CourseCategories; //The menu item will be active for this page.
+    ViewBag.ActiveMenu = PageNames.Courses; //The menu item will be active for this page.
 }
-<div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="row" id="categoriesdiv">
+    <div class="col-lg-12 col-small-center">
         <div class="card">
-            <div class="header">
-                <h2>
-                    @L("Categories")
-                </h2>
+            <div class="body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img style="width: 75%;margin:0 auto" src="https://cdn.dribbble.com/users/22930/screenshots/2188769/newspaper.gif" class="img-responsive" alt="Alternate Text" />
+                    </div>
+                    <div class="col-lg-8 ">
+                        <h2>Categorias</h2>
+                        <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. </p>
+                    </div>
+                </div>
+                @*<div class="row">
+                    <div class="col-lg-12">
+                        <a class="btn btn-default js-dismiss pull-right" data-div="categoriesdiv">Cerrar</a>
+                    </div>
+                </div>*@
             </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-small-center">
+        <a class="btn btn-primary btn-lg waves-effect js-add-category pull-right">
+            Crear nueva categoría
+        </a>
+        <a href="/Courses" class="btn btn-default btn-lg waves-effect pull-left">
+           Ir a Cursos
+        </a>
+        <br /><br /><br />
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
+        
+        <div class="card">
             <div class="body table-responsive">
-                <table data-pagination="true" data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/courseCategories/getall" id="table" class="table table-responsive table-condensed">
-                    
-                </table>
-                <a class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right js-add-category">
-                    <i class="material-icons">add</i>
-                </a>
+                <table data-pagination="true" data-side-pagination="server" data-classes="table table-no-bordered table-condensed" data-events="buttons" data-search="true" data-url="/api/services/app/courseCategories/getall" id="table"></table>
+
             </div>
         </div>
     </div>
@@ -30,5 +55,6 @@
     <script src="~/js/eModal/eModal.min.js"></script>
     <script src="~/js/bootstraptable/bootstrap-table.min.js"></script>
     <script src="~/js/bootstraptable/bootstrap-table-es-MX.min.js"></script>
+    <script src="~/js/helpers.js"></script>
     <script src="~/Views/CourseCategories/Index.js"></script>
 }

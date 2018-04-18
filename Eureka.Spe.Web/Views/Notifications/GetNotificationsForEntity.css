@@ -12,7 +12,8 @@
   margin-bottom: 0;
 }
 .sparkline {
-  position: absolute;
-  left: 85%;
-  bottom: 5%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    left: 40%;
 }

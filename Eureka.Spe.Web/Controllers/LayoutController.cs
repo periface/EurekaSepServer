@@ -131,7 +131,6 @@ namespace Eureka.Spe.Web.Controllers
             return View(careers);
 
         }
-        [ChildActionOnly]
         [AbpMvcAuthorize]
         public ViewResult CourseCategorySelector(int? selected)
         {

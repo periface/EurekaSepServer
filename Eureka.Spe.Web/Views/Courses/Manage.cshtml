@@ -6,14 +6,21 @@
     ViewBag.ActiveMenu = PageNames.Courses; //The menu item will be active for this page.
 }
 <link href="~/Views/Courses/Manage.css" rel="stylesheet" />
-<div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="row">
+    <div class="col-lg-12 col-small-center ">
         <div class="card">
-            <div class="header">
-                Curso: @Model.Title
+            <div class="body">
+                <h4>@Model.Title</h4>
+                <p><strong>@Model.CategoryName</strong></p>
+                <a href="@Url.Action("CreateOrEdit",new{id=Model.Id})" class="btn btn-primary">Editar contenido</a>
             </div>
+        </div>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
+        <div class="card">
             <div class="body" style="min-height: 500px">
-
                 <input type="hidden" value="@Model.Id" id="Id" />
                 <div class="row">
                     <div class="col-lg-12">

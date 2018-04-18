@@ -7,65 +7,102 @@
 
 <link href="~/Views/Notifications/GetNotificationsForEntity.css" rel="stylesheet" />
 <div class="row">
+    <div class="container">
+
+    </div>
+
+</div>
+<div class="row">
     <div class="col-sm-12">
         <input type="hidden" id="Id" value="@Model.Id" />
         <input type="hidden" id="EntityName" value="@Model.EntityName" />
         @if (!Model.Notifications.Any())
         {
-            <h4>Aún no se han agendado notificaciones para este elemento...</h4>
+            <div class="">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <img class="img-responsive" style="width: 15%;margin:0 auto" src="https://www.shareicon.net/data/128x128/2017/05/22/886177_message_512x512.png" alt="Alternate Text" />
+                        <h2>Agenda de notificaciones</h2>
+                        <p>
+                            Seleccione los elementos que desee asignar a la publicación
+                        </p>
+                        <p class="help-block">
+                            Una vez asignada la unidad académica se dará prioridad a las notificaciones para los alumnos dentro de la misma.
+                        </p>
+                        <button class="btn btn-primary js-place-notification" type="button">
+                            Agendar Notificación
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
         }
         else
         {
             <div class="row">
-                @foreach (var modelNotification in Model.Notifications)
+
+
+                <div class="col-sm-12">
+                    <button class="btn btn-primary js-place-notification pull-right" type="button">
+                        Agendar Notificación
+                    </button>
+                </div>
+                <div class="col-lg-12">
+                    <table class="table table-responsive table-condensed">
+                        <thead>
+                            <tr>
+                                @*<th>
+                                    --
+                                </th>*@
+                                <th style="font-size: 0.9rem;">
+                                    Titulo
+                                </th>
+                                <th style="font-size: 0.9rem;">
+                                    Mensaje
+                                </th>
+                                <th style="font-size: 0.9rem;">
+                                    Fecha de inicio
+                                </th>
+                                <th style="font-size: 0.9rem;">
+                                    Opciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var modelNotification in Model.Notifications)
                 {
-                    <div class="col-md-4">
-                        <div class="notification-holder">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <span style="font-size: 1rem;width: 90%;">
-                                        @modelNotification.NotifyDate.ToShortDateString()
-                                    </span>
-                                    <a class="btn btn-xs btn-danger pull-right js-delete-notification" data-id="@modelNotification.Id"><i class="material-icons">delete_sweep</i></a>
-                                </div>
-                            </div>
-
-                            <div class="row js-element-container-@modelNotification.Id">
-                                <div class="col-sm-3 text-center">
-                                    <img src="@(modelNotification.Badge.IsNullOrEmpty()? "https://storefront.bindo.com/images/empty-product-img.png":modelNotification.Badge)" style="width: 50px; height: 50px; margin: 0 auto" class="img-responsive" alt="Alternate Text" />
-                                </div>
-                                <div class="col-sm-9" data-id="@modelNotification.Id" style="padding: 0;">
-                                    <p style="font-weight: 600;">
-                                        @modelNotification.Title
-                                    </p>
-                                    <p style="font-size: 1rem;width: 90%;">
-                                        @modelNotification.Message
-                                    </p>
-
-                                </div>
-
-                            </div>
-
+                    <tr data-id="@modelNotification.Id">
+                        @*<td>
                             <div class="sparkline" data-type="pie" data-spot-Radius="4" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#fff"
                                  data-min-Spot-Color="rgb(255,255,255)" data-max-Spot-Color="rgb(255,255,255)" data-spot-Color="rgb(255,255,255)"
                                  data-offset="90" data-width="100%" data-height="40px" data-line-Width="2" data-line-Color="rgba(255,255,255,0.7)"
                                  data-fill-Color="rgba(0, 188, 212, 0)">
                                 @string.Join(",", modelNotification.GetData)
                             </div>
-                        </div>
-
-                    </div>
-
-                }
+                        </td>*@
+                        <td style="font-size: 0.9rem;">
+                            @modelNotification.Title
+                        </td>
+                        <td style="font-size: 0.9rem;">
+                            @modelNotification.Message
+                        </td>
+                        <td style="font-size: 0.9rem;">
+                            @modelNotification.NotifyDate.ToShortDateString() @modelNotification.NotifyDate.ToShortTimeString()
+                        </td>
+                        <td>
+                            <a class="btn btn-xs btn-danger pull-right js-delete-notification" data-id="@modelNotification.Id"><i class="material-icons">delete_sweep</i></a>
+                        </td>
+                    </tr>
+    }
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         }
     </div>
-    <div class="col-sm-12">
-        <button class="btn btn-primary js-place-notification" type="button">
-            Agendar Notificación
-        </button>
-    </div>
+
 </div>
 
 <script src="~/Views/Notifications/GetNotificationsForEntity.es5.min.js"></script>

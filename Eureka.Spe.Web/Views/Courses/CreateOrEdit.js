@@ -1,5 +1,6 @@
 ﻿(function () {
     var service = abp.services.app.course;
+    var categoryService = abp.services.app.courseCategories;
     var tinyMce;
     startTinyMce("#content", function (instance) {
         tinyMce = instance;
@@ -36,11 +37,68 @@
             var data = $(this).serializeFormToObject();
             data.content = tinyMce.save();
             console.log(data);
-            service.createOrUpdate(data).done(function () {
+            service.createOrUpdate(data).done(function (response) {
                 abp.notify.success("Cambios guardados...");
+                reloadPage(response);
             });
         });
     $("#imgPlaceHolder").click(function () {
         $("#icon").click();
     });
+
+    var modalIsOpen = false;
+    $(".js-add-category").click(function () {
+        modalIsOpen = true;
+        window.eModal.ajax({
+                loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+                url: '/CourseCategories/CreateOrEdit/',
+                title: 'Crear categoría',
+                buttons: [
+                    {
+                        text: 'Cerrar', style: 'danger', close: true, click: function () {
+
+                        }
+                    },
+                    {
+                        text: 'Guardar', style: 'info', close: false, click: function (elm) {
+                            save();
+                        }
+                    }
+                ]
+            })
+            .then(function () {
+                bindEnter();
+            });
+    });
+
+    function enterFunc(e) {
+        if (e.keyCode === 13 && modalIsOpen) {
+            e.preventDefault();
+            save();
+        }
+    }
+
+    function bindEnter() {
+        unBindEnter();
+        $(document).on('keypress',
+            'input', enterFunc);
+    }
+    function unBindEnter() {
+        $(document).unbind("keypress", enterFunc);
+    }
+    function save() {
+        var data = $("#AddEditCategoryForm").serializeFormToObject();
+        categoryService.createOrUpdate(data).done(function (response) {
+            window.eModal.close();
+            abp.notify.success("Elemento guardado con exito...");
+            modalIsOpen = false;
+            unBindEnter();
+            reloadCategories(response);
+        });
+    }
+    function reloadCategories(id) {
+        $("#publisher").load("/layout/CourseCategorySelector?selected=" + id, function () {
+            $.AdminBSB.select.activate();
+        });
+    }
 })();

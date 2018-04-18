@@ -6,6 +6,7 @@
         table.bootstrapTable({
             method: "post",
             locale: 'es-Es',
+
             columns: [
                 {
                     title: "Titulo", field: "title", sortable: true, formatter: (value, row, index) => {
@@ -42,10 +43,10 @@
             ],
             toolbar: ".toolbar",
             clickToSelect: true,
-            showRefresh: true,
+            showRefresh: false,
             search: true,
-            showToggle: true,
-            showColumns: true,
+            showToggle: false,
+            showColumns: false,
             pagination: true,
             pageSize: 8,
             pageList: [8, 10, 25, 50, 100],

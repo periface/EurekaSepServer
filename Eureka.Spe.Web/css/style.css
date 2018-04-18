@@ -11,6 +11,24 @@
     margin-top: 5%;
 
 }
+
+/**Tables*/
+
+
+.fixed-table-toolbar .bs-bars, .fixed-table-toolbar .columns, .fixed-table-toolbar .search {
+    position: relative;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 34px;
+}
+
+.fixed-table-toolbar .bs-bars, .fixed-table-toolbar .columns, .fixed-table-toolbar .search > * {
+    border-radius: 0!important;
+}
+
+/*Tables*/
+
+
 .stick-bottom {
     background-color: white;
     height: 60px;
@@ -20,6 +38,7 @@
     width: 100%;
     left: 0;
     text-align: center;
+    z-index: 1;
 }
 
 .eureka-brand {
@@ -30,6 +49,7 @@
     width: 100%;
     /* left: -15%; */
     text-align: center;
+    z-index: 1;
 }
 
 .eureka-brand-img {

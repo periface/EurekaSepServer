@@ -6,7 +6,7 @@ using Eureka.Spe.Courses.Entities;
 namespace Eureka.Spe.Courses.Dto
 {
     [AutoMap(typeof(Course))]
-    public class CourseDto : EntityDto
+    public class CourseDto : FullAuditedEntityDto
     {
         public int CategoryId { get; set; }
         public string Title { get; set; }

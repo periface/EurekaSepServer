@@ -3,18 +3,38 @@
 @{
     Layout = null;
 }
-
+@if (!Model.AcademicUnitsSelected.Any())
+{
+    <div class="">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <img class="img-responsive" style="width: 15%;margin:0 auto" src="https://www.shareicon.net/data/256x256/2016/07/29/803832_book_512x512.png" alt="Alternate Text" />
+                <h2>Selección de Unidades Académicas</h2>
+                <p>
+                    Seleccione los elementos que desee asignar a la publicación
+                </p>
+                <p class="help-block">
+                    Una vez asignada la unidad académica se dará prioridad a las notificaciones para los alumnos dentro de la misma.
+                </p>
+                <a href="@Url.Action("Index","AcademicUnits")" class="btn btn-default">
+                    Administrar Unidades Académicas
+                </a>
+            </div>
+        </div>
+    </div>
+}
 <div class="row">
     <div class="col-sm-12">
         <input type="hidden" id="Id" value="@Model.Id" />
         <input type="hidden" id="EntityName" value="@Model.EntityName" />
         @foreach (var role in Model.AcademicUnitsSelected.OrderBy(a => a.Name))
-        {
-            <div class="col-sm-3">
-                <input type="checkbox" name="academicunit" data-id="@role.Id" title="@role.Description" class="filled-in" id="@string.Format("role{0}", role.Id)" @(role.Selected ? "checked" : "") />
-                <label for="@string.Format("role{0}", role.Id)" title="@role.Name">@role.ShortName</label>
-            </div>
-        }
+    {
+        <div class="col-sm-3">
+            <img src="@role.Img" alt="Alternate Text" style="width: 20px; height: 20px" />
+            <input type="checkbox" name="academicunit" data-id="@role.Id" title="@role.Description" class="filled-in" id="@string.Format("role{0}", role.Id)" @(role.Selected ? "checked" : "") />
+            <label for="@string.Format("role{0}", role.Id)" title="@role.Name">@role.ShortName</label>
+        </div>
+}
     </div>
 
 </div>

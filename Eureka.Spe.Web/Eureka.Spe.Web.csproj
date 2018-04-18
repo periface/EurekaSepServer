@@ -3019,6 +3019,7 @@
       <DependentUpon>Schedule.es5.js</DependentUpon>
     </Content>
     <Content Include="Views\Notifications\Schedule.js" />
+    <Content Include="Views\Publishers\CreateFast.js" />
     <Content Include="Views\Publishers\CreateOrEdit.es5.js">
       <DependentUpon>CreateOrEdit.js</DependentUpon>
     </Content>

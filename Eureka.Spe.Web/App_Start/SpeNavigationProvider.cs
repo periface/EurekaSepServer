@@ -63,22 +63,8 @@ namespace Eureka.Spe.Web
                     new MenuItemDefinition(
                             PageNames.Courses,
                             L("Courses"),
-                            url: "",
+                            url: "Courses",
                             icon: "local_offer"
-                        )
-                        .AddItem(
-                            new MenuItemDefinition(
-                                PageNames.CourseCategories,
-                                L("Categories"),
-                                url: "CourseCategories"
-                            )
-                        )
-                        .AddItem(
-                            new MenuItemDefinition(
-                                PageNames.Courses,
-                                L("CourseList"),
-                                url: "Courses"
-                            )
                         )
                 )
                 .AddItem(
