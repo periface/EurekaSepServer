@@ -9,12 +9,8 @@
             method: "post",
             locale: 'es-Es',
             columns: [{
-                title: "Logo", field: "img", sortable: false, align: "center", formatter: function formatter(value, row, index) {
-                    return "<img style=\"width:32px;height:32px;\" src=\"" + value + "\" />";
-                }
-            }, {
                 title: "Nombre", field: "name", sortable: true, formatter: function formatter(value, row, index) {
-                    return "" + value;
+                    return "<img style=\"width:32px;height:32px;\" src=\"" + row.img + "\" /> " + value;
                 }
             }, {
                 title: "Acciones",

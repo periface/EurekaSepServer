@@ -4,7 +4,13 @@
     position: relative;
     left: 10%;
 }
+.col-smaller-center {
+    width: 70%;
+    position: relative;
+    left: 15%;
+    margin-top: 5%;
 
+}
 .stick-bottom {
     background-color: white;
     height: 60px;

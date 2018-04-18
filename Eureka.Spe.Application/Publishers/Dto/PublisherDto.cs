@@ -5,7 +5,7 @@ using Eureka.Spe.NewsFeed.Entities;
 namespace Eureka.Spe.Publishers.Dto
 {
     [AutoMap(typeof(FeedPublisher))]
-    public class PublisherDto : EntityDto
+    public class PublisherDto : FullAuditedEntityDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

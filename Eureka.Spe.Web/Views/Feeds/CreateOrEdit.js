@@ -1,5 +1,8 @@
 ﻿
 (function () {
+    window.onbeforeunload = function () {
+        return 'Are you sure you want to navigate away from this page?';
+    };
     var service = abp.services.app.feed;
     var publisherService = abp.services.app.publisher;
     var tinyMce;

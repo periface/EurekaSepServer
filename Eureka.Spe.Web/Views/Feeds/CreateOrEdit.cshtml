@@ -165,12 +165,7 @@
                         </div>
 
                         <div class="stick-bottom">
-                            <div class="switch-container">
-                                <span>Noticia activa</span>
-                                <div class="switch">
-                                    <label><input type="checkbox" checked><span class="lever"></span></label>
-                                </div>
-                            </div>
+
                             <div class="btn-container">
 
                                 <a @(Model.Id == 0 ? "" : "href=/Feeds/Manage/" + Model.Id) @(Model.Id == 0 ? "disabled" : "") class="btn btn-lg btn-default">Administrar</a>
