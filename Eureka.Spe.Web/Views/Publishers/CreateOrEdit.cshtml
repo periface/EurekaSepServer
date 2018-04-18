@@ -13,11 +13,11 @@
                 <div class="form-line" id="upload">
                     @if (Model.Img.IsNullOrEmpty())
                     {
-                        <img id="iconPlaceHolder" src="" />
+                        <img id="iconPlaceHolder" style="width: 100px;" src="" />
                     }
                     else
                     {
-                        <img id="iconPlaceHolder" src="@Model.Img" />
+                        <img id="iconPlaceHolder" style="width: 100px;" src="@Model.Img" />
                     }
                     <input name="icon" id="icon" type="file" class="validate form-control">
                     <input type="hidden" value="@Model.Img" name="img" id="img" />
