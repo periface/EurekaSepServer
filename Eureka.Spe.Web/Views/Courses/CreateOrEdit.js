@@ -25,7 +25,7 @@
             abp.ui.clearBusy($("#upload"));
             abp.notify.info("Archivo procesado...");
         },
-        onUploadError: function (err) {
+        onUploadError: function () {
             abp.ui.clearBusy($("#upload"));
         }
     };
@@ -36,7 +36,6 @@
             e.preventDefault();
             var data = $(this).serializeFormToObject();
             data.content = tinyMce.save();
-            console.log(data);
             service.createOrUpdate(data).done(function (response) {
                 abp.notify.success("Cambios guardados...");
                 reloadPage(response);
@@ -102,33 +101,37 @@
         });
     }
 
+    function startDates() {
 
-    $('.datetimepicker-r-start').bootstrapMaterialDatePicker({
-        format: "YYYY-MM-DD",
-        time: false,
-        lang: 'es'
-    }).on("change", function (e, date) {
-        $('.datetimepicker-r-end').bootstrapMaterialDatePicker('setMinDate', date);
-    });
-    $('.datetimepicker-r-end').bootstrapMaterialDatePicker({
-        format: "YYYY-MM-DD",
-        time: false,
-        lang: 'es'
-    }).on("change", function (e, date) {
-        $('.datetimepicker-start').bootstrapMaterialDatePicker('setMinDate', date);
-    });
-    $('.datetimepicker-start').bootstrapMaterialDatePicker({
-        format: "YYYY-MM-DD",
-        time: false,
-        lang: 'es'
-    }).on("change", function (e, date) {
-        $('.datetimepicker-end').bootstrapMaterialDatePicker('setMinDate', date);
-    });
-    $('.datetimepicker-end').bootstrapMaterialDatePicker({
-        format: "YYYY-MM-DD",
-        time: false,
-        lang: 'es'
-    }).on("change", function (e, date) {
+        $('.datetimepicker-r-start').bootstrapMaterialDatePicker({
+            format: "YYYY-MM-DD",
+            time: false,
+            lang: 'es'
+        }).on("change", function (e, date) {
+            $('.datetimepicker-r-end').bootstrapMaterialDatePicker('setMinDate', date);
+        });
+        $('.datetimepicker-r-end').bootstrapMaterialDatePicker({
+            format: "YYYY-MM-DD",
+            time: false,
+            lang: 'es'
+        }).on("change", function (e, date) {
+            $('.datetimepicker-start').bootstrapMaterialDatePicker('setMinDate', date);
+        });
+        $('.datetimepicker-start').bootstrapMaterialDatePicker({
+            format: "YYYY-MM-DD",
+            time: false,
+            lang: 'es'
+        }).on("change", function (e, date) {
+            $('.datetimepicker-end').bootstrapMaterialDatePicker('setMinDate', date);
+        });
+        $('.datetimepicker-end').bootstrapMaterialDatePicker({
+            format: "YYYY-MM-DD",
+            time: false,
+            lang: 'es'
+        }).on("change", function (e, date) {
 
-    });
+        });
+    }
+
+    startDates();
 })();
