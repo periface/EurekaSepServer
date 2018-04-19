@@ -6,7 +6,7 @@ using Eureka.Spe.Scholarships.Entities;
 namespace Eureka.Spe.Scholarships.Dto
 {
     [AutoMap(typeof(Scholarship))]
-    public class ScholarshipDto : EntityDto
+    public class ScholarshipDto : FullAuditedEntityDto
     {
         public bool IsActive { get; set; }
         public string Title { get; set; }

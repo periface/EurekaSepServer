@@ -7,13 +7,12 @@
     ViewBag.ActiveMenu = PageNames.Scholarships; //The menu item will be active for this page.
 }
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
         <div class="card">
-            <div class="header">
-                <h2>
-                    @L("Scholarships")
-                </h2>
-            </div><div class="body table-responsive"><table data-pagination="true" data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/scholarship/getall" id="table" class="table table-responsive table-condensed"></table><a class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right js-add-scholarship"><i class="material-icons">add</i></a></div>
+            <div class="body table-responsive">
+                <table data-pagination="true" data-classes="table table-no-bordered table-condensed" data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/scholarship/getall" id="table"></table>
+                <a class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right js-add-scholarship"><i class="material-icons">add</i></a>
+            </div>
         </div>
     </div>
 </div>

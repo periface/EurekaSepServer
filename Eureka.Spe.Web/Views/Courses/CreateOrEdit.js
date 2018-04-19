@@ -50,22 +50,22 @@
     $(".js-add-category").click(function () {
         modalIsOpen = true;
         window.eModal.ajax({
-                loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
-                url: '/CourseCategories/CreateOrEdit/',
-                title: 'Crear categoría',
-                buttons: [
-                    {
-                        text: 'Cerrar', style: 'danger', close: true, click: function () {
+            loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+            url: '/CourseCategories/CreateOrEdit/',
+            title: 'Crear categoría',
+            buttons: [
+                {
+                    text: 'Cerrar', style: 'danger', close: true, click: function () {
 
-                        }
-                    },
-                    {
-                        text: 'Guardar', style: 'info', close: false, click: function (elm) {
-                            save();
-                        }
                     }
-                ]
-            })
+                },
+                {
+                    text: 'Guardar', style: 'info', close: false, click: function (elm) {
+                        save();
+                    }
+                }
+            ]
+        })
             .then(function () {
                 bindEnter();
             });
@@ -101,4 +101,34 @@
             $.AdminBSB.select.activate();
         });
     }
+
+
+    $('.datetimepicker-r-start').bootstrapMaterialDatePicker({
+        format: "YYYY-MM-DD",
+        time: false,
+        lang: 'es'
+    }).on("change", function (e, date) {
+        $('.datetimepicker-r-end').bootstrapMaterialDatePicker('setMinDate', date);
+    });
+    $('.datetimepicker-r-end').bootstrapMaterialDatePicker({
+        format: "YYYY-MM-DD",
+        time: false,
+        lang: 'es'
+    }).on("change", function (e, date) {
+        $('.datetimepicker-start').bootstrapMaterialDatePicker('setMinDate', date);
+    });
+    $('.datetimepicker-start').bootstrapMaterialDatePicker({
+        format: "YYYY-MM-DD",
+        time: false,
+        lang: 'es'
+    }).on("change", function (e, date) {
+        $('.datetimepicker-end').bootstrapMaterialDatePicker('setMinDate', date);
+    });
+    $('.datetimepicker-end').bootstrapMaterialDatePicker({
+        format: "YYYY-MM-DD",
+        time: false,
+        lang: 'es'
+    }).on("change", function (e, date) {
+
+    });
 })();
