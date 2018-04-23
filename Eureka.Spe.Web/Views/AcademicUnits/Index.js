@@ -8,21 +8,16 @@
             locale: 'es-Es',
             columns: [
                 {
-                    title: "Logo", field: "img", sortable: false, align: "center", formatter: (value, row, index) => {
-                        return `<img style="width:32px;height:32px;" src="${value}" />`;
-                    }
-                },
-                {
                     title: "Nombre", field: "name", sortable: true, formatter: (value, row, index) => {
-                        return `${value}`;
+                        return `<p style="margin:0;display:inline-block;"> <img style="width:32px;height:32px" src="${row.img}" /> </p> <p style="margin:0;display:inline-block;">${value}</p>`;
                     }
                 },
                 {
                     title: "Acciones",
                     formatter: (value, row, index) => {
-                        var btnEdit = `<a class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-academicunit" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
+                        var btnEdit = `<a class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-academicunit" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
                         var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-academicunit" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
-                        var btnAdvanced = `<a href="/Feeds/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
+                        var btnAdvanced = `<a href="/AcademicUnits/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
                         return [
                             btnAdvanced,
                             btnEdit,
@@ -33,10 +28,10 @@
             ],
             toolbar: ".toolbar",
             clickToSelect: true,
-            showRefresh: true,
+            showRefresh: false,
             search: true,
-            showToggle: true,
-            showColumns: true,
+            showToggle: false,
+            showColumns: false,
             pagination: true,
             pageSize: 8,
             pageList: [8, 10, 25, 50, 100],
