@@ -12,4 +12,7 @@
     abp.event.on('notifications', function () {
         loadUrlInDiv("#sections", "/Notifications/GetNotificationsForEntity?entityName=scholarships&id=" + id);
     });
+    abp.event.on('sections', function() {
+        loadUrlInDiv("#sections", "/Scholarships/Sections?id=" + id);
+    });
 })();

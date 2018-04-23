@@ -2,9 +2,28 @@
 (function () {
     var service = abp.services.app.feed;
     var publisherService = abp.services.app.publisher;
-    var tinyMce;
-    startTinyMce("#content", function (instance) {
-        tinyMce = instance;
+    $('#content').trumbowyg({
+        lang: 'es',
+        btnsDef: {
+            // Create a new dropdown
+            image: {
+                dropdown: ['insertImage', 'base64'],
+                ico: 'insertImage'
+            }
+        },
+        btns: [
+            ['viewHTML'],
+            ['formatting'],
+            ['strong', 'em', 'del'],
+            ['superscript', 'subscript'],
+            ['link'],
+            ['image'], // Our fresh created dropdown
+            ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+            ['unorderedList', 'orderedList'],
+            ['horizontalRule'],
+            ['removeformat'],
+            ['fullscreen']
+        ]
     });
     var uploadOptions = {
         baseUrl: "/upload",
@@ -43,7 +62,7 @@
             e.preventDefault();
             $('button[type="submit"]').prop("disabled", true);
             var data = $(this).serializeFormToObject();
-            data.content = tinyMce.save();
+            data.content = $('#content').trumbowyg('html');;
             service.createOrUpdate(data).done(function (response) {
                 abp.notify.info("Cambios guardados...");
                 $('button[type="submit"]').prop("disabled", false);
@@ -66,36 +85,36 @@
     });
 
     $(".js-add-publisher").click(function () {
-        
+
         window.eModal.ajax({
-                loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
-                url: '/Publishers/CreateFast',
-                title: 'Nuevo departamento',
-                buttons: [
-                    {
-                        text: 'Cerrar', style: 'danger', close: true, click: function () {
+            loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+            url: '/Publishers/CreateFast',
+            title: 'Nuevo departamento',
+            buttons: [
+                {
+                    text: 'Cerrar', style: 'danger', close: true, click: function () {
 
-                        }
-                    },
-                    {
-                        text: 'Guardar', style: 'info', close: false, click: function (elm) {
-                            var data = $("#AddEditPublisherForm").serializeFormToObject();
-                            publisherService.createOrUpdate(data).done(function (data) {
-                                window.eModal.close();
-                                abp.notify.success("Elemento guardado con exito...");
-                                reloadPublishers(data);
-                            });
-
-                        }
                     }
-                ]
-            })
+                },
+                {
+                    text: 'Guardar', style: 'info', close: false, click: function (elm) {
+                        var data = $("#AddEditPublisherForm").serializeFormToObject();
+                        publisherService.createOrUpdate(data).done(function (data) {
+                            window.eModal.close();
+                            abp.notify.success("Elemento guardado con exito...");
+                            reloadPublishers(data);
+                        });
+
+                    }
+                }
+            ]
+        })
             .then(function () {
 
             });
     });
     function reloadPublishers(id) {
-        $("#publisher").load("/layout/PublishersSelector?selected="+id, function() {
+        $("#publisher").load("/layout/PublishersSelector?selected=" + id, function () {
             $.AdminBSB.select.activate();
         });
     }

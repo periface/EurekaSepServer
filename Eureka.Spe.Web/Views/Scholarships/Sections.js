@@ -68,6 +68,9 @@
             modalIsOpen = false;
             unBindEnter();
             abp.notify.success("Sección creada");
+
+            abp.event.trigger('sections');
+
         });
     }
     function enterFunc(e) {
@@ -92,6 +95,7 @@
             if (response) {
                 service.delete(id).done(function () {
                     abp.notify.success("Sección eliminada");
+                    abp.event.trigger('sections');
                 });
             }
         });

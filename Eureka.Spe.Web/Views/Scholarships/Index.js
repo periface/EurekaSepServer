@@ -13,9 +13,18 @@
                     }
                 },
                 {
+                    title: "Ultima actualización", field: "lastModificationTime", sortable: true, formatter: (value, row, index) => {
+                        var date = new Date(value).yyyymmddhhmm();
+                        if (!value) {
+                            return "-";
+                        }
+                        return `${date}`;
+                    }
+                },
+                {
                     title: "Acciones",
                     formatter: (value, row, index) => {
-                        var btnEdit = `<a class="btn btn-primary btn-xs waves-effect waves-teal btn-flat js-edit-scholarship" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
+                        var btnEdit = `<a class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-scholarship" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
                         var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-scholarship" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
                         var btnAdvanced = `<a href="/Scholarships/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
                         return [

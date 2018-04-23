@@ -11,30 +11,50 @@
     }
 
 }
-<h2>Estadísticas</h2>
-<div class="row">
-    <form class="col-sm-4" id="form">
+<div class="row" id="container">
+    <div class="col-lg-12">
+        <h2>Estadísticas</h2>
+    </div>
+    <div class="col-sm-4">
+        <form id="form">
+            <h3>Opciones</h3>
+            <label>Inicio</label>
+            <input type="date" id="StartDate" class="datepicker-elm form-control" name="StartDate" value="@ParseDate(DateTime.Now)"/>
+            <label>Fin</label><br/>
+            <input type="date" id="EndDate" class="datepicker-elm form-control" name="EndDate" value="@ParseDate(DateTime.Now)"/><br/>
 
-        <h3>Opciones</h3>
-        <label>Inicio</label>
-        <input type="date" id="StartDate" class="datepicker-elm form-control" name="StartDate" value="@ParseDate(DateTime.Now)" />
-        <label>Fin</label><br />
-        <input type="date" id="EndDate" class="datepicker-elm form-control" name="EndDate" value="@ParseDate(DateTime.Now)" /><br />
-
-        <div class="form-group form-float">
-            <div class="">
-                <input type="checkbox" id="ByDay" name="ByDay" value="false" class="form-control" />
-                <label for="ByDay" class="form-label">
-                    Resultados por día
-                </label>
+            <div class="form-group form-float">
+                <div class="">
+                    <input type="checkbox" id="ByDay" name="ByDay" value="false" class="form-control"/>
+                    <label for="ByDay" class="form-label">
+                        Resultados por día
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <button type="button" class="btn btn-sm btn-primary js-filter">Filtrar</button>
-    </form>
+            <button type="button" class="btn btn-sm btn-primary js-filter">Filtrar</button>
+        </form>
+    </div>
+    
     <div class="col-sm-8" id="chart">
 
         <canvas id="canvas"></canvas>
+    </div>
+</div>
+<div id="container-non">
+    <div class="">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <img class="img-responsive" style="width: 15%; margin: 0 auto" src="https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VWGZUTUtNVF9oY28/components-lists.png" alt="Alternate Text"/>
+                <h2>Estadísticas</h2>
+                <p>
+                    Seleccione los elementos que desee asignar a la publicación
+                </p>
+                <p class="help-block">
+                    Una vez asignada la unidad académica se dará prioridad a las notificaciones para los alumnos dentro de la misma.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
 <script src="~/Views/Stats/GetStatsForEntity.js"></script>

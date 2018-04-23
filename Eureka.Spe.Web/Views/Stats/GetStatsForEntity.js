@@ -48,7 +48,18 @@
                 }
             }
             console.log(notificationsData);
-            buildChart(data, clicksData, notificationsData);
+
+            if (notificationsData.length) {
+                $("#container-non").css("display", "none");
+                buildChart(data, clicksData, notificationsData);
+            } else {
+                if (!byDay) {
+
+                    $("#container").css("display", "none");
+                    $("#container-non").css("display", "block");
+                }
+            }
+
         });
     }
     function getDataSetsForClicks(data) {
