@@ -136,7 +136,13 @@ function startTabListener(container,id) {
         loadUrlInDiv(container, href);
     });    
 }
-
+function overrideNotify() {
+    abp.notify.success = function (message) {
+        var toast = $.mdtoast(message, { duration: 3000, init: true });
+        // Displays the toast
+        toast.show();
+    }
+}
 function loadUrlInDiv(div, url) {
     abp.ui.setBusy($(div));
     $(div).load(url, function (response, status, xhr) {

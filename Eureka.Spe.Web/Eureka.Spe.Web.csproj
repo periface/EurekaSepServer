@@ -615,6 +615,8 @@
     <Content Include="js\bootstraptable\extensions\tree-column\bootstrap-table-tree-column.min.js" />
     <Content Include="js\counterup\jquery.counterup.min.js" />
     <Content Include="js\counterup\waypoints.min.js" />
+    <Content Include="js\customtoast\mdtoast.min.css" />
+    <Content Include="js\customtoast\mdtoast.min.js" />
     <Content Include="js\datetimepicker\bootstrap-material-datetimepicker.css" />
     <Content Include="js\datetimepicker\bootstrap-material-datetimepicker.js" />
     <Content Include="js\eModal\eModal.min.js" />

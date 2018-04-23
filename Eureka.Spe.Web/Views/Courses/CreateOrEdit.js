@@ -1,9 +1,29 @@
 ﻿(function () {
     var service = abp.services.app.course;
     var categoryService = abp.services.app.courseCategories;
-    var tinyMce;
-    startTinyMce("#content", function (instance) {
-        tinyMce = instance;
+    $("#content").trumbowyg({
+        lang: 'es',
+        btnsDef: {
+            // Create a new dropdown
+            image: {
+                dropdown: ['insertImage', 'base64'],
+                ico: 'insertImage'
+            }
+        },
+        autogrow: true,
+        btns: [
+            ['viewHTML'],
+            ['formatting'],
+            ['strong', 'em', 'del'],
+            ['superscript', 'subscript'],
+            ['link'],
+            ['image'], // Our fresh created dropdown
+            ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+            ['unorderedList', 'orderedList'],
+            ['horizontalRule'],
+            ['removeformat'],
+            ['fullscreen']
+        ]
     });
     var uploadOptions = {
         baseUrl: "/upload",
@@ -35,7 +55,6 @@
         function (e) {
             e.preventDefault();
             var data = $(this).serializeFormToObject();
-            data.content = tinyMce.save();
             service.createOrUpdate(data).done(function (response) {
                 abp.notify.success("Cambios guardados...");
                 reloadPage(response);

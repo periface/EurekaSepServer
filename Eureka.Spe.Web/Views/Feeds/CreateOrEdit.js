@@ -2,6 +2,7 @@
 (function () {
     var service = abp.services.app.feed;
     var publisherService = abp.services.app.publisher;
+    //overrideNotify();
     $('#content').trumbowyg({
         lang: 'es',
         btnsDef: {
@@ -11,6 +12,7 @@
                 ico: 'insertImage'
             }
         },
+        autogrow: true,
         btns: [
             ['viewHTML'],
             ['formatting'],
@@ -64,7 +66,7 @@
             var data = $(this).serializeFormToObject();
             data.content = $('#content').trumbowyg('html');;
             service.createOrUpdate(data).done(function (response) {
-                abp.notify.info("Cambios guardados...");
+                abp.notify.success("Cambios guardados...");
                 $('button[type="submit"]').prop("disabled", false);
                 reloadPage(response);
             });

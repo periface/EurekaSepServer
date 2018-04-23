@@ -24,7 +24,7 @@
     <title>Sistema de gestión de contenidos</title>
 
     @Styles.Render("~/Bundles/vendor/css")
-
+    <link href="~/js/customtoast/mdtoast.min.css" rel="stylesheet" />
     <!-- View specific styles -->
     @RenderSection("styles", required: false)
 
@@ -136,7 +136,7 @@
     <!-- SignalR scripts -->
     <script src="~/signalr/hubs"></script>
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
-
+    <script src="~/js/customtoast/mdtoast.min.js"></script>
     <!-- View specific scripts -->
     @RenderSection("scripts", required: false)
 </body>

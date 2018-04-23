@@ -16,11 +16,9 @@
 @section Styles{
     <link href="~/js/datetimepicker/bootstrap-material-datetimepicker.css" rel="stylesheet" />
     <link href="~/Views/Courses/CreateOrEdit.css" rel="stylesheet" />
+    <link href="~/js/trumboWys/ui/trumbowyg.min.css" rel="stylesheet" />
 }
-
 <form name="CreateEditFeedForm" id="CreateEditFeedForm" role="form" class="form-validation">
-
-
     <input type="hidden" name="Id" value="@Model.Id" />
     <input type="hidden" name="TenantId" value="@Model.TenantId" />
     @*<div class="row clearfix">
@@ -246,8 +244,13 @@
 </form>
 @section Scripts{
     <script src="~/js/eModal/eModal.min.js"></script>
-    <script src="~/js/tinymce/js/tinymce/tinymce.min.js"></script>
     <script src="~/js/helpers.js"></script>
+
     <script src="~/js/datetimepicker/bootstrap-material-datetimepicker.js"></script>
+
+    <script src="~/js/trumboWys/trumbowyg.min.js"></script>
+    <script src="~/js/trumboWys/plugins/base64/trumbowyg.base64.min.js"></script>
+
+    <script src="~/js/trumboWys/langs/es.min.js"></script>
     <script src="~/Views/Courses/CreateOrEdit.js"></script>
 }
