@@ -2960,6 +2960,7 @@
       <DependentUpon>CreateOrEdit.css</DependentUpon>
     </Content>
     <Content Include="Views\AcademicUnits\Index.js" />
+    <Content Include="Views\AcademicUnits\Manage.js" />
     <Content Include="Views\Account\Login.css">
       <DependentUpon>Login.less</DependentUpon>
     </Content>
@@ -3076,6 +3077,7 @@
     <Content Include="Views\Messages\CreateOrEdit.cshtml" />
     <Content Include="Views\Messages\Manage.cshtml" />
     <Content Include="Views\Publishers\CreateFast.cshtml" />
+    <Content Include="Views\AcademicUnits\Manage.cshtml" />
     <None Include="Views\Students\CreateOrEdit.less" />
     <Content Include="Views\Students\CreateOrEdit.css">
       <DependentUpon>CreateOrEdit.less</DependentUpon>

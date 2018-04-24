@@ -22,9 +22,10 @@ namespace Eureka.Spe.Web.Controllers
         }
 
         // GET: Careers
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View();
+            var careers = _careerAppService.GetCareersSimpleListForAcUnit(id);
+            return View(careers);
         }
 
         public async Task<ActionResult> CreateOrEdit(int? id,int selected =0)

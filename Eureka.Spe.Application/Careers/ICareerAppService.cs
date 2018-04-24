@@ -10,5 +10,6 @@ namespace Eureka.Spe.Careers
     {
         List<CareerDto> GetCareersSimpleList();
         CareersGroupedList GetCareersList();
+        List<CareerDto> GetCareersSimpleListForAcUnit(int id);
     }
 }

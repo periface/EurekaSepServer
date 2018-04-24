@@ -96,12 +96,6 @@ namespace Eureka.Spe.Web
                             )
                         )
                         .AddItem(
-                            new MenuItemDefinition(
-                                    PageNames.Careers,
-                                    L("Careers"),
-                                    url: "Careers"
-                                ))
-                        .AddItem(
                         new MenuItemDefinition(
                             PageNames.Students,
                             L("StudentsList"),

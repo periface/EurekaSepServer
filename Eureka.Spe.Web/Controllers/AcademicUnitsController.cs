@@ -30,5 +30,11 @@ namespace Eureka.Spe.Web.Controllers
             var elm = await _academicUnitAppService.Get(id.Value);
             return View(elm);
         }
+
+        public async Task<ActionResult> Manage(int id)
+        {
+            var model = await _academicUnitAppService.Get(id);
+            return View(model);
+        }
     }
 }

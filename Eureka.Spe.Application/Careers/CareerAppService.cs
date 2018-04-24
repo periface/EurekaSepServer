@@ -92,5 +92,11 @@ namespace Eureka.Spe.Careers
             }
             return result;
         }
+
+        public List<CareerDto> GetCareersSimpleListForAcUnit(int id)
+        {
+            var careers = _repository.GetAllList(a => a.AcademicUnitId == id);
+            return careers.Select(a => a.MapTo<CareerDto>()).ToList();
+        }
     }
 }

@@ -5,7 +5,7 @@ using Eureka.Spe.Students.Entities;
 namespace Eureka.Spe.Careers.Dto
 {
     [AutoMap(typeof(Career))]
-    public class CareerDto : EntityDto
+    public class CareerDto : FullAuditedEntityDto
     {
         public string Name { get; set; }
         public string Description { get; set; }
