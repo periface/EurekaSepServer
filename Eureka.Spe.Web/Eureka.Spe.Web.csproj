@@ -621,6 +621,7 @@
     <Content Include="js\datetimepicker\bootstrap-material-datetimepicker.js" />
     <Content Include="js\eModal\eModal.min.js" />
     <Content Include="js\helpers.js" />
+    <Content Include="js\inputmark\jquery.inputmask.bundle.js" />
     <Content Include="js\main.js" />
     <Content Include="js\script.js" />
     <Content Include="js\trumboWys\langs\ar.min.js" />
