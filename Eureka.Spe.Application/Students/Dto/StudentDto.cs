@@ -5,7 +5,7 @@ using Eureka.Spe.Students.Entities;
 namespace Eureka.Spe.Students.Dto
 {
     [AutoMap(typeof(Student))]
-    public class StudentDto : EntityDto
+    public class StudentDto : FullAuditedEntityDto
     {
         public string Name { get; set; }
         public string Img { get; set; }

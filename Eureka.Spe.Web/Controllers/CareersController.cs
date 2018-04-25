@@ -24,6 +24,7 @@ namespace Eureka.Spe.Web.Controllers
         // GET: Careers
         public ActionResult Index(int id)
         {
+            ViewBag.Id = id;
             var careers = _careerAppService.GetCareersSimpleListForAcUnit(id);
             return View(careers);
         }

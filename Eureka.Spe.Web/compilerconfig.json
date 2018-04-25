@@ -54,5 +54,13 @@
   {
     "outputFile": "Views/Students/CreateOrEdit.css",
     "inputFile": "Views/Students/CreateOrEdit.less"
+  },
+  {
+    "outputFile": "Views/Careers/Index.css",
+    "inputFile": "Views/Careers/Index.less"
+  },
+  {
+    "outputFile": "Views/AcademicUnits/Manage.css",
+    "inputFile": "Views/AcademicUnits/Manage.less"
   }
 ]

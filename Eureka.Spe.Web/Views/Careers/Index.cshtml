@@ -2,72 +2,84 @@
 @{
     Layout = null;
 }
+<input type="hidden" id="AcademicUnitId" value="@ViewBag.Id" />
 <link href="~/js/bootstraptable/bootstrap-table.min.css" rel="stylesheet" />
-<style>
-    .filter-cont {
-        width: 40%;
-        margin-bottom: 0;
-        display: inline-block;
-    }
 
-    .btn-container-right {
-        display: inline-block;
-        width: 60%;
-        float: right;
-        margin-top: 20px;
-    }
-
-    #academicUnits {
-        display: inline-block;
-    }
-
-    .block {
-        display: block;
-    }
-</style>
+<link href="~/Views/Careers/Index.css" rel="stylesheet" />
 <div class="row">
-    <div class="col-sm-12">
-        <a class="btn btn-primary btn-sm waves-effect pull-right js-add-career">
-            Crear nueva carrera
-        </a>
-    </div>
+
     <div class="col-lg-12">
-        <table class="table table-responsive table-condensed">
-            <thead>
-            <tr>
-                @*<th>
-                                    --
-                                </th>*@
-                <th>
-                    Titulo
-                </th>
-                <th>
-                    Ultima actualización
-                </th>
-                <th class="text-center">
-                    Opciones
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (var modelNotification in Model)
-            {
-                <tr data-id="@modelNotification.Id">
-                    
-                    <td>
-                        @modelNotification.Name
-                    </td>
-                    <td>
-                        @(modelNotification.LastModificationTime.HasValue ? modelNotification.LastModificationTime.Value.ToShortTimeString() : "--")
-                    </td>
-                    <td class="text-center">
-                        <a data-id="@modelNotification.Id" class="btn btn-xs btn-default js-edit-career"><i class="material-icons">edit</i></a>
-                        <a class="btn btn-xs btn-danger js-delete-notification" data-id="@modelNotification.Id"><i class="material-icons">delete_sweep</i></a>
-                    </td>
-                </tr>
-            }
-            </tbody>
-        </table>
+        @if (!Model.Any())
+        {
+            <div class="">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <img class="img-responsive" style="width: 15%; margin: 0 auto" src="https://www.shareicon.net/data/128x128/2017/05/22/886177_message_512x512.png" alt="Alternate Text" />
+                        <h2>Carreras</h2>
+                        <p>
+                            Seleccione los elementos que desee asignar a la publicación
+                        </p>
+                        <p class="help-block">
+                            Una vez asignada la unidad académica se dará prioridad a las notificaciones para los alumnos dentro de la misma.
+                        </p>
+                        <button class="btn btn-primary waves-effect btn-sm js-add-career" type="button">
+                            Crear nueva carrera
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+        else
+        {
+            <div class="col-sm-12">
+                <a class="btn btn-primary btn-sm waves-effect pull-right js-add-career">
+                    Crear nueva carrera
+                </a>
+            </div>
+            <table class="table table-responsive table-condensed">
+                <thead>
+                    <tr>
+                        <th>
+                            Titulo
+                        </th>
+                        <th>
+                            Ultima actualización
+                        </th>
+                        <th class="text-center">
+                            Opciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var modelNotification in Model)
+                    {
+                        <tr data-id="@modelNotification.Id">
+
+                            <td>
+                                @modelNotification.Name
+                            </td>
+                            <td>
+                                @(modelNotification.LastModificationTime.HasValue ?
+                                    modelNotification.LastModificationTime.Value.ToShortDateString()
+                                    + " "
+                                    + modelNotification.LastModificationTime.Value.ToShortTimeString() + " hrs" : "--")
+                            </td>
+                            <td class="text-center">
+                                <a data-id="@modelNotification.Id" class="btn btn-xs btn-default js-edit-career">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a class="btn btn-xs btn-danger js-delete-career" data-id="@modelNotification.Id">
+                                    <i class="material-icons">delete_sweep</i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
     </div>
 </div>
 <script src="~/Views/Careers/Index.js"></script>

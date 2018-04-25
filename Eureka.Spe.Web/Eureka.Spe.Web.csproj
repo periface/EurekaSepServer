@@ -2960,7 +2960,13 @@
       <DependentUpon>CreateOrEdit.css</DependentUpon>
     </Content>
     <Content Include="Views\AcademicUnits\Index.js" />
+    <Content Include="Views\AcademicUnits\Manage.css">
+      <DependentUpon>Manage.less</DependentUpon>
+    </Content>
     <Content Include="Views\AcademicUnits\Manage.js" />
+    <Content Include="Views\AcademicUnits\Manage.min.css">
+      <DependentUpon>Manage.css</DependentUpon>
+    </Content>
     <Content Include="Views\Account\Login.css">
       <DependentUpon>Login.less</DependentUpon>
     </Content>
@@ -2984,7 +2990,13 @@
     <Content Include="Views\Careers\CreateOrEdit.min.css">
       <DependentUpon>CreateOrEdit.css</DependentUpon>
     </Content>
+    <Content Include="Views\Careers\Index.css">
+      <DependentUpon>Index.less</DependentUpon>
+    </Content>
     <Content Include="Views\Careers\Index.js" />
+    <Content Include="Views\Careers\Index.min.css">
+      <DependentUpon>Index.css</DependentUpon>
+    </Content>
     <Content Include="Views\CourseCategories\CreateOrEdit.js" />
     <Content Include="Views\CourseCategories\Index.js" />
     <Content Include="Views\Courses\CreateOrEdit.css">
@@ -3078,6 +3090,8 @@
     <Content Include="Views\Messages\Manage.cshtml" />
     <Content Include="Views\Publishers\CreateFast.cshtml" />
     <Content Include="Views\AcademicUnits\Manage.cshtml" />
+    <Content Include="Views\Careers\Index.less" />
+    <Content Include="Views\AcademicUnits\Manage.less" />
     <None Include="Views\Students\CreateOrEdit.less" />
     <Content Include="Views\Students\CreateOrEdit.css">
       <DependentUpon>CreateOrEdit.less</DependentUpon>

@@ -5,19 +5,16 @@
     ViewBag.ActiveMenu = PageNames.Students; //The menu item will be active for this page.
 }
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
+        <a class="btn btn-primary btn-lg waves-effect pull-right" href="@Url.Action("CreateOrEdit")">
+            Crear estudiante
+        </a>
+        <br /><br /><br />
         <div class="card">
-            <div class="header">
-                <h2>
-                    @L("Students")
-                </h2>
-            </div>
             <div class="body table-responsive">
                 <table data-pagination="true"
-                       data-side-pagination="server" data-events="buttons" data-search="true" data-url="/api/services/app/student/getall" id="table" class="table table-responsive table-condensed"></table>
-                <a class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right js-add-student">
-                    <i class="material-icons">add</i>
-                </a>
+                       data-side-pagination="server" data-classes="table table-no-bordered table-condensed" data-events="buttons" data-search="true" data-url="/api/services/app/student/getall" id="table"></table>
+
             </div>
         </div>
     </div>
@@ -28,6 +25,6 @@
     <script src="~/js/eModal/eModal.min.js"></script>
     <script src="~/js/bootstraptable/bootstrap-table.min.js"></script>
     <script src="~/js/bootstraptable/bootstrap-table-es-MX.min.js"></script>
+    <script src="~/js/helpers.js"></script>
     <script src="~/Views/Students/Index.js"></script>
-
 }

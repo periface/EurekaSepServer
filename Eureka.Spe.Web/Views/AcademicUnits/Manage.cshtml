@@ -1,16 +1,17 @@
-﻿@model Eureka.Spe.AcademicUnits.Dto.AcademicUnitDto
+﻿@model Eureka.Spe.Web.Controllers.AcademicUnitsController.ManageViewModel
 @section Styles{
 
     <link href="~/js/bootstraptable/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="~/Views/AcademicUnits/Manage.css" rel="stylesheet" />
 }@{
-     ViewBag.ActiveMenu = PageNames.AcademicUnits; //The menu item will be active for this page.
- }
+    ViewBag.ActiveMenu = PageNames.AcademicUnits; //The menu item will be active for this page.
+}
 <link href="~/Views/Courses/Manage.css" rel="stylesheet" />
 <div class="row">
     <div class="col-lg-12 col-small-center ">
         <div class="card">
             <div class="body">
-                <h4>@Model.Name</h4>
+                <h4>@Model.SelectedAcademicUnit.Name  <span class="help-block"><a href="#" data-toggle="modal" data-target="#selectAcademicUnitModal">Cambiar</a></span></h4>
             </div>
         </div>
     </div>
@@ -19,7 +20,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
         <div class="card">
             <div class="body" style="min-height: 500px">
-                <input type="hidden" value="@Model.Id" id="Id" />
+                <input type="hidden" value="@Model.SelectedAcademicUnit.Id" id="Id" />
                 <div class="row">
                     <div class="col-lg-12">
                         <ul class="nav nav-tabs" role="tablist">
@@ -36,6 +37,45 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="selectAcademicUnitModal" tabindex="-1" role="dialog" aria-labelledby="selectAcademicUnitModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>Unidades académicas</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="@Url.Action("Index","AcademicUnits")" class="btn btn-default">Administrar Unidades Académicas</a>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach (var modelAvailableAcademicUnit in Model.AvailableAcademicUnits)
+                    {
+                        <a href="@Url.Action("Manage", new {id = modelAvailableAcademicUnit.Id})">
+                            <div class="col-sm-3">
+                                <div class="card-box @(modelAvailableAcademicUnit.IsCurrentlySelected ? "active":"")">
+                                    @modelAvailableAcademicUnit.ShortName
+                                    <p class="help-block">
+                                        @modelAvailableAcademicUnit.Name
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts{
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>

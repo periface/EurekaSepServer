@@ -1,0 +1,17 @@
+﻿.filter-cont {
+  width: 40%;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.btn-container-right {
+  display: inline-block;
+  width: 60%;
+  float: right;
+  margin-top: 20px;
+}
+#academicUnits {
+  display: inline-block;
+}
+.block {
+  display: block;
+}
