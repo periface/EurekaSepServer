@@ -1,7 +1,9 @@
 ﻿@using System.Globalization
 @using Castle.Core.Internal
 @model Eureka.Spe.Courses.Dto.CourseDto
-
+@{
+    ViewBag.Title = "Detalles de curso";
+}
 @functions {
     private string ParseDate(DateTime? modelRegistrationsEnd)
     {

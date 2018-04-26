@@ -3093,6 +3093,7 @@
     <Content Include="Views\AcademicUnits\Manage.cshtml" />
     <Content Include="Views\Careers\Index.less" />
     <Content Include="Views\AcademicUnits\Manage.less" />
+    <Content Include="Views\Messages\Configure.cshtml" />
     <None Include="Views\Students\CreateOrEdit.less" />
     <Content Include="Views\Students\CreateOrEdit.css">
       <DependentUpon>CreateOrEdit.less</DependentUpon>

@@ -224,6 +224,7 @@
     <Compile Include="AcademicUnits\Dto\AcademicUnitSelectedDto.cs" />
     <Compile Include="AcademicUnits\Dto\AddToEntityInput.cs" />
     <Compile Include="DailyMessages\DialyMessageAppService.cs" />
+    <Compile Include="DailyMessages\Dto\MessageConfigurationDto.cs" />
     <Compile Include="DailyMessages\Dto\MessageDto.cs" />
     <Compile Include="DailyMessages\IDialyMessageAppService.cs" />
     <Compile Include="Feeds\Dto\FeedDto.cs" />

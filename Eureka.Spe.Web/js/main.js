@@ -78,4 +78,11 @@
 
     startDismissListener();
     loadDismissed();
+    var open = true;
+    //$(".navbar-brand").click(function() {
+    //    open = !open;
+    //    $("#leftsidebar").css("left",-300);
+    //});
+
+
 })(jQuery);

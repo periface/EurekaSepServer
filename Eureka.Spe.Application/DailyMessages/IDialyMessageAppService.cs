@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
 using Abp.Application.Services;
 using Eureka.Spe.DailyMessages.Dto;
 using Eureka.Spe.DailyMessages.Entities;
@@ -10,5 +11,7 @@ namespace Eureka.Spe.DailyMessages
     {
         [HttpGet]
         MessageDto GetLatestMessage();
+
+        Task<MessageConfigurationDto> GetConfigModel();
     }
 }

@@ -1,88 +1,4 @@
-﻿/*Custom ===============================*/
-.col-small-center {
-    width: 80%;
-    position: relative;
-    left: 10%;
-}
-
-.col-smaller-center {
-    width: 70%;
-    position: relative;
-    left: 15%;
-    margin-top: 5%;
-}
-
-.custom-content {
-    margin: 115px 0 0 300px !important;
-}
-
-.custom-fluid {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    margin-right: auto !important;
-    margin-left: auto !important;
-}
-.sticky {
-    position: fixed;
-    top: 70px;
-    width: 100%;
-    z-index: 1;
-}
-/**Tables*/
-
-
-.fixed-table-toolbar .bs-bars, .fixed-table-toolbar .columns, .fixed-table-toolbar .search {
-    position: relative;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    line-height: 34px;
-}
-
-    .fixed-table-toolbar .bs-bars, .fixed-table-toolbar .columns, .fixed-table-toolbar .search > * {
-        border-radius: 0 !important;
-    }
-
-/*Tables*/
-
-
-.stick-bottom {
-    background-color: white;
-    height: 60px;
-    /* padding: 10px; */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    z-index: 1;
-}
-
-.eureka-brand {
-    /* padding: 10px; */
-    position: fixed;
-    bottom: 2%;
-    right: 25%;
-    width: 100%;
-    /* left: -15%; */
-    text-align: center;
-    z-index: 1;
-}
-
-.eureka-brand-img {
-    width: 10%;
-}
-
-.btn-container {
-    position: relative;
-    left: 30%;
-    top: 10px;
-    display: inline-flex;
-}
-
-.help-block {
-    font-size: 0.8em;
-}
-/* Navbar ====================================== */
+﻿/* Navbar ====================================== */
 .navbar {
     font-family: "Roboto", sans-serif;
     -webkit-border-radius: 0;
@@ -10879,4 +10795,128 @@ html.ie11 .bs-searchbox .form-control {
 
 .swal-footer {
     text-align: center;
+}
+
+
+
+/*Custom ===============================*/
+.col-small-center {
+    width: 80%;
+    position: relative;
+    left: 10%;
+}
+.sidebar {
+    top: 0 !important;
+    z-index: 12 !important;
+    height: calc(100vh - 0px) !important;
+}
+.navbar {
+    left: 19% !important;
+    width: 81% !important;
+}
+.end-row {
+    margin-bottom: 100px;
+}
+.form-group .form-line {
+    border-bottom: 1px solid #939393 !important;
+}
+.card .header {
+    border-bottom: 1px solid border-color: rgba(0,0,0,0.12) !important;
+}
+
+.form-control-label.left {
+    text-align: left !important;
+}
+
+.form-control-label.left label {
+    margin-bottom: 0 !important;
+}
+
+.label-help {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+textarea {
+    resize: none;
+    height: 200px !important;
+}
+
+.col-smaller-center {
+    width: 70%;
+    position: relative;
+    left: 15%;
+    margin-top: 5%;
+}
+
+.custom-content {
+    margin: 115px 0 0 300px !important;
+}
+
+.custom-fluid {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.sticky {
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    z-index: 1;
+}
+/**Tables*/
+
+
+.fixed-table-toolbar .bs-bars, .fixed-table-toolbar .columns, .fixed-table-toolbar .search {
+    position: relative;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 34px;
+}
+
+.fixed-table-toolbar .bs-bars, .fixed-table-toolbar .columns, .fixed-table-toolbar .search > * {
+    border-radius: 0 !important;
+}
+
+/*Tables*/
+
+
+.stick-bottom {
+    background-color: white;
+    height: 60px;
+    /* padding: 10px; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+.eureka-brand {
+    /* padding: 10px; */
+    position: fixed;
+    bottom: 2%;
+    right: 25%;
+    width: 100%;
+    /* left: -15%; */
+    text-align: center;
+    z-index: 1;
+}
+
+.eureka-brand-img {
+    width: 10%;
+}
+
+.btn-container {
+    position: relative;
+    left: 30%;
+    top: 10px;
+    display: inline-flex;
+}
+
+.help-block {
+    font-size: 0.8em;
 }

@@ -39,5 +39,11 @@ namespace Eureka.Spe.Web.Controllers
             var message = await _dialyMessageAppService.Get(id);
             return View(message);
         }
+
+        public async Task<ViewResult> Configure()
+        {
+            var configurationModel = await _dialyMessageAppService.GetConfigModel();
+            return View(configurationModel);
+        }
     }
 }

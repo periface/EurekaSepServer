@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using Abp.Configuration;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
 using Eureka.Spe.DailyMessages.Dto;
@@ -14,10 +15,11 @@ namespace Eureka.Spe.DailyMessages
     public class DialyMessageAppService : IDialyMessageAppService
     {
         private readonly IRepository<Message> _repository;
-
-        public DialyMessageAppService(IRepository<Message> repository)
+        private readonly SettingManager _settingManager;
+        public DialyMessageAppService(IRepository<Message> repository, SettingManager settingManager)
         {
             _repository = repository;
+            _settingManager = settingManager;
         }
 
         public IQueryable<Message> GetFilteredQuery(IQueryable<Message> all, BootstrapTableInput input)
@@ -87,6 +89,18 @@ namespace Eureka.Spe.DailyMessages
         {
             var latest = _repository.GetAll().OrderByDescending(a=>a.CreationTime).FirstOrDefault();
             return latest.MapTo<MessageDto>();
+        }
+
+        public async Task<MessageConfigurationDto> GetConfigModel()
+        {
+            var name = await _settingManager.GetSettingValueAsync("RectorName");
+            var img = await _settingManager.GetSettingValueAsync("RectorImg");
+
+            return new MessageConfigurationDto()
+            {
+                MainImg = img,
+                Name = name
+            };
         }
     }
 }
