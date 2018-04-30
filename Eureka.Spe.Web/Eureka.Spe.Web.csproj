@@ -3103,6 +3103,7 @@
       <DependentUpon>CreateOrEdit.css</DependentUpon>
     </Content>
     <Content Include="Views\Students\Index.js" />
+    <Content Include="Views\Students\Manage.js" />
     <Content Include="Views\Tenants\Index.js" />
     <Content Include="Views\Tenants\_EditTenantModal.js" />
     <Content Include="Views\Users\Index.js" />

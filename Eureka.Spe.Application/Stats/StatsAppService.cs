@@ -39,10 +39,26 @@ namespace Eureka.Spe.Stats
 
         public List<NotificationsResult> GetNotificationsStatsForElement(GetSingleElementMetricRequest input)
         {
-            var result = new List<NotificationsResult>();
+            
             var phoneNotifications = _phoneNotificationsRepository.GetAllIncluding(a => a.SendNotificationsStatuses)
                 .Where(a => a.AssignedTo == input.EntityType && a.AssignedToId == input.EntityId);
 
+
+            if (string.IsNullOrEmpty(input.Filter))
+            {
+
+                return BasicResult(phoneNotifications, input);
+            }
+            return GetFilteredResult(phoneNotifications, input);
+        }
+
+        private List<NotificationsResult> GetFilteredResult(IQueryable<PhoneNotification> phoneNotifications, GetSingleElementMetricRequest input)
+        {
+            throw new NotImplementedException();
+        }
+        private List<NotificationsResult> BasicResult(IQueryable<PhoneNotification> phoneNotifications, GetSingleElementMetricRequest input)
+        {
+            var result = new List<NotificationsResult>();
             foreach (var phoneNotification in phoneNotifications)
             {
                 if (phoneNotification != null)

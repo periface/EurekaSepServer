@@ -18,6 +18,13 @@
             width: 450px;
             height: 200px;
         }
+        #upload {
+            text-align: center;
+
+        }
+        #upload img {
+            cursor: pointer;
+        }
     </style>
 }
 
@@ -129,7 +136,7 @@
                                 <div id="upload">
                                     @if (Model.Img.IsNullOrEmpty())
                                     {
-                                        <img id="iconPlaceHolder" src="" />
+                                        <img id="iconPlaceHolder" src="http://www.gaia-earth.co.uk/img/placeholder-img.jpg" />
                                     }
                                     else
                                     {

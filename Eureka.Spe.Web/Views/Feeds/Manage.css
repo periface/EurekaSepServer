@@ -1,3 +1,8 @@
 ﻿#sections {
   min-height: 200px;
 }
+.img-inline {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+}

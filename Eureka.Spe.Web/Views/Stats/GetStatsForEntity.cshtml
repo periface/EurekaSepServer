@@ -11,11 +11,16 @@
     }
 
 }
+<style>
+    #canvas {
+        height: 300px;
+    }
+    #canvas-two {
+        height: 300px;
+    }
+</style>
 <div class="row" id="container">
-    <div class="col-lg-12">
-        <h2>Estadísticas</h2>
-    </div>
-    <div class="col-sm-4">
+    @*<div class="col-sm-4">
         <form id="form">
             <h3>Opciones</h3>
             <label>Inicio</label>
@@ -34,11 +39,23 @@
 
             <button type="button" class="btn btn-sm btn-primary js-filter">Filtrar</button>
         </form>
+    </div>*@
+    <div class="col-sm-12">
+        <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+            <button type="button" data-action="sevdays" class="btn btn-primary waves-effect js-buttons">7 DÍAS</button>
+            <button type="button" data-action="thirdays" class="btn btn-default waves-effect js-buttons">30 DÍAS</button>
+            <button type="button" data-action="year" class="btn btn-default waves-effect js-buttons">1 AÑO</button>
+            <button type="button" data-action="all" class="btn btn-default waves-effect js-buttons">DESDE SIEMPRE</button>
+        </div>
     </div>
-    
-    <div class="col-sm-8" id="chart">
+    <div class="col-sm-12" id="chart">
+        <hr />
+        <div class="row">
+            <div class="col-lg-12">
 
-        <canvas id="canvas"></canvas>
+                <div id="canvas"></div>
+            </div>
+        </div>
     </div>
 </div>
 <div id="container-non">
@@ -57,4 +74,5 @@
         </div>
     </div>
 </div>
+
 <script src="~/Views/Stats/GetStatsForEntity.js"></script>

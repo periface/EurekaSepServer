@@ -10920,3 +10920,7 @@ textarea {
 .help-block {
     font-size: 0.8em;
 }
+
+.manage-title {
+    font-weight: 600;
+}

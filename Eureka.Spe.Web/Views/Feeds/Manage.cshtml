@@ -9,15 +9,16 @@
  }
 <div class="row">
     <div class="col-lg-12 col-small-center">
-        <a class="btn btn-lg bg-grey" href="@Url.Action("Index")"><i class="material-icons">keyboard_backspace</i> @Model.Feed.Title</a>
+        <a class="btn btn-lg bg-grey" href="@Url.Action("Index")"><i class="material-icons">keyboard_backspace</i></a> <span class="manage-title">@Model.Feed.Title</span> 
+        <br /><br />
     </div>
 </div>
 <div class="row">
     <div class="col-lg-12 col-small-center ">
         <div class="card">
             <div class="body">
-                <h4>@Model.Feed.Title</h4>
-                <p><img class="img-responsive" style="width: 30px; height: 30px;display:inline-flex" src="@Model.Feed.PublisherImg" /> <strong>@Model.Feed.PublisherName</strong></p>
+                @*<h4>@Model.Feed.Title</h4>*@
+                <p><img class="img-responsive img-inline"  src="@Model.Feed.PublisherImg" /> <strong>@Model.Feed.PublisherName</strong></p>
                 <a href="@Url.Action("CreateOrEdit",new{id=Model.Feed.Id})" class="btn btn-primary">Editar contenido</a>
             </div>
         </div>
@@ -51,7 +52,6 @@
     <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="~/js/eModal/eModal.min.js"></script>
     <script src="~/js/helpers.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-    <script src="/lib/jquery-sparkline/dist/jquery.sparkline.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="~/Views/Feeds/Manage.js"></script>
 }

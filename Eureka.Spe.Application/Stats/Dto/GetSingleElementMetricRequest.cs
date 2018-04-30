@@ -11,5 +11,8 @@ namespace Eureka.Spe.Stats.Dto
 
         public bool ByDay { get; set; }
         public int StudentId { get; set; }
+
+
+        public string Filter { get; set; }
     }
 }

@@ -35,8 +35,9 @@
                     formatter: (value, row, index) => {
                         var btnEdit = `<a href="/Students/CreateOrEdit/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
                         var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-student" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
-
+                        var brnManage = `<a href="/Students/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
                         return [
+                            brnManage,
                             btnEdit,
                             btnDelete
                         ].join(' ');
