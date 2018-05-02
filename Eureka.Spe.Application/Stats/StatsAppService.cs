@@ -54,7 +54,19 @@ namespace Eureka.Spe.Stats
 
         private List<NotificationsResult> GetFilteredResult(IQueryable<PhoneNotification> phoneNotifications, GetSingleElementMetricRequest input)
         {
+            switch (input.Filter)
+            {
+                case "":
+
+                    break;
+
+
+
+            }
             var result = phoneNotifications.Where(a => a.CreationTime > DateTime.Now.AddDays(-7)).ToList();
+
+
+
 
             return null;
         }
