@@ -1,14 +1,14 @@
 ﻿using Abp.Web.Mvc.Authorization;
-using Eureka.Spe.AcademicUnits;
-using Eureka.Spe.AcademicUnits.Dto;
 using Eureka.Spe.Authorization;
-using Eureka.Spe.Feeds;
-using Eureka.Spe.Feeds.Dto;
-using Eureka.Spe.Publishers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Eureka.Spe.NewsFeed.Feeds;
+using Eureka.Spe.NewsFeed.Feeds.Dto;
+using Eureka.Spe.NewsFeed.Publishers;
+using Eureka.Spe.StudentsInfo.AcademicUnits;
+using Eureka.Spe.StudentsInfo.AcademicUnits.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {

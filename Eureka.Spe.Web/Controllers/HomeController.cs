@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using Abp.Web.Mvc.Authorization;
-using Eureka.Spe.Feeds;
+using Eureka.Spe.NewsFeed.Feeds;
 using Eureka.Spe.Stats;
 
 namespace Eureka.Spe.Web.Controllers

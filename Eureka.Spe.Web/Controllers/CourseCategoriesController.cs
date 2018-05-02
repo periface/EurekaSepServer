@@ -6,8 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
-using Eureka.Spe.CourseCategories;
-using Eureka.Spe.CourseCategories.Dto;
+using Eureka.Spe.ContinuousEducation.CourseCategories;
+using Eureka.Spe.ContinuousEducation.CourseCategories.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {

@@ -7,13 +7,15 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
+using Eureka.Spe.ContinuousEducation.Courses;
 using Eureka.Spe.Courses;
 using Eureka.Spe.DailyMessages;
-using Eureka.Spe.Feeds;
+using Eureka.Spe.NewsFeed.Feeds;
 using Eureka.Spe.Notifications;
 using Eureka.Spe.Notifications.Dto;
 using Eureka.Spe.Push.PushManager.Inputs;
 using Eureka.Spe.Scholarships;
+using Eureka.Spe.ScholarshipsService.Scholarships;
 
 namespace Eureka.Spe.Web.Controllers
 {

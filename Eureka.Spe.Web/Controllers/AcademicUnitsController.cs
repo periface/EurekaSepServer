@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Abp.AutoMapper;
 using Abp.Web.Mvc.Authorization;
-using Eureka.Spe.AcademicUnits;
-using Eureka.Spe.AcademicUnits.Dto;
 using Eureka.Spe.Authorization;
+using Eureka.Spe.StudentsInfo.AcademicUnits;
+using Eureka.Spe.StudentsInfo.AcademicUnits.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {

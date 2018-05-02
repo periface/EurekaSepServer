@@ -7,9 +7,10 @@ using System.Web.Mvc;
 using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
 using Eureka.Spe.Scholarships;
-using Eureka.Spe.Scholarships.Dto;
-using Eureka.Spe.ScholarshipSections;
-using Eureka.Spe.ScholarshipSections.Dto;
+using Eureka.Spe.ScholarshipsService.Scholarships;
+using Eureka.Spe.ScholarshipsService.Scholarships.Dto;
+using Eureka.Spe.ScholarshipsService.ScholarshipSections;
+using Eureka.Spe.ScholarshipsService.ScholarshipSections.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {

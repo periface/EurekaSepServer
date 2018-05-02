@@ -3,7 +3,8 @@ using System.Web.Mvc;
 using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
 using Eureka.Spe.Students;
-using Eureka.Spe.Students.Dto;
+using Eureka.Spe.StudentsInfo.Students;
+using Eureka.Spe.StudentsInfo.Students.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {

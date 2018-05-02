@@ -2,8 +2,8 @@
 using System.Web.Mvc;
 using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
-using Eureka.Spe.Publishers;
-using Eureka.Spe.Publishers.Dto;
+using Eureka.Spe.NewsFeed.Publishers;
+using Eureka.Spe.NewsFeed.Publishers.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {

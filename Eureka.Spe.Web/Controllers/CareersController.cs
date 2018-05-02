@@ -6,8 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
-using Eureka.Spe.Careers;
-using Eureka.Spe.Careers.Dto;
+using Eureka.Spe.StudentsInfo.Careers;
+using Eureka.Spe.StudentsInfo.Careers.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {

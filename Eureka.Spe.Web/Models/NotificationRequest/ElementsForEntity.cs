@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Eureka.Spe.AcademicUnits.Dto;
 using Eureka.Spe.Notifications.Dto;
+using Eureka.Spe.StudentsInfo.AcademicUnits.Dto;
 
 namespace Eureka.Spe.Web.Models.NotificationRequest
 {

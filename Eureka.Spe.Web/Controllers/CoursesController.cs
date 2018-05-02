@@ -2,8 +2,9 @@
 using System.Web.Mvc;
 using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
+using Eureka.Spe.ContinuousEducation.Courses;
+using Eureka.Spe.ContinuousEducation.Courses.Dto;
 using Eureka.Spe.Courses;
-using Eureka.Spe.Courses.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {
