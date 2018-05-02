@@ -2,11 +2,12 @@
 @section Styles{
 
     <link href="~/js/bootstraptable/bootstrap-table.min.css" rel="stylesheet" />
+    <link href="~/Views/Courses/Manage.css" rel="stylesheet" />
 }@{
     ViewBag.ActiveMenu = PageNames.Courses; //The menu item will be active for this page.
+     ViewBag.Title = Model.Title;
 }
-<link href="~/Views/Courses/Manage.css" rel="stylesheet" />
-<div class="row">
+@*<div class="row">
     <div class="col-lg-12 col-small-center ">
         <div class="card">
             <div class="body">
@@ -16,7 +17,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
         <div class="card">
