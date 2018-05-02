@@ -10932,3 +10932,10 @@ textarea {
 .table-responsive {
    overflow-x: unset !important; 
 }
+.textarea-wys {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.form-control {
+    font-size: 16px!important;
+}
