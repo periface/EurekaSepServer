@@ -1,4 +1,4 @@
-﻿(function() {
+﻿(function () {
     var service = abp.services.app.feed;
     var table = $("#table");
 
@@ -10,7 +10,7 @@
             columns: [
                 {
                     title: "Titulo", field: "title", sortable: true, formatter: (value, row, index) => {
-                        
+
                         return `<p style="margin:0!important;text-transform: uppercase;"><strong>${value}</strong></p>
                         <p style="margin:0!important;">
                             <img class="img-responsive" style="width:20px;height:20px;display:inline;" src="${row.publisherImg}">
@@ -30,13 +30,17 @@
                 {
                     title: "Acciones",
                     formatter: (value, row, index) => {
-                        var btnEdit = `<a href="/Feeds/CreateOrEdit/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
-                        var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-feed" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
-                        var btnAdvanced = `<a href="/Feeds/Manage/${row.id}" class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i></a>`;
+                        var btnAdvanced = `<a href="/Feeds/Manage/${row.id}" class="waves-effect waves-block js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i> Administrar</a>`;
+                        var btns = `<div class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>${btnAdvanced}</li>
+                                        <li><a href="/Feeds/CreateOrEdit/${row.id}" class="waves-effect waves-block"><i class="material-icons">edit</i>Editar</a></li>
+                                        <li><a href="#" class="waves-effect waves-block js-delete-feed" data-id="${row.id}"><i class="material-icons">delete_sweep</i>Eliminar</a></li>
+                                    </ul></div>`;
                         return [
-                            btnAdvanced,
-                            btnEdit,
-                            btnDelete
+                            btns
                         ].join(' ');
                     }
                 }

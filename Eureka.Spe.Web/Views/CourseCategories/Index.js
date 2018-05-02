@@ -25,11 +25,17 @@
                 {
                     title: "Acciones",
                     formatter: (value, row, index) => {
-                        var btnEdit = `<a class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
-                        var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
+
+                        var btns = `<div class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a <a href="#" class="waves-effect waves-block js-edit-category" data-id="${row.id}"><i class="material-icons">edit</i>Editar</a></li>
+                                        <li><a href="#" class="waves-effect waves-block js-delete-category" data-id="${row.id}"><i class="material-icons">delete_sweep</i>Eliminar</a></li>
+                                    </ul></div>`;
+
                         return [
-                            btnEdit,
-                            btnDelete
+                            btns
                         ].join(' ');
                     }
                 }

@@ -24,22 +24,28 @@
                 {
                     title: "Acciones",
                     formatter: (value, row, index) => {
-                        var btnEdit = `<a class="btn btn-default btn-xs waves-effect waves-teal btn-flat js-edit-publisher" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">edit</i></a>`;
-                        var btnDelete = `<a class="btn btn-danger btn-xs waves-effect waves-teal btn-flat js-delete-publisher" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">delete</i></a>`;
+                    
+                        var btns = `<div class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#" class="waves-effect waves-block js-edit-publisher" data-id="${row.id}"><i class="material-icons">edit</i>Editar</a></li>
+                                        <li><a href="#" class="waves-effect waves-block js-delete-publisher" data-id="${row.id}"><i class="material-icons">delete_sweep</i>Eliminar</a></li>
+                                    </ul></div>`;
+
 
                         return [
-                            btnEdit,
-                            btnDelete
+                            btns
                         ].join(' ');
                     }
                 }
             ],
             toolbar: ".toolbar",
             clickToSelect: true,
-            showRefresh: true,
+            showRefresh: false,
             search: true,
-            showToggle: true,
-            showColumns: true,
+            showToggle: false,
+            showColumns: false,
             pagination: true,
             pageSize: 8,
             pageList: [8, 10, 25, 50, 100],
