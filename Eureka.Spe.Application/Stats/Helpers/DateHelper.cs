@@ -5,6 +5,7 @@ using Abp.Domain.Entities.Auditing;
 
 namespace Eureka.Spe.Stats.Helpers
 {
+    
     public static class DateHelper<T> 
         where T : FullAuditedEntity
     {
@@ -48,6 +49,7 @@ namespace Eureka.Spe.Stats.Helpers
             }
             return metrics;
         }
+        
     }
     public static class DateHelper
     {

@@ -132,16 +132,12 @@ namespace Eureka.Spe.Stats.Helpers
         public static List<ClicksResult> FilterClicksResult(IQueryable<ClickElement> metrics,
             GetSingleElementMetricRequest input)
         {
-
             var result = new List<ClicksResult>();
-
-
             if (input.EndDate.HasValue && input.StartDate.HasValue)
             {
                 metrics = DateHelper<ClickElement>.GetDateFilteredResult(metrics, input.StartDate.Value,
                     input.EndDate.Value, input.ByDay);
             }
-
             if (input.ByDay)
             {
 
