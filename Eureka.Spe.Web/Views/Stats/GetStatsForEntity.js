@@ -1,7 +1,7 @@
 ﻿(function () {
     var service = abp.services.app.stats;
     var myBarChart;
-    function startStats(startDate, endDate, byDay) {
+    function startStats(startDate, endDate, byDay, filter) {
         abp.ui.setBusy($("#chart"));
         if (myBarChart) {
             myBarChart.destroy();
@@ -12,14 +12,16 @@
             EntityId: $("#EntityId").val(),
             StartDate: startDate,
             EndDate: endDate,
-            ByDay: byDay
+            ByDay: byDay,
+            filter: filter
         }));
         asyncCalls.push(service.getClickForElement({
             EntityType: $("#EntityName").val(),
             EntityId: $("#EntityId").val(),
             StartDate: startDate,
             EndDate: endDate,
-            ByDay: byDay
+            ByDay: byDay,
+            filter: filter
         }));
 
         asyncCalls.push(service.getNotificationsStatsForElement({
@@ -27,7 +29,8 @@
             EntityId: $("#EntityId").val(),
             StartDate: startDate,
             EndDate: endDate,
-            ByDay: byDay
+            ByDay: byDay,
+            filter: filter
         }));
 
         $.when.apply(this, asyncCalls).done(function () {
@@ -47,16 +50,7 @@
                     notificationsData = dataobject;
                 }
             }
-            if (notificationsData.length > 0) {
-                $("#container-non").css("display", "none");
-                buildChart(data, clicksData, notificationsData);
-            } else {
-                if (!byDay) {
-
-                    $("#container").css("display", "none");
-                    $("#container-non").css("display", "block");
-                }
-            }
+            buildChart(data, clicksData, notificationsData);
 
         });
     }
@@ -89,9 +83,6 @@
             };
             var chart = new google.charts.Bar(document.getElementById('canvas'));
             chart.draw(leData, google.charts.Bar.convertOptions(options));
-
-            var chart2 = new google.charts.Bar(document.getElementById('canvas-two'));
-            chart2.draw(leData, google.charts.Bar.convertOptions(options));
         }
 
     }
@@ -129,11 +120,11 @@
         var action = $(this).data("action");
         console.log(action);
 
-
+        startStats(null, null, byDay, action);
 
     });
 
 
-    
+
 
 })();
