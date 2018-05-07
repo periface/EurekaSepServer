@@ -24,8 +24,9 @@ namespace Eureka.Spe.NewsFeed.Feeds
 
         public IQueryable<Feed> GetFilteredQuery(IQueryable<Feed> all, BootstrapTableInput input)
         {
-            all = all.WhereIf(!string.IsNullOrEmpty(input.search), a => a.Title.Contains(input.search) || a.Publisher.Name.Contains(input.search));
-            return all;
+            all = all.WhereIf(!string.IsNullOrEmpty(input.search), a => a.Title.Contains(input.search) || a.Publisher.Name.Contains(input.search) 
+            );
+            return input.active.HasValue ? all.Where(a => a.IsActive == input.active.Value) : all;
         }
 
         public IQueryable<Feed> GetOrderedQuery(IQueryable<Feed> all, BootstrapTableInput input)
@@ -108,6 +109,12 @@ namespace Eureka.Spe.NewsFeed.Feeds
             var count = await Task.FromResult(_repository.GetAll().Count());
             var diff = (count - input);
             return diff;
+        }
+
+        public async Task ToggleFeed(int id)
+        {
+            var feed = await _repository.GetAsync(id);
+            feed.IsActive = !feed.IsActive;
         }
     }
 }

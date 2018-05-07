@@ -62,4 +62,6 @@
             reloadPage(response);
         });
     }
+
+    overrideNotify();
 })();

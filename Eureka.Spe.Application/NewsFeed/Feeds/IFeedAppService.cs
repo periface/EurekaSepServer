@@ -11,5 +11,7 @@ namespace Eureka.Spe.NewsFeed.Feeds
     {
         [HttpGet]
         Task<int> GetFeedDifCount(int input);
+
+        Task ToggleFeed(int id);
     }
 }

@@ -1,9 +1,11 @@
-﻿using Abp.Web.Mvc.Authorization;
+﻿using System;
+using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Abp.UI;
 using Eureka.Spe.NewsFeed.Feeds;
 using Eureka.Spe.NewsFeed.Feeds.Dto;
 using Eureka.Spe.NewsFeed.Publishers;
@@ -35,8 +37,18 @@ namespace Eureka.Spe.Web.Controllers
 
         public async Task<ActionResult> CreateOrEdit(int? id)
         {
-
-            if (!id.HasValue) return View(new FeedDto());
+            var randomPublisher = _publisherAppService.GetPublishersSimpleList().FirstOrDefault();
+            if (randomPublisher == null) throw new UserFriendlyException("No hay departamentos creados...");
+            if (!id.HasValue)
+            {
+                var draft = await _feedAppService.CreateOrUpdate(new FeedDto()
+                {
+                    Title = $"Noticia {DateTime.Now.ToShortDateString()}",
+                    Description = $"Noticia {DateTime.Now.ToShortDateString()}",
+                    PublisherId = randomPublisher.Id
+                });
+                return RedirectToAction("CreateOrEdit", new { id = draft });
+            };
             var feed = await _feedAppService.Get(id.Value);
             return View(feed);
         }

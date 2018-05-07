@@ -28,6 +28,20 @@
                     }
                 },
                 {
+                    title: "Pública", sortable: false, formatter: (value, row, index) => {
+                        var checked = "";
+                        if (row.isActive) {
+                            checked = "checked";
+                        }
+                        return `<div class="form-group form-float">
+                            <div class="">
+                                <input data-id="${row.id}" id="IsActive-${row.id}" type="checkbox" ${checked} name="IsActive" value="true" class="form-control js-toggle-feed" />
+                                <label for="IsActive-${row.id}" class="form-label"></label>
+                            </div>
+                        </div>`;
+                    }
+                },
+                {
                     title: "Acciones",
                     formatter: (value, row, index) => {
                         var btnAdvanced = `<a href="/Feeds/Manage/${row.id}" class="waves-effect waves-block js-edit-category" data-id="${row.id}"><i data-id="${row.id}" class="material-icons left">build</i> Administrar</a>`;
@@ -45,6 +59,10 @@
                     }
                 }
             ],
+            onPostBody: function () {
+                console.log("Dom ready");
+                $.AdminBSB.input.activate($("body"));
+            },
             toolbar: ".toolbar",
             clickToSelect: true,
             showRefresh: false,
@@ -89,5 +107,14 @@
 
 
         });
+    $("body").on("change", ".js-toggle-feed", function() {
+        var id = $(this).data("id");
 
+
+        service.toggleFeed(id).done(function() {
+            console.log("Ok");
+
+        });
+    });
+    overrideNotify();
 })();

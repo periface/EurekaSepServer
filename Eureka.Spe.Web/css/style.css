@@ -10944,3 +10944,10 @@ textarea {
     position: relative;
     left: 10%;
 }
+    .google-container.center {
+        width: 60% !important;
+        position: relative !important;
+        left: 0 !important;
+        margin: 0 auto !important;
+        text-align: center;
+    }

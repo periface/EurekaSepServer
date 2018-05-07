@@ -143,10 +143,18 @@ namespace Eureka.Spe.FileUpload
 
         private static void OptimizeImg(string imgLocation)
         {
-            var snakewareLogo = new FileInfo(imgLocation);
-            var optimizer = new ImageOptimizer { OptimalCompression = true };
-            optimizer.Compress(snakewareLogo);
-            snakewareLogo.Refresh();
+            try
+            {
+                var snakewareLogo = new FileInfo(imgLocation);
+                var optimizer = new ImageOptimizer { OptimalCompression = true };
+                optimizer.Compress(snakewareLogo);
+                snakewareLogo.Refresh();
+            }
+            catch (Exception)
+            {
+                // ignored
+
+            }
         }
 
         private static ResizeResult ReziseImg(int width, int height, string img, string outputDirectory)

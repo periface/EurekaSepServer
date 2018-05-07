@@ -305,6 +305,14 @@
     <Compile Include="Migrations\201805021657339_AbpUpdate.Designer.cs">
       <DependentUpon>201805021657339_AbpUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805071559376_ResourcesForEntities.cs" />
+    <Compile Include="Migrations\201805071559376_ResourcesForEntities.Designer.cs">
+      <DependentUpon>201805071559376_ResourcesForEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805071625447_FeedShouldBeActivable.cs" />
+    <Compile Include="Migrations\201805071625447_FeedShouldBeActivable.Designer.cs">
+      <DependentUpon>201805071625447_FeedShouldBeActivable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -393,6 +401,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805021657339_AbpUpdate.resx">
       <DependentUpon>201805021657339_AbpUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805071559376_ResourcesForEntities.resx">
+      <DependentUpon>201805071559376_ResourcesForEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805071625447_FeedShouldBeActivable.resx">
+      <DependentUpon>201805071625447_FeedShouldBeActivable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

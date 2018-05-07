@@ -202,6 +202,9 @@
     <Compile Include="NewsFeed\IFeedManager.cs" />
     <Compile Include="PhoneNotifications\Entities\PhoneNotification.cs" />
     <Compile Include="PhoneNotifications\Entities\SendNotificationsStatus.cs" />
+    <Compile Include="Resources\IResourceManager.cs" />
+    <Compile Include="Resources\Entities\EntityResource .cs" />
+    <Compile Include="Resources\ResourceManager.cs" />
     <Compile Include="Scholarships\Entities\Scholarship.cs" />
     <Compile Include="Scholarships\Entities\ScholarshipSection.cs" />
     <Compile Include="SpeConsts.cs" />

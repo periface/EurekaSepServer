@@ -8,22 +8,25 @@
     <input type="hidden" name="Id" value="@Model.Id" />
     <input type="hidden" name="TenantId" value="@Model.TenantId" />
     <div class="row clearfix">
-        <div class="col-sm-12">
-            <div class="form-group form-float">
-                <div class="form-line" id="upload">
-                    @if (Model.Img.IsNullOrEmpty())
-                    {
-                        <img id="iconPlaceHolder" style="width: 100px;" src="" />
-                    }
-                    else
-                    {
-                        <img id="iconPlaceHolder" style="width: 100px;" src="@Model.Img" />
-                    }
-                    <input name="icon" id="icon" type="file" class="validate form-control">
-                    <input type="hidden" value="@Model.Img" name="img" id="img" />
+        <div class="google-container center">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <div class="form-line" id="upload">
+                        @if (Model.Img.IsNullOrEmpty())
+                        {
+                            <img id="iconPlaceHolder" style="width: 50%;" src="http://www.comotiongroup.ca/wp-content/plugins/pixelthrone__vc_extension/assets/img/shortcode-frontend/empty-image-thumb.png"/>
+                        }
+                        else
+                        {
+                            <img id="iconPlaceHolder" style="width: 100px;" src="@Model.Img"/>
+                        }
+                        <input name="icon" id="icon" type="file" class="validate form-control">
+                        <input type="hidden" value="@Model.Img" name="img" id="img"/>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </div>
     <div class="row clearfix">
         <div class="col-sm-12">

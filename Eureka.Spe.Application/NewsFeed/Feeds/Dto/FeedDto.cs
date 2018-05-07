@@ -1,11 +1,12 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using Eureka.Spe.Contracts;
 using Eureka.Spe.NewsFeed.Entities;
 
 namespace Eureka.Spe.NewsFeed.Feeds.Dto
 {
     [AutoMap(typeof(Feed))]
-    public class FeedDto : FullAuditedEntityDto
+    public class FeedDto : FullAuditedEntityDto, IShouldBeActivable
     {
         public string Title { get; set; }
         public string Description { get; set; }
@@ -19,6 +20,8 @@ namespace Eureka.Spe.NewsFeed.Feeds.Dto
         public string PublisherImg { get; set; }
         public int Clicks { get; set; }
 
-        
+
+        public bool IsActive { get; set; }
     }
+
 }

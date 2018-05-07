@@ -56,11 +56,17 @@
     }
     google.charts.load('current', { 'packages': ['bar'] });
     google.charts.setOnLoadCallback(startStats);
+
+    var chart;
     function buildChart(data) {
         console.log("The data", data);
-        if (data.length > 0) {
+        if (data.length <= 0) {
+            console.log(chart);
+            if (chart) {
+                chart.clearChart();
+            }
+        } else {
             var formatedInfo = [[]];
-
             for (var i = 0; i < data.length; i++) {
                 var elm = data[i];
 
@@ -81,8 +87,9 @@
                     title: 'Estadísticas'
                 }
             };
-            var chart = new google.charts.Bar(document.getElementById('canvas'));
+            chart = new google.charts.Bar(document.getElementById('canvas'));
             chart.draw(leData, google.charts.Bar.convertOptions(options));
+
         }
 
     }

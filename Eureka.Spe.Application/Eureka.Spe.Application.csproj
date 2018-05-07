@@ -206,6 +206,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Resources\Dto\ResourceDto.cs" />
+    <Compile Include="Resources\IResourceAppService.cs" />
+    <Compile Include="Resources\ResourceAppService.cs" />
     <Compile Include="Stats\Helpers\DateHelper.cs" />
     <Compile Include="Stats\Helpers\StatsFilters.cs" />
     <Compile Include="StudentsInfo\AcademicUnits\AcademicUnitAppService.cs" />

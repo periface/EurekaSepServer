@@ -9,7 +9,7 @@
             columns: [
                 {
                     title: "Titulo", field: "title", sortable: true, formatter: (value, row, index) => {
-                        return `${value}`;
+                        return `<p style="margin:0!important;"><strong> ${value} </strong></p><img style="width:64px;height:32px;" src="${row.img}" />`;
                     }
                 },
                 {

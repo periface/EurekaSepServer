@@ -120,4 +120,29 @@
             $.AdminBSB.select.activate();
         });
     }
+    overrideNotify();
+
+
+    $("body").on("change", ".js-toggle-feed", function () {
+        var id = $(this).data("id");
+
+
+        service.toggleFeed(id).done(function () {
+            var toggled = $("#IsActive").val();
+            if (toggled == "True") {
+                toggled = "False";
+
+                $("#message-container").fadeIn();
+
+            } else {
+                if (toggled == "False") {
+                    toggled = "True";
+
+                    $("#message-container").fadeOut();
+                }
+            }
+            $("#IsActive").val(toggled);
+        });
+    });
+
 })();

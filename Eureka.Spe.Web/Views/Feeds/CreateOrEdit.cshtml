@@ -12,6 +12,7 @@
             width: 450px;
             height: 200px;
         }
+
         #imgPlaceHolder {
             width: 450px;
             height: 200px;
@@ -30,10 +31,25 @@
 }
 
 <form name="CreateEditFeedForm" id="CreateEditFeedForm" role="form" class="form-validation form-horizontal">
-
     <input type="hidden" name="Id" id="Id" value="@Model.Id" />
     <input type="hidden" name="TenantId" value="@Model.TenantId" />
     <input type="hidden" id="publisherId" value="@Model.PublisherId" />
+    @Html.HiddenFor(a => a.IsActive)
+
+    <div class="row" style="@(Model.IsActive ? "display:none;" : "")" id="message-container">
+        <div class="google-container">
+            <div class="col-sm-12">
+                <div class="alert alert-info">
+                    <strong>
+                        Esta noticia no esta activa,
+                    </strong>
+                    por lo tanto no aparecerá en la sección de noticias de la aplicación
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     @*<div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
                 <div class="card">
@@ -57,55 +73,61 @@
         </div>*@
 
     <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center ">
-            <div class="card">
+        <div class="google-container">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                <div class="header">
-                    <h2>
-                        Información básica
-                    </h2>
-                </div>
-                <div class="body">
+                <div class="card">
 
-                    <div class="row clearfix">
-
-                        <div class="col-sm-3 form-control-label left">
-                            <label for="name">@L("Title")*</label>
-                            <p class="help-block label-help">
-                                Contenido
-                            </p>
+                    <div class="header">
+                        <h2 style="    display: inline;">
+                            Información básica
+                        </h2>
+                        <div class="switch pull-right">
+                            <label>Inactiva<input data-id="@Model.Id" class="js-toggle-feed" type="checkbox" @(Model.IsActive ? "checked" : "")><span class="lever"></span>Activa</label>
                         </div>
-                        <div class="col-sm-9">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <input id="name" type="text" name="Title" value="@Model.Title" required class="validate form-control">
+                    </div>
+                    <div class="body">
 
+                        <div class="row clearfix">
+
+                            <div class="col-sm-3 form-control-label left">
+                                <label for="name">@L("Title")*</label>
+                                <p class="help-block label-help">
+                                    Contenido
+                                </p>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="name" type="text" name="Title" value="@Model.Title" required class="validate form-control">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12">
 
-                            <hr />
+                                <hr />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 form-control-label left">
-                            <label for="name">@L("Description")*</label>
-                            <p class="help-block label-help">
-                                Contenido
-                            </p>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="form-group form-float">
-                                <div class="form-line">
-                                    <textarea name="Description" class="form-control">@Model.Description</textarea>
+                        <div class="row">
+                            <div class="col-sm-3 form-control-label left">
+                                <label for="name">@L("Description")*</label>
+                                <p class="help-block label-help">
+                                    Contenido
+                                </p>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <textarea name="Description" class="form-control">@Model.Description</textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -153,6 +175,7 @@
                         <div class="col-sm-12">
                             <div class="form-group form-float">
                                 <div class="" id="upload">
+                                    <label>Imagen Principal</label>
                                     @if (Model.Img.IsNullOrEmpty())
                                     {
                                         <img id="imgPlaceHolder" class="img-responsive feed-img" src="http://www.gaia-earth.co.uk/img/placeholder-img.jpg" />
@@ -185,7 +208,6 @@
                     <div class="row clearfix">
                         <div class="col-sm-12">
                             <div class="form-group form-float textarea-wys">
-                                <label for="content" class="form-label">@L("Content")*</label>
                                 <textarea name="content" id="content" class="form-control">@Model.Content</textarea>
 
                             </div>
@@ -205,11 +227,15 @@
         </div>
     </div>
 </form>
+<div class="row clearfix">
+    <div class="col-sm-12">
+        <form class="dropzone"></form>
+    </div>
+</div>
 @section Scripts{
     <script src="~/js/eModal/eModal.min.js"></script>
     <script src="~/js/helpers.js"></script>
     <script src="~/js/trumboWys/trumbowyg.min.js"></script>
-
     <script src="~/js/trumboWys/plugins/base64/trumbowyg.base64.min.js"></script>
     <script src="~/js/trumboWys/plugins/pasteembed/trumbowyg.pasteembed.min.js"></script>
     <script src="~/js/trumboWys/langs/es.min.js"></script>

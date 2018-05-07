@@ -40,26 +40,14 @@ namespace Eureka.Spe.Stats
 
         public List<NotificationsResult> GetNotificationsStatsForElement(GetSingleElementMetricRequest input)
         {
-            
+
+            if (string.IsNullOrEmpty(input.Filter)) input.Filter = "sevdays";
             var phoneNotifications = _phoneNotificationsRepository.GetAllIncluding(a => a.SendNotificationsStatuses)
                 .Where(a => a.AssignedTo == input.EntityType && a.AssignedToId == input.EntityId);
-
-
-            if (string.IsNullOrEmpty(input.Filter))
-            {
-
-                return StatsFilters.FilterNotificationStats(phoneNotifications, input);
-            }
-            if(input.Filter == "all") return StatsFilters.FilterNotificationStats(phoneNotifications, input);
-            return GetFilteredResultForStats(phoneNotifications, input);
+            return input.Filter == "all" ? StatsFilters.FilterNotificationStats(phoneNotifications, input) : GetFilteredResultForStats(phoneNotifications, input);
         }
 
-        private List<NotificationsResult> GetFilteredResultForStats(IQueryable<PhoneNotification> phoneNotifications, GetSingleElementMetricRequest input)
-        {
-            var filteredDate = DateHelper.GetFilteredDate(input.Filter);
-            var result = phoneNotifications.Where(a => a.CreationTime < filteredDate);
-            return StatsFilters.FilterNotificationStats(result, input);
-        }
+
         public bool CanSendFeedBack(GetSingleElementMetricRequest input)
         {
             var metrics = _statsManager.GetMetricsForOneEntitiesInType(input.EntityType, input.EntityId);
@@ -67,16 +55,35 @@ namespace Eureka.Spe.Stats
         }
         public List<MetricsResult> GetMetricsForElement(GetSingleElementMetricRequest input)
         {
-
+            if (string.IsNullOrEmpty(input.Filter)) input.Filter = "sevdays";
             var metrics = _statsManager.GetMetricsForOneEntitiesInType(input.EntityType, input.EntityId);
-
-            return StatsFilters.FilterMetricsResult(metrics, input);
+            return input.Filter == "all" ? StatsFilters.FilterMetricsResult(metrics, input) : GetFilteredResultForStats(metrics, input);
         }
         public List<ClicksResult> GetClickForElement(GetSingleElementMetricRequest input)
         {
             var metrics = _statsManager.GetClicksForOneEntitiesInType(input.EntityType, input.EntityId);
 
-            return StatsFilters.FilterClicksResult(metrics,input);
+            return StatsFilters.FilterClicksResult(metrics, input);
         }
+
+        #region Helpers
+
+        private List<NotificationsResult> GetFilteredResultForStats(IQueryable<PhoneNotification> phoneNotifications, GetSingleElementMetricRequest input)
+        {
+
+            var filteredDate = DateHelper.GetFilteredDate(input.Filter);
+            var result = phoneNotifications.Where(a => a.CreationTime > filteredDate);
+            return StatsFilters.FilterNotificationStats(result, input);
+        }
+
+        private List<MetricsResult> GetFilteredResultForStats(IQueryable<MetricElement> metricElements,
+            GetSingleElementMetricRequest input)
+        {
+            var filteredDate = DateHelper.GetFilteredDate(input.Filter);
+            var result = metricElements.Where(a => a.CreationTime > filteredDate);
+            return StatsFilters.FilterMetricsResult(result, input);
+        }
+
+        #endregion
     }
 }

@@ -7,5 +7,6 @@
         public string order { get; set; }
         public string search { get; set; }
         public string sort { get; set; }
+        public bool? active { get; set; }
     }
 }
