@@ -35,13 +35,6 @@ namespace Eureka.Spe.Web.Controllers
             _scoralshipAppService = scoralshipAppService;
             _dialyMessageAppService = dialyMessageAppService;
         }
-
-        // GET: Notifications
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public async Task<ActionResult> Schedule(int? id, int? entityId, string entitype)
         {
             ViewBag.EntityType = entitype;
