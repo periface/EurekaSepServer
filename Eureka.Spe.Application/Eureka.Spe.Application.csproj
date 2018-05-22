@@ -206,6 +206,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Notifications\Dto\CustomStudentNotificationsRequest.cs" />
     <Compile Include="Resources\Dto\ResourceDto.cs" />
     <Compile Include="Resources\IResourceAppService.cs" />
     <Compile Include="Resources\ResourceAppService.cs" />

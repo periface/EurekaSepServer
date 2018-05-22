@@ -170,5 +170,20 @@ namespace Eureka.Spe.Notifications
 
             return result;
         }
+
+        public PagedResultDto<SimpleNotificationResult> GetNotificationsForStudentPaged(CustomStudentNotificationsRequest input)
+        {
+            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == input.StudentId).OrderByDescending(a => a.CreationTime);
+            var paged = notifications.Skip(input.offset).Take(input.limit).ToList();
+            return new PagedResultDto<SimpleNotificationResult>(notifications.Count(), paged.Select(a => new SimpleNotificationResult()
+            {
+                Data = a.PhoneNotification?.Data,
+                Message = a.PhoneNotification?.Message,
+                Title = a.PhoneNotification?.Title,
+                Id = a.Id,
+                Readed = a.Readed
+            }).ToList());
+        }
+
     }
 }
