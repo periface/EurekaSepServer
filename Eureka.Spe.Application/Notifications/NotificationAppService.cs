@@ -19,15 +19,17 @@ namespace Eureka.Spe.Notifications
         private readonly IRepository<PhoneNotification> _repository;
         private readonly IBackgroundJobManager _backgroundJobManager;
         private readonly IRepository<SendNotificationsStatus> _statusRepository;
+        private readonly IRepository<PhoneNotification> _phoneNotificationsRepository;
         private readonly IRepository<Student> _studentRepository;
         private readonly IRepository<Feed> _feedRepository;
-        public NotificationAppService(IRepository<PhoneNotification> repository, IBackgroundJobManager backgroundJobManager, IRepository<SendNotificationsStatus> statusRepository, IRepository<Student> studentRepository, IRepository<Feed> feedRepository)
+        public NotificationAppService(IRepository<PhoneNotification> repository, IBackgroundJobManager backgroundJobManager, IRepository<SendNotificationsStatus> statusRepository, IRepository<Student> studentRepository, IRepository<Feed> feedRepository, IRepository<PhoneNotification> phoneNotificationsRepository)
         {
             _repository = repository;
             _backgroundJobManager = backgroundJobManager;
             _statusRepository = statusRepository;
             _studentRepository = studentRepository;
             _feedRepository = feedRepository;
+            _phoneNotificationsRepository = phoneNotificationsRepository;
         }
 
         public IQueryable<PhoneNotification> GetFilteredQuery(IQueryable<PhoneNotification> all, NotificationPaginableInput input)

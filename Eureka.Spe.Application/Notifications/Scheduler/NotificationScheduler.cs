@@ -12,7 +12,7 @@ using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.Notifications.Scheduler
 {
-    public class NotificationScheduler: BackgroundJob<SendNotificationArgs>, ITransientDependency
+    public class NotificationScheduler : BackgroundJob<SendNotificationArgs>, ITransientDependency
     {
         private readonly IRepository<Student> _students;
         private readonly IRepository<PhoneNotification> _phoneNotificationRepository;
@@ -30,7 +30,7 @@ namespace Eureka.Spe.Notifications.Scheduler
         {
             var notification = _phoneNotificationRepository
                 .GetAllIncluding(a => a.SendNotificationsStatuses)
-                .FirstOrDefault(a=>a.Id == args.NotificationId);
+                .FirstOrDefault(a => a.Id == args.NotificationId);
             if (notification != null && notification.SendNotificationsStatuses == null) notification.SendNotificationsStatuses = new List<SendNotificationsStatus>();
             var tokens = GetPhoneTokens(notification);
             if (notification == null) return;
@@ -57,26 +57,46 @@ namespace Eureka.Spe.Notifications.Scheduler
                     if (feed == null) break;
 
                     //Obtiene todos los estudiantes de la unidad academica
-                    
+
                     var studentsEnum = students.Where(a => feed.AcademicUnits.Any(f => f.Id == a.Career.AcademicUnitId));
-                    
+
                     foreach (var student in studentsEnum)
                     {
-                        result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
+                        if (student.PhoneInfos.Any())
                         {
-                            Token = a.Token,
-                            StudentId = a.StudentId
-                        }));
+                            result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
+                            {
+                                Token = a.Token,
+                                StudentId = a.StudentId
+                            }));
+                            continue;
+                        }
+
+                        result.Add(new StudentPhoneTokenInfo()
+                        {
+                            Token = "",
+                            StudentId = student.Id
+                        });
+
                     }
                     break;
                 default:
                     foreach (var student in students)
                     {
-                        result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
+                        if (student.PhoneInfos.Any())
                         {
-                            Token = a.Token,
-                            StudentId = a.StudentId
-                        }));
+                            result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
+                            {
+                                Token = a.Token,
+                                StudentId = a.StudentId
+                            }));
+                            continue;
+                        }
+                        result.Add(new StudentPhoneTokenInfo()
+                        {
+                            Token = "",
+                            StudentId = student.Id
+                        });
                     }
                     break;
             }
