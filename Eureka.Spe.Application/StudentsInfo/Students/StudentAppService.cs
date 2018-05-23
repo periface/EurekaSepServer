@@ -18,10 +18,12 @@ namespace Eureka.Spe.StudentsInfo.Students
     {
         private readonly IRepository<Student> _repository;
         private readonly IRepository<AcademicUnit> _academicUnitRepository;
-        public StudentAppService(IRepository<Student> repository, IRepository<AcademicUnit> academicUnitRepository)
+        private readonly IRepository<PhoneInfo> _phoneInfoRepository;
+        public StudentAppService(IRepository<Student> repository, IRepository<AcademicUnit> academicUnitRepository, IRepository<PhoneInfo> phoneInfoRepository)
         {
             _repository = repository;
             _academicUnitRepository = academicUnitRepository;
+            _phoneInfoRepository = phoneInfoRepository;
         }
 
         public IQueryable<Student> GetFilteredQuery(IQueryable<Student> all, BootstrapTableInput input)
@@ -83,17 +85,18 @@ namespace Eureka.Spe.StudentsInfo.Students
         {
             await _repository.DeleteAsync(id);
         }
-
+        /// <summary>
+        /// Saves the phone without student info
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
         public async Task SetPhone(PhoneInfoDto phone)
         {
-            var student = await Task.FromResult(_repository.GetAllIncluding(a => a.PhoneInfos).FirstOrDefault(a => a.Id == phone.StudentId));
-            if (student == null) return;
-            var phoneCoincidence = student.PhoneInfos.FirstOrDefault(a => a.Token == phone.Token );
+            var phoneCoincidence = _phoneInfoRepository.FirstOrDefault(a => a.Token == phone.Token);
             if (phoneCoincidence != null) return;
             var mapped = phone.MapTo<PhoneInfo>();
-            student.PhoneInfos.Add(mapped);
+            await _phoneInfoRepository.InsertAndGetIdAsync(mapped);
         }
-
         public Task SetFacebookToken(string token)
         {
             throw new NotImplementedException();
@@ -101,9 +104,31 @@ namespace Eureka.Spe.StudentsInfo.Students
 
         public async Task<StudentDto> ConfirmInfo(CheckStudentInfoInput input)
         {
-            var student = await _repository.GetAllIncluding(a=>a.Career).FirstOrDefaultAsync(a => a.EnrollCode == input.EnrollCode);
-            if(student == null) return new StudentDto();
+            var student = await _repository.GetAllIncluding(a => a.Career).FirstOrDefaultAsync(a => a.EnrollCode == input.EnrollCode);
+            if (student == null) return new StudentDto();
             var uncrypt = new PasswordHasher().VerifyHashedPassword(student.Password, input.Password);
+            if (uncrypt == PasswordVerificationResult.Success)
+            {
+                var phone = _phoneInfoRepository.FirstOrDefault(a => a.Token == input.PhoneToken);
+                if (phone != null)
+                {
+                    phone.StudentId = student.Id;
+                    await _phoneInfoRepository.UpdateAsync(phone);
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(input.PhoneToken))
+                    {
+                        var newPhone = new PhoneInfo()
+                        {
+                            Token = input.PhoneToken,
+                            StudentId = student.Id
+                        };
+                        await _phoneInfoRepository.InsertOrUpdateAndGetIdAsync(newPhone);
+                    }
+                    
+                }
+            }
             return uncrypt == PasswordVerificationResult.Success ? MapStudent(student) : new StudentDto();
         }
 

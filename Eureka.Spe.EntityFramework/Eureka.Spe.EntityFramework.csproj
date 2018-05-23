@@ -313,6 +313,10 @@
     <Compile Include="Migrations\201805071625447_FeedShouldBeActivable.Designer.cs">
       <DependentUpon>201805071625447_FeedShouldBeActivable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805231609053_StudentIdNullable.cs" />
+    <Compile Include="Migrations\201805231609053_StudentIdNullable.Designer.cs">
+      <DependentUpon>201805231609053_StudentIdNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -407,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805071625447_FeedShouldBeActivable.resx">
       <DependentUpon>201805071625447_FeedShouldBeActivable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805231609053_StudentIdNullable.resx">
+      <DependentUpon>201805231609053_StudentIdNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

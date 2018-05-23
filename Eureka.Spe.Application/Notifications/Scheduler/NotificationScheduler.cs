@@ -67,7 +67,7 @@ namespace Eureka.Spe.Notifications.Scheduler
                             result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
                             {
                                 Token = a.Token,
-                                StudentId = a.StudentId
+                                StudentId = a.StudentId ?? 0
                             }));
                             continue;
                         }
@@ -88,7 +88,7 @@ namespace Eureka.Spe.Notifications.Scheduler
                             result.AddRange(student.PhoneInfos.Select(a => new StudentPhoneTokenInfo
                             {
                                 Token = a.Token,
-                                StudentId = a.StudentId
+                                StudentId = a.StudentId ?? 0
                             }));
                             continue;
                         }

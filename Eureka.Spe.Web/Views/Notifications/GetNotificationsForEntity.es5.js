@@ -23,6 +23,25 @@
             bindEnter();
         });
     }
+    function openCreateModalP() {
+        window.eModal.ajax({
+            loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+            url: '/Notifications/Schedule?entitype=' + $("#EntityName").val() + '&entityId=' + $("#Id").val() + '&showAlert=true',
+            title: 'Notificación',
+            buttons: [{
+                text: 'Cerrar',
+                style: 'danger',
+                close: true,
+                click: function click() {}
+            }, {
+                text: 'Agendar', style: 'info', close: false, click: function click(elm) {
+                    save();
+                }
+            }]
+        }).then(function () {
+            bindEnter();
+        });
+    }
     function deleteNotification() {
         var id = $(this).data("id");
         abp.message.confirm("¿Eliminar elemento?", function (response) {
@@ -57,6 +76,7 @@
             abp.event.trigger('notifications');
         });
     }
+    $(".js-place-notification-p").click(openCreateModalP);
     function enterFunc(e) {
         if (e.keyCode === 13 && modalIsOpen) {
             e.preventDefault();

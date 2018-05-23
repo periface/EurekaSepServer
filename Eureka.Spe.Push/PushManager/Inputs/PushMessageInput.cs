@@ -16,10 +16,11 @@ namespace Eureka.Spe.Push.PushManager.Inputs
     }
     public class DataMessageRequest
     {
-        public DataMessageRequest(string type, int id)
+        public DataMessageRequest(string type, int id,bool showAlert)
         {
             Type = type;
             Id = id;
+            ShowAlert = showAlert;
         }
 
         public DataMessageRequest()
@@ -28,5 +29,6 @@ namespace Eureka.Spe.Push.PushManager.Inputs
         }
         public string Type { get; set; }
         public int Id { get; set; }
+        public bool ShowAlert { get; set; }
     }
 }

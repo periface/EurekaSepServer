@@ -35,7 +35,7 @@ namespace Eureka.Spe.Web.Controllers
             _scoralshipAppService = scoralshipAppService;
             _dialyMessageAppService = dialyMessageAppService;
         }
-        public async Task<ActionResult> Schedule(int? id, int? entityId, string entitype)
+        public async Task<ActionResult> Schedule(int? id, int? entityId, string entitype,bool showAlert = false)
         {
             ViewBag.EntityType = entitype;
             if (id.HasValue)
@@ -52,7 +52,7 @@ namespace Eureka.Spe.Web.Controllers
                     model = new NotificationDto()
                     {
                         AssignedTo = "feeds",
-                        DataObj = new DataMessageRequest("feeds", entityId.Value),
+                        DataObj = new DataMessageRequest("feeds", entityId.Value,showAlert),
                         Message = feed.Description,
                         Title = feed.Title,
                         AssignedToId = entityId.Value
@@ -64,7 +64,7 @@ namespace Eureka.Spe.Web.Controllers
                     model = new NotificationDto()
                     {
                         AssignedTo = "courses",
-                        DataObj = new DataMessageRequest("courses", entityId.Value),
+                        DataObj = new DataMessageRequest("courses", entityId.Value, showAlert),
                         Message = course.Description,
                         Title = course.Title,
                         AssignedToId = entityId.Value
@@ -76,7 +76,7 @@ namespace Eureka.Spe.Web.Controllers
                     model = new NotificationDto()
                     {
                         AssignedTo = "scholarships",
-                        DataObj = new DataMessageRequest("scholarships", entityId.Value),
+                        DataObj = new DataMessageRequest("scholarships", entityId.Value, showAlert),
                         Message = scholarship.Description,
                         Title = scholarship.Title,
                         AssignedToId = entityId.Value
@@ -88,7 +88,7 @@ namespace Eureka.Spe.Web.Controllers
                     model = new NotificationDto()
                     {
                         AssignedTo = "messages",
-                        DataObj = new DataMessageRequest("messages",entityId.Value),
+                        DataObj = new DataMessageRequest("messages",entityId.Value, showAlert),
                         Message = message.Description,
                         Title = message.Title,
                         AssignedToId = entityId.Value

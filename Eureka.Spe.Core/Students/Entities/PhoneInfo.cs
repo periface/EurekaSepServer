@@ -7,7 +7,7 @@ namespace Eureka.Spe.Students.Entities
     public class PhoneInfo : FullAuditedEntity, IMustHaveTenant
     {
         public string Token { get; set; }
-        public int StudentId { get; set; }
+        public int? StudentId { get; set; }
         [ForeignKey("StudentId")]
         public Student Student { get; set; }
         public string Cordova { get; set; }
