@@ -27,5 +27,7 @@ namespace Eureka.Spe.NewsFeed.Entities
 
         public ICollection<AcademicUnit> AcademicUnits { get; set; }
         public bool IsActive { get; set; }
+
+        public string TitlePosition { get; set; }
     }
 }

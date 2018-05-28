@@ -20,8 +20,11 @@ namespace Eureka.Spe.NewsFeed.Feeds.Dto
         public string PublisherImg { get; set; }
         public int Clicks { get; set; }
 
-
+        
         public bool IsActive { get; set; }
+
+
+        public string TitlePosition { get; set; }
     }
 
 }
