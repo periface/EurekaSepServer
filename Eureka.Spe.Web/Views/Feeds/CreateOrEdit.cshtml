@@ -138,13 +138,14 @@
             </div>
         </div>
     </div>
+    <!--Refactor this section-->
     <div class="row">
         <div class="google-container">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Opciones de diseno
+                            Opciones de diseño
                         </h2>
                     </div>
                     <div class="body table-responsive">
@@ -156,10 +157,10 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control" name="titlePosition" data-live-search="true">
-                                            <option @(Model.TitlePosition == "top-left" ? "selected":"") value="top-left">Arriba izquierda</option>
-                                            <option @(Model.TitlePosition == "bottom-left" ? "selected":"") value="bottom-left">Abajo izquierda</option>
-                                            <option @(Model.TitlePosition == "top-right" ? "selected":"") value="top-right">Arriba derecha</option>
-                                            <option @(Model.TitlePosition == "bottom-right" ? "selected":"") value="bottom-right">Abajo derecha</option>
+                                            <option @(Model.TitlePosition == "top-left" ? "selected" : "") value="top-left">Arriba izquierda</option>
+                                            <option @(Model.TitlePosition == "bottom-left" ? "selected" : "") value="bottom-left">Abajo izquierda</option>
+                                            <option @(Model.TitlePosition == "top-right" ? "selected" : "") value="top-right">Arriba derecha</option>
+                                            <option @(Model.TitlePosition == "bottom-right" ? "selected" : "") value="bottom-right">Abajo derecha</option>
                                         </select>
                                     </div>
                                 </div>
@@ -174,9 +175,9 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control" name="FontWeight" data-live-search="true">
-                                            <option @(Model.FontWeight == "none" ? "selected":"") value="none">Normal</option>
-                                            <option @(Model.FontWeight == "bold" ? "selected":"") value="bold">Fuerte</option>
-                                            <option @(Model.FontWeight == "bolder" ? "selected":"") value="bolder">Mas Fuerte</option>
+                                            <option @(Model.FontWeight == "none" ? "selected" : "") value="none">Normal</option>
+                                            <option @(Model.FontWeight == "bold" ? "selected" : "") value="bold">Fuerte</option>
+                                            <option @(Model.FontWeight == "bolder" ? "selected" : "") value="bolder">Mas Fuerte</option>
                                         </select>
                                     </div>
                                 </div>
@@ -190,9 +191,9 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control" name="FontSize" data-live-search="true">
-                                            <option @(Model.FontSize == "1rem" ? "selected":"") value="1rem">1 rem</option>
-                                            <option @(Model.FontSize == "2rem" ? "selected":"") value="2rem">2 rem</option>
-                                            <option @(Model.FontSize == "3rem" ? "selected":"") value="3rem">3 rem</option>
+                                            <option @(Model.FontSize == "1rem" ? "selected" : "") value="1rem">1 rem</option>
+                                            <option @(Model.FontSize == "2rem" ? "selected" : "") value="2rem">2 rem</option>
+                                            <option @(Model.FontSize == "3rem" ? "selected" : "") value="3rem">3 rem</option>
                                         </select>
                                     </div>
                                 </div>
@@ -206,8 +207,8 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control" name="TitleColor" data-live-search="true">
-                                            <option @(Model.TitleColor == "white" ? "selected":"") value="white">Blanco</option>
-                                            <option @(Model.TitleColor == "black" ? "selected":"") value="black">Negro</option>
+                                            <option @(Model.TitleColor == "white" ? "selected" : "") value="white">Blanco</option>
+                                            <option @(Model.TitleColor == "black" ? "selected" : "") value="black">Negro</option>
                                         </select>
                                     </div>
                                 </div>
@@ -218,6 +219,7 @@
             </div>
         </div>
     </div>
+    <!--!Refactor this section-->
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
             <div class="card">
