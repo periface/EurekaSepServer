@@ -198,6 +198,7 @@
     <Compile Include="Groups\Entities\Group.cs" />
     <Compile Include="NewsFeed\Entities\Feed.cs" />
     <Compile Include="NewsFeed\Entities\FeedPublisher.cs" />
+    <Compile Include="Contracts\IHasDesignOptions.cs" />
     <Compile Include="NewsFeed\FeedManager.cs" />
     <Compile Include="NewsFeed\IFeedManager.cs" />
     <Compile Include="PhoneNotifications\Entities\PhoneNotification.cs" />

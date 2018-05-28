@@ -8,7 +8,7 @@ using Eureka.Spe.Students.Entities;
 
 namespace Eureka.Spe.NewsFeed.Entities
 {
-    public sealed class Feed : FullAuditedEntity, IMustHaveTenant, IHasPublishableInfo, IHasAcademicUnits, IShouldBeActivable
+    public sealed class Feed : FullAuditedEntity, IHasDesignOptions, IMustHaveTenant, IHasPublishableInfo, IHasAcademicUnits, IShouldBeActivable
     {
         public Feed()
         {
@@ -28,6 +28,10 @@ namespace Eureka.Spe.NewsFeed.Entities
         public ICollection<AcademicUnit> AcademicUnits { get; set; }
         public bool IsActive { get; set; }
 
+
         public string TitlePosition { get; set; }
+        public string TitleColor { get; set; }
+        public string FontSize { get; set; }
+        public string FontWeight { get; set; }
     }
 }
