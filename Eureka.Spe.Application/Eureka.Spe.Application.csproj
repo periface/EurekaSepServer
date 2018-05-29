@@ -289,6 +289,7 @@
     <Compile Include="Stats\Dto\MetricsResult.cs" />
     <Compile Include="Stats\StatsAppService.cs" />
     <Compile Include="StudentsInfo\Students\Dto\AdacemicInfoDto.cs" />
+    <Compile Include="StudentsInfo\Students\Dto\ChangeProfileInput.cs" />
     <Compile Include="StudentsInfo\Students\Dto\CheckStudentInfoInput.cs" />
     <Compile Include="StudentsInfo\Students\Dto\StudentDto.cs" />
     <Compile Include="StudentsInfo\Students\IStudentAppService.cs" />
@@ -315,6 +316,10 @@
     <ProjectReference Include="..\Eureka.Spe.Core\Eureka.Spe.Core.csproj">
       <Project>{17298ea0-af73-4f30-b6f1-2066100d7d74}</Project>
       <Name>Eureka.Spe.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eureka.Spe.FileUpload\Eureka.Spe.FileUpload.csproj">
+      <Project>{DC3AC9BA-85CF-44EF-8488-002742AD8C36}</Project>
+      <Name>Eureka.Spe.FileUpload</Name>
     </ProjectReference>
     <ProjectReference Include="..\Eureka.Spe.Push\Eureka.Spe.Push.csproj">
       <Project>{BF0C58D7-1D83-441D-9040-A87FD40513EB}</Project>

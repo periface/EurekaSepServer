@@ -214,6 +214,30 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-3 form-control-label left">
+                                <label for="name" style="top: -15px" class="form-label">Titulo</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group form-float">
+                                        <div class="switch">
+                                            <label>Ocultar<input name="DisplayTitleInList" value="true" type="checkbox" @(Model.DisplayTitleInList ? "checked" : "")><span class="lever"></span>Mostrar</label>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-3 form-control-label left">
+                                <label for="name" style="top: -15px" class="form-label">Titulo (vista de detalle)</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group form-float">
+                                    <div class="switch">
+                                        <label>Ocultar<input name="DisplayTitleInDetails" value="true" type="checkbox" @(Model.DisplayTitleInDetails ? "checked" : "")><span class="lever"></span>Mostrar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -260,3 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 /Eureka.Spe.Web/img
+/Eureka.Spe.Web/studentsimg/2
+/Eureka.Spe.Web/students/2

@@ -86,16 +86,19 @@ namespace Eureka.Spe.FileUpload
                 return ms.ToArray();
             }
         }
-        public static SaveFileOutput SaveFileFromBase64String(string bs64, string uniqueFolder, string staticFolder, string serverRoute)
+        public static SaveFileOutput SaveFileFromBase64String(string bs64,
+            string uniqueFolder,
+            string staticFolder,
+            string targetFolder,
+            string serverRoute,
+            HttpContext context)
         {
             var uniqueFileName = Guid.NewGuid().ToString("N").Substring(0, 10);
             var extension = GetExtensionFromBase64String(bs64);
             var storeFileName = uniqueFileName + extension;
-            var fileAbsoluteFolder = serverRoute + "\\" + staticFolder;
-
+            var virtualPath = $"{GetServerPath(context)}/{targetFolder}/{staticFolder}/{uniqueFolder}/{storeFileName}";
+            var fileAbsoluteFolder = serverRoute + targetFolder + "\\" + staticFolder;
             if (!Directory.Exists(fileAbsoluteFolder)) Directory.CreateDirectory(fileAbsoluteFolder);
-
-
             var fileAbsoluteDirectory = fileAbsoluteFolder + "\\" + uniqueFolder;
             if (!Directory.Exists(fileAbsoluteDirectory)) Directory.CreateDirectory(fileAbsoluteDirectory);
 
@@ -107,7 +110,8 @@ namespace Eureka.Spe.FileUpload
 
             return new SaveFileOutput()
             {
-                File = imgLocation
+                File = imgLocation,
+                FileUrl = virtualPath
             };
         }
 
@@ -188,6 +192,14 @@ namespace Eureka.Spe.FileUpload
             return string.Empty;
         }
 
+        private static string GetServerPath(HttpContext input, bool apiEnabled = true)
+        {
+            if (apiEnabled)
+            {
+                return input.Request.Url.Scheme + "://" + input.Request.Url.Authority;
+            }
+            return string.Empty;
+        }
         public static void DeleteFile(string rootFolder, string staticFolder, string uniqueFolder, string feedImg)
         {
             var fileName = Path.GetFileName(feedImg);

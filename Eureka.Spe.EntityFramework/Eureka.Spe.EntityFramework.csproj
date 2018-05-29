@@ -321,6 +321,10 @@
     <Compile Include="Migrations\201805271710447_TitlePositionForFeeds.Designer.cs">
       <DependentUpon>201805271710447_TitlePositionForFeeds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805291745497_MoreOptionsForFeed.cs" />
+    <Compile Include="Migrations\201805291745497_MoreOptionsForFeed.Designer.cs">
+      <DependentUpon>201805291745497_MoreOptionsForFeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SpeDataModule.cs" />
@@ -421,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805271710447_TitlePositionForFeeds.resx">
       <DependentUpon>201805271710447_TitlePositionForFeeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805291745497_MoreOptionsForFeed.resx">
+      <DependentUpon>201805291745497_MoreOptionsForFeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

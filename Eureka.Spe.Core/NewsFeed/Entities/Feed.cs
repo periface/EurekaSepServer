@@ -33,5 +33,7 @@ namespace Eureka.Spe.NewsFeed.Entities
         public string TitleColor { get; set; }
         public string FontSize { get; set; }
         public string FontWeight { get; set; }
+        public bool DisplayTitleInList { get; set; }
+        public bool DisplayTitleInDetails { get; set; }
     }
 }

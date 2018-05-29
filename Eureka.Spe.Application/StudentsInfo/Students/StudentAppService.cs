@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
+using System.Web.Hosting;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Linq.Extensions;
+using Eureka.Spe.FileUpload;
 using Eureka.Spe.PaginableHelpers;
 using Eureka.Spe.Students.Entities;
 using Eureka.Spe.StudentsInfo.Students.Dto;
@@ -19,6 +22,7 @@ namespace Eureka.Spe.StudentsInfo.Students
         private readonly IRepository<Student> _repository;
         private readonly IRepository<AcademicUnit> _academicUnitRepository;
         private readonly IRepository<PhoneInfo> _phoneInfoRepository;
+        
         public StudentAppService(IRepository<Student> repository, IRepository<AcademicUnit> academicUnitRepository, IRepository<PhoneInfo> phoneInfoRepository)
         {
             _repository = repository;
@@ -155,6 +159,24 @@ namespace Eureka.Spe.StudentsInfo.Students
         {
             var student = await Task.FromResult(_repository.GetAllIncluding(a => a.PhoneInfos).FirstOrDefault(a => a.Id == studentId));
             return student.PhoneInfos.Select(a => a.MapTo<PhoneInfoDto>()).ToList();
+        }
+
+        public SaveFileOutput ChangeProfilePicture(ChangeProfileInput input)
+        {
+            var result = FileSaver.SaveFileFromBase64String(input.Base64Img,
+                input.StudentId.ToString(),
+                "students",
+                "img",
+                HostingEnvironment.ApplicationPhysicalPath,
+                HttpContext.Current);
+
+            var student = _repository.Get(input.StudentId);
+
+            student.Img = result.FileUrl;
+
+            _repository.Update(student);
+
+            return result;
         }
 
 
