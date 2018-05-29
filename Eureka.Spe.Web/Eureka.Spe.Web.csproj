@@ -2907,6 +2907,7 @@
     <Content Include="js\trumboWys\plugins\mention\ui\sass\trumbowyg.mention.scss" />
     <Content Include="js\trumboWys\plugins\table\ui\sass\trumbowyg.table.scss" />
     <Content Include="js\trumboWys\ui\sass\trumbowyg.scss" />
+    <Content Include="img\Web.config" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
