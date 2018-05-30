@@ -183,7 +183,8 @@ namespace Eureka.Spe.Notifications
                 Message = a.PhoneNotification?.Message,
                 Title = a.PhoneNotification?.Title,
                 Id = a.Id,
-                Readed = a.Readed
+                Readed = a.Readed,
+                Date = a.PhoneNotification?.NotifyDate
             }).ToList());
         }
 

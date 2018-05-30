@@ -18,5 +18,6 @@ namespace Eureka.Spe.Notifications.Dto
         public string Data { get; set; }
         public bool Readed { get; set; }
         public int Id { get; set; }
+        public DateTime? Date { get; set; }
     }
 }
