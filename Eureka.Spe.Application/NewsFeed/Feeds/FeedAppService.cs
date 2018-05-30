@@ -92,6 +92,7 @@ namespace Eureka.Spe.NewsFeed.Feeds
         
         private FeedDto Map(Feed input)
         {
+            if(input == null) return null;
             var mapped = input.MapTo<FeedDto>();
             mapped.PublisherName = input.Publisher?.Name;
             mapped.PublisherImg = input.Publisher?.Img;
