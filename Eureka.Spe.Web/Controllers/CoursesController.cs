@@ -36,5 +36,32 @@ namespace Eureka.Spe.Web.Controllers
             var model = await _courseAppService.Get(id);
             return View(model);
         }
+
+        public async Task<ActionResult> CreateOrEditCourseTheme(int courseId, int? id)
+        {
+
+            if (id.HasValue)
+            {
+                var theme = await _courseAppService.GetTheme(id.Value);
+                return View(theme);
+            }
+            else
+            {
+                var model = new CourseThemeDto()
+                {
+                    CourseId = courseId
+                };
+
+                return View(model);
+            }
+            
+        }
+
+        public async Task<ActionResult> Themes(int courseId)
+        {
+            var themes =  await _courseAppService.GetThemes(courseId);
+            return View(themes);
+        }
+
     }
 }

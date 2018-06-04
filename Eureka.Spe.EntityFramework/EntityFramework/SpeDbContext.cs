@@ -29,6 +29,7 @@ namespace Eureka.Spe.EntityFramework
 
         public IDbSet<Course> Courses { get; set; }
         public IDbSet<CourseCategory> CourseCategories { get; set; }
+        public IDbSet<CourseTheme> CourseThemes { get; set; }
 
         public IDbSet<Scholarship> Scholarships { get; set; }
         public IDbSet<ScholarshipSection> ScholarshipSections { get; set; }

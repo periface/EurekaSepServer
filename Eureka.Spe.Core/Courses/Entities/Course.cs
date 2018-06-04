@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
@@ -26,5 +27,17 @@ namespace Eureka.Spe.Courses.Entities
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
 
+        public virtual ICollection<CourseTheme> CourseThemes { get; set; }
+    }
+
+    public class CourseTheme :FullAuditedEntity, IHasPublishableInfo
+    {
+        public int CourseId { get; set; }
+        [ForeignKey("CourseId")]
+        public virtual Course Course { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Content { get; set; }
+        public string Img { get; set; }
     }
 }

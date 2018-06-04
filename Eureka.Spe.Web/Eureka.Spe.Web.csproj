@@ -3086,6 +3086,8 @@
     <Content Include="Views\Careers\Index.less" />
     <Content Include="Views\AcademicUnits\Manage.less" />
     <Content Include="Views\Messages\Configure.cshtml" />
+    <Content Include="Views\Courses\CreateOrEditCourseTheme.cshtml" />
+    <Content Include="Views\Courses\Themes.cshtml" />
     <None Include="Views\Students\CreateOrEdit.less" />
     <Content Include="Views\Students\CreateOrEdit.css">
       <DependentUpon>CreateOrEdit.less</DependentUpon>

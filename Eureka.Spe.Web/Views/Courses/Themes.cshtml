@@ -1,0 +1,118 @@
+﻿@model Eureka.Spe.ContinuousEducation.Courses.Dto.CoursThemesResult
+
+@{
+    Layout = null;
+}
+<input type="hidden" value="@Model.CourseId" id="courseId"/>
+<div class="row">
+    <div class="container">
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        @if (!Model.CourseThemes.Any())
+        {
+            <div class="">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <img class="img-responsive" style="width: 15%;margin:0 auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcF3Ao69XVd0J65vUzur1vq8ORTXu9TYu8voVd3S4g3H9t0Ck6dw" alt="Alternate Text" />
+                        <h2>Temario</h2>
+                        <p>
+                            Desde aquí se pueden agregar los temas de los que consta su curso/taller etc.
+                        </p>
+                        <button class="btn btn-default js-add-theme" type="button">
+                            Agregar un tema
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+        else
+        {
+            <div class="row">
+
+
+                <div class="col-sm-12">
+                    <button class="btn btn-default js-add-theme pull-right" type="button">
+                        Agregar un tema
+                    </button>
+                </div>
+                <div class="col-lg-12">
+                    <table class="table table-responsive table-condensed">
+                        <thead>
+                            <tr>
+                                @*<th>
+                                        --
+                                    </th>*@
+                                <th style="font-size: 0.9rem;">
+                                    Titulo
+                                </th>
+                                <th style="font-size: 0.9rem;">
+                                    Opciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var course in Model.CourseThemes)
+                            {
+                                <tr data-id="@course.Id">
+                                    <td style="font-size: 0.9rem;">
+                                        @course.Title
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-xs btn-danger pull-right js-delete-theme" data-id="@course.Id"><i class="material-icons">delete_sweep</i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        }
+    </div>
+
+</div>
+<script>
+
+    (function () {
+        var service = abp.services.app.course;
+        let courseId = $("#courseId").val();
+        $(".js-add-theme").click(function () {
+            window.eModal.ajax({
+                loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
+                url: '/Courses/CreateOrEditCourseTheme?courseId=' + courseId,
+                title: 'Tema',
+                buttons: [
+                    {
+                        text: 'Cerrar', style: 'danger', close: true, click: function () {
+
+                        }
+                    },
+                    {
+                        text: 'Guardar', style: 'info', close: false, click: function (elm) {
+                            var data = $("#AddEditCourseThemeForm").serializeFormToObject();
+                            service.createOrEditTheme(data).done(function () {
+                                window.eModal.close();
+                                abp.notify.success("Elemento guardado con exito...");
+                            });
+
+                        }
+                    }
+                ]
+            })
+                .then(function () {
+
+                });
+        });
+
+
+
+    })();
+
+
+</script>
