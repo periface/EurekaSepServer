@@ -2992,6 +2992,7 @@
     </Content>
     <Content Include="Views\CourseCategories\CreateOrEdit.js" />
     <Content Include="Views\CourseCategories\Index.js" />
+    <Content Include="Views\Courses\Themes.js" />
     <Content Include="Views\Courses\CreateOrEdit.css">
       <DependentUpon>CreateOrEdit.less</DependentUpon>
     </Content>
@@ -2999,6 +3000,7 @@
     <Content Include="Views\Courses\CreateOrEdit.min.css">
       <DependentUpon>CreateOrEdit.css</DependentUpon>
     </Content>
+    <Content Include="Views\Courses\CreateOrEditCourseTheme.js" />
     <Content Include="Views\Courses\Index.js" />
     <Content Include="Views\Courses\Manage.css">
       <DependentUpon>Manage.less</DependentUpon>

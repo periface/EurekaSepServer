@@ -1,9 +1,9 @@
-﻿@model Eureka.Spe.ContinuousEducation.Courses.Dto.CoursThemesResult
+﻿@model Eureka.Spe.ContinuousEducation.CourseThemes.Dto.CoursThemesResult
 
 @{
     Layout = null;
 }
-<input type="hidden" value="@Model.CourseId" id="courseId"/>
+<input type="hidden" value="@Model.CourseId" id="courseId" />
 <div class="row">
     <div class="container">
 
@@ -45,13 +45,13 @@
                     <table class="table table-responsive table-condensed">
                         <thead>
                             <tr>
-                                @*<th>
-                                        --
-                                    </th>*@
                                 <th style="font-size: 0.9rem;">
                                     Titulo
                                 </th>
                                 <th style="font-size: 0.9rem;">
+                                    Descripción
+                                </th>
+                                <th style="font-size: 0.9rem;" class="text-center">
                                     Opciones
                                 </th>
                             </tr>
@@ -63,8 +63,17 @@
                                     <td style="font-size: 0.9rem;">
                                         @course.Title
                                     </td>
-                                    <td>
-                                        <a class="btn btn-xs btn-danger pull-right js-delete-theme" data-id="@course.Id"><i class="material-icons">delete_sweep</i></a>
+                                    <td style="font-size: 0.9rem;max-width: 300px">
+                                        @course.Description
+                                    </td>
+                                    <td class="text-center">
+                                        <a class="btn btn-default btn-xs js-edit-theme" data-id="@course.Id">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                        <a class="btn btn-xs btn-danger js-delete-theme" data-id="@course.Id">
+                                            <i class="material-icons">delete_sweep</i>
+                                        </a>
+
                                     </td>
                                 </tr>
                             }
@@ -77,42 +86,4 @@
     </div>
 
 </div>
-<script>
-
-    (function () {
-        var service = abp.services.app.course;
-        let courseId = $("#courseId").val();
-        $(".js-add-theme").click(function () {
-            window.eModal.ajax({
-                loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Cargando</span>',
-                url: '/Courses/CreateOrEditCourseTheme?courseId=' + courseId,
-                title: 'Tema',
-                buttons: [
-                    {
-                        text: 'Cerrar', style: 'danger', close: true, click: function () {
-
-                        }
-                    },
-                    {
-                        text: 'Guardar', style: 'info', close: false, click: function (elm) {
-                            var data = $("#AddEditCourseThemeForm").serializeFormToObject();
-                            service.createOrEditTheme(data).done(function () {
-                                window.eModal.close();
-                                abp.notify.success("Elemento guardado con exito...");
-                            });
-
-                        }
-                    }
-                ]
-            })
-                .then(function () {
-
-                });
-        });
-
-
-
-    })();
-
-
-</script>
+<script src="~/Views/Courses/Themes.js"></script>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Eureka.Spe.Courses.Entities;
@@ -27,21 +26,5 @@ namespace Eureka.Spe.ContinuousEducation.Courses.Dto
 
         public bool RegistrationsOpen { get; set; }
         public string Duration { get; set; }
-    }
-
-    [AutoMap(typeof(CourseTheme))]
-    public class CourseThemeDto : FullAuditedEntityDto
-    {
-        public int CourseId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Content { get; set; }
-        public string Img { get; set; }
-    }
-
-    public class CoursThemesResult
-    {
-        public int CourseId { get; set; }
-        public List<CourseThemeDto> CourseThemes { get; set; } = new List<CourseThemeDto>();
     }
 }

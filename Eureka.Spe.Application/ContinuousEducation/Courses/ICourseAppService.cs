@@ -9,8 +9,14 @@ namespace Eureka.Spe.ContinuousEducation.Courses
 {
     public interface ICourseAppService : IApplicationService, IHavePaginatedResults<Course, CourseDto, BootstrapTableInput>
     {
-        Task<CourseThemeDto> GetTheme(int id);
-        Task<CoursThemesResult> GetThemes(int courseId);
-        Task<int> CreateOrEditTheme(CourseThemeDto input);
+        
     }
+    /*
+     
+     
+        
+     
+     
+     
+     */
 }

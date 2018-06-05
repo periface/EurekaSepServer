@@ -10837,10 +10837,10 @@ html.ie11 .bs-searchbox .form-control {
     margin-bottom: 0 !important;
 }
 
-textarea {
+/*textarea {
     resize: none;
     height: 200px !important;
-}
+}*/
 
 .col-smaller-center {
     width: 70%;

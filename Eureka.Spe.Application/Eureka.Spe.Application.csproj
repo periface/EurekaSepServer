@@ -206,6 +206,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContinuousEducation\CourseThemes\CourseThemeAppService.cs" />
+    <Compile Include="ContinuousEducation\CourseThemes\Dto\CourseThemeDto.cs" />
+    <Compile Include="ContinuousEducation\CourseThemes\Dto\CoursThemesResult.cs" />
+    <Compile Include="ContinuousEducation\CourseThemes\ICourseThemeAppService.cs" />
     <Compile Include="Notifications\Dto\CustomStudentNotificationsRequest.cs" />
     <Compile Include="Resources\Dto\ResourceDto.cs" />
     <Compile Include="Resources\IResourceAppService.cs" />

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
@@ -15,11 +14,9 @@ namespace Eureka.Spe.ContinuousEducation.Courses
     public class CourseAppService : ICourseAppService
     {
         private readonly IRepository<Course> _repository;
-        private readonly IRepository<CourseTheme> _courseThemeRepository;
-        public CourseAppService(IRepository<Course> repository, IRepository<CourseTheme> courseThemeRepository)
+        public CourseAppService(IRepository<Course> repository)
         {
             _repository = repository;
-            _courseThemeRepository = courseThemeRepository;
         }
 
         public IQueryable<Course> GetFilteredQuery(IQueryable<Course> all, BootstrapTableInput input)
@@ -83,30 +80,6 @@ namespace Eureka.Spe.ContinuousEducation.Courses
         {
             var course = await _repository.GetAsync(id);
             return Map(course);
-        }
-
-        public async Task<CourseThemeDto> GetTheme(int id)
-        {
-            var theme = await _courseThemeRepository.GetAsync(id);
-            return theme.MapTo<CourseThemeDto>();
-        }
-
-        public async Task<CoursThemesResult> GetThemes(int courseId)
-        {
-            var themes = await _courseThemeRepository.GetAllListAsync(a => a.CourseId == courseId);
-            var themesDto = themes.Select(a => a.MapTo<CourseThemeDto>()).ToList();
-            return new CoursThemesResult()
-            {
-                CourseThemes = themesDto,
-                CourseId = courseId
-            };
-        }
-
-        public async Task<int> CreateOrEditTheme(CourseThemeDto input)
-        {
-            var elm = input.MapTo<CourseTheme>();
-            await _courseThemeRepository.InsertOrUpdateAndGetIdAsync(elm);
-            return elm.Id;
         }
     }
 }

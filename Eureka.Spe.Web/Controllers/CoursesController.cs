@@ -4,17 +4,20 @@ using Abp.Web.Mvc.Authorization;
 using Eureka.Spe.Authorization;
 using Eureka.Spe.ContinuousEducation.Courses;
 using Eureka.Spe.ContinuousEducation.Courses.Dto;
-using Eureka.Spe.Courses;
+using Eureka.Spe.ContinuousEducation.CourseThemes;
+using Eureka.Spe.ContinuousEducation.CourseThemes.Dto;
 
 namespace Eureka.Spe.Web.Controllers
 {
     [AbpMvcAuthorize(PermissionNames.Pages_Courses)]
     public class CoursesController : Controller
     {
+        private readonly ICourseThemeAppService _courseThemeAppService;
         private readonly ICourseAppService _courseAppService;
 
-        public CoursesController(ICourseAppService courseAppService)
+        public CoursesController(ICourseThemeAppService courseThemeAppService, ICourseAppService courseAppService)
         {
+            _courseThemeAppService = courseThemeAppService;
             _courseAppService = courseAppService;
         }
 
@@ -42,24 +45,20 @@ namespace Eureka.Spe.Web.Controllers
 
             if (id.HasValue)
             {
-                var theme = await _courseAppService.GetTheme(id.Value);
+                var theme = await _courseThemeAppService.GetTheme(id.Value);
                 return View(theme);
             }
-            else
+            var model = new CourseThemeDto()
             {
-                var model = new CourseThemeDto()
-                {
-                    CourseId = courseId
-                };
+                CourseId = courseId
+            };
 
-                return View(model);
-            }
-            
+            return View(model);
         }
 
         public async Task<ActionResult> Themes(int courseId)
         {
-            var themes =  await _courseAppService.GetThemes(courseId);
+            var themes =  await _courseThemeAppService.GetThemesForCourse(courseId);
             return View(themes);
         }
 
