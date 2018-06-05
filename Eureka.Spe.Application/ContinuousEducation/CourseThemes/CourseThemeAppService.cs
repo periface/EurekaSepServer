@@ -22,8 +22,11 @@ namespace Eureka.Spe.ContinuousEducation.CourseThemes
 
         public async Task<CoursThemesResult> GetThemesForCourse(int courseId)
         {
-            var themes = await _repository.GetAllListAsync(a => a.CourseId == courseId);
-            var themesDto = themes.Select(a => a.MapTo<CourseThemeDto>()).ToList();
+            var themes = (await _repository
+                .GetAllListAsync(a => a.CourseId == courseId))
+                .OrderBy(a=>a.Order);
+            var themesDto = themes.Select(a => a.MapTo<CourseThemeDto>())
+                .ToList();
             return new CoursThemesResult()
             {
                 CourseThemes = themesDto,
