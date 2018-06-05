@@ -43,7 +43,7 @@ namespace Eureka.Spe.Web.Controllers
         public async Task<ActionResult> CreateOrEditCourseTheme(int courseId, int? id)
         {
 
-            if (id.HasValue)
+            if (id.HasValue && id.Value != 0)
             {
                 var theme = await _courseThemeAppService.GetTheme(id.Value);
                 return View(theme);
