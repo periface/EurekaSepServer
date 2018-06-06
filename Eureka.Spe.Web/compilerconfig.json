@@ -62,5 +62,9 @@
   {
     "outputFile": "Views/AcademicUnits/Manage.css",
     "inputFile": "Views/AcademicUnits/Manage.less"
+  },
+  {
+    "outputFile": "css/custom.css",
+    "inputFile": "css/custom.less"
   }
 ]

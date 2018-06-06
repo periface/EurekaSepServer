@@ -6,30 +6,40 @@
     ViewBag.PageName = "Noticias";
     ViewBag.Title = "Noticias";
  }
-
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-small-center">
-        @if (!ViewBag.HasPublishers)
-        {
-            <div class="card">
-                <div class="body">
+    <div class="google-container">
+        <div class="col-lg-12">
+            <a class="btn btn-default waves-effect btn-lg pull-left" href="@Url.Action("Index", "Publishers")">Gestionar Departamentos</a>
+            <a href="@Url.Action("CreateOrEdit")" class="btn btn-primary waves-effect btn-lg pull-right"> Crear nueva noticia</a><br/><br/><br/>
+        </div>
+    </div>
+    
+</div>
+<div class="row clearfix">
+    <div class="google-container">
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            @if (!ViewBag.HasPublishers)
+            {
+                <div class="card">
+                    <div class="body">
 
-                    <h4 class="">
-                        <img style="width: 5%;" src="https://www.materialui.co/materialIcons/alert/warning_amber_144x144.png" /> Advertencia
-                    </h4>
-                    <p>
-                        No tiene departamentos creados...
-                    </p>
+                        <h4 class="">
+                            <img style="width: 5%;" src="https://www.materialui.co/materialIcons/alert/warning_amber_144x144.png"/> Advertencia
+                        </h4>
+                        <p>
+                            No tiene departamentos creados...
+                        </p>
 
+                    </div>
                 </div>
-            </div>
-        }
-        <a class="btn btn-default waves-effect btn-lg pull-left" href="@Url.Action("Index", "Publishers")">Gestionar Departamentos</a>
-        <a href="@Url.Action("CreateOrEdit")" class="btn btn-primary waves-effect btn-lg pull-right"> Crear nueva noticia</a><br /><br /><br />
-        <div class="card">
-            <div class="body table-responsive">
-                <table data-pagination="true" data-toggle="table" data-classes="table table-no-bordered table-condensed"
-                       data-side-pagination="server" data-events="buttons" data-url="/api/services/app/feed/getall" id="table" class="table table-responsive"></table>
+            }
+
+            <div class="card">
+                <div class="body table-responsive">
+                    <table data-pagination="true" data-toggle="table" data-classes="table table-no-bordered table-condensed"
+                           data-side-pagination="server" data-events="buttons" data-url="/api/services/app/feed/getall" id="table" class="table table-responsive"></table>
+                </div>
             </div>
         </div>
     </div>
