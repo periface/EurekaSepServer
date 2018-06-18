@@ -99,7 +99,7 @@ namespace Eureka.Spe.Web
                         new MenuItemDefinition(
                             PageNames.Students,
                             L("StudentsList"),
-                            url: "Students"
+                            url: "Students/Index"
                         )
                     )
                 )
