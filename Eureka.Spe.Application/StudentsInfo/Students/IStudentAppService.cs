@@ -19,5 +19,7 @@ namespace Eureka.Spe.StudentsInfo.Students
         Task<List<PhoneInfoDto>> GetPhonesForStudent(int studentId);
 
         SaveFileOutput ChangeProfilePicture(ChangeProfileInput input);
+
+        Task<StudentDto> Signup(SignupInput input);
     }
 }

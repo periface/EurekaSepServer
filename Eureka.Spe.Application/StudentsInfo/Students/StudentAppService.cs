@@ -179,7 +179,10 @@ namespace Eureka.Spe.StudentsInfo.Students
             return result;
         }
 
-
+        public Task<StudentDto> Signup(SignupInput input)
+        {
+            throw new NotImplementedException();
+        }
         public async Task<StudentDto> RegisterStudentAccount(StudentDto input)
         {
             var passwordHash = new PasswordHasher().HashPassword(input.Password);

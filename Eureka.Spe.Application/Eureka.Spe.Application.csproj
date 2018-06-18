@@ -295,6 +295,7 @@
     <Compile Include="StudentsInfo\Students\Dto\AdacemicInfoDto.cs" />
     <Compile Include="StudentsInfo\Students\Dto\ChangeProfileInput.cs" />
     <Compile Include="StudentsInfo\Students\Dto\CheckStudentInfoInput.cs" />
+    <Compile Include="StudentsInfo\Students\Dto\SignupInput.cs" />
     <Compile Include="StudentsInfo\Students\Dto\StudentDto.cs" />
     <Compile Include="StudentsInfo\Students\IStudentAppService.cs" />
     <Compile Include="StudentsInfo\Students\StudentAppService.cs" />
