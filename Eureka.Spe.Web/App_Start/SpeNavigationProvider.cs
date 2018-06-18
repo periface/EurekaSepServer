@@ -55,7 +55,7 @@ namespace Eureka.Spe.Web
                             PageNames.Feeds,
                             L("Feeds"),
                             url: "Feeds",
-                            icon: "local_offer",
+                            icon: "announcement",
                             requiredPermissionName: PermissionNames.Pages_Roles
                         )
                 )
@@ -64,7 +64,7 @@ namespace Eureka.Spe.Web
                             PageNames.Courses,
                             L("Courses"),
                             url: "Courses",
-                            icon: "local_offer"
+                            icon: "chrome_reader_mode"
                         )
                 )
                 .AddItem(
@@ -72,7 +72,7 @@ namespace Eureka.Spe.Web
                             PageNames.Scholarships,
                             L("Scholarships"),
                             url: "Scholarships",
-                            icon: "local_offer"
+                            icon: "card_membership"
                         )
                 )
                 .AddItem(
@@ -80,14 +80,14 @@ namespace Eureka.Spe.Web
                         PageNames.Messages,
                         L("Messages"),
                         url: "Messages",
-                        icon: "local_offer"
+                        icon: "speaker_notes"
                     )
                 )
                 .AddItem(
                     new MenuItemDefinition(
                         PageNames.Students,
                         L("Students"),
-                        icon: "local_offer"
+                        icon: "supervisor_account"
                     ).AddItem(
                             new MenuItemDefinition(
                                 PageNames.AcademicUnits,
