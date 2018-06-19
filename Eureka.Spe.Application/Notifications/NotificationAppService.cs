@@ -65,7 +65,7 @@ namespace Eureka.Spe.Notifications
         {
             var elm = input.MapTo<PhoneNotification>();
 
-            elm.Badge = GetBadge(input.AssignedTo,input.AssignedToId);
+            elm.Badge = GetBadge(input.AssignedTo, input.AssignedToId);
 
 
             await _repository.InsertOrUpdateAndGetIdAsync(elm);
@@ -131,7 +131,7 @@ namespace Eureka.Spe.Notifications
             var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == id).ToList();
 
             result.Notifications = new List<SimpleNotificationResult>();
-            foreach (var notification in notifications.Where(a=>!a.Readed))
+            foreach (var notification in notifications.Where(a => !a.Readed))
             {
                 result.Notifications.Add(new SimpleNotificationResult()
                 {
@@ -155,7 +155,7 @@ namespace Eureka.Spe.Notifications
         {
             var result = new StudentNotificationsResult();
 
-            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == id).OrderByDescending(a=>a.CreationTime).ToList();
+            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == id).OrderByDescending(a => a.CreationTime).ToList();
 
             result.Notifications = new List<SimpleNotificationResult>();
             foreach (var notification in notifications)
@@ -165,7 +165,7 @@ namespace Eureka.Spe.Notifications
                     Data = notification.PhoneNotification?.Data,
                     Message = notification.PhoneNotification?.Message,
                     Title = notification.PhoneNotification?.Title,
-                    Id= notification.Id,
+                    Id = notification.Id,
                     Readed = notification.Readed
                 });
             }
@@ -175,7 +175,7 @@ namespace Eureka.Spe.Notifications
 
         public PagedResultDto<SimpleNotificationResult> GetNotificationsForStudentPaged(CustomStudentNotificationsRequest input)
         {
-            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == input.StudentId).OrderByDescending(a => a.CreationTime);
+            var notifications = _statusRepository.GetAllIncluding(a => a.PhoneNotification).Where(a => a.StudentId == input.StudentId && a.PhoneNotification != null && !string.IsNullOrEmpty(a.PhoneNotification.Title)).OrderByDescending(a => a.CreationTime);
             var paged = notifications.Skip(input.offset).Take(input.limit).ToList();
             return new PagedResultDto<SimpleNotificationResult>(notifications.Count(), paged.Select(a => new SimpleNotificationResult()
             {
